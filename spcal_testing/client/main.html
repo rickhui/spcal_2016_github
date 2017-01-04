@@ -1,6 +1,14 @@
 <body ng-app="spcal" ng-cloak>
   <div ng-include src="'client/nav.html'"></div>
-  <div ng-include src="'client/calculator.html'"></div>
+  <div layout="row" layout-padding>
+    <div flex ng-include src="'client/calculator.html'"></div>
+    <div flex layout="column">
+      <div flex="66" ng-include src="'client/datatable.html'"></div>
+      <div flex="33" ng-include src="'client/outputformula.html'"></div>
+    </div>
+  </div>
+
+  <!-- <div ng-include src="'client/testing.html'"></div> -->
 
   <!-- <div ng-include src="'imports/components/carousel/testing.html'"></div> -->
 </body>

@@ -5,13 +5,15 @@ import ngMaterial from 'angular-material';
 import ngMessages from 'angular-messages';
 // import 'angular-messages/angular-messages.min.js';
 import 'angular-material/angular-material.css';
+import ngDataTable from 'angular-material-data-table'
 
 
 angular.module('spcal', [
   ngMaterial,
   ngMessages,
   angularMeteor,
-  angularUI
+  angularUI,
+  ngDataTable
 ]);
 
 angular.module('spcal').controller('ValidationCtrl', function ($scope) {
@@ -23,7 +25,12 @@ angular.module('spcal').controller('ValidationCtrl', function ($scope) {
     currency: 'USD',
     interestRate: '5%',
     fixValue: 'Linked to Currency Exchange',
-    refValue: 6.400
+    refValue: 6.400,
+    determinationDate: new Date(),
+    closingPrice: 'The official closing price of the MTR shares on the Determination Data as published by the Exchange',
+    cpnRate: '4.37%',
+    spotPrice: '$98.5',
+    stock: '0700.HK'
   };
   $scope.currencies = ('AUD CNY JPY USD EUR').split(' ').map(function(currency) {
        return {abbrev: currency};
@@ -116,3 +123,25 @@ angular.module('spcal').controller('ValidationCtrl', function ($scope) {
     }
   // }
 });
+
+// ###### Datatable need to connect to DB ######
+// angular.module('spcal').controller('sampleController', ['$nutrition', '$scope', function ($nutrition, $scope) {
+//   'use strict';
+//
+//   $scope.selected = [];
+//
+//   $scope.query = {
+//     order: 'name',
+//     limit: 5,
+//     page: 1
+//   };
+//
+//   function success(desserts) {
+//     $scope.desserts = desserts;
+//   }
+//
+//   $scope.getDesserts = function () {
+//     $scope.promise = $nutrition.desserts.get($scope.query, success).$promise;
+//   };
+//
+// }]);
