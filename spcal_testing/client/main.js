@@ -8,7 +8,7 @@ import 'angular-material/angular-material.css';
 import ngDataTable from 'angular-material-data-table'
 
 
-angular.module('spcal', [
+angular.module('spcal',[
   ngMaterial,
   ngMessages,
   angularMeteor,
