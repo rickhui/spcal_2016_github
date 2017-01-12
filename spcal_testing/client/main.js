@@ -18,11 +18,11 @@ angular.module('spcal',[
 
 angular.module('spcal').controller('ValidationCtrl', function ($scope) {
   $scope.cal = {
-    tradeDate: new Date(),
-    currencyPair: 'AUD/HKD',
-    maturityDate: new Date(),
-    amountDeposit: '$10000',
-    currency: 'USD',
+    //tradeDate: new Date(),
+    //currencyPair: 'AUD/HKD',
+    //maturityDate: new Date(),
+    amountDeposit: '10000',
+    //currency: 'USD',
     interestRate: '5%',
     fixValue: 'Linked to Currency Exchange',
     refValue: 6.400,
@@ -32,11 +32,32 @@ angular.module('spcal').controller('ValidationCtrl', function ($scope) {
     spotPrice: '$98.5',
     stock: '0700.HK'
   };
-  $scope.currencies = ('AUD CNY JPY USD EUR').split(' ').map(function(currency) {
-       return {abbrev: currency};
+  $scope.currencies = ('AUD, CAD, CHF, CNY, EUR, GBP, HKD, JPY, NZD, SGD, USD').split(', ').map(function(currency) {
+    return {abbrev: currency};
   });
+  $scope.minDate = new Date();
 });
 
+//TODO: add filter for linked currencies after choosing deposit currency
+/*
+angular.module('spcal', []).filter('linkedCurrencyFilter', function() {
+  return function(depoCur) {
+    var filteredLinkCur = [];
+    var originalLinkCur = ['AUD', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'JPY', 'NZD', 'SGD', 'USD'];
+    //angular.forEach($scope.currencies, function())
+    for(var i = 0; i < originalLinkCur.length; i++) {
+      var linkCur = originalLinkCur[i];
+      if (linkCur === depoCur) {
+        continue;
+      } else if ((linkCur === "USD" && depoCur === "HKD") || (linkCur === "HKD" && depoCur === "USD")) {
+        continue;
+      }
+      filteredLinkCur.push(linkCur);
+    }
+    return filteredLinkCur;
+  };
+});
+*/
 // (function () {
   // 'use strict';
   // angular
