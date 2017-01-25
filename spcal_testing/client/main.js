@@ -5,10 +5,12 @@ import ngMaterial from 'angular-material';
 import ngMessages from 'angular-messages';
 // import 'angular-messages/angular-messages.min.js';
 import 'angular-material/angular-material.css';
-import ngDataTable from 'angular-material-data-table'
+import ngDataTable from 'angular-material-data-table';
+import jquery from 'jquery'
 
+var Highcharts = require('highcharts/highstock');
 
-angular.module('spcal',[
+var spcal = angular.module('spcal',[
   ngMaterial,
   ngMessages,
   angularMeteor,
@@ -16,7 +18,7 @@ angular.module('spcal',[
   ngDataTable
 ]);
 
-angular.module('spcal').controller('ValidationCtrl', function ($scope) {
+spcal.controller('ValidationCtrl', function ($scope) {
   $scope.cal = {
     //tradeDate: new Date(),
     //currencyPair: 'AUD/HKD',
@@ -38,7 +40,7 @@ angular.module('spcal').controller('ValidationCtrl', function ($scope) {
   $scope.minDate = new Date();
 });
 
-//TODO: add filter for linked currencies after choosing deposit currency
+//TODO: Filter for linked currencies after choosing deposit currency
 /*
 angular.module('spcal', []).filter('linkedCurrencyFilter', function() {
   return function(depoCur) {
@@ -63,7 +65,46 @@ angular.module('spcal', []).filter('linkedCurrencyFilter', function() {
   // angular
   //     .module('spcal')
   //     .controller('DemoCtrl', DemoCtrl);
-  angular.module('spcal').controller('AutoCompleteCtrl', function ($timeout, $q, $log) {
+
+  //TODO: Calculate tenor
+
+  //TODO: Add controller to config highcharts
+  spcal.controller('DiagramCtrl', function ($scope) {
+      $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
+          // Create the chart
+          Highcharts.stockChart('container', {
+              rangeSelector: {
+                  selected: 1
+              },
+              title: {
+                  text: 'AUD-HKD FX RATE',
+              },
+              series: [{
+                  name: 'AUD-HKD FX RATE',
+                  data: data,
+                  type: 'area',
+                  threshold: null,
+                  tooltip: {
+                      valueDecimals: 2
+                  },
+                  fillColor: {
+                      linearGradient: {
+                          x1: 0,
+                          y1: 0,
+                          x2: 0,
+                          y2: 1
+                      },
+                      stops: [
+                          [0, Highcharts.getOptions().colors[0]],
+                          [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                      ]
+                  }
+              }]
+          });
+      });
+  });
+
+  spcal.controller('AutoCompleteCtrl', function ($timeout, $q, $log) {
 
   // function DemoCtrl ($timeout, $q, $log) {
     var self = this;
@@ -143,7 +184,7 @@ angular.module('spcal', []).filter('linkedCurrencyFilter', function() {
 
     }
   // }
-});
+  });
 
 // ###### Datatable need to connect to DB ######
 // angular.module('spcal').controller('sampleController', ['$nutrition', '$scope', function ($nutrition, $scope) {
