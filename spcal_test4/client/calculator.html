@@ -1,0 +1,357 @@
+<div layout="column" ng-cloak class="md-inline-form">
+
+  <!-- <div layout="row" layout-padding>
+    <div flex="66"> -->
+      <!-- <md-content md-colors="{background: 'blue'}" layout-gt-sm="row" layout-padding>
+    <div>
+      <h4>Deposit Plus</h4>md-dynamic-height
+    </div>style="min-height: 450px;"
+    </md-content> -->
+    <div class="tabsdemoDynamicHeight" ng-cloak>
+  <md-card>
+    <md-tabs style="min-height: 450px;" md-border-bottom>
+      <md-tab label="Deposit Plus">
+        <md-content class="md-padding">
+          <md-content layout-padding ng-controller="ValidationCtrl">
+          <div>
+            <form name="InvForm">
+              <div layout="row">
+
+                <md-input-container class="md-block" flex>
+                  <label>Deposit Currency</label>
+                  <md-select  ng-model="cal.depositCurrency">
+                    <md-option ng-repeat="currency in currencies" value="{{currency.abbrev}}">
+                      {{currency.abbrev}}
+                    </md-option>
+                  </md-select>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex>
+                  <label>Linked Currency</label>
+                  <md-select  ng-model="cal.linkedCurrency">
+                    <md-option ng-repeat="currency in currencies" value="{{currency.abbrev}}">
+                      {{currency.abbrev}}
+                    </md-option>
+                  </md-select>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex>
+                  <label>Currency Pair</label>
+                  <input name="currencyPair" ng-if="cal.depositCurrency&&cal.linkedCurrency" value="{{cal.depositCurrency}}/{{cal.linkedCurrency}}" disabled/>
+                </md-input-container>
+
+              </div>
+
+
+              <div layout="row">
+                <md-input-container >
+                  <label>Trade date</label>
+                  <md-datepicker name="tradeDate" ng-model="cal.tradeDate" required md-open-on-focus></md-datepicker>
+                  <div ng-messages="InvForm.tradeDate.$error">
+                      <div ng-message="required">This is required!</div>
+                  </div>
+                  <div ng-if="InvForm.tradeDate.$error.required">
+                    <div style="font-size:11px;text-align:center;color:#D32F2F">A valid date is required.</div>
+                  </div>
+                  <div ng-if="InvForm.tradeDate.$error.mindate">
+                    <div style="font-size:11px;text-align:center;color:#D32F2F">Trade date must be today or a future date.</div>
+                  </div>
+                </md-input-container>
+
+                <!-- <md-input-container >
+                  <label>Maturity Date</label>
+                  <md-datepicker md-no-asterisk name="maturityDate" ng-model="cal.maturityDate" required md-open-on-focus ng-disabled="cal.tradeDate === undefined" md-min-date="cal.tradeDate"></md-datepicker> --> -->
+                  <!-- <div ng-if="InvForm.maturityDate.$error.required">
+                    <div style="font-size:11px;text-align:center;color:#D32F2F">A valid date is required.</div>
+                  </div>
+                  <div ng-if="InvForm.maturityDate.$error.mindate">
+                    <div style="font-size:11px;text-align:center;color:#D32F2F">Maturity date should be after trade date.</div>
+                  </div> -->
+                <!-- </md-input-container> -->
+
+                <!-- <md-input-container class="md-block" flex>
+                  <label>Tenor</label>
+                  <input name="tenor" ng-if="cal.tradeDate&&cal.maturityDate" value="" disabled/>
+                </md-input-container> -->
+
+              </div>
+
+              <div layout="row">
+
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Amount Deposit</label>
+                  <!-- <div style="font-size:11px" >{{cal.depositCurrency}}</div> -->
+                  <input md-maxlength="10" name="amountDeposit" ng-model="cal.amountDeposit" required>
+                  <div ng-show="InvForm.amountDeposit.$error.required">
+                    <div style="color:#D32F2F;font-size:11px">This is required.</div>
+                  </div>
+                  <div ng-show="InvForm.amountDeposit.$error.maxlength">
+                    <div style="color:#D32F2F;font-size:11px">This should be less than 10 digits.</div>
+                  </div>
+                </md-input-container>
+              </div>
+
+              <div layout-gt-sm="row">
+
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Interest Rate</label>
+                  <input name="interestRate" required ng-model="cal.interestRate">
+                  <div ng-show="InvForm.interestRate.$error.required">
+                    <div style="color:#D32F2F;font-size:11px">This is required.</div>
+                  </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Fixing Value</label>
+                  <input disabled ng-model="cal.fixValue">
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Reference Value</label>
+                  <input required ng-model="cal.refValue">
+                </md-input-container>
+
+              </div>
+            </form>
+          </div>
+        </md-content>
+        </md-content>
+      </md-tab>
+      <md-tab label="Equity Linked Deposit">
+        <md-content class="md-padding">
+            <md-content layout-padding ng-controller="ValidationCtrl">
+            <div>
+              <form name="InvForm">
+                <div layout-gt-xs="row">
+                  <md-input-container class="md-block" flex-gt-xs>
+                      <label>Currency</label>
+                  <md-select  ng-model="cal.currency">
+                    <md-option ng-repeat="currency in currencies" value="{{currency.abbrev}}">
+                      {{currency.abbrev}}
+                    </md-option>
+                  </md-select>
+                  </md-input-container>
+                  <md-input-container class="md-block" flex-gt-xs>
+                    <label>Principal Amount</label>
+                    <input name="principalAmount" ng-model="cal.principalAmount" required/>
+                    <!-- <div ng-messages="InvForm.currencyPair.$error" role="alert"> -->
+                      <div ng-if="InvForm.tradeDate.$error.required">
+                        <div style="font-size:11px;color:#D32F2F">This is required.</div>
+                      </div>
+                    <!-- </div> -->
+                  </md-input-container>
+
+                  <md-input-container>
+                    <label>Trade date</label>
+                    <md-datepicker name="tradeDate" ng-model="cal.tradeDate" required md-open-on-focus=""></md-datepicker>
+                    <!-- <div ng-messages="InvForm.tradeDate.$error">
+                        <div ng-message="required">This is required!</div>
+                    </div> -->
+                    <div ng-if="InvForm.tradeDate.$error.required">
+                      <div style="font-size:11px;text-align:center;color:#D32F2F">A valid date is required.</div>
+                    </div>
+                  </md-input-container>
+                </div>
+
+                <div layout-gt-sm="row">
+                  <md-input-container class="md-block" flex-gt-sm>
+                      <label>Strike Price</label>
+                      <input md-maxlength="10" name="strikePrice" ng-model="cal.strikePrice" required>
+                  </md-input-container>
+                  <md-input-container class="md-block" flex-gt-sm>
+                    <label>Coupon Rate</label>
+                    <input disabled name="cpnRate" ng-model="cal.cpnRate" >
+                  </md-input-container>
+
+                  <md-input-container>
+                    <label>Maturity Date</label>
+                    <md-datepicker md-no-asterisk name="maturityDate" ng-model="cal.maturityDate" required md-open-on-focus=""></md-datepicker>
+                    <div ng-if="!cal.maturityDate">
+                      <div style="text-align:center;color:#D32F2F">This is required!</div>
+                    </div>
+                  </md-input-container>
+                </div>
+              <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Spot Price</label>
+                  <input disabled name="spotPrice" ng-model="cal.spotPrice">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Linked stock</label>
+                  <input disabled name="stock" ng-model="cal.stock">
+                </md-input-container>
+
+                  <!-- <md-input-container class="md-block" flex-gt-sm>
+                    <label>Fixing Value</label>
+                    <input disabled ng-model="cal.fixValue">
+                  </md-input-container> -->
+
+                  <md-input-container class="md-block" flex-gt-sm>
+                    <label>Determination Date</label>
+                    <md-datepicker md-no-asterisk name="determinationDate" ng-model="cal.determinationDate" required md-open-on-focus=""></md-datepicker>
+                    <div ng-if="InvForm.determinationDate.$error.required">
+                      <div style="text-align:center;color:#D32F2F">This is required!</div>
+                    </div>
+                  </md-input-container>
+                </div>
+                  <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Final Closing Price</label>
+                      <input disabled name="closingPrice" ng-model="cal.closingPrice">
+                    </md-input-container>
+
+                </div>
+
+              </form>
+            </div>
+          </md-content>
+        </md-content>
+      </md-tab>
+      <md-tab label="Currency Linked Deposit">
+        <md-content class="md-padding">
+          <md-content layout-padding ng-controller="ValidationCtrl">
+          <div>
+            <form name="InvForm">
+              <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                  <label>Currency Pair</label>
+                  <input name="currencyPair" ng-model="cal.currencyPair" required/>
+                  <!-- <div ng-messages="InvForm.currencyPair.$error" role="alert"> -->
+                    <div ng-if="!cal.currencyPair">
+                      <div style="font-size:11px;color:#D32F2F">This is required.</div>
+                    </div>
+                  <!-- </div> -->
+                </md-input-container>
+
+                <md-input-container>
+                  <label>Trade date</label>
+                  <md-datepicker name="tradeDate" ng-model="cal.tradeDate" required md-open-on-focus=""></md-datepicker>
+                  <!-- <div ng-messages="InvForm.tradeDate.$error">
+                      <div ng-message="required">This is required!</div>
+                  </div> -->
+                  <div ng-if="InvForm.tradeDate.$error.required">
+                    <div style="font-size:11px;text-align:center;color:#D32F2F">A valid date is required.</div>
+                  </div>
+                </md-input-container>
+              </div>
+
+              <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Currency</label>
+                <md-select  ng-model="cal.currency">
+                  <md-option ng-repeat="currency in currencies" value="{{currency.abbrev}}">
+                    {{currency.abbrev}}
+                  </md-option>
+                </md-select>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Amount Deposit</label>
+                  <input md-maxlength="10" name="amountDeposit" ng-model="cal.amountDeposit" required>
+                  <div ng-show="InvForm.amountDeposit.$error.required">
+                    <div style="color:#D32F2F;font-size:11px">This is required.</div>
+                  </div>
+                  <div ng-show="InvForm.amountDeposit.$error.maxlength">
+                    <div style="color:#D32F2F;font-size:11px">This should be less than 10 digits.</div>
+                  </div>
+                </md-input-container>
+
+                <md-input-container>
+                  <label>Maturity Date</label>
+                  <md-datepicker md-no-asterisk name="maturityDate" ng-model="cal.maturityDate" required md-open-on-focus=""></md-datepicker>
+                  <div ng-if="!cal.maturityDate">
+                    <div style="text-align:center;color:#D32F2F">This is required!</div>
+                  </div>
+                </md-input-container>
+              </div>
+            <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>Interest Rate</label>
+                <input name="interestRate" required ng-model="cal.interestRate">
+                <div ng-show="InvForm.interestRate.$error.required">
+                  <div style="color:#D32F2F;font-size:11px">This is required.</div>
+                </div>
+              </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Fixing Value</label>
+                  <input disabled ng-model="cal.fixValue">
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Reference Value</label>
+                  <input required ng-model="cal.refValue">
+                </md-input-container>
+
+
+              </div>
+            </form>
+          </div>
+        </md-content>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-card>
+</div>
+
+    </div>
+  <!-- </div>
+</div> -->
+    <!-- <div layout="row" layout-padding>
+            <div flex="66">
+                <md-content layout-padding>
+                <form>
+                <div layout-gt-sm="row" >
+                <md-input-container class="md-icon-float md-block" flex-gt-sm>
+                    <label>Currency Pair</label>
+                    <!-- <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon> -->
+                    <!-- <input name="Currency Pair" ng-model="currency" required>
+                    <div ng-messages="currency.$error">
+                        <div ng-message="required">This is required!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                <label>Trade Date</label> -->
+                    <!-- <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon> -->
+                <!-- <md-datepicker ng-model="tradeDate" md-open-on-focus=""></md-datepicker>
+                </md-input-container>
+
+                </div>
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-icon-float md-block" flex-gt-sm>
+                        <label>Deposit Amount</label>
+                        <input name="Currency Pair" ng-model="currency" required>
+                        <div ng-messages="currency.$error">
+                            <div ng-message="required">This is required!</div>
+                        </div>
+                    </md-input-container>
+                <md-input-container >
+                <label>Maturity Date</label>
+                <md-datepicker ng-model="maturityDate"  md-open-on-focus=""></md-datepicker>
+                </md-input-container>
+                </div>
+                </md-content>
+                    </form>
+            </div>
+            <div flex="33">
+                <md-input-container>
+                    <label>Currency Pair</label>
+                    <input name="Currency Pair" ng-model="currency" required>
+                    <div ng-messages="currency.$error">
+                        <div ng-message="required">This is required!</div>
+                    </div>
+                </md-input-container>
+            </div>
+        </div>
+        </div> -->
+    <!-- <form class="form-inline" align="center">
+    <div class="form-group">
+    <pre  style="text-align: left;">
+    <h5>Currency Pair: </h5><input style="width:30%;text-align: center" type="text" class="form-control"  placeholder="AUD/HKD"><br>
+    Deposit Amount: <input style="width:30%;text-align: center" type="text" class="form-control"  placeholder="AUD/HKD"><br>
+    Trade Date: <span flex-gt-xs=""><md-datepicker ng-model="ctrl.myDate" md-placeholder="Enter date" md-open-on-focus=""></md-datepicker></span><br>
+    Maturity Date: <input style="width:30%;text-align: center" type="text" class="form-control" ng-model="currency" placeholder="AUD/HKD"><br>
+    Interest rate:
+    </pre>
+    </div>
+</form> -->
+<!-- </div> -->

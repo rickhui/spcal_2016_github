@@ -1,28 +1,22 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
-import angularUI from 'angular-ui-bootstrap';
 import ngMaterial from 'angular-material';
-import ngMessages from 'angular-messages';
-// import 'angular-messages/angular-messages.min.js';
-import 'angular-material/angular-material.css';
-import ngDataTable from 'angular-material-data-table'
-
 
 angular.module('spcal',[
-  ngMaterial,
-  ngMessages,
-  angularMeteor,
-  angularUI,
-  ngDataTable
+      angularMeteor,
+      // 'ui.router',
+      // 'angularUtils.directives.dirPagination',
+      // 'uiGmapgoogle-maps',
+      ngMaterial
 ]);
 
 angular.module('spcal').controller('ValidationCtrl', function ($scope) {
   $scope.cal = {
     tradeDate: new Date(),
-    //currencyPair: 'AUD/HKD',
+    currencyPair: 'AUD/HKD',
     maturityDate: new Date(),
-    amountDeposit: '10000',
-    // currency: 'USD',
+    amountDeposit: '$10000',
+    currency: 'USD',
     interestRate: '5%',
     fixValue: 'Linked to Currency Exchange',
     refValue: 6.400,
@@ -32,32 +26,11 @@ angular.module('spcal').controller('ValidationCtrl', function ($scope) {
     spotPrice: '$98.5',
     stock: '0700.HK'
   };
-  $scope.currencies = ('AUD, CAD, CHF, CNY, EUR, GBP, HKD, JPY, NZD, SGD, USD').split(', ').map(function(currency) {
-    return {abbrev: currency};
+  $scope.currencies = ('AUD CNY JPY USD EUR').split(' ').map(function(currency) {
+       return {abbrev: currency};
   });
-  $scope.minDate = new Date();
 });
 
-//TODO: add filter for linked currencies after choosing deposit currency
-/*
-angular.module('spcal', []).filter('linkedCurrencyFilter', function() {
-  return function(depoCur) {
-    var filteredLinkCur = [];
-    var originalLinkCur = ['AUD', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'JPY', 'NZD', 'SGD', 'USD'];
-    //angular.forEach($scope.currencies, function())
-    for(var i = 0; i < originalLinkCur.length; i++) {
-      var linkCur = originalLinkCur[i];
-      if (linkCur === depoCur) {
-        continue;
-      } else if ((linkCur === "USD" && depoCur === "HKD") || (linkCur === "HKD" && depoCur === "USD")) {
-        continue;
-      }
-      filteredLinkCur.push(linkCur);
-    }
-    return filteredLinkCur;
-  };
-});
-*/
 // (function () {
   // 'use strict';
   // angular
@@ -145,24 +118,32 @@ angular.module('spcal', []).filter('linkedCurrencyFilter', function() {
   // }
 });
 
-// ###### Datatable need to connect to DB ######
-// angular.module('spcal').controller('sampleController', ['$nutrition', '$scope', function ($nutrition, $scope) {
-//   'use strict';
-//
-//   $scope.selected = [];
-//
-//   $scope.query = {
-//     order: 'name',
-//     limit: 5,
-//     page: 1
-//   };
-//
-//   function success(desserts) {
-//     $scope.desserts = desserts;
-//   }
-//
-//   $scope.getDesserts = function () {
-//     $scope.promise = $nutrition.desserts.get($scope.query, success).$promise;
-//   };
-//
-// }]);
+
+var themeIcons = function ($mdIconProvider) {
+
+  $mdIconProvider
+    .iconSet("social",
+             "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-social.svg")
+
+    .iconSet("action",
+             "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-action.svg")
+
+    .iconSet("communication",
+             "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-communication.svg")
+
+    .iconSet("content",
+             "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-content.svg")
+
+    .iconSet("toggle",
+             "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-toggle.svg")
+
+    .iconSet("navigation",
+             "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-navigation.svg")
+
+    .iconSet("image",
+             "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-image.svg");
+
+};
+
+angular.module('spcal')
+  .config(themeIcons);

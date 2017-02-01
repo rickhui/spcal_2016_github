@@ -1,0 +1,26 @@
+<head>
+  <title>Structured Product Calculator</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body ng-app="spcal" ng-cloak>
+  <div ng-include src="'client/nav.html'"></div>
+  <div layout="column">
+  <div flex layout="row" layout-padding>
+    <div flex ng-include src="'client/calculator.html'"></div>
+    <md-content>
+      <!-- <md-input-container> -->
+   <label>Enter date</label>
+   <md-datepicker ng-model="user.submissionDate"></md-datepicker>
+  <!-- </md-input-container> -->
+</md-content>
+    <!-- <div flex layout="column">
+      <div flex="66" ng-include src="'client/datatable.html'"></div>
+      <div flex="33" ng-include src="'client/outputformula.html'"></div>
+    </div> -->
+  </div>
+  <div flex layout="row" layout-padding>
+
+  </div>
+  <!-- </div> -->
+</body>

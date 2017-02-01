@@ -4,3 +4,11 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+body	/Users/huikaseng/spcal_2016_github/spcal_test2/client/index.html	/^<body ng-app="socially" >$/;"	function	line:1
+div	/Users/huikaseng/spcal_2016_github/spcal_test2/client/index.html	/^       <div class="nav-wrapper">$/;"	function	line:5
+a	/Users/huikaseng/spcal_2016_github/spcal_test2/client/index.html	/^         <a href="#" class="brand-logo">Logo<\/a>$/;"	function	line:6
+ul	/Users/huikaseng/spcal_2016_github/spcal_test2/client/index.html	/^         <ul id="nav-mobile" class="right hide-on-med-and-down">$/;"	function	line:7
+li	/Users/huikaseng/spcal_2016_github/spcal_test2/client/index.html	/^           <li><a href="sass.html">Sass<\/a><\/li>$/;"	function	line:8
+li	/Users/huikaseng/spcal_2016_github/spcal_test2/client/index.html	/^           <li><a href="badges.html">Components<\/a><\/li>$/;"	function	line:9
+li	/Users/huikaseng/spcal_2016_github/spcal_test2/client/index.html	/^           <li><a href="collapsible.html">JavaScript<\/a><\/li>$/;"	function	line:10
+div	/Users/huikaseng/spcal_2016_github/spcal_test2/client/index.html	/^        <div ng-include src="'client\/main.html'"><\/div>$/;"	function	line:14
