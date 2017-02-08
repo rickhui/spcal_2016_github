@@ -1,12 +1,12 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
-import angularUI from 'angular-ui-bootstrap';
+// import angularUI from 'angular-ui-bootstrap';
 import ngMaterial from 'angular-material';
 import ngMessages from 'angular-messages';
 // import 'angular-messages/angular-messages.min.js';
 import 'angular-material/angular-material.css';
 import ngDataTable from 'angular-material-data-table';
-import jquery from 'jquery'
+// import jquery from 'jquery'
 
 var Highcharts = require('highcharts/highstock');
 
@@ -14,7 +14,7 @@ var spcal = angular.module('spcal',[
   ngMaterial,
   ngMessages,
   angularMeteor,
-  angularUI,
+  // angularUI,
   ngDataTable
 ]);
 
