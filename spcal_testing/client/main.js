@@ -1,30 +1,31 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
-import angularUI from 'angular-ui-bootstrap';
+// import angularUI from 'angular-ui-bootstrap';
 import ngMaterial from 'angular-material';
 import ngMessages from 'angular-messages';
 // import 'angular-messages/angular-messages.min.js';
 import 'angular-material/angular-material.css';
 import ngDataTable from 'angular-material-data-table';
-import jquery from 'jquery'
+// import jquery from 'jquery'
 
-var Highcharts = require('highcharts/highstock');
+var Highcharts = require('highcharts');
+var HighchartsData = require('highcharts/modules/data.js');
 
 var spcal = angular.module('spcal',[
   ngMaterial,
   ngMessages,
   angularMeteor,
-  angularUI,
+  // angularUI,
   ngDataTable
 ]);
 
 spcal.controller('ValidationCtrl', function ($scope) {
   $scope.cal = {
-    //tradeDate: new Date(),
+    tradeDate: new Date(),
     //currencyPair: 'AUD/HKD',
-    //maturityDate: new Date(),
+    maturityDate: new Date(),
     amountDeposit: '10000',
-    //currency: 'USD',
+    // currency: 'USD',
     interestRate: '5%',
     fixValue: 'Linked to Currency Exchange',
     refValue: 6.400,
@@ -69,6 +70,7 @@ angular.module('spcal', []).filter('linkedCurrencyFilter', function() {
   //TODO: Calculate tenor
 
   //TODO: Add controller to config highcharts
+  /*
   spcal.controller('DiagramCtrl', function ($scope) {
       $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
           // Create the chart
@@ -102,6 +104,33 @@ angular.module('spcal', []).filter('linkedCurrencyFilter', function() {
               }]
           });
       });
+  });
+*/
+
+spcal.controller('DiagramCtrl', function ($scope) {
+    //$.get('client/fxRate.csv', function (data) {
+      //  console.log("I'm here 1111111111111:" + data);
+        // Create the chart
+      $(function () {
+        Highcharts.chart('container', {
+          chart: {
+            height: 400
+          },
+          data: {
+            csv: document.getElementById('csv').innerHTML
+          },
+          title: {
+              text: 'FX RATE'
+          },
+          subtitle: {
+              text: ''
+          },
+          rangeSelector: {
+              selected: 1
+          }
+        });
+      });
+    //  });
   });
 
   spcal.controller('AutoCompleteCtrl', function ($timeout, $q, $log) {
