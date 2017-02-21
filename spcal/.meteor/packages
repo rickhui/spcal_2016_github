@@ -18,8 +18,9 @@ shell-server@0.2.1            # Server-side component of the `meteor shell` comm
 
 autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
-angularui:angular-ui-bootstrap
 angular-templates
-twbs:bootstrap
-angular:angular-material
-pbastowski:angular-babel
+planettraining:material-design-icons
+angular:angular-messages
+angularjs:angular-sanitize
+angular
+adrianliaw:youtube-iframe-api

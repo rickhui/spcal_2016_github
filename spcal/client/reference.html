@@ -1,0 +1,75 @@
+<md-card>
+<div style="height:400px" class="container" id="video" ng-controller="SubheaderAppCtrl" layout="column" flex layout-fill ng-cloak>
+  <md-toolbar >
+    <div class="md-toolbar-tools" style="background-color:navy;color:white">Reference Link</div>
+  </md-toolbar>
+
+  <md-content md-theme="altTheme">
+
+    <section>
+      <md-subheader style="font-size:16px" class="md-primary">Video</md-subheader>
+      <md-list ng-controller="videoCtrl" layout-padding>
+        <md-list-item class="md-3-line" ng-click="showAdvanced($event)" ng-repeat="message in messages">
+            <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+            <div class="md-list-item-text">
+              <h3>{{message.what}}</h3>
+              <h4>{{message.who}}</h4>
+              <p>
+                {{message.notes}}
+              </p>
+            </div>
+        </md-list-item>
+      </md-list>
+    </section>
+
+    <section>
+      <md-subheader style="font-size:16px" class="md-warn">Appendix</md-subheader>
+      <md-list layout="column" layout-padding>
+        <md-list-item ng-click="showAdvanced($event)" class="md-3-line" ng-repeat="message in messages">
+          <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+          <div class="md-list-item-text">
+            <h3>{{message.what}}</h3>
+            <h4>{{message.who}}</h4>
+            <p>
+              {{message.notes}}
+            </p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </section>
+
+    <section>
+      <md-subheader style="font-size:16px">Terms</md-subheader>
+      <md-list layout="column" layout-padding>
+        <md-list-item ng-click="showAdvanced($event)" class="md-3-line" ng-repeat="message in messages">
+          <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+          <div class="md-list-item-text">
+            <h3>{{message.what}}</h3>
+            <h4>{{message.who}}</h4>
+            <p>
+              {{message.notes}}
+            </p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </section>
+
+    <section>
+      <md-subheader style="font-size:16px" class="md-accent">Expert Tips</md-subheader>
+      <md-list layout="column" layout-padding>
+        <md-list-item class="md-3-line" ng-repeat="message in messages" ng-click="null">
+          <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+          <div class="md-list-item-text">
+            <h3>{{message.what}}</h3>
+            <h4>{{message.who}}</h4>
+            <p>
+              {{message.notes}}
+            </p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </section>
+
+  </md-content>
+</div>
+</md-card>
