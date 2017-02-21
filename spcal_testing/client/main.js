@@ -9,7 +9,9 @@ import ngDataTable from 'angular-material-data-table';
 // import jquery from 'jquery'
 
 var Highcharts = require('highcharts');
-var HighchartsData = require('highcharts/modules/data.js');
+var Highstock = require('highcharts/highstock');
+require('highcharts/modules/data.js')(Highcharts);
+require('highcharts/modules/data.js')(Highstock);
 
 var spcal = angular.module('spcal',[
   ngMaterial,
@@ -69,68 +71,69 @@ angular.module('spcal', []).filter('linkedCurrencyFilter', function() {
 
   //TODO: Calculate tenor
 
-  //TODO: Add controller to config highcharts
-  /*
   spcal.controller('DiagramCtrl', function ($scope) {
-      $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
-          // Create the chart
-          Highcharts.stockChart('container', {
-              rangeSelector: {
-                  selected: 1
-              },
-              title: {
-                  text: 'AUD-HKD FX RATE',
-              },
-              series: [{
-                  name: 'AUD-HKD FX RATE',
-                  data: data,
-                  type: 'area',
-                  threshold: null,
-                  tooltip: {
-                      valueDecimals: 2
-                  },
-                  fillColor: {
-                      linearGradient: {
-                          x1: 0,
-                          y1: 0,
-                          x2: 0,
-                          y2: 1
-                      },
-                      stops: [
-                          [0, Highcharts.getOptions().colors[0]],
-                          [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                      ]
-                  }
-              }]
-          });
+    $.get('fxRate.csv', function (data) {
+      // Create the chart
+      Highcharts.chart('container', {
+        chart: {
+          height: 400
+        },
+        title: {
+          text: 'FX RATE'
+        },
+        subtitle: {
+          text: ''
+        },
+        data: {
+          csv: data
+        },
+        rangeSelector: {
+          selected: 1
+        }
       });
-  });
-*/
-
-spcal.controller('DiagramCtrl', function ($scope) {
-    //$.get('client/fxRate.csv', function (data) {
-      //  console.log("I'm here 1111111111111:" + data);
-        // Create the chart
-      $(function () {
-        Highcharts.chart('container', {
-          chart: {
-            height: 400
-          },
-          data: {
-            csv: document.getElementById('csv').innerHTML
-          },
+    });
+    $.get('stockPrice.csv', function (data) {
+      // Create the chart
+      Highstock.stockChart('container_v2', {
+        chart: {
+          type: 'column'
+        },
+        title: {
+          text: 'Performance on Deposit Plus from Other Financial Institutions'
+        },
+        xAxis: {
+          categories: ['HSBC', 'BOC', 'Standard Charter', 'Citi', 'Hang Seng']
+        },
+        yAxis: {
+          min: 0,
           title: {
-              text: 'FX RATE'
-          },
-          subtitle: {
-              text: ''
-          },
-          rangeSelector: {
-              selected: 1
+            text: 'Criteria Distribution'
           }
-        });
+        },
+        tooltip: {
+          pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+          shared: true
+        },
+        plotOptions: {
+          column: {
+            stacking: 'percent'
+          }
+        },
+        series: [{
+          name: 'Return',
+          data: [5, 3, 4, 7, 2]
+        }, {
+          name: 'Stability',
+          data: [2, 2, 3, 2, 1]
+        }, {
+          name: 'Volatility',
+          data: [3, 4, 4, 2, 5]
+        },{
+          name: 'Momentum',
+          data: [6, 2, 4, 3, 1]
+        }]
       });
-    //  });
+    });
   });
 
   spcal.controller('AutoCompleteCtrl', function ($timeout, $q, $log) {

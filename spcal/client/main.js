@@ -246,7 +246,7 @@ spcal.controller('matrixCtrl', function($timeout, $scope){
 spcal.controller('DiagramCtrl', function ($scope) {
   $.get('fxRate.csv', function (data) {
     // Create the chart
-    Highstock.stockChart('container', {
+    Highcharts.chart('container', {
       chart: {
         height: 400
       },
@@ -266,7 +266,7 @@ spcal.controller('DiagramCtrl', function ($scope) {
   });
   $.get('stockPrice.csv', function (data) {
     // Create the chart
-    Highcharts.chart('container_v2', {
+    Highstock.stockChart('container_v2', {
       chart: {
         type: 'column'
       },
@@ -307,9 +307,6 @@ spcal.controller('DiagramCtrl', function ($scope) {
     });
   });
 });
-
-
-
 
   spcal.config(function($mdThemingProvider) {
   $mdThemingProvider.theme('altTheme')
