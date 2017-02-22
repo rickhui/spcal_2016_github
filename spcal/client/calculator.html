@@ -28,7 +28,7 @@
                                         <md-input-container class="md-block" flex>
                                             <label>Linked Currency</label>
                                             <md-select ng-model="cal.linkedCurrency">
-                                                <md-option ng-repeat="currency in currencies" value="{{currency.abbrev}}">
+                                                <md-option ng-repeat="currency in currencies | filter:linkedCurrencyFilter" value="{{currency.abbrev}}">
                                                     {{currency.abbrev}}
                                                 </md-option>
                                             </md-select>

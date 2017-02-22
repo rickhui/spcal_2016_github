@@ -71,10 +71,8 @@ spcal.config(function ($mdThemingProvider) {
 
   $scope.cal = {
     tradeDate: new Date(),
-    currencyPair: 'AUD/HKD',
     maturityDate: new Date(),
     amountDeposit: '$10000',
-    currency: 'USD',
     interestRate: '5%',
     fixValue: 'Linked to Currency Exchange',
     refValue: 6.400,
@@ -86,8 +84,8 @@ spcal.config(function ($mdThemingProvider) {
     yieldPA: 50,
     finRate: 30
   };
-  $scope.currencies = ('AUD CNY JPY USD EUR').split(' ').map(function(currency) {
-       return {abbrev: currency};
+  $scope.currencies = ('AUD, CAD, CHF, CNY, EUR, GBP, HKD, JPY, NZD, SGD, USD').split(', ').map(function(currency) {
+    return {abbrev: currency};
   });
 
   //Preview Button JS
@@ -100,6 +98,12 @@ spcal.config(function ($mdThemingProvider) {
   $scope.$watch('demo.delayTooltip', function(val) {
     $scope.demo.delayTooltip = parseInt(val, 10) || 0;
   });
+
+  $scope.linkedCurrencyFilter = function(inputCur) {
+    return (inputCur.abbrev !== $scope.cal.depositCurrency)
+      && (!(inputCur.abbrev === 'USD' && $scope.cal.depositCurrency === 'HKD')
+      && (!(inputCur.abbrev === 'HKD' && $scope.cal.depositCurrency === 'USD')));
+  };
 });
 
 // (function () {
@@ -250,17 +254,20 @@ spcal.controller('DiagramCtrl', function ($scope) {
       chart: {
         height: 400
       },
-      title: {
-        text: 'FX RATE'
+      data: {
+        csv: data
       },
       subtitle: {
         text: ''
       },
-      data: {
-        csv: data
+      title: {
+        text: 'Deposit Plus'
       },
-      rangeSelector: {
-        selected: 1
+      yAxis: {
+        crosshair: true,
+        title: {
+          text: 'FX Rate'
+        }
       }
     });
   });
@@ -308,7 +315,7 @@ spcal.controller('DiagramCtrl', function ($scope) {
   });
 });
 
-  spcal.config(function($mdThemingProvider) {
+spcal.config(function($mdThemingProvider) {
   $mdThemingProvider.theme('altTheme')
     .primaryPalette('purple');
   })
