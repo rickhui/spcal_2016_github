@@ -69,21 +69,6 @@ spcal.config(function ($mdThemingProvider) {
     };
   }
 
-  $scope.cal = {
-    tradeDate: new Date(),
-    maturityDate: new Date(),
-    amountDeposit: '$10000',
-    interestRate: '5%',
-    fixValue: 'Linked to Currency Exchange',
-    refValue: 6.400,
-    determinationDate: new Date(),
-    closingPrice: 'The official closing price of the MTR shares on the Determination Data as published by the Exchange',
-    cpnRate: '4.37%',
-    spotPrice: '$98.5',
-    stock: '0700.HK',
-    yieldPA: 50,
-    finRate: 30
-  };
   $scope.currencies = ('AUD, CAD, CHF, CNY, EUR, GBP, HKD, JPY, NZD, SGD, USD').split(', ').map(function(currency) {
     return {abbrev: currency};
   });
@@ -100,9 +85,9 @@ spcal.config(function ($mdThemingProvider) {
   });
 
   $scope.linkedCurrencyFilter = function(inputCur) {
-    return (inputCur.abbrev !== $scope.cal.depositCurrency)
-      && (!(inputCur.abbrev === 'USD' && $scope.cal.depositCurrency === 'HKD')
-      && (!(inputCur.abbrev === 'HKD' && $scope.cal.depositCurrency === 'USD')));
+    return (inputCur.abbrev !== $scope.cal.dp.depositCurrency)
+      && (!(inputCur.abbrev === 'USD' && $scope.cal.dp.depositCurrency === 'HKD')
+      && (!(inputCur.abbrev === 'HKD' && $scope.cal.dp.depositCurrency === 'USD')));
   };
 });
 
@@ -251,9 +236,6 @@ spcal.controller('DiagramCtrl', function ($scope) {
   $.get('fxRate.csv', function (data) {
     // Create the chart
     Highcharts.chart('dpChartContainer', {
-      chart: {
-        height: 400
-      },
       data: {
         csv: data
       },
@@ -271,7 +253,6 @@ spcal.controller('DiagramCtrl', function ($scope) {
   $.get('stockPrice.csv', function (data) {
     // Create the chart
     Highstock.stockChart('dcdcChartContainer', {
-      chart: {},
       data: {
         csv: data
       },
