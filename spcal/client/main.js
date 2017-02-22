@@ -271,47 +271,45 @@ spcal.controller('DiagramCtrl', function ($scope) {
       }
     });
   });
-  $.get('stockPrice.csv', function (data) {
-    // Create the chart
-    Highstock.stockChart('container_v2', {
-      chart: {
-        type: 'column'
-      },
+  // Create the chart
+  Highstock.stockChart('container_v2', {
+    chart: {
+      type: 'column'
+    },
+    title: {
+      text: 'Performance on Deposit Plus from Other Financial Institutions'
+    },
+    xAxis: {
+      categories: ['HSBC', 'BOC', 'Standard Charter', 'Citi', 'Hang Seng']
+    },
+    yAxis: {
+      min: 0,
       title: {
-        text: 'Performance on Deposit Plus from Other Financial Institutions'
-      },
-      xAxis: {
-        categories: ['HSBC', 'BOC', 'Standard Charter', 'Citi', 'Hang Seng']
-      },
-      yAxis: {
-        min: 0,
-        title: {
-          text: 'Criteria Distribution'
-        }
-      },
-      tooltip: {
-        pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
-        shared: true
-      },
-      plotOptions: {
-        column: {
-          stacking: 'percent'
-        }
-      },
-      series: [{
-        name: 'Return',
-        data: [5, 3, 4, 7, 2]
-      }, {
-        name: 'Stability',
-        data: [2, 2, 3, 2, 1]
-      }, {
-        name: 'Volatility',
-        data: [3, 4, 4, 2, 5]
-      },{
-        name: 'Momentum',
-        data: [6, 2, 4, 3, 1]
-      }]
-    });
+        text: 'Criteria Distribution'
+      }
+    },
+    tooltip: {
+      pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+      shared: true
+    },
+    plotOptions: {
+      column: {
+        stacking: 'percent'
+      }
+    },
+    series: [{
+      name: 'Return',
+      data: [5, 3, 4, 7, 2]
+    }, {
+      name: 'Stability',
+      data: [2, 2, 3, 2, 1]
+    }, {
+      name: 'Volatility',
+      data: [3, 4, 4, 2, 5]
+    },{
+      name: 'Momentum',
+      data: [6, 2, 4, 3, 1]
+    }]
   });
 });
 

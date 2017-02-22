@@ -9,7 +9,7 @@
     </md-content> -->
     <div class="tabsdemoDynamicHeight" ng-cloak>
         <md-card>
-            <md-tabs md-stretch-tabs="always" style="min-height: 450px;" md-border-bottom>
+            <md-tabs md-stretch-tabs="always" style="min-height: 865px;" md-border-bottom>
                 <md-tab label="Deposit Plus">
                     <md-content class="md-padding">
                         <md-content layout-padding ng-controller="ValidationCtrl">
@@ -24,7 +24,6 @@
                                                 </md-option>
                                             </md-select>
                                         </md-input-container>
-
                                         <md-input-container class="md-block" flex>
                                             <label>Linked Currency</label>
                                             <md-select ng-model="cal.linkedCurrency">
@@ -33,14 +32,11 @@
                                                 </md-option>
                                             </md-select>
                                         </md-input-container>
-
                                         <md-input-container class="md-block" flex>
                                             <label>Currency Pair</label>
                                             <input name="currencyPair" ng-if="cal.depositCurrency&&cal.linkedCurrency" value="{{cal.depositCurrency}}/{{cal.linkedCurrency}}" disabled/>
                                         </md-input-container>
-
                                     </div>
-
 
                                     <div layout="row">
                                         <md-input-container class="md-block" flex>
@@ -68,11 +64,6 @@
                                     </div>
 
                                     <div layout="row">
-
-
-                                    </div>
-
-                                    <div layout="row">
                                         <md-input-container class="md-block" flex>
                                             <label>Interest Rate</label>
                                             <input name="interestRate" required ng-model="cal.interestRate">
@@ -80,7 +71,6 @@
                                                 <div ng-message="required">A valid value is required.</div>
                                             </div>
                                         </md-input-container>
-
                                         <md-input-container class="md-block" flex>
                                             <label>Fixing Value</label>
                                             <input disabled ng-model="cal.fixValue">
@@ -88,7 +78,6 @@
                                                 <div ng-message="required">A valid value is required.</div>
                                             </div>
                                         </md-input-container>
-
                                         <md-input-container class="md-block" flex>
                                             <label>Reference Value</label>
                                             <input required name="refValue" ng-model="cal.refValue">
@@ -96,8 +85,8 @@
                                                 <div ng-message="required">A valid value is required.</div>
                                             </div>
                                         </md-input-container>
-
                                     </div>
+
                                     <div layout="row">
                                         <h4 style="color:#737373">Inv Yield PA &emsp;&emsp;</h4>
                                         <md-slider-container flex>
@@ -110,6 +99,7 @@
                                           <div style="padding-right: 160px">
                                           </div>
                                     </div>
+
                                     <div layout="row" layout-align="space-between center">
                                         <h4 style="color:#737373">Final Conversion Rate &emsp;&emsp;</h4>
                                         <md-slider-container flex>
@@ -129,6 +119,10 @@
                                                 Preview
                                             </md-button>
                                         </div>
+                                    </div>
+                                    <br />
+                                    <div layout="row">
+                                      <div ng-controller="DiagramCtrl" id="container" style="width: 100%; height: 400px"></div>
                                     </div>
                                 </form>
                             </div>
@@ -151,7 +145,6 @@
                                             </div>
                                             <!-- </div> -->
                                         </md-input-container>
-
                                         <md-input-container>
                                             <label>Trade date</label>
                                             <md-datepicker name="tradeDate" ng-model="cal.tradeDate" required md-open-on-focus=""></md-datepicker>
@@ -178,7 +171,6 @@
                                                 <div ng-message="maxlength">This should be less than 10 digits.</div>
                                             </div>
                                         </md-input-container>
-
                                         <md-input-container>
                                             <label>Maturity Date</label>
                                             <md-datepicker md-no-asterisk name="maturityDate" ng-model="cal.maturityDate" required md-open-on-focus=""></md-datepicker>
@@ -187,6 +179,7 @@
                                             </div>
                                         </md-input-container>
                                     </div>
+
                                     <div layout="row">
                                         <md-input-container class="md-block" flex>
                                             <label>Interest Rate</label>
@@ -195,7 +188,6 @@
                                                 <div ng-message="required">A valid date is required.</div>
                                             </div>
                                         </md-input-container>
-
                                         <md-input-container class="md-block" flex>
                                             <label>Fixing Value</label>
                                             <input disabled ng-model="cal.fixValue">
@@ -203,7 +195,6 @@
                                                 <div ng-message="required">A valid date is required.</div>
                                             </div>
                                         </md-input-container>
-
                                         <md-input-container class="md-block" flex>
                                             <label>Reference Value</label>
                                             <input required ng-model="cal.refValue">
@@ -211,9 +202,8 @@
                                                 <div ng-message="required">A valid date is required.</div>
                                             </div>
                                         </md-input-container>
-
-
                                     </div>
+
                                     <div layout="row" layout-align="space-between center">
                                         <div style="padding-left: 30px">
                                         </div>
