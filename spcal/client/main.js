@@ -250,15 +250,12 @@ spcal.controller('matrixCtrl', function($timeout, $scope){
 spcal.controller('DiagramCtrl', function ($scope) {
   $.get('fxRate.csv', function (data) {
     // Create the chart
-    Highcharts.chart('container', {
+    Highcharts.chart('dpChartContainer', {
       chart: {
         height: 400
       },
       data: {
         csv: data
-      },
-      subtitle: {
-        text: ''
       },
       title: {
         text: 'Deposit Plus'
@@ -267,6 +264,23 @@ spcal.controller('DiagramCtrl', function ($scope) {
         crosshair: true,
         title: {
           text: 'FX Rate'
+        }
+      }
+    });
+  });
+  $.get('stockPrice.csv', function (data) {
+    // Create the chart
+    Highstock.stockChart('dcdcChartContainer', {
+      chart: {},
+      data: {
+        csv: data
+      },
+      title: {
+        text: 'DCDC'
+      },
+      yAxis: {
+        title: {
+          text: 'Stock Price'
         }
       }
     });
