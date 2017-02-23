@@ -73,6 +73,17 @@ spcal.config(function ($mdThemingProvider) {
     return {abbrev: currency};
   });
 
+  $scope.stocks = ['700 HK', '388 HK'];
+
+  $scope.earlyCallPrices = ['No Early Call Allowed', '110% of Strike Price', '120% of Strike Price', '130% of Strike Price'];
+
+  $scope.airbagPrices = [
+    'No Airbag Added',
+    '80% of Strike Price',
+    '75% of Strike Price',
+    '70% of Strike Price'
+  ];
+
   //Preview Button JS
   $scope.demo = {
     showTooltip: false,
@@ -209,7 +220,7 @@ angular.module('spcal')
   .config(themeIcons);
 
 
-spcal.controller('matrixCtrl', function($timeout, $scope){
+spcal.controller('MatrixCtrl', function($timeout, $scope){
   var data = [
     ["", "Ford", "Volvo", "Toyota", "Honda"],
     ["2016", 10, 11, 12, 13],
@@ -217,11 +228,29 @@ spcal.controller('matrixCtrl', function($timeout, $scope){
     ["2018", 30, 15, 12, 13]
   ];
 
+  var rateData = [
+    [0.7594, 0.7589, 0.7583, 0.7577, 0.7596, 0.7616],
+    [0.76, 0.7599, 0.7597, 0.7595, 0.7627, 0.7658],
+    [0.7606, 0.7608, 0.7609, 0.7611, 0.7655, 0.7696],
+    [0.7611, 0.7617, 0.7621, 0.7626, 0.7681, 'N/A'],
+    [0.7616, 0.7625, 0.7632, 0.764, 'N/A', 'N/A'],
+    [0.7621, 0.7632, 0.7643, 0.7653, 'N/A', 'N/A'],
+    [0.7625, 0.7639, 0.7652, 0.7665, 'N/A', 'N/A'],
+    [0.7629, 0.7646, 0.7662, 0.7676, 'N/A', 'N/A'],
+    [0.7633, 0.7653, 0.767, 0.7687, 'N/A', 'N/A']
+  ];
+
   var container = document.getElementById('example');
   var hot = new Handsontable(container, {
-    data: Handsontable.helper.createSpreadsheetData(100, 100),
-    rowHeaders: true,
-    colHeaders: true,
+    data: rateData,
+    headerToolTips: true,
+    rowHeaders: ['4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%'],
+    nestedHeaders: [
+      [{label: 'Conversion Rate', colspan: 6}],
+      ['1W', '2W', '3W', '1M', '2M', '3M']
+    ],
+    colWidths: 100,
+    rowHeights: 40,
     currentRowClassName: 'selectedRow',
     currentColClassName: 'selectedCol',
     editor: false,

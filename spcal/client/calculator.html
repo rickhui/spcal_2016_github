@@ -123,57 +123,76 @@
                 <form name="DcdcInvForm">
                   <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex>
-                      <label>Currency</label>
-                      <md-select ng-model="cal.dcdc.currency">
-                        <md-option ng-repeat="currency in currencies" value="{{currency.abbrev}}">
-                          {{currency.abbrev}}
-                        </md-option>
+                      <label>Linked Stock</label>
+                      <md-select ng-model="cal.dcdc.linkedStock">
+                        <md-option ng-repeat="stock in stocks" value="{{stock}}">{{stock}}</md-option>
                       </md-select>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
-                      <label>Underlying</label>
-                      <input name="underlying" ng-model="cal.dcdc.underlying" required>
+                      <label>Spot Price</label>
+                      <input name="spotPrice" ng-if="cal.dcdc.linkedStock" value="190.2" disabled/>
                     </md-input-container>
+                  </div>
+
+                  <div layout="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Trade date</label>
+                      <md-datepicker name="tradeDate" ng-model="cal.dcdc.tradeDate" required md-open-on-focus></md-datepicker>
+                      <div ng-messages="DcdcInvForm.tradeDate.$error">
+                        <div ng-message="required">A valid date is required</div>
+                      </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                      <label>Maturity Date</label>
+                      <md-datepicker md-no-asterisk name="maturityDate" ng-model="cal.dcdc.maturityDate" required md-open-on-focus=""></md-datepicker>
+                      <div ng-messages="DcdcInvForm.maturityDate.$error">
+                        <div ng-message="required">A valid date is required.</div>
+                      </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                      <label>Tenor</label>
+                      <input name="tenor" ng-if="cal.dcdc.tradeDate&&cal.dcdc.maturityDate" value="{{(cal.dcdc.maturityDate-cal.dcdc.tradeDate)/86400000}}" disabled/>
+                    </md-input-container>
+                  </div>
+
+                  <div layout="row">
                     <md-input-container class="md-block" flex>
                       <label>Strike Price</label>
                       <input name="strikePrice" ng-model="cal.dcdc.strikePrice" required>
                     </md-input-container>
-                  </div>
-
-                  <div layout="row">
                     <md-input-container class="md-block" flex>
-                      <label>KO Type</label>
-                      <input name="koType" ng-model="cal.dcdc.koType" required>
+                      <label>Early Call Price</label>
+                      <md-select ng-model="cal.dcdc.earlyCallPrice">
+                        <md-option ng-repeat="earlyCallPrice in earlyCallPrices" value="{{earlyCallPrice}}">{{earlyCallPrice}}</md-option>
+                      </md-select>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
-                      <label>KO Barrier</label>
-                      <input name="koBarrier" ng-model="cal.dcdc.koBarrier" required>
-                    </md-input-container>
-                    <md-input-container class="md-block" flex>
-                      <label>Note Price</label>
-                      <input name="notePrice" ng-model="cal.dcdc.notePrice" required>
+                      <label>Airbag Price</label>
+                      <md-select ng-model="cal.dcdc.airbagPrice">
+                        <md-option ng-repeat="airbagPrice in airbagPrices" value="{{airbagPrice}}">{{airbagPrice}}</md-option>
+                      </md-select>
                     </md-input-container>
                   </div>
 
-                  <div layout="row">
-                    <md-input-container class="md-block" flex>
-                      <label>Tenor</label>
-                      <input name="tenor" ng-model="cal.dcdc.tenor" required>
+                  <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                      <label>Amount Deposit</label>
+                      <!-- <div style="font-size:11px" >{{cal.dcdc.depositCurrency}}</div> -->
+                      <input md-maxlength="10" name="amountDeposit" ng-model="cal.dcdc.amountDeposit" required>
+                      <!-- <div ng-show="DpInvForm.amountDeposit.$error.required">
+                        <div style="color:#D32F2F;font-size:11px">This is required.</div>
+                      </div> -->
+                      <div ng-show="DcdcInvForm.amountDeposit.$error.maxlength">
+                        <div style="color:#D32F2F;font-size:11px">This should be less than 10 digits.</div>
+                      </div>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
-                      <label>Barrier Type</label>
-                      <input name="barrierType" ng-model="cal.dcdc.barrierType" required>
+                      <label>Interest Rate</label>
+                      <input name="barrierType" ng-model="cal.dcdc.interestRate" required>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
-                      <label>KI Barrier</label>
-                      <input name="kiBarrier" ng-model="cal.dcdc.kiBarrier" required>
-                    </md-input-container>
-                  </div>
-
-                  <div layout="row">
-                    <md-input-container class="md-block" flex>
-                      <label>Observation</label>
-                      <input name="observation" ng-model="cal.dcdc.observation" required>
+                      <label>Interest Payment</label>
+                      <input name="interestPayment" ng-if="cal.dcdc.amountDeposit" value="{{cal.dcdc.amountDeposit * cal.dcdc.interestRate}}" disabled/>
                     </md-input-container>
                   </div>
 
