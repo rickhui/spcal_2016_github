@@ -69,20 +69,22 @@ spcal.config(function ($mdThemingProvider) {
     };
   }
 
+  $scope.cal = {
+    dp: {},
+    dcdc: {}
+  };
+
   $scope.currencies = ('AUD, CAD, CHF, CNY, EUR, GBP, HKD, JPY, NZD, SGD, USD').split(', ').map(function(currency) {
     return {abbrev: currency};
   });
+
+  $scope.tenors = ['1W', '2W', '3W', '1M', '2M', '3M'];
 
   $scope.stocks = ['700 HK', '388 HK'];
 
   $scope.earlyCallPrices = ['No Early Call Allowed', '110% of Strike Price', '120% of Strike Price', '130% of Strike Price'];
 
-  $scope.airbagPrices = [
-    'No Airbag Added',
-    '80% of Strike Price',
-    '75% of Strike Price',
-    '70% of Strike Price'
-  ];
+  $scope.airbagPrices = ['No Airbag Added', '80% of Strike Price', '75% of Strike Price', '70% of Strike Price'];
 
   //Preview Button JS
   $scope.demo = {
