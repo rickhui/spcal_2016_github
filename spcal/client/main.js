@@ -82,9 +82,9 @@ spcal.config(function ($mdThemingProvider) {
 
   $scope.stocks = ['700 HK', '388 HK'];
 
-  $scope.earlyCallPrices = ['No Early Call Allowed', '110% of Strike Price', '120% of Strike Price', '130% of Strike Price'];
+  $scope.koTypes = ['Daily', 'Period End'];
 
-  $scope.airbagPrices = ['No Airbag Added', '80% of Strike Price', '75% of Strike Price', '70% of Strike Price'];
+  $scope.barrierTypes = ['NONE', 'AKI', 'EKI'];
 
   //Preview Button JS
   $scope.demo = {
