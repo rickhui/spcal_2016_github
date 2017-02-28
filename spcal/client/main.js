@@ -78,7 +78,9 @@ spcal.config(function ($mdThemingProvider) {
     return {abbrev: currency};
   });
 
-  $scope.tenors = ['1W', '2W', '3W', '1M', '2M', '3M'];
+  $scope.dpTenors = ['1W', '2W', '3W', '1M', '2M', '3M'];
+
+  $scope.dcdcTenors = ['3M', '6M', '9M', '12M'];
 
   $scope.stocks = ['700 HK', '388 HK'];
 

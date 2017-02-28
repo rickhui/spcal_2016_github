@@ -40,7 +40,7 @@
                     <md-input-container class="md-block" flex>
                       <label>Tenor</label>
                       <md-select ng-model="cal.dp.tenor" required>
-                        <md-option ng-repeat="tenor in tenors" value="{{tenor}}">
+                        <md-option ng-repeat="tenor in dpTenors" value="{{tenor}}">
                           {{tenor}}
                         </md-option>
                       </md-select>
@@ -127,7 +127,7 @@
                     <md-input-container class="md-block" flex>
                       <label>Tenor</label>
                       <md-select ng-model="cal.dcdc.tenor" required>
-                        <md-option ng-repeat="tenor in tenors" value="{{tenor}}">
+                        <md-option ng-repeat="tenor in dcdcTenors" value="{{tenor}}">
                           {{tenor}}
                         </md-option>
                       </md-select>
