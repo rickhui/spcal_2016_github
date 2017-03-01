@@ -79,9 +79,7 @@
                     </md-input-container>
                   </div>
 
-                  <div layout="row" layout-align="space-between center">
-                    <div style="padding-left: 50px">
-                    </div>
+                  <div layout="row" layout-align="end center">
                     <div md-theme="{{theme}}">
                       <md-button ng-click="showAdvanced($event)" class="md-raised md-warn" aria-label="Menu with Tooltip Delay" style="margin-top: -24px">
                         <md-tooltip md-delay="demo.delayTooltip">
@@ -127,8 +125,8 @@
                     <md-input-container class="md-block" flex>
                       <label>Tenor</label>
                       <md-select ng-model="cal.dcdc.tenor" required>
-                        <md-option ng-repeat="tenor in dcdcTenors" value="{{tenor}}">
-                          {{tenor}}
+                        <md-option ng-repeat="tenor in dcdcTenors" value="{{tenor.value}}">
+                          {{tenor.name}}
                         </md-option>
                       </md-select>
                     </md-input-container>
@@ -164,12 +162,18 @@
                   <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex>
                       <label>Coupon P.A.</label>
-                      <input name="couponPa" value="This is the result to be found." disabled/>
+                      <input name="couponPa" value="cal.dcdc.couponPa" disabled/>
                     </md-input-container>
                   </div>
 
-                  <div layout="row" layout-align="space-between center">
-                    <div style="padding-left: 30px">
+                  <div layout="row" layout-align="end center">
+                    <div>
+                      <md-button onclick="calculateCouponPa" class="md-raised md-warn" aria-label="DCDC Calculate Button" style="margin-top: -24px">
+                        <md-tooltip md-delay="demo.delayTooltip">
+                          See the coupon per annum under the chosen criteria
+                        </md-tooltip>
+                        Query
+                      </md-button>
                     </div>
                     <div md-theme="{{theme}}">
                       <md-button ng-click="showAdvanced($event)" class="md-raised md-warn" aria-label="Menu with Tooltip Delay" style="margin-top: -24px">

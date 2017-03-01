@@ -32,79 +32,100 @@ spcal.config(function ($mdThemingProvider) {
   .controller('ValidationCtrl', function ($scope, $mdDialog, $interval) {
     $scope.theme = 'red';
 
-  var isThemeRed = true;
+    var isThemeRed = true;
 
-  $interval(function () {
-    $scope.theme = isThemeRed ? 'blue' : 'red';
+    $interval(function () {
+      $scope.theme = isThemeRed ? 'blue' : 'red';
 
-    isThemeRed = !isThemeRed;
-  }, 2000);
+      isThemeRed = !isThemeRed;
+    }, 2000);
 
-  $scope.showAdvanced = function(ev) {
-    $mdDialog.show({
-      controller: DialogController,
-      templateUrl: 'client/dialog1.tmpl.html',
-      parent: angular.element(document.body),
-      targetEvent: ev,
-      clickOutsideToClose:true
-    })
-    .then(function(answer) {
-      $scope.status = 'You said the information was "' + answer + '".';
-    }, function() {
-      $scope.status = 'You cancelled the dialog.';
+    $scope.calculateCouponPa = function($scope) {
+      cal.dcdc.couponPa = DcdcData.findOne({ underlying: cal.dcdc.linkedStock, strike: cal.dcdc.strikePrice, ko_type: cal.dcdc.koType,
+                        ko_barrier: cal.dcdc.koBarrier, tenor: cal.dcdc.tenor, barrier_type: cal.dcdc.barrierType,
+                        ki_barrier: cal.dcdc.kiBarrier },
+                        {coupon_pa: 1});
+    }
+
+    $scope.showAdvanced = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: 'client/dialog1.tmpl.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true
+      })
+      .then(function(answer) {
+        $scope.status = 'You said the information was "' + answer + '".';
+      }, function() {
+        $scope.status = 'You cancelled the dialog.';
+      });
+    };
+
+    function DialogController($scope, $mdDialog) {
+      $scope.hide = function() {
+        $mdDialog.hide();
+      };
+
+      $scope.cancel = function() {
+        $mdDialog.cancel();
+      };
+
+      $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
+    }
+
+    $scope.cal = {
+      dp: {},
+      dcdc: {}
+    };
+
+    $scope.currencies = ('AUD, CAD, CHF, CNY, EUR, GBP, HKD, JPY, NZD, SGD, USD').split(', ').map(function(currency) {
+      return {abbrev: currency};
     });
-  };
 
-  function DialogController($scope, $mdDialog) {
-    $scope.hide = function() {
-      $mdDialog.hide();
+    $scope.dpTenors = ['1W', '2W', '3W', '1M', '2M', '3M'];
+
+    $scope.dcdcTenors = [
+      {
+        name: '3M',
+        value: 3
+      }, {
+        name: '6M',
+        value: 6
+      }, {
+        name: '9M',
+        value: 9
+      }, {
+        name: '12M',
+        value: 12
+      }
+    ];
+
+    $scope.stocks = ['700 HK', '388 HK'];
+
+    $scope.koTypes = ['Daily', 'Period End'];
+
+    $scope.barrierTypes = ['NONE', 'AKI', 'EKI'];
+
+    //Preview Button JS
+    $scope.demo = {
+      showTooltip: false,
+      tipDirection: 'bottom'
     };
 
-    $scope.cancel = function() {
-      $mdDialog.cancel();
+    $scope.demo.delayTooltip = undefined;
+    $scope.$watch('demo.delayTooltip', function(val) {
+      $scope.demo.delayTooltip = parseInt(val, 10) || 0;
+    });
+
+    $scope.linkedCurrencyFilter = function(inputCur) {
+      return (inputCur.abbrev !== $scope.cal.dp.depositCurrency)
+        && (!(inputCur.abbrev === 'USD' && $scope.cal.dp.depositCurrency === 'HKD')
+        && (!(inputCur.abbrev === 'HKD' && $scope.cal.dp.depositCurrency === 'USD')));
     };
-
-    $scope.answer = function(answer) {
-      $mdDialog.hide(answer);
-    };
-  }
-
-  $scope.cal = {
-    dp: {},
-    dcdc: {}
-  };
-
-  $scope.currencies = ('AUD, CAD, CHF, CNY, EUR, GBP, HKD, JPY, NZD, SGD, USD').split(', ').map(function(currency) {
-    return {abbrev: currency};
   });
-
-  $scope.dpTenors = ['1W', '2W', '3W', '1M', '2M', '3M'];
-
-  $scope.dcdcTenors = ['3M', '6M', '9M', '12M'];
-
-  $scope.stocks = ['700 HK', '388 HK'];
-
-  $scope.koTypes = ['Daily', 'Period End'];
-
-  $scope.barrierTypes = ['NONE', 'AKI', 'EKI'];
-
-  //Preview Button JS
-  $scope.demo = {
-    showTooltip: false,
-    tipDirection: 'bottom'
-  };
-
-  $scope.demo.delayTooltip = undefined;
-  $scope.$watch('demo.delayTooltip', function(val) {
-    $scope.demo.delayTooltip = parseInt(val, 10) || 0;
-  });
-
-  $scope.linkedCurrencyFilter = function(inputCur) {
-    return (inputCur.abbrev !== $scope.cal.dp.depositCurrency)
-      && (!(inputCur.abbrev === 'USD' && $scope.cal.dp.depositCurrency === 'HKD')
-      && (!(inputCur.abbrev === 'HKD' && $scope.cal.dp.depositCurrency === 'USD')));
-  };
-});
 
 // (function () {
   // 'use strict';
