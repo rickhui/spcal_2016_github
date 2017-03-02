@@ -42,10 +42,20 @@ spcal.config(function ($mdThemingProvider) {
 
     $scope.calculateCouponPa = function() {
       var pre = $scope.cal.dcdc;
-      var document = DcdcData.findOne({ underlying: pre.linkedStock, strike: parseInt(pre.strikePrice), ko_type: pre.koType,
-                        ko_barrier: parseInt(pre.koBarrier), tenor: parseInt(pre.tenor), barrier_type: pre.barrierType,
-                        ki_barrier: parseInt(pre.kiBarrier) });
-      pre.couponPa = document.coupon_pa;
+      if (pre.barrierType === 'NONE') {
+        var document = DcdcData.findOne({ underlying: pre.linkedStock, strike: parseInt(pre.strikePrice), ko_type: pre.koType,
+                          ko_barrier: parseInt(pre.koBarrier), tenor: parseInt(pre.tenor), barrier_type: pre.barrierType,
+                          ki_barrier: null });
+      } else {
+        var document = DcdcData.findOne({ underlying: pre.linkedStock, strike: parseInt(pre.strikePrice), ko_type: pre.koType,
+                          ko_barrier: parseInt(pre.koBarrier), tenor: parseInt(pre.tenor), barrier_type: pre.barrierType,
+                          ki_barrier: parseInt(pre.kiBarrier) });
+      }
+      if (document) {
+        pre.couponPa = document.coupon_pa;
+      } else {
+        pre.couponPa = undefined;
+      }
     }
 
     $scope.showAdvanced = function(ev) {

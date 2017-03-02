@@ -155,7 +155,7 @@
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>KI Barrier</label>
-                      <input name="kiBarrier" ng-model="cal.dcdc.kiBarrier" type="number" min="1" pattern="\d+" required>
+                      <input name="kiBarrier" ng-model="cal.dcdc.kiBarrier" type="number" min="1" pattern="\d+" ng-required="cal.dcdc.barrierType !== 'NONE'" ng-disabled="cal.dcdc.barrierType === 'NONE'">
                     </md-input-container>
                   </div>
 
