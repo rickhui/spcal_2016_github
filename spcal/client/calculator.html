@@ -113,14 +113,14 @@
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>Spot Price</label>
-                      <input name="spotPrice" ng-if="cal.dcdc.linkedStock" value="190.2" disabled/>
+                      <input name="spotPrice" ng-if="cal.dcdc.linkedStock" value="190.2(Fake)" disabled/>
                     </md-input-container>
                   </div>
 
                   <div layout="row">
                     <md-input-container class="md-block" flex>
                       <label>Strike Price</label>
-                      <input name="strikePrice" ng-model="cal.dcdc.strikePrice" required>
+                      <input name="strikePrice" ng-model="cal.dcdc.strikePrice" type="number" min="1" pattern="\d+" required>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>Tenor</label>
@@ -142,7 +142,7 @@
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>KO Barrier</label>
-                      <input name="koBarrier" ng-model="cal.dcdc.koBarrier" required>
+                      <input name="koBarrier" ng-model="cal.dcdc.koBarrier" type="number" min="1" pattern="\d+" required>
                     </md-input-container>
                   </div>
 
@@ -155,20 +155,20 @@
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>KI Barrier</label>
-                      <input name="kiBarrier" ng-model="cal.dcdc.kiBarrier" required>
+                      <input name="kiBarrier" ng-model="cal.dcdc.kiBarrier" type="number" min="1" pattern="\d+" required>
                     </md-input-container>
                   </div>
 
                   <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex>
                       <label>Coupon P.A.</label>
-                      <input name="couponPa" value="cal.dcdc.couponPa" disabled/>
+                      <input name="couponPa" ng-if="cal.dcdc.couponPa" value="{{cal.dcdc.couponPa}}" disabled/>
                     </md-input-container>
                   </div>
 
                   <div layout="row" layout-align="end center">
                     <div>
-                      <md-button ng-click="calculateCouponPa()" class="md-raised md-warn" aria-label="DCDC Calculate Button" style="margin-top: -24px">
+                      <md-button ng-disabled="DcdcInvForm.$invalid" ng-click="calculateCouponPa()" class="md-raised md-warn" aria-label="DCDC Calculate Button" style="margin-top: -24px">
                         <md-tooltip md-delay="demo.delayTooltip">
                           See the coupon per annum under the chosen criteria
                         </md-tooltip>
