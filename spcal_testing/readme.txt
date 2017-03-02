@@ -1,0 +1,3 @@
+-meteor npm install
+-meteor update angular:angular
+-csv to json: http://www.convertcsv.com/csv-to-json.htm
