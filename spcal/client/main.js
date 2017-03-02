@@ -40,11 +40,13 @@ spcal.config(function ($mdThemingProvider) {
       isThemeRed = !isThemeRed;
     }, 2000);
 
-    $scope.calculateCouponPa = function($scope) {
-      cal.dcdc.couponPa = DcdcData.findOne({ underlying: cal.dcdc.linkedStock, strike: cal.dcdc.strikePrice, ko_type: cal.dcdc.koType,
-                        ko_barrier: cal.dcdc.koBarrier, tenor: cal.dcdc.tenor, barrier_type: cal.dcdc.barrierType,
-                        ki_barrier: cal.dcdc.kiBarrier },
+    $scope.calculateCouponPa = function() {
+      var pre = $scope.cal.dcdc;
+      pre.couponPa = DcdcData.findOne({ underlying: pre.linkedStock, strike: pre.strikePrice, ko_type: pre.koType,
+                        ko_barrier: pre.koBarrier, tenor: pre.tenor, barrier_type: pre.barrierType,
+                        ki_barrier: pre.kiBarrier },
                         {coupon_pa: 1});
+      console.log(pre.linkedStock, pre.strikePrice, pre.koType, pre.koBarrier, pre.tenor, pre.barrierType, pre.kiBarrier, pre.couponPa);
     }
 
     $scope.showAdvanced = function(ev) {
