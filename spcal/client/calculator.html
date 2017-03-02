@@ -107,7 +107,7 @@
                   <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex>
                       <label>Linked Stock</label>
-                      <md-select ng-model="cal.dcdc.linkedStock">
+                      <md-select ng-model="cal.dcdc.linkedStock" required>
                         <md-option ng-repeat="stock in stocks" value="{{stock}}">{{stock}}</md-option>
                       </md-select>
                     </md-input-container>
@@ -169,7 +169,7 @@
                   <div layout="row" layout-align="end center">
                     <div>
                       <md-button ng-disabled="DcdcInvForm.$invalid" ng-click="calculateCouponPa()" class="md-raised md-warn" aria-label="DCDC Calculate Button" style="margin-top: -24px">
-                        <md-tooltip md-delay="demo.delayTooltip">
+                        <md-tooltip>
                           See the coupon per annum under the chosen criteria
                         </md-tooltip>
                         Query

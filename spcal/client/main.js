@@ -114,7 +114,7 @@ spcal.config(function ($mdThemingProvider) {
       }
     ];
 
-    $scope.stocks = ['700 HK', '388 HK'];
+    $scope.stocks = ['700 HK', '388 HK', '5 HK'];
 
     $scope.koTypes = ['Daily', 'Period End'];
 
