@@ -43,9 +43,12 @@ spcal.config(function ($mdThemingProvider) {
     $scope.onStockChange = function(stockName) {
       var chart = $("#dcdcChartContainer").highcharts();
       var series = chart.series;
-      for (let i = 0; i < series.length; i++) {
+      var navigatorIndex = series.length - 1;
+      for (let i = 0; i < navigatorIndex; i++) {
         let column = series[i];
+        console.log(i, ",", column.name);
         if (column.name === stockName) {
+          series[navigatorIndex].data = column.data;
           column.show();
         } else {
           column.hide();
@@ -127,7 +130,7 @@ spcal.config(function ($mdThemingProvider) {
       }
     ];
 
-    $scope.stocks = ['700 HK', '388 HK', '5 HK'];
+    $scope.stocks = ['700 HK', '388 HK'];
 
     $scope.koTypes = ['Daily', 'Period End'];
 
@@ -317,6 +320,11 @@ spcal.controller('DiagramCtrl', function ($scope) {
       data: {
         csv: data
       },
+      plotOptions: {
+        series: {
+          visible: false
+        }
+      },
       title: {
         text: 'Deposit Plus'
       },
@@ -333,6 +341,11 @@ spcal.controller('DiagramCtrl', function ($scope) {
     Highstock.stockChart('dcdcChartContainer', {
       data: {
         csv: data
+      },
+      plotOptions: {
+        series: {
+          visible: false
+        }
       },
       title: {
         text: 'DCDC'
