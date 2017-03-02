@@ -40,6 +40,19 @@ spcal.config(function ($mdThemingProvider) {
       isThemeRed = !isThemeRed;
     }, 2000);
 
+    $scope.onStockChange = function(stockName) {
+      var chart = $("#dcdcChartContainer").highcharts();
+      var series = chart.series;
+      for (let i = 0; i < series.length; i++) {
+        let column = series[i];
+        if (column.name === stockName) {
+          column.show();
+        } else {
+          column.hide();
+        }
+      }
+    };
+
     $scope.calculateCouponPa = function() {
       var pre = $scope.cal.dcdc;
       if (pre.barrierType === 'NONE') {
@@ -56,7 +69,7 @@ spcal.config(function ($mdThemingProvider) {
       } else {
         pre.couponPa = undefined;
       }
-    }
+    };
 
     $scope.showAdvanced = function(ev) {
       $mdDialog.show({

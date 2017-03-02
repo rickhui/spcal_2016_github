@@ -107,7 +107,7 @@
                   <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex>
                       <label>Linked Stock</label>
-                      <md-select ng-model="cal.dcdc.linkedStock" required>
+                      <md-select ng-model="cal.dcdc.linkedStock" ng-change="onStockChange(cal.dcdc.linkedStock)" required>
                         <md-option ng-repeat="stock in stocks" value="{{stock}}">{{stock}}</md-option>
                       </md-select>
                     </md-input-container>
