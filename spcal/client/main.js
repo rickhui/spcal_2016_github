@@ -46,7 +46,6 @@ spcal.config(function ($mdThemingProvider) {
       var navigatorIndex = series.length - 1;
       for (let i = 0; i < navigatorIndex; i++) {
         let column = series[i];
-        console.log(i, ",", column.name);
         if (column.name === stockName) {
           series[navigatorIndex].data = column.data;
           column.show();
