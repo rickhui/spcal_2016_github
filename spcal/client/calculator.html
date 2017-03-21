@@ -18,13 +18,13 @@
                   <div layout="row">
                     <md-input-container class="md-block" flex>
                       <label>Deposit Currency</label>
-                      <md-select ng-model="cal.dp.depositCurrency" required>
+                      <md-select ng-model="cal.dp.depositCurrency" ng-change="onCurPairChange(cal.dp.depositCurrency, cal.dp.linkedCurrency)" required>
                         <md-option ng-repeat="currency in currencies" value="{{currency.abbrev}}">{{currency.abbrev}}</md-option>
                       </md-select>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>Linked Currency</label>
-                      <md-select ng-model="cal.dp.linkedCurrency" required>
+                      <md-select ng-model="cal.dp.linkedCurrency" ng-change="onCurPairChange(cal.dp.depositCurrency, cal.dp.linkedCurrency)" required>
                         <md-option ng-repeat="currency in currencies | filter:linkedCurrencyFilter" value="{{currency.abbrev}}">
                           {{currency.abbrev}}
                         </md-option>

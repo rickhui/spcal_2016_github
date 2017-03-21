@@ -40,6 +40,27 @@ spcal.config(function ($mdThemingProvider) {
       isThemeRed = !isThemeRed;
     }, 2000);
 
+    $scope.onCurPairChange = function(depoCur, linkCur) {
+      var dp = $scope.cal.dp;
+      if (depCur && linkCur) {
+        var seq = depCur + "-" + linkCur;
+        var inv = linkCur + "-" + depCur;
+        console.log(dp, seq, inv);
+        let dpChart = $("#dpChartContainer").highcharts();
+        let dpSeries = dpChart.series;
+        console.log(dpSeries);
+        for (let i = 0; i < dpSeries.length; i++) {
+          let dpColumn = dpSeries[i];
+          console.log(dpColumn.name);
+          if (dpColumn.name === seq || dpColumn.name === inv) {
+            dpColumn.show();
+          } else {
+            dpColumn.hide();
+          }
+        }
+      }
+    };
+
     $scope.onStockChange = function(stockName) {
       var chart = $("#dcdcChartContainer").highcharts();
       var series = chart.series;
@@ -56,20 +77,20 @@ spcal.config(function ($mdThemingProvider) {
     };
 
     $scope.calculateCouponPa = function() {
-      var pre = $scope.cal.dcdc;
-      if (pre.barrierType === 'NONE') {
-        var document = DcdcData.findOne({ underlying: pre.linkedStock, strike: parseInt(pre.strikePrice), ko_type: pre.koType,
-                          ko_barrier: parseInt(pre.koBarrier), tenor: parseInt(pre.tenor), barrier_type: pre.barrierType,
+      var dcdc = $scope.cal.dcdc;
+      if (dcdc.barrierType === 'NONE') {
+        var document = DcdcData.findOne({ underlying: dcdc.linkedStock, strike: parseInt(dcdc.strikePrice), ko_type: dcdc.koType,
+                          ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
                           ki_barrier: null });
       } else {
-        var document = DcdcData.findOne({ underlying: pre.linkedStock, strike: parseInt(pre.strikePrice), ko_type: pre.koType,
-                          ko_barrier: parseInt(pre.koBarrier), tenor: parseInt(pre.tenor), barrier_type: pre.barrierType,
-                          ki_barrier: parseInt(pre.kiBarrier) });
+        var document = DcdcData.findOne({ underlying: dcdc.linkedStock, strike: parseInt(dcdc.strikePrice), ko_type: dcdc.koType,
+                          ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
+                          ki_barrier: parseInt(dcdc.kiBarrier) });
       }
       if (document) {
-        pre.couponPa = document.coupon_pa;
+        dcdc.couponPa = document.coupon_pa;
       } else {
-        pre.couponPa = undefined;
+        dcdc.couponPa = undefined;
       }
     };
 
@@ -135,7 +156,7 @@ spcal.config(function ($mdThemingProvider) {
 
     $scope.barrierTypes = ['NONE', 'AKI', 'EKI'];
 
-    //Preview Button JS
+    //dcdcview Button JS
     $scope.demo = {
       showTooltip: false,
       tipDirection: 'bottom'
@@ -356,6 +377,7 @@ spcal.controller('DiagramCtrl', function ($scope) {
       }
     });
   });
+  /*
   $.get('stockPrice.csv', function (data) {
     // Create the chart
     Highstock.stockChart('container_v2', {
@@ -397,7 +419,7 @@ spcal.controller('DiagramCtrl', function ($scope) {
         data: [6, 2, 4, 3, 1]
       }]
     });
-  });
+  });*/
 });
 
 spcal.config(function($mdThemingProvider) {
