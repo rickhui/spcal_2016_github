@@ -2,6 +2,14 @@ import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
   // code to run on server at startup
+  //Insert pricing data from dcdc
+  var dpsJson = JSON.parse(Assets.getText("dps.json"));
+  dpsJson.forEach(function (item) {
+    let exists = DpsData.findOne({ depo_cur: item.depo_cur, link_cur: item.link_cur, tenor: item.tenor, interest_rate: item.interest_rate, conversion_rate: item.conversion_rate });
+    if(!exists) {
+      DpsData.insert(item);
+    }
+  });
 
   //Insert pricing data from dcdc
   var dcdcJson = JSON.parse(Assets.getText("dcdc.json"));
