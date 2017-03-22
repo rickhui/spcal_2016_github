@@ -41,21 +41,21 @@ spcal.config(function ($mdThemingProvider) {
     }, 2000);
 
     $scope.onCurPairChange = function(depoCur, linkCur) {
-      var dp = $scope.cal.dp;
-      if (depCur && linkCur) {
-        var seq = depCur + "-" + linkCur;
-        var inv = linkCur + "-" + depCur;
-        console.log(dp, seq, inv);
-        let dpChart = $("#dpChartContainer").highcharts();
-        let dpSeries = dpChart.series;
-        console.log(dpSeries);
-        for (let i = 0; i < dpSeries.length; i++) {
-          let dpColumn = dpSeries[i];
-          console.log(dpColumn.name);
-          if (dpColumn.name === seq || dpColumn.name === inv) {
-            dpColumn.show();
+      var dps = $scope.cal.dps;
+      if (depoCur && linkCur) {
+        var seq = depoCur + "-" + linkCur;
+        var inv = linkCur + "-" + depoCur;
+        console.log(dps, seq, inv);
+        let dpsChart = $("#dpsChartContainer").highcharts();
+        let dpsSeries = dpsChart.series;
+        console.log(dpsSeries);
+        for (let i = 0; i < dpsSeries.length; i++) {
+          let dpsColumn = dpsSeries[i];
+          console.log(dpsColumn.name);
+          if (dpsColumn.name === seq || dpsColumn.name === inv) {
+            dpsColumn.show();
           } else {
-            dpColumn.hide();
+            dpsColumn.hide();
           }
         }
       }
@@ -73,6 +73,17 @@ spcal.config(function ($mdThemingProvider) {
         } else {
           column.hide();
         }
+      }
+    };
+
+    $scope.calculateConversionRate = function() {
+      var dps = $scope.cal.dps;
+      var document = DpsData.findOne({ depo_cur: dps.depositCurrency, link_cur: dps.linkedCurrency,
+        tenor: dps.tenor, interest_rate: dps.yieldPa});
+      if (document) {
+        dps.conversionRate = document.conversion_rate;
+      } else {
+        dps.conversionRate = undefined;
       }
     };
 
@@ -124,7 +135,7 @@ spcal.config(function ($mdThemingProvider) {
     }
 
     $scope.cal = {
-      dp: {},
+      dps: {},
       dcdc: {}
     };
 
@@ -132,7 +143,7 @@ spcal.config(function ($mdThemingProvider) {
       return {abbrev: currency};
     });
 
-    $scope.dpTenors = ['1W', '2W', '3W', '1M', '2M', '3M'];
+    $scope.dpsTenors = ['1W', '2W', '3W', '1M', '2M', '3M'];
 
     $scope.dcdcTenors = [
       {
@@ -168,9 +179,9 @@ spcal.config(function ($mdThemingProvider) {
     });
 
     $scope.linkedCurrencyFilter = function(inputCur) {
-      return (inputCur.abbrev !== $scope.cal.dp.depositCurrency)
-        && (!(inputCur.abbrev === 'USD' && $scope.cal.dp.depositCurrency === 'HKD')
-        && (!(inputCur.abbrev === 'HKD' && $scope.cal.dp.depositCurrency === 'USD')));
+      return (inputCur.abbrev !== $scope.cal.dps.depositCurrency)
+        && (!(inputCur.abbrev === 'USD' && $scope.cal.dps.depositCurrency === 'HKD')
+        && (!(inputCur.abbrev === 'HKD' && $scope.cal.dps.depositCurrency === 'USD')));
     };
   });
 
@@ -336,7 +347,7 @@ spcal.controller('MatrixCtrl', function($timeout, $scope){
 spcal.controller('DiagramCtrl', function ($scope) {
   $.get('fxRate.csv', function (data) {
     // Create the chart
-    Highcharts.chart('dpChartContainer', {
+    Highcharts.chart('dpsChartContainer', {
       data: {
         csv: data
       },

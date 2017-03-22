@@ -3,3584 +3,3584 @@
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 5.9015
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 5.9054
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 5.909
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 5.9124
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 5.9157
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 5.9188
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 5.9218
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 5.9246
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "8.50%",
+   "interest_rate": 8.5,
    "conversion_rate": 5.9274
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 5.8938
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 5.9007
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 5.9072
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 5.9132
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 5.919
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 5.9244
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 5.9296
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 5.9345
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "8.50%",
+   "interest_rate": 8.5,
    "conversion_rate": 5.9392
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 5.8961
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 5.9055
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 5.9142
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 5.9223
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 5.93
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 5.9372
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 5.9441
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 5.9507
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "8.50%",
+   "interest_rate": 8.5,
    "conversion_rate": 5.957
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 5.894
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 5.906
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 5.9171
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 5.9274
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 5.9371
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 5.9462
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 5.9549
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 5.9632
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "2M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 5.915
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "2M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 5.9362
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "2M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 5.9559
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "3M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 5.9401
  },
  {
    "depo_cur": "HKD",
    "link_cur": "AUD",
    "tenor": "3M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 5.9683
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1694
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.1693
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1692
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.1691
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.169
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.169
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 0.1689
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 0.1688
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "8.50%",
+   "interest_rate": 8.5,
    "conversion_rate": 0.1687
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1697
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.1695
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1693
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.1691
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.1689
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.1688
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 0.1686
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 0.1685
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "8.50%",
+   "interest_rate": 8.5,
    "conversion_rate": 0.1684
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1696
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.1693
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1691
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.1689
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.1686
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.1684
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 0.1682
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 0.168
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "8.50%",
+   "interest_rate": 8.5,
    "conversion_rate": 0.1679
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1697
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.1693
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.169
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.1687
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.1684
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.1682
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 0.1679
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 0.1677
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1691
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.1685
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1679
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "3M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1683
  },
  {
    "depo_cur": "AUD",
    "link_cur": "HKD",
    "tenor": "3M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.1676
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.7594
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.76
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.7606
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.7611
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.7616
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.7621
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.7625
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 0.7629
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 0.7633
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.7589
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.7599
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.7608
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.7617
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.7625
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.7632
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.7639
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 0.7646
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "2W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 0.7653
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.7583
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.7597
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.7609
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.7621
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.7632
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.7643
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.7652
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 0.7662
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "3W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 0.767
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.7577
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.7595
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.7611
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.7626
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.764
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.7653
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.7665
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 0.7676
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "1M",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 0.7687
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "2M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.7596
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "2M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.7627
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "2M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.7655
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "2M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.7681
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "3M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.7616
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "3M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.7658
  },
  {
    "depo_cur": "USD",
    "link_cur": "AUD",
    "tenor": "3M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.7696
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 1.3168
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 1.3158
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 1.3148
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 1.3139
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 1.313
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 1.3122
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 1.3115
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 1.3108
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 1.3101
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "2W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 1.3177
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "2W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 1.316
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "2W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 1.3144
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "2W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 1.3129
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "2W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 1.3115
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "2W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 1.3103
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "2W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 1.3091
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "2W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 1.3079
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "2W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 1.3067
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "3W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 1.3187
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "3W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 1.3163
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "3W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 1.3142
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "3W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 1.3122
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "3W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 1.3103
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "3W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 1.3084
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "3W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 1.3068
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "3W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 1.3051
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "3W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 1.3038
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 1.3198
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 1.3167
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 1.3139
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 1.3113
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1M",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 1.3089
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1M",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 1.3067
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1M",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 1.3046
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1M",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 1.3028
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "1M",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 1.3009
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "2M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 1.3165
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "2M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 1.3111
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "2M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 1.3063
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "2M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 1.3019
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "3M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 1.313
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "3M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 1.3058
  },
  {
    "depo_cur": "AUD",
    "link_cur": "USD",
    "tenor": "3M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 1.2994
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 9.7533
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 9.7475
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 9.7419
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 9.7367
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 9.7317
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 9.7268
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1W",
-   "interest_rate": "8.50%",
+   "interest_rate": 8.5,
    "conversion_rate": 9.7222
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1W",
-   "interest_rate": "9.00%",
+   "interest_rate": 9,
    "conversion_rate": 9.7177
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1W",
-   "interest_rate": "9.50%",
+   "interest_rate": 9.5,
    "conversion_rate": 9.7134
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "2W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 9.7583
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "2W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 9.7482
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "2W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 9.7387
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "2W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 9.7298
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "2W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 9.7212
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "2W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 9.713
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "2W",
-   "interest_rate": "8.50%",
+   "interest_rate": 8.5,
    "conversion_rate": 9.7052
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "2W",
-   "interest_rate": "9.00%",
+   "interest_rate": 9,
    "conversion_rate": 9.6976
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "2W",
-   "interest_rate": "9.50%",
+   "interest_rate": 9.5,
    "conversion_rate": 9.6903
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "3W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 9.7561
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "3W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 9.7424
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "3W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 9.7296
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "3W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 9.7174
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "3W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 9.7058
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "3W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 9.6948
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "3W",
-   "interest_rate": "8.50%",
+   "interest_rate": 8.5,
    "conversion_rate": 9.6841
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "3W",
-   "interest_rate": "9.00%",
+   "interest_rate": 9,
    "conversion_rate": 9.6739
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "3W",
-   "interest_rate": "9.50%",
+   "interest_rate": 9.5,
    "conversion_rate": 9.664
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 9.7433
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1M",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 9.7268
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1M",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 9.7113
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1M",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 9.6965
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1M",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 9.6824
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1M",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 9.6689
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1M",
-   "interest_rate": "8.50%",
+   "interest_rate": 8.5,
    "conversion_rate": 9.6559
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "1M",
-   "interest_rate": "9.00%",
+   "interest_rate": 9,
    "conversion_rate": 9.6434
  },
  {
    "depo_cur": "HKD",
    "link_cur": "GBP",
    "tenor": "2M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 9.668
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1025
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.1026
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.1026
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.1027
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 0.1028
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 0.1028
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "8.50%",
+   "interest_rate": 8.5,
    "conversion_rate": 0.1029
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "9.00%",
+   "interest_rate": 9,
    "conversion_rate": 0.1029
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "9.50%",
+   "interest_rate": 9.5,
    "conversion_rate": 0.103
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1025
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.1026
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.1027
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.1028
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 0.1029
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 0.103
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "8.50%",
+   "interest_rate": 8.5,
    "conversion_rate": 0.103
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "9.00%",
+   "interest_rate": 9,
    "conversion_rate": 0.1031
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "9.50%",
+   "interest_rate": 9.5,
    "conversion_rate": 0.1032
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1025
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.1026
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.1028
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.1029
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 0.103
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 0.1031
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "8.50%",
+   "interest_rate": 8.5,
    "conversion_rate": 0.1033
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "9.00%",
+   "interest_rate": 9,
    "conversion_rate": 0.1034
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "9.50%",
+   "interest_rate": 9.5,
    "conversion_rate": 0.1035
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1026
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.1028
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.103
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.1031
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "7.50%",
+   "interest_rate": 7.5,
    "conversion_rate": 0.1033
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "8.00%",
+   "interest_rate": 8,
    "conversion_rate": 0.1034
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "8.50%",
+   "interest_rate": 8.5,
    "conversion_rate": 0.1036
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "9.00%",
+   "interest_rate": 9,
    "conversion_rate": 0.1037
  },
  {
    "depo_cur": "GBP",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1034
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 5.9099
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 5.9146
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 5.9189
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 5.9229
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 5.9266
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 5.9302
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 5.9335
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 5.9367
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 5.9397
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "2W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 5.9081
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "2W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 5.9159
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "2W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 5.9231
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "2W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 5.9296
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "2W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 5.9357
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "2W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 5.9414
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "2W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 5.9467
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "2W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 5.9518
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "2W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 5.9566
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "3W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 5.8937
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "3W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 5.9056
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "3W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 5.9162
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "3W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 5.9259
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "3W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 5.9348
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "3W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 5.943
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "3W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 5.9507
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "3W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 5.958
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "3W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 5.9648
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 5.885
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 5.9005
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 5.9143
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 5.9268
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 5.9382
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 5.9487
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1M",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 5.9584
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1M",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 5.9676
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "1M",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 5.9762
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "2M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 5.8985
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "2M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 5.925
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "2M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 5.9484
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "2M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 5.9693
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "3M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 5.9098
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "3M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 5.9451
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CAD",
    "tenor": "3M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 5.976
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.1692
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.1691
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.169
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1688
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.1687
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1686
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.1685
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.1684
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.1684
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.1693
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.169
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.1688
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1686
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.1685
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1683
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.1682
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.168
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.1679
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.1697
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.1693
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.169
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1688
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.1685
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1683
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.168
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.1678
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.1677
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.1699
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.1695
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.1691
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1687
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.1684
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1681
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.1678
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.1676
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.1673
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.1695
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.1688
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.1681
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1675
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "3M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.1692
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "3M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.1682
  },
  {
    "depo_cur": "CAD",
    "link_cur": "HKD",
    "tenor": "3M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.1673
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 8.4099
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 8.4038
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 8.3982
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 8.3931
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 8.3882
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 8.3837
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 8.3795
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 8.3755
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 8.3716
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "2W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 8.4216
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "2W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 8.4111
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "2W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 8.4015
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "2W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 8.3927
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "2W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 8.3846
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "2W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 8.3771
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "2W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 8.3699
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "2W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 8.3632
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "2W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 8.3568
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "3W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 8.4286
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "3W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 8.414
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "3W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 8.4009
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "3W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 8.3889
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "3W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 8.3779
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "3W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 8.3676
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "3W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 8.358
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "3W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 8.3488
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "3W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 8.3401
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 8.4289
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 8.411
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 8.3949
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 8.3802
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 8.3667
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 8.3541
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1M",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 8.3422
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1M",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 8.331
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "1M",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 8.3202
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "2M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 8.435
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "2M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 8.4037
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "2M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 8.3755
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "2M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 8.3495
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "2M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 8.3254
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "3M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 8.4295
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "3M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 8.3881
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "3M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 8.3505
  },
  {
    "depo_cur": "HKD",
    "link_cur": "EUR",
    "tenor": "3M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 8.3157
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.1189
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.119
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.1191
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1191
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.1192
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1193
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.1193
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.1194
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.1195
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.1187
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.1189
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.119
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1192
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.1193
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1194
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.1195
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.1196
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.1197
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.1186
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.1188
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.119
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1192
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.1194
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1195
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.1196
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.1198
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.1199
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.1186
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.1189
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.1191
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1193
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.1195
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.1197
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.1199
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "6.50%",
+   "interest_rate": 6.5,
    "conversion_rate": 0.12
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "7.00%",
+   "interest_rate": 7,
    "conversion_rate": 0.1202
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.1186
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.119
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.1194
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1198
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.1201
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "3M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.1186
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "3M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.1192
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "3M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.1198
  },
  {
    "depo_cur": "EUR",
    "link_cur": "HKD",
    "tenor": "3M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.1203
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1W",
-   "interest_rate": "2.00%",
+   "interest_rate": 2,
    "conversion_rate": 1.1326
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1W",
-   "interest_rate": "2.50%",
+   "interest_rate": 2.5,
    "conversion_rate": 1.1336
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 1.1344
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 1.1352
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 1.1358
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 1.1365
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 1.137
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 1.1375
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 1.138
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2W",
-   "interest_rate": "2.00%",
+   "interest_rate": 2,
    "conversion_rate": 1.1301
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2W",
-   "interest_rate": "2.50%",
+   "interest_rate": 2.5,
    "conversion_rate": 1.1319
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 1.1333
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 1.1345
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 1.1356
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 1.1366
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 1.1376
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 1.1384
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 1.1393
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "3W",
-   "interest_rate": "2.00%",
+   "interest_rate": 2,
    "conversion_rate": 1.128
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "3W",
-   "interest_rate": "2.50%",
+   "interest_rate": 2.5,
    "conversion_rate": 1.1304
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "3W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 1.1324
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "3W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 1.1341
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "3W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 1.1356
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "3W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 1.137
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "3W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 1.1383
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "3W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 1.1395
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "3W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 1.1406
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1M",
-   "interest_rate": "2.00%",
+   "interest_rate": 2,
    "conversion_rate": 1.1254
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1M",
-   "interest_rate": "2.50%",
+   "interest_rate": 2.5,
    "conversion_rate": 1.1287
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 1.1313
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 1.1335
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 1.1355
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 1.1373
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 1.1389
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 1.1404
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "1M",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 1.1418
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2M",
-   "interest_rate": "2.00%",
+   "interest_rate": 2,
    "conversion_rate": 1.1188
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2M",
-   "interest_rate": "2.50%",
+   "interest_rate": 2.5,
    "conversion_rate": 1.1248
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 1.1297
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 1.1338
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 1.1374
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 1.1406
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "2M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 1.1435
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "3M",
-   "interest_rate": "2.00%",
+   "interest_rate": 2,
    "conversion_rate": 1.1147
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "3M",
-   "interest_rate": "2.50%",
+   "interest_rate": 2.5,
    "conversion_rate": 1.123
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "3M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 1.1296
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "3M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 1.1351
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "3M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 1.1399
  },
  {
    "depo_cur": "HKD",
    "link_cur": "CNH",
    "tenor": "3M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 1.1441
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "2.00%",
+   "interest_rate": 2,
    "conversion_rate": 0.8829
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "2.50%",
+   "interest_rate": 2.5,
    "conversion_rate": 0.8821
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.8815
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.8809
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.8804
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.8799
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.8795
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.8791
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.8787
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "2.00%",
+   "interest_rate": 2,
    "conversion_rate": 0.8849
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "2.50%",
+   "interest_rate": 2.5,
    "conversion_rate": 0.8835
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.8824
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.8814
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.8806
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.8798
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.879
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.8784
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.8777
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "2.00%",
+   "interest_rate": 2,
    "conversion_rate": 0.8865
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "2.50%",
+   "interest_rate": 2.5,
    "conversion_rate": 0.8846
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.8831
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.8818
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.8806
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.8795
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.8785
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.8776
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "3W",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.8767
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "2.00%",
+   "interest_rate": 2,
    "conversion_rate": 0.8886
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "2.50%",
+   "interest_rate": 2.5,
    "conversion_rate": 0.886
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.8839
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.8822
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.8807
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.8793
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.878
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "5.50%",
+   "interest_rate": 5.5,
    "conversion_rate": 0.8769
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "1M",
-   "interest_rate": "6.00%",
+   "interest_rate": 6,
    "conversion_rate": 0.8758
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "2.00%",
+   "interest_rate": 2,
    "conversion_rate": 0.8938
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "2.50%",
+   "interest_rate": 2.5,
    "conversion_rate": 0.889
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.8852
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.882
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.8792
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.8767
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "2M",
-   "interest_rate": "5.00%",
+   "interest_rate": 5,
    "conversion_rate": 0.8745
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "3M",
-   "interest_rate": "2.00%",
+   "interest_rate": 2,
    "conversion_rate": 0.8971
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "3M",
-   "interest_rate": "2.50%",
+   "interest_rate": 2.5,
    "conversion_rate": 0.8905
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "3M",
-   "interest_rate": "3.00%",
+   "interest_rate": 3,
    "conversion_rate": 0.8853
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "3M",
-   "interest_rate": "3.50%",
+   "interest_rate": 3.5,
    "conversion_rate": 0.881
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "3M",
-   "interest_rate": "4.00%",
+   "interest_rate": 4,
    "conversion_rate": 0.8773
  },
  {
    "depo_cur": "CNH",
    "link_cur": "HKD",
    "tenor": "3M",
-   "interest_rate": "4.50%",
+   "interest_rate": 4.5,
    "conversion_rate": 0.874
  }
 ]
