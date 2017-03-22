@@ -1,9 +1,9 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import ngMaterial from 'angular-material';
-import Handsontable from 'handsontable-pro/dist/handsontable.full';
+//import Handsontable from 'handsontable-pro/dist/handsontable.full';
 import 'angular-material/angular-material.css';
-import 'handsontable-pro/dist/handsontable.full.css';
+//import 'handsontable-pro/dist/handsontable.full.css';
 
 var Highcharts = require('highcharts');
 var Highstock = require('highcharts/highstock');
@@ -291,6 +291,7 @@ spcal.controller('MatrixCtrl', function($timeout, $scope){
     [0.7633, 0.7653, 0.767, 0.7687, 'N/A', 'N/A']
   ];
 
+/*
   var container = document.getElementById('example');
   var hot = new Handsontable(container, {
     data: rateData,
@@ -310,6 +311,7 @@ spcal.controller('MatrixCtrl', function($timeout, $scope){
    $timeout(function () {
      hot.selectCell(0,0);
    }, 2);
+*/
 });
 
 spcal.controller('DiagramCtrl', function ($scope) {
@@ -356,6 +358,7 @@ spcal.controller('DiagramCtrl', function ($scope) {
       }
     });
   });
+/*
   $.get('stockPrice.csv', function (data) {
     // Create the chart
     Highstock.stockChart('container_v2', {
@@ -398,6 +401,7 @@ spcal.controller('DiagramCtrl', function ($scope) {
       }]
     });
   });
+*/
 });
 
 spcal.config(function($mdThemingProvider) {
