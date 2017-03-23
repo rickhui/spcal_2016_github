@@ -41,7 +41,6 @@ spcal.config(function ($mdThemingProvider) {
     }, 2000);
 
     $scope.onCurPairChange = function(depoCur, linkCur) {
-      var dps = $scope.cal.dps;
       if (depoCur && linkCur) {
         var seq = depoCur + "-" + linkCur;
         var inv = linkCur + "-" + depoCur;
