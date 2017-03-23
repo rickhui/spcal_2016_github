@@ -44,7 +44,7 @@ spcal.config(function ($mdThemingProvider) {
       if (depoCur && linkCur) {
         var seq = depoCur + "-" + linkCur;
         var inv = linkCur + "-" + depoCur;
-        console.log(dps, seq, inv);
+        console.log(seq, inv);
         let dpsChart = $("#dpsChartContainer").highcharts();
         let dpsSeries = dpsChart.series;
         console.log(dpsSeries);
@@ -77,10 +77,10 @@ spcal.config(function ($mdThemingProvider) {
 
     $scope.calculateConversionRate = function() {
       var dps = $scope.cal.dps;
-      var document = DpsData.findOne({ depo_cur: dps.depositCurrency, link_cur: dps.linkedCurrency,
+      var dpsDoc = DpsData.findOne({ depo_cur: dps.depositCurrency, link_cur: dps.linkedCurrency,
         tenor: dps.tenor, interest_rate: dps.yieldPa});
-      if (document) {
-        dps.conversionRate = document.conversion_rate;
+      if (dpsDoc) {
+        dps.conversionRate = dpsDoc.conversion_rate;
       } else {
         dps.conversionRate = undefined;
       }
@@ -89,16 +89,16 @@ spcal.config(function ($mdThemingProvider) {
     $scope.calculateCouponPa = function() {
       var dcdc = $scope.cal.dcdc;
       if (dcdc.barrierType === 'NONE') {
-        var document = DcdcData.findOne({ underlying: dcdc.linkedStock, strike: parseInt(dcdc.strikePrice), ko_type: dcdc.koType,
+        var dcdcDoc = DcdcData.findOne({ underlying: dcdc.linkedStock, strike: parseInt(dcdc.strikePrice), ko_type: dcdc.koType,
                           ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
                           ki_barrier: null });
       } else {
-        var document = DcdcData.findOne({ underlying: dcdc.linkedStock, strike: parseInt(dcdc.strikePrice), ko_type: dcdc.koType,
+        var dcdcDoc = DcdcData.findOne({ underlying: dcdc.linkedStock, strike: parseInt(dcdc.strikePrice), ko_type: dcdc.koType,
                           ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
                           ki_barrier: parseInt(dcdc.kiBarrier) });
       }
-      if (document) {
-        dcdc.couponPa = document.coupon_pa;
+      if (dcdcDoc) {
+        dcdc.couponPa = dcdcDoc.coupon_pa;
       } else {
         dcdc.couponPa = undefined;
       }
