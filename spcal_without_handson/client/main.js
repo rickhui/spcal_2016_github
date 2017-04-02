@@ -40,6 +40,26 @@ spcal.config(function ($mdThemingProvider) {
       isThemeRed = !isThemeRed;
     }, 2000);
 
+    $scope.onCurPairChange = function(depoCur, linkCur) {
+      if (depoCur && linkCur) {
+        var seq = depoCur + "-" + linkCur;
+        var inv = linkCur + "-" + depoCur;
+        console.log(seq, inv);
+        let dpsChart = $("#dpsChartContainer").highcharts();
+        let dpsSeries = dpsChart.series;
+        console.log(dpsSeries);
+        for (let i = 0; i < dpsSeries.length; i++) {
+          let dpsColumn = dpsSeries[i];
+          console.log(dpsColumn.name);
+          if (dpsColumn.name === seq || dpsColumn.name === inv) {
+            dpsColumn.show();
+          } else {
+            dpsColumn.hide();
+          }
+        }
+      }
+    };
+
     $scope.onStockChange = function(stockName) {
       var chart = $("#dcdcChartContainer").highcharts();
       var series = chart.series;
@@ -55,21 +75,32 @@ spcal.config(function ($mdThemingProvider) {
       }
     };
 
+    $scope.calculateConversionRate = function() {
+      var dps = $scope.cal.dps;
+      var dpsDoc = DpsData.findOne({ depo_cur: dps.depositCurrency, link_cur: dps.linkedCurrency,
+        tenor: dps.tenor, interest_rate: dps.yieldPa});
+      if (dpsDoc) {
+        dps.conversionRate = dpsDoc.conversion_rate;
+      } else {
+        dps.conversionRate = undefined;
+      }
+    };
+
     $scope.calculateCouponPa = function() {
-      var pre = $scope.cal.dcdc;
-      if (pre.barrierType === 'NONE') {
-        var document = DcdcData.findOne({ underlying: pre.linkedStock, strike: parseInt(pre.strikePrice), ko_type: pre.koType,
-                          ko_barrier: parseInt(pre.koBarrier), tenor: parseInt(pre.tenor), barrier_type: pre.barrierType,
+      var dcdc = $scope.cal.dcdc;
+      if (dcdc.barrierType === 'NONE') {
+        var dcdcDoc = DcdcData.findOne({ underlying: dcdc.linkedStock, strike: parseInt(dcdc.strikePrice), ko_type: dcdc.koType,
+                          ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
                           ki_barrier: null });
       } else {
-        var document = DcdcData.findOne({ underlying: pre.linkedStock, strike: parseInt(pre.strikePrice), ko_type: pre.koType,
-                          ko_barrier: parseInt(pre.koBarrier), tenor: parseInt(pre.tenor), barrier_type: pre.barrierType,
-                          ki_barrier: parseInt(pre.kiBarrier) });
+        var dcdcDoc = DcdcData.findOne({ underlying: dcdc.linkedStock, strike: parseInt(dcdc.strikePrice), ko_type: dcdc.koType,
+                          ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
+                          ki_barrier: parseInt(dcdc.kiBarrier) });
       }
-      if (document) {
-        pre.couponPa = document.coupon_pa;
+      if (dcdcDoc) {
+        dcdc.couponPa = dcdcDoc.coupon_pa;
       } else {
-        pre.couponPa = undefined;
+        dcdc.couponPa = undefined;
       }
     };
 
@@ -103,7 +134,7 @@ spcal.config(function ($mdThemingProvider) {
     }
 
     $scope.cal = {
-      dp: {},
+      dps: {},
       dcdc: {}
     };
 
@@ -111,7 +142,7 @@ spcal.config(function ($mdThemingProvider) {
       return {abbrev: currency};
     });
 
-    $scope.dpTenors = ['1W', '2W', '3W', '1M', '2M', '3M'];
+    $scope.dpsTenors = ['1W', '2W', '3W', '1M', '2M', '3M'];
 
     $scope.dcdcTenors = [
       {
@@ -135,7 +166,7 @@ spcal.config(function ($mdThemingProvider) {
 
     $scope.barrierTypes = ['NONE', 'AKI', 'EKI'];
 
-    //Preview Button JS
+    //dcdcview Button JS
     $scope.demo = {
       showTooltip: false,
       tipDirection: 'bottom'
@@ -147,9 +178,9 @@ spcal.config(function ($mdThemingProvider) {
     });
 
     $scope.linkedCurrencyFilter = function(inputCur) {
-      return (inputCur.abbrev !== $scope.cal.dp.depositCurrency)
-        && (!(inputCur.abbrev === 'USD' && $scope.cal.dp.depositCurrency === 'HKD')
-        && (!(inputCur.abbrev === 'HKD' && $scope.cal.dp.depositCurrency === 'USD')));
+      return (inputCur.abbrev !== $scope.cal.dps.depositCurrency)
+        && (!(inputCur.abbrev === 'USD' && $scope.cal.dps.depositCurrency === 'HKD')
+        && (!(inputCur.abbrev === 'HKD' && $scope.cal.dps.depositCurrency === 'USD')));
     };
   });
 
@@ -291,8 +322,8 @@ spcal.controller('MatrixCtrl', function($timeout, $scope){
     [0.7633, 0.7653, 0.767, 0.7687, 'N/A', 'N/A']
   ];
 
-/*
   var container = document.getElementById('example');
+  /*
   var hot = new Handsontable(container, {
     data: rateData,
     headerToolTips: true,
@@ -311,21 +342,23 @@ spcal.controller('MatrixCtrl', function($timeout, $scope){
    $timeout(function () {
      hot.selectCell(0,0);
    }, 2);
-*/
+   */
 });
 
 spcal.controller('DiagramCtrl', function ($scope) {
   $.get('fxRate.csv', function (data) {
     // Create the chart
-    Highcharts.chart('dpChartContainer', {
+    Highcharts.chart('dpsChartContainer', {
       data: {
         csv: data
       },
+      /*
       plotOptions: {
         series: {
           visible: false
         }
       },
+      */
       title: {
         text: 'Deposit Plus'
       },
@@ -358,7 +391,7 @@ spcal.controller('DiagramCtrl', function ($scope) {
       }
     });
   });
-/*
+  /*
   $.get('stockPrice.csv', function (data) {
     // Create the chart
     Highstock.stockChart('container_v2', {
@@ -400,8 +433,7 @@ spcal.controller('DiagramCtrl', function ($scope) {
         data: [6, 2, 4, 3, 1]
       }]
     });
-  });
-*/
+  });*/
 });
 
 spcal.config(function($mdThemingProvider) {

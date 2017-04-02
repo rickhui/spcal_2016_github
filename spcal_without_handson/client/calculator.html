@@ -14,17 +14,17 @@
           <md-content class="md-padding">
             <md-content layout-padding ng-controller="ValidationCtrl">
               <div>
-                <form name="DpInvForm">
+                <form name="DpsInvForm">
                   <div layout="row">
                     <md-input-container class="md-block" flex>
                       <label>Deposit Currency</label>
-                      <md-select ng-model="cal.dp.depositCurrency" required>
+                      <md-select ng-model="cal.dps.depositCurrency" ng-change="onCurPairChange(cal.dps.depositCurrency, cal.dps.linkedCurrency)" required>
                         <md-option ng-repeat="currency in currencies" value="{{currency.abbrev}}">{{currency.abbrev}}</md-option>
                       </md-select>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>Linked Currency</label>
-                      <md-select ng-model="cal.dp.linkedCurrency" required>
+                      <md-select ng-model="cal.dps.linkedCurrency" ng-change="onCurPairChange(cal.dps.depositCurrency, cal.dps.linkedCurrency)" required>
                         <md-option ng-repeat="currency in currencies | filter:linkedCurrencyFilter" value="{{currency.abbrev}}">
                           {{currency.abbrev}}
                         </md-option>
@@ -35,12 +35,12 @@
                   <div layout="row">
                     <md-input-container class="md-block" flex>
                       <label>Currency Pair</label>
-                      <input name="currencyPair" ng-if="cal.dp.depositCurrency&&cal.dp.linkedCurrency" value="{{cal.dp.depositCurrency}}-{{cal.dp.linkedCurrency}}" disabled/>
+                      <input name="currencyPair" ng-if="cal.dps.depositCurrency&&cal.dps.linkedCurrency" value="{{cal.dps.depositCurrency}}-{{cal.dps.linkedCurrency}}" disabled/>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>Tenor</label>
-                      <md-select ng-model="cal.dp.tenor" required>
-                        <md-option ng-repeat="tenor in dpTenors" value="{{tenor}}">
+                      <md-select ng-model="cal.dps.tenor" required>
+                        <md-option ng-repeat="tenor in dpsTenors" value="{{tenor}}">
                           {{tenor}}
                         </md-option>
                       </md-select>
@@ -50,36 +50,47 @@
                   <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
                       <label>Amount Deposit</label>
-                      <div style="font-size:11px" >{{cal.dp.depositCurrency}}</div>
-                      <input md-maxlength="10" name="amountDeposit" ng-model="cal.dp.amountDeposit">
-                      <!-- <div ng-show="DpInvForm.amountDeposit.$error.required">
+                      <div style="font-size:11px" >{{cal.dps.depositCurrency}}</div>
+                      <input md-maxlength="10" name="amountDeposit" ng-model="cal.dps.amountDeposit">
+                      <!-- <div ng-show="DpsInvForm.amountDeposit.$error.required">
                         <div style="color:#D32F2F;font-size:11px">This is required.</div>
                       </div> -->
-                      <div ng-show="DpInvForm.amountDeposit.$error.maxlength">
+                      <div ng-show="DpsInvForm.amountDeposit.$error.maxlength">
                         <div style="color:#D32F2F;font-size:11px">This should be less than 10 digits.</div>
                       </div>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>Interest Amount</label>
-                      <input name="interestAmount" ng-if="cal.dp.amountDeposit" value="{{cal.dp.amountDeposit}}" disabled/>
+                      <input name="interestAmount" ng-if="cal.dps.amountDeposit" value="{{cal.dps.amountDeposit}}" disabled/>
                     </md-input-container>
                   </div>
 
                   <div layout="row">
                     <h4 style="color:#737373">Yield P.A. &emsp;&emsp;</h4>
                     <md-slider-container flex>
-                      <md-slider md-discrete flex min="4" max="8" step="0.5" ng-model="cal.dp.yieldPa" aria-label="yieldPaSlider"></md-slider>
+                      <md-slider md-discrete flex min="4" max="8" step="0.5" ng-model="cal.dps.yieldPa" aria-label="yieldPaSlider"></md-slider>
+                      <md-input-container>
+                        <input flex type="number" ng-model="cal.dp.yieldPA" aria-label="yieldPaInput" disabled>
+                      </md-input-container>
                     </md-slider-container>
                   </div>
 
                   <div layout="row">
                     <md-input-container class="md-block" flex>
                       <label>Coversion Rate</label>
-                      <input name="couponPa" value="This is the result to be found." disabled/>
+                      <input name="conversionRate" ng-if="cal.dps.conversionRate" value="{{cal.dps.conversionRate}}" disabled/>
                     </md-input-container>
                   </div>
 
                   <div layout="row" layout-align="end center">
+                    <div>
+                      <md-button ng-disabled="DpsInvForm.$invalid" ng-click="calculateConversionRate()" class="md-raised md-warn" aria-label="DPS Calculate Button" style="margin-top: -24px">
+                        <md-tooltip>
+                          See the conversion rate under the chosen criteria
+                        </md-tooltip>
+                        Query
+                      </md-button>
+                    </div>
                     <div md-theme="{{theme}}">
                       <md-button ng-click="showAdvanced($event)" class="md-raised md-warn" aria-label="Menu with Tooltip Delay" style="margin-top: -24px">
                         <md-tooltip md-delay="demo.delayTooltip">
@@ -91,7 +102,7 @@
                   </div>
                   <br />
                   <div layout="row">
-                    <div ng-controller="DiagramCtrl" id="dpChartContainer" style="width: 100%; height: 400px"></div>
+                    <div ng-controller="DiagramCtrl" id="dpsChartContainer" style="width: 100%; height: 400px"></div>
                   </div>
                 </form>
               </div>
