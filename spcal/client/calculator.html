@@ -69,6 +69,9 @@
                     <h4 style="color:#737373">Yield P.A. &emsp;&emsp;</h4>
                     <md-slider-container flex>
                       <md-slider md-discrete flex min="4" max="8" step="0.5" ng-model="cal.dps.yieldPa" aria-label="yieldPaSlider"></md-slider>
+                      <md-input-container>
+                        <input flex type="number" ng-model="cal.dp.yieldPA" aria-label="yieldPaInput" disabled>
+                      </md-input-container>
                     </md-slider-container>
                   </div>
 

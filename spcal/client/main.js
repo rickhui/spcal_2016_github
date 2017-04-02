@@ -350,11 +350,13 @@ spcal.controller('DiagramCtrl', function ($scope) {
       data: {
         csv: data
       },
+      /*
       plotOptions: {
         series: {
           visible: false
         }
       },
+      */
       title: {
         text: 'Deposit Plus'
       },
