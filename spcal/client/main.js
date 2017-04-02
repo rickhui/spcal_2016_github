@@ -104,6 +104,24 @@ spcal.config(function ($mdThemingProvider) {
       }
     };
 
+    $scope.calculateStrikePrice = function() {
+      var dcdc = $scope.cal.dcdc;
+      if (dcdc.barrierType === 'NONE') {
+        var dcdcDoc = DcdcData.findOne({ underlying: dcdc.linkedStock, coupon_pa: parseFloat(dcdc.couponPa), ko_type: dcdc.koType,
+                          ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
+                          ki_barrier: null });
+      } else {
+        var dcdcDoc = DcdcData.findOne({ underlying: dcdc.linkedStock, coupon_pa: parseFloat(dcdc.couponPa), ko_type: dcdc.koType,
+                          ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
+                          ki_barrier: parseInt(dcdc.kiBarrier) });
+      }
+      if (dcdcDoc) {
+        dcdc.strikePrice = dcdcDoc.strike;
+      } else {
+        dcdc.strikePrice = undefined;
+      }
+    };
+
     $scope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,

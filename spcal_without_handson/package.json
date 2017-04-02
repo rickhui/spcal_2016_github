@@ -1,5 +1,6 @@
 {
-  "name": "spcal_test4",
+  "name": "spcal_without_handson",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "meteor run"

@@ -130,8 +130,23 @@
 
                   <div layout="row">
                     <md-input-container class="md-block" flex>
+                      <h4 style="color:#737373">Query for</h4>
+                      <md-radio-group layout="row" ng-model="cal.dcdc.scenario">
+                        <md-radio-button value="1">Coupon PA</md-radio-button>
+                        <md-radio-button value="2">Strike Price</md-radio-button>
+                      </md-radio-group>
+                    </md-input-container>
+
+                  </div>
+
+                  <div layout="row">
+                    <md-input-container ng-if="cal.dcdc.scenario == 1" class="md-block" flex>
                       <label>Strike Price</label>
                       <input name="strikePrice" ng-model="cal.dcdc.strikePrice" type="number" min="1" pattern="\d+" required>
+                    </md-input-container>
+                    <md-input-container ng-if="cal.dcdc.scenario == 2" class="md-block" flex>
+                      <label>Coupon PA</label>
+                      <input name="couponPa" ng-model="cal.dcdc.couponPa" type="number" min="1" required>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>Tenor</label>
@@ -171,17 +186,29 @@
                   </div>
 
                   <div layout-gt-sm="row">
-                    <md-input-container class="md-block" flex>
+                    <md-input-container ng-if="cal.dcdc.scenario == 1" class="md-block" flex>
                       <label>Coupon P.A.</label>
                       <input name="couponPa" ng-if="cal.dcdc.couponPa" value="{{cal.dcdc.couponPa}}" disabled/>
+                    </md-input-container>
+                    <md-input-container ng-if="cal.dcdc.scenario == 2" class="md-block" flex>
+                      <label>Strike Price</label>
+                      <input name="strikePrice" ng-if="cal.dcdc.strikePrice" value="{{cal.dcdc.strikePrice}}" disabled/>
                     </md-input-container>
                   </div>
 
                   <div layout="row" layout-align="end center">
-                    <div>
+                    <div ng-if="cal.dcdc.scenario == 1">
                       <md-button ng-disabled="DcdcInvForm.$invalid" ng-click="calculateCouponPa()" class="md-raised md-warn" aria-label="DCDC Calculate Button" style="margin-top: -24px">
                         <md-tooltip>
                           See the coupon per annum under the chosen criteria
+                        </md-tooltip>
+                        Query
+                      </md-button>
+                    </div>
+                    <div ng-if="cal.dcdc.scenario == 2">
+                      <md-button ng-disabled="DcdcInvForm.$invalid" ng-click="calculateStrikePrice()" class="md-raised md-warn" aria-label="DCDC Calculate Button" style="margin-top: -24px">
+                        <md-tooltip>
+                          See the strike price under the chosen criteria
                         </md-tooltip>
                         Query
                       </md-button>
