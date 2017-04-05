@@ -20,6 +20,9 @@ var spcal = angular.module('spcal',[
       'ngSanitize'
 ]);
 
+var dpsChart;
+var dcdcChart;
+
 spcal.config(function ($mdThemingProvider) {
 
     $mdThemingProvider.theme('red')
@@ -44,25 +47,20 @@ spcal.config(function ($mdThemingProvider) {
       if (depoCur && linkCur) {
         var seq = depoCur + "-" + linkCur;
         var inv = linkCur + "-" + depoCur;
-        console.log(seq, inv);
-        let dpsChart = $("#dpsChartContainer").highcharts();
-        let dpsSeries = dpsChart.series;
-        console.log(dpsSeries);
-        for (let i = 0; i < dpsSeries.length; i++) {
-          let dpsColumn = dpsSeries[i];
-          console.log(dpsColumn.name);
-          if (dpsColumn.name === seq || dpsColumn.name === inv) {
-            dpsColumn.show();
+        var series = dpsChart.series;
+        for (let i = 0; i < series.length; i++) {
+          let column = series[i];
+          if (column.name === seq || column.name === inv) {
+            column.show();
           } else {
-            dpsColumn.hide();
+            column.hide();
           }
         }
       }
     };
 
     $scope.onStockChange = function(stockName) {
-      var chart = $("#dcdcChartContainer").highcharts();
-      var series = chart.series;
+      var series = dcdcChart.series;
       var navigatorIndex = series.length - 1;
       for (let i = 0; i < navigatorIndex; i++) {
         let column = series[i];
@@ -364,17 +362,15 @@ spcal.controller('MatrixCtrl', function($timeout, $scope){
 spcal.controller('DiagramCtrl', function ($scope) {
   $.get('fxRate.csv', function (data) {
     // Create the chart
-    Highcharts.chart('dpsChartContainer', {
+    dpsChart = Highcharts.chart('dpsChartContainer', {
       data: {
         csv: data
       },
-      /*
       plotOptions: {
         series: {
           visible: false
         }
       },
-      */
       title: {
         text: 'Deposit Plus'
       },
@@ -388,7 +384,7 @@ spcal.controller('DiagramCtrl', function ($scope) {
   });
   $.get('stockPrice.csv', function (data) {
     // Create the chart
-    Highstock.stockChart('dcdcChartContainer', {
+    dcdcChart = Highstock.stockChart('dcdcChartContainer', {
       data: {
         csv: data
       },
@@ -461,80 +457,52 @@ spcal.config(function($mdThemingProvider) {
     $scope.messages = [
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
+        what: 'Derivatives',
+        who: 'Basic Financial Concepts',
         when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        notes: " Get to know the products before investing"
       },
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
+        what: 'Deposit Plus',
+        who: 'A Currency Linked Investment',
         when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        notes: " Get to know the products before investing"
       },
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
+        what: 'Deposit Plus Example',
+        who: 'A Currency Linked Investment',
         when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        notes: " Get to know the products before investing"
       },
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
+        what: 'Deposit Plus Interest Calculation',
+        who: 'A Currency Linked Investment',
         when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        notes: " Get to know the products before investing"
       },
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
+        what: 'DCDC',
+        who: 'An Equity Linked Investment',
         when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        notes: " Get to know the products before investing"
       },
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
+        what: 'DCDC Example 1 - Auto Call',
+        who: 'An Equity Linked Investment',
         when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        notes: " Get to know the products before investing"
       },
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
+        what: 'DCDC Example 2 - Airbag',
+        who: 'An Equity Linked Investment',
         when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        notes: " Get to know the products before investing"
       },
     ];
 });
