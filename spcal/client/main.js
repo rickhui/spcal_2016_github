@@ -65,9 +65,12 @@ spcal.config(function ($mdThemingProvider) {
       for (let i = 0; i < navigatorIndex; i++) {
         let column = series[i];
         if (column.name === stockName) {
-          series[navigatorIndex].data = column.data;
+          //series[navigatorIndex].data = column.data;
+          column.showInNavigator = true;
+          //dcdcChart.navigator.series = column;
           column.show();
         } else {
+          column.showInNavigator = false;
           column.hide();
         }
       }
