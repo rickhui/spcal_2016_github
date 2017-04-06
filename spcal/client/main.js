@@ -154,7 +154,9 @@ spcal.config(function ($mdThemingProvider) {
 
     $scope.cal = {
       dps: {},
-      dcdc: {}
+      dcdc: {
+        scenario: 1,
+      }
     };
 
     $scope.currencies = ('AUD, CAD, CHF, CNY, EUR, GBP, HKD, JPY, NZD, SGD, USD').split(', ').map(function(currency) {
