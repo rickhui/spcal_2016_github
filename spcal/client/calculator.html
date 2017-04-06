@@ -61,7 +61,7 @@
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>Interest Amount</label>
-                      <input name="interestAmount" ng-if="cal.dps.amountDeposit && cal.dps.yieldPa" ng-value="{{cal.dps.amountDeposit*cal.dps.yieldPa}}/100" disabled/>
+                      <input name="interestAmount" ng-if="cal.dps.amountDeposit && cal.dps.yieldPa" value="{{cal.dps.amountDeposit*cal.dps.yieldPa/100}}" disabled/>
                     </md-input-container>
                   </div>
 
