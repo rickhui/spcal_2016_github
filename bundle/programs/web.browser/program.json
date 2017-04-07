@@ -1,0 +1,395 @@
+{
+  "format": "web-program-pre1",
+  "manifest": [
+    {
+      "path": "76335acd2c1635c133a601609ebce4eefd5f41b8.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/76335acd2c1635c133a601609ebce4eefd5f41b8.js?meteor_js_resource=true",
+      "size": 3903366,
+      "hash": "76335acd2c1635c133a601609ebce4eefd5f41b8"
+    },
+    {
+      "path": "2c05fca11965abf75c8a80f0d8e281e34d40465a.css",
+      "where": "client",
+      "type": "css",
+      "cacheable": true,
+      "url": "/2c05fca11965abf75c8a80f0d8e281e34d40465a.css?meteor_css_resource=true",
+      "size": 1770,
+      "hash": "2c05fca11965abf75c8a80f0d8e281e34d40465a"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-action-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-action-symbol.svg",
+      "size": 62780,
+      "hash": "51332ff1888d0df78bda742023dfeaa63aa2317f"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-av.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-av.svg",
+      "size": 23671,
+      "hash": "41841ede7c18ed0b905c1b80a2f98e95d449b5ae"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-device.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-device.svg",
+      "size": 26145,
+      "hash": "ef7c569d2864b39ada231639d30e145253098a4d"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-hardware-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-hardware-symbol.svg",
+      "size": 10750,
+      "hash": "c24855a0403a4b97777453ea810e41444cdcd111"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-maps.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-maps.svg",
+      "size": 22099,
+      "hash": "7c3deef5fcc3ad33cb99fe053b9fa44ecdb30d6b"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-places-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-places-symbol.svg",
+      "size": 8875,
+      "hash": "2fbb79aefdea43499728fd05d53fddf4084175f3"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-toggle.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-toggle.svg",
+      "size": 2044,
+      "hash": "3a3eb6e6e662f66a7018993d7a776e33ef479309"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-action.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-action.svg",
+      "size": 69562,
+      "hash": "3aacdeb931f7a77a75c1042837c0aa80d6ee158d"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-communication-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-communication-symbol.svg",
+      "size": 14240,
+      "hash": "4cfc9df300127c93405ba42a4243d2d36bb971f9"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-editor-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-editor-symbol.svg",
+      "size": 16125,
+      "hash": "41314c9bbd0e1fce5c42800ffa1411bb24fad090"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-hardware.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-hardware.svg",
+      "size": 12213,
+      "hash": "df988212634ec19efd77b4d3dd0196c6428ad472"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-navigation-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-navigation-symbol.svg",
+      "size": 4325,
+      "hash": "8f57fd8fc3e8153f49fe05a92e99b80cf9a10619"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-places.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-places.svg",
+      "size": 9446,
+      "hash": "56f2c352bb1875fc4be9c4b10d86a5d88d162f41"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-alert-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-alert-symbol.svg",
+      "size": 984,
+      "hash": "c660f9d1f9eb55842dbc9fd238b237b8eab74463"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-communication.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-communication.svg",
+      "size": 15761,
+      "hash": "4ef6bf92530c53c2332c4c839a0e51587f92af4a"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-editor.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-editor.svg",
+      "size": 18213,
+      "hash": "8f78da2d301f2550eef74068d1cdaf38b51720f3"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-image-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-image-symbol.svg",
+      "size": 50072,
+      "hash": "5a0cf58bd5fc946ef664cf17f115087c69edc228"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-navigation.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-navigation.svg",
+      "size": 5134,
+      "hash": "72787624f22de4176ad69e5f8099085983f5ac46"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-social-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-social-symbol.svg",
+      "size": 10435,
+      "hash": "93ec466cbb60b75cebd63ca6aff6aa34c0e4cf7e"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-alert.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-alert.svg",
+      "size": 1123,
+      "hash": "a1f40a96c29ed52818fbdd2a7933509d40667a7f"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-content-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-content-symbol.svg",
+      "size": 9271,
+      "hash": "49639816bd9d60938f3faf9491fb3ed91892167b"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-file-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-file-symbol.svg",
+      "size": 3468,
+      "hash": "7266760e711d47dfc11ea0e1852c1874fefd28b4"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-image.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-image.svg",
+      "size": 54934,
+      "hash": "6ba565a79c28ef2c6c8e99b26b6b273e45ed5d9b"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-notification-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-notification-symbol.svg",
+      "size": 16613,
+      "hash": "57c01ee838ca161504100ec042226659fb3f3bfb"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-social.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-social.svg",
+      "size": 11340,
+      "hash": "8a97bff75334020cd1d65deee3a8df58e1f81504"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-av-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-av-symbol.svg",
+      "size": 21200,
+      "hash": "a833f66559741d4de5e9eb4d7f0a3268afd561fe"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-content.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-content.svg",
+      "size": 10534,
+      "hash": "14ab98fac2bda8c332a2e59475c1217c2b16f562"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-file.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-file.svg",
+      "size": 3889,
+      "hash": "b0d59edec041bb740a71725c99336e30fdd2535d"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-maps-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-maps-symbol.svg",
+      "size": 20011,
+      "hash": "f647bf8de2b1ffc2a68ac2b47ba891ca4a9ce1cf"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-notification.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-notification.svg",
+      "size": 18262,
+      "hash": "0d869ed6d6d4030b8479fe4c13cebef156f619c7"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-toggle-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-toggle-symbol.svg",
+      "size": 1795,
+      "hash": "fb7e96a2875cae6b0d49461faf07dca9dddd13fd"
+    },
+    {
+      "path": "app/fxRate.csv",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fxRate.csv",
+      "size": 28532,
+      "hash": "3a814ac6fd6b451bade827180f8a981f217d52e0"
+    },
+    {
+      "path": "app/stockPrice.csv",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/stockPrice.csv",
+      "size": 2822,
+      "hash": "854dae93ee84d52c904926dc4a0139c0b8b5926d"
+    },
+    {
+      "path": "app/images/Hsbc-logo.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/Hsbc-logo.svg",
+      "size": 6228,
+      "hash": "4b3e7af760beb733fcd9ddf1209d8520667b6de2"
+    },
+    {
+      "path": "app/images/cross-icon.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/cross-icon.svg",
+      "size": 1029,
+      "hash": "7d08ccdb02372d7dda35a023e178aaa0eceb5f2c"
+    },
+    {
+      "path": "app/images/hsbc-icon.gif",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/hsbc-icon.gif",
+      "size": 2970,
+      "hash": "3cbeac2b942c4761c9aca76f70bc247b99ce4536"
+    },
+    {
+      "path": "app/images/ic_cancel_white_48px.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/ic_cancel_white_48px.svg",
+      "size": 339,
+      "hash": "4b5c95c78db305af36d078738e1f58748c9c3f98"
+    },
+    {
+      "path": "app/images/test1.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/test1.jpg",
+      "size": 93140,
+      "hash": "a5f9d12940c96288f96c54dc7d46112c3cff87c6"
+    },
+    {
+      "path": "app/images/test2.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/test2.jpg",
+      "size": 1448642,
+      "hash": "04a51490afde3c4b21367ccb9d0e7fd5543a158a"
+    },
+    {
+      "path": "app/images/test3.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/test3.jpg",
+      "size": 469800,
+      "hash": "7286ab2b3a12ca91bd83219f542cb8639e15f279"
+    },
+    {
+      "path": "head.html",
+      "where": "internal",
+      "type": "head",
+      "hash": "a90f67e95bd71f26889708e32ad064491ec45c70"
+    },
+    {
+      "path": "body.html",
+      "where": "internal",
+      "type": "body",
+      "hash": "d222294c4d3801d8cea759e0606213f2bec109b6"
+    }
+  ]
+}
