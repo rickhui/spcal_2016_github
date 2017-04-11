@@ -10,7 +10,7 @@ var meteorInstall = Package['modules-runtime'].meteorInstall;
 /* Package-scope variables */
 var Buffer, process;
 
-var require = meteorInstall({"node_modules":{"meteor":{"modules":{"server.js":["./install-packages.js","./buffer.js","./process.js","reify/lib/runtime",function(require,exports,module){
+var require = meteorInstall({"node_modules":{"meteor":{"modules":{"server.js":["./install-packages.js","./buffer.js","./process.js","./reify.js",function(require){
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                              //
@@ -21,7 +21,7 @@ var require = meteorInstall({"node_modules":{"meteor":{"modules":{"server.js":["
 require("./install-packages.js");
 require("./buffer.js");
 require("./process.js");
-require("reify/lib/runtime").enable(module.constructor);
+require("./reify.js");
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -104,7 +104,7 @@ install("minimongo");
 install("check", "meteor/check/match.js");
 install("retry");
 install("ddp-common");
-install("ddp-client");
+install("ddp-client", "meteor/ddp-client/namespace.js");
 install("logging");
 install("routepolicy");
 install("deps");
@@ -130,7 +130,6 @@ install("binary-heap");
 install("insecure");
 install("mongo");
 install("standard-minifier-css");
-install("standard-minifier-js");
 install("shell-server", "meteor/shell-server/main.js");
 install("angular-templates");
 install("planettraining:material-design-icons");
@@ -188,6 +187,22 @@ _.extend(process.env, meteorEnv);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+}],"reify.js":["reify/lib/runtime",function(require,exports,module){
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                              //
+// packages/modules/reify.js                                                                                    //
+//                                                                                                              //
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                //
+var Module = module.constructor;
+require("reify/lib/runtime").enable(Module);
+var Mp = Module.prototype;
+Mp.importSync = Mp.importSync || Mp.import;
+Mp.import = Mp.import || Mp.importSync;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 }],"node_modules":{"reify":{"lib":{"runtime.js":function(require,exports,module){
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -196,16 +211,22 @@ _.extend(process.env, meteorEnv);
 //                                                                                                              //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                                                                                                 //
+var hasOwn = Object.prototype.hasOwnProperty;
 var Entry = require("./entry.js").Entry;
 var utils = require("./utils.js");
+var dynRequire = module.require ? function require(id) {
+  // Infuriatingly, this code may have to run in environments that do not
+  // have Function.prototype.bind (cough cough PhantomJS).
+  return module.require(id);
+} : __non_webpack_require__;
 
 exports.enable = function (Module) {
   var Mp = Module.prototype;
 
-  if (typeof Mp.import === "function" &&
+  if (typeof Mp.importSync === "function" &&
       typeof Mp.export === "function") {
-    // If the Mp.{import,export} methods have already been
-    // defined, abandon reification immediately.
+    // If the Mp.{importSync,export} methods have already been defined,
+    // abandon reification immediately.
     return Module;
   }
 
@@ -247,17 +268,24 @@ exports.enable = function (Module) {
 
   function setESModule(module) {
     var exports = module.exports;
-    if (exports && typeof exports === "object") {
-      exports.__esModule = true;
+    if (exports &&
+        typeof exports === "object" &&
+        ! hasOwn.call(exports, "__esModule")) {
+      Object.defineProperty(exports, "__esModule", {
+        value: true,
+        enumerable: false,
+        writable: false,
+        configurable: true
+      });
     }
   }
 
   // If key is provided, it will be used to identify the given setters so
-  // that they can be replaced if module.import is called again with the
+  // that they can be replaced if module.importSync is called again with the
   // same key. This avoids potential memory leaks from import declarations
   // inside loops. The compiler generates these keys automatically (and
   // deterministically) when compiling nested import declarations.
-  Mp.import = function (id, setters, key) {
+  Mp.importSync = function (id, setters, key) {
     var module = this;
     setESModule(module);
 
@@ -271,7 +299,7 @@ exports.enable = function (Module) {
     var countBefore = entry && entry.runCount;
     var exports = typeof module.require === "function"
       ? module.require(absoluteId)
-      : require(absoluteId);
+      : dynRequire(absoluteId);
 
     if (entry && entry.runCount === countBefore) {
       // If require(absoluteId) didn't run any setters for this entry,
@@ -390,6 +418,76 @@ exports.default = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
+};
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+},"possibleConstructorReturn.js":function(require,exports){
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                              //
+// node_modules/babel-runtime/helpers/possibleConstructorReturn.js                                              //
+//                                                                                                              //
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                //
+"use strict";
+
+exports.__esModule = true;
+
+var _typeof2 = require("../helpers/typeof");
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && ((typeof call === "undefined" ? "undefined" : (0, _typeof3.default)(call)) === "object" || typeof call === "function") ? call : self;
+};
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+},"inherits.js":function(require,exports){
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                              //
+// node_modules/babel-runtime/helpers/inherits.js                                                               //
+//                                                                                                              //
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                //
+"use strict";
+
+exports.__esModule = true;
+
+var _setPrototypeOf = require("../core-js/object/set-prototype-of");
+
+var _setPrototypeOf2 = _interopRequireDefault(_setPrototypeOf);
+
+var _create = require("../core-js/object/create");
+
+var _create2 = _interopRequireDefault(_create);
+
+var _typeof2 = require("../helpers/typeof");
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : (0, _typeof3.default)(superClass)));
+  }
+
+  subClass.prototype = (0, _create2.default)(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf2.default ? (0, _setPrototypeOf2.default)(subClass, superClass) : subClass.__proto__ = superClass;
 };
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

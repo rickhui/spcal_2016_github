@@ -94,6 +94,7 @@
     },
     {
       "node_modules": "npm/node_modules/meteor/ddp-client/node_modules",
+      "sourceMap": "packages/ddp-client.js.map",
       "path": "packages/ddp-client.js"
     },
     {
@@ -184,9 +185,6 @@
     },
     {
       "path": "packages/standard-minifier-css.js"
-    },
-    {
-      "path": "packages/standard-minifier-js.js"
     },
     {
       "sourceMap": "packages/shell-server.js.map",

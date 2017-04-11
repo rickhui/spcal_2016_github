@@ -537,22 +537,20 @@ LocalCollection.prototype.insert = function (doc, callback) {                   
   // https://docs.mongodb.com/manual/reference/limits/#Restrictions-on-Field-Names                                     // 549
                                                                                                                        //
   if (doc) {                                                                                                           // 550
-    (function () {                                                                                                     // 550
-      var invalidCharMsg = {                                                                                           // 551
-        '.': "contain '.'",                                                                                            // 552
-        '$': "start with '$'",                                                                                         // 553
-        '\0': "contain null bytes"                                                                                     // 554
-      };                                                                                                               // 551
-      JSON.stringify(doc, function (key, value) {                                                                      // 556
-        var match = void 0;                                                                                            // 557
+    var invalidCharMsg = {                                                                                             // 551
+      '.': "contain '.'",                                                                                              // 552
+      '$': "start with '$'",                                                                                           // 553
+      '\0': "contain null bytes"                                                                                       // 554
+    };                                                                                                                 // 551
+    JSON.stringify(doc, function (key, value) {                                                                        // 556
+      var match = void 0;                                                                                              // 557
                                                                                                                        //
-        if (_.isString(key) && (match = key.match(/^\$|\.|\0/))) {                                                     // 558
-          throw MinimongoError("Key " + key + " must not " + invalidCharMsg[match[0]]);                                // 559
-        }                                                                                                              // 560
+      if (_.isString(key) && (match = key.match(/^\$|\.|\0/))) {                                                       // 558
+        throw MinimongoError("Key " + key + " must not " + invalidCharMsg[match[0]]);                                  // 559
+      }                                                                                                                // 560
                                                                                                                        //
-        return value;                                                                                                  // 561
-      });                                                                                                              // 562
-    })();                                                                                                              // 550
+      return value;                                                                                                    // 561
+    });                                                                                                                // 562
   }                                                                                                                    // 563
                                                                                                                        //
   if (!_.has(doc, '_id')) {                                                                                            // 565
