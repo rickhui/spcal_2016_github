@@ -1,17 +1,9 @@
 <div layout="column" class="container" ng-cloak class="md-inline-form">
-
-    <!-- <div layout="row" layout-padding>
-    <div flex="66"> -->
-    <!-- <md-content md-colors="{background: 'blue'}" layout-gt-sm="row" layout-padding>
-    <div>
-      <h4>Deposit Plus</h4>md-dynamic-height
-    </div>style="min-height: 450px;"
-    </md-content> -->
   <div class="tabsdemoDynamicHeight" ng-cloak>
     <md-card>
       <md-tabs md-stretch-tabs="always" style="min-height: 865px;" md-border-bottom>
         <md-tab label="Deposit Plus">
-          <md-content class="md-padding">
+          <md-content class="md-padding" >
             <md-content layout-padding ng-controller="ValidationCtrl">
               <div>
                 <form name="DpsInvForm">
@@ -49,19 +41,18 @@
 
                   <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
-                      <label>Amount Deposit</label>
-                      <div style="font-size:11px" >{{cal.dps.depositCurrency}}</div>
-                      <input md-maxlength="10" name="amountDeposit" ng-model="cal.dps.amountDeposit">
-                      <!-- <div ng-show="DpsInvForm.amountDeposit.$error.required">
-                        <div style="color:#D32F2F;font-size:11px">This is required.</div>
-                      </div> -->
-                      <div ng-show="DpsInvForm.amountDeposit.$error.maxlength">
-                        <div style="color:#D32F2F;font-size:11px">This should be less than 10 digits.</div>
+                      <label>Amount Deposit <span style="font-size:12px" ng-if="cal.dps.depositCurrency"> ({{cal.dps.depositCurrency}}) </span></label>
+                      <span id="tempAmount" style="display:none;">{{cal.dps.amountDeposit | number:2}}</span>
+                      <input md-maxlength="20"  ng-maxlength="20" id="convertAmount" name="amountDeposit" ng-pattern="/^[0-9]*$/" ng-model="cal.dps.amountDeposit" ng-blur="convert2dp()">
+                      <div ng-messages="DpsInvForm.amountDeposit.$error" style="color:maroon" role="alert">
+                        <div ng-message="maxlength">Your field is too long.</div>
+                        <div ng-message="pattern">Not a Valid Amount.</div>
                       </div>
+
                     </md-input-container>
                     <md-input-container class="md-block" flex>
-                      <label>Interest Amount</label>
-                      <input name="interestAmount" ng-if="cal.dps.amountDeposit && cal.dps.yieldPa" value="{{cal.dps.amountDeposit*cal.dps.yieldPa/100}}" disabled/>
+                      <label>Interest Amount <span style="font-size:12px" ng-if="cal.dps.depositCurrency"> ({{cal.dps.depositCurrency}}) </span></label>
+                      <input name="interestAmount" ng-if="cal.dps.amountDeposit && cal.dps.yieldPa" value="{{cal.dps.amountDeposit*cal.dps.yieldPa/100 | number:2}}" disabled/>
                     </md-input-container>
                   </div>
 
@@ -86,6 +77,9 @@
                   </div>
 
                   <div layout="row" layout-align="end center">
+                    <!-- showAdvanced($event)
+                    resizeDiag($event) -->
+                    <input id="toggleBtn" type="button" style="display:none;" ng-click="resizeDiag($event)"/>
                     <div>
                       <md-button ng-disabled="DpsInvForm.$invalid" ng-click="calculateConversionRate()" class="md-raised md-warn" aria-label="DPS Calculate Button">
                         <md-tooltip>
@@ -103,9 +97,14 @@
                       </md-button>
                     </div>
                   </div>
-                  <br />
+                  <br/>
+                  <md-divider></md-divider>
+                  <br/>
                   <div layout="row">
-                    <div ng-controller="DiagramCtrl" id="dpsChartContainer" style="width: 100%; height: 400px"></div>
+                     <!-- <div ng-controller="DiagramCtrl">
+
+                    </div> -->
+                    <div ng-controller="DiagramCtrl" id="dpsChartContainer" style="width: 100%; height: 400px;"></div>
                   </div>
                 </form>
               </div>
@@ -223,7 +222,9 @@
                       </md-button>
                     </div>
                   </div>
-                  <br />
+                  <br/>
+                  <md-divider></md-divider>
+                  <br/>
                   <div layout="row">
                     <div ng-controller="DiagramCtrl" id="dcdcChartContainer" style="width: 100%; height: 400px"></div>
                   </div>

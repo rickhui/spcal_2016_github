@@ -1,0 +1,315 @@
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/matrix.html	/^<md-card style="height:450px">$/;"	function	line:1
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/matrix.html	/^    <h3>Coupon Rate p.a. Matrix<\/h3>$/;"	function	line:3
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/matrix.html	/^  <md-card-title >$/;"	function	line:5
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/matrix.html	/^    <md-content class="container">$/;"	function	line:6
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/matrix.html	/^      <div id="parentContainer">$/;"	function	line:7
+input	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/matrix.html	/^        <input id="search_field" type="hidden">$/;"	function	line:8
+input	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/matrix.html	/^        <input id="search_button" style="display:none;" type="button">$/;"	function	line:9
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/matrix.html	/^        <div class="handsontable" ng-controller="MatrixCtrl" id="example"><\/div>$/;"	function	line:10
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/matrix.html	/^  <md-card-actions layout="row" layout-align="end center">$/;"	function	line:14
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/matrix.html	/^          <md-button class="md-raised" style="background: #3399ff; color:white">Conversion Rates<\/md-button>$/;"	function	line:15
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/matrix.html	/^          <md-button class="md-raised" style="background: #cc0066; color:white">Interest Rates<\/md-button>$/;"	function	line:16
+head	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.html	/^<head>$/;"	function	line:1
+title	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.html	/^  <title>Structured Product Calculator<\/title>$/;"	function	line:2
+link	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.html	/^  <link href="https:\/\/fonts.googleapis.com\/icon?family=Material+Icons" rel="stylesheet">$/;"	function	line:3
+body	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.html	/^<body ng-app="spcal" ng-cloak>$/;"	function	line:6
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.html	/^  <div ng-include src="'client\/nav.html'"><\/div>$/;"	function	line:7
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.html	/^  <div layout="row">$/;"	function	line:8
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.html	/^    <div flex layout="column" >$/;"	function	line:9
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.html	/^      <div flex ng-include src="'client\/calculator.html'"><\/div>$/;"	function	line:10
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.html	/^    <div flex layout="column">$/;"	function	line:12
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.html	/^      <div layout="row">$/;"	function	line:13
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.html	/^        <div flex ng-include src="'client\/matrix.html'"><\/div>$/;"	function	line:14
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.html	/^      <div layout="row">$/;"	function	line:16
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.html	/^        <div flex ng-include src="'client\/reference.html'"><\/div>$/;"	function	line:17
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^<div layout="column" class="container" ng-cloak class="md-inline-form">$/;"	function	line:1
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^  <div class="tabsdemoDynamicHeight" ng-cloak>$/;"	function	line:2
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^    <md-card>$/;"	function	line:3
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^      <md-tabs md-stretch-tabs="always" style="min-height: 865px;" md-border-bottom>$/;"	function	line:4
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^        <md-tab label="Deposit Plus">$/;"	function	line:5
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^          <md-content class="md-padding" >$/;"	function	line:6
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^            <md-content layout-padding ng-controller="ValidationCtrl">$/;"	function	line:7
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^              <div>$/;"	function	line:8
+form	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                <form name="DpsInvForm">$/;"	function	line:9
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <div layout="row">$/;"	function	line:10
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container class="md-block" flex>$/;"	function	line:11
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>Deposit Currency<\/label>$/;"	function	line:12
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <md-select ng-model="cal.dps.depositCurrency" ng-change="onCurPairChange(cal.dps.depositCurrency, cal.dps.linkedCurrency)" required>$/;"	function	line:13
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <md-option ng-repeat="currency in currencies" value="{{currency.abbrev}}">{{currency.abbrev}}<\/md-option>$/;"	function	line:14
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container class="md-block" flex>$/;"	function	line:17
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>Linked Currency<\/label>$/;"	function	line:18
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <md-select ng-model="cal.dps.linkedCurrency" ng-change="onCurPairChange(cal.dps.depositCurrency, cal.dps.linkedCurrency)" required>$/;"	function	line:19
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <md-option ng-repeat="currency in currencies | filter:linkedCurrencyFilter" value="{{currency.abbrev}}">$/;"	function	line:20
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <div layout="row">$/;"	function	line:27
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container class="md-block" flex>$/;"	function	line:28
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>Currency Pair<\/label>$/;"	function	line:29
+input	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <input name="currencyPair" ng-if="cal.dps.depositCurrency&&cal.dps.linkedCurrency" value="{{cal.dps.depositCurrency}}-{{cal.dps.linkedCurrency}}" disabled\/>$/;"	function	line:30
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container class="md-block" flex>$/;"	function	line:32
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>Tenor<\/label>$/;"	function	line:33
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <md-select ng-model="cal.dps.tenor" required>$/;"	function	line:34
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <md-option ng-repeat="tenor in dpsTenors" value="{{tenor}}">$/;"	function	line:35
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <div layout-gt-sm="row">$/;"	function	line:42
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container class="md-block" flex-gt-sm>$/;"	function	line:43
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>Amount Deposit <span style="font-size:12px" ng-if="cal.dps.depositCurrency"> ({{cal.dps.depositCurrency}}) <\/span><\/label>$/;"	function	line:44
+span	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <span id="tempAmount" style="display:none;">{{cal.dps.amountDeposit | number:2}}<\/span>$/;"	function	line:45
+input	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <input md-maxlength="20"  ng-maxlength="20" id="convertAmount" name="amountDeposit" ng-pattern="\/^[0-9]*$\/" ng-model="cal.dps.amountDeposit" ng-blur="convert2dp()">$/;"	function	line:46
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <div ng-messages="DpsInvForm.amountDeposit.$error" style="color:maroon" role="alert">$/;"	function	line:47
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <div ng-message="maxlength">Your field is too long.<\/div>$/;"	function	line:48
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <div ng-message="pattern">Not a Valid Amount.<\/div>$/;"	function	line:49
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container class="md-block" flex>$/;"	function	line:53
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>Interest Amount<\/label>$/;"	function	line:54
+input	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <input name="interestAmount" ng-if="cal.dps.amountDeposit && cal.dps.yieldPa" value="{{cal.dps.amountDeposit*cal.dps.yieldPa\/100 | number:2}}" disabled\/>$/;"	function	line:55
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <div layout="row">$/;"	function	line:59
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-slider-container flex>$/;"	function	line:61
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label style="color:#afaeae">Yield P.A. *<\/label>$/;"	function	line:62
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <md-slider md-discrete flex min="2" max="9.5" step="0.5" ng-model="cal.dps.yieldPa" aria-label="yieldPaSlider" required><\/md-slider>$/;"	function	line:63
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <md-input-container>$/;"	function	line:64
+input	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <input flex ng-if="cal.dps.yieldPa" value="{{cal.dps.yieldPa}}%" aria-label="yieldPaInput" readonly>$/;"	function	line:65
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <div layout="row">$/;"	function	line:70
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container class="md-block" flex>$/;"	function	line:71
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>Coversion Rate<\/label>$/;"	function	line:72
+input	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <input name="conversionRate" ng-if="cal.dps.conversionRate" value="{{cal.dps.conversionRate}}" style="font-size: 20px; font-weight: bold" readonly\/>$/;"	function	line:73
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <div style="font-size: 18px"><b>{{cal.dps.conversionRate}}<\/b><\/div> -->$/;"	function	line:76
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <div layout="row" layout-align="end center">$/;"	function	line:79
+input	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <input id="toggleBtn" type="button" style="display:none;" ng-click="resizeDiag($event)"\/>$/;"	function	line:82
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <div>$/;"	function	line:83
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <md-button ng-disabled="DpsInvForm.$invalid" ng-click="calculateConversionRate()" class="md-raised md-warn" aria-label="DPS Calculate Button">$/;"	function	line:84
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <md-tooltip>$/;"	function	line:85
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <div md-theme="{{theme}}">$/;"	function	line:91
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <md-button ng-click="showAdvanced($event)" class="md-raised md-warn" aria-label="Menu with Tooltip Delay">$/;"	function	line:92
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <md-tooltip md-delay="demo.delayTooltip">$/;"	function	line:93
+br	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <br\/>$/;"	function	line:100
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <md-divider><\/md-divider>$/;"	function	line:101
+br	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <br\/>$/;"	function	line:102
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <div layout="row">$/;"	function	line:103
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <div ng-controller="DiagramCtrl" id="dpsChartContainer" style="width: 100%; height: 400px;"><\/div>$/;"	function	line:107
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^        <md-tab label="DCDC">$/;"	function	line:115
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^          <md-content class="md-padding">$/;"	function	line:116
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^            <md-content layout-padding ng-controller="ValidationCtrl">$/;"	function	line:117
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^              <div>$/;"	function	line:118
+form	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                <form name="DcdcInvForm">$/;"	function	line:119
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <div layout-gt-sm="row">$/;"	function	line:120
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container class="md-block" flex>$/;"	function	line:121
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>Linked Stock<\/label>$/;"	function	line:122
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <md-select ng-model="cal.dcdc.linkedStock" ng-change="onStockChange(cal.dcdc.linkedStock)" required>$/;"	function	line:123
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <md-option ng-repeat="stock in stocks" value="{{stock}}">{{stock}}<\/md-option>$/;"	function	line:124
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container class="md-block" flex>$/;"	function	line:127
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>Spot Price<\/label>$/;"	function	line:128
+input	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <input name="spotPrice" ng-if="cal.dcdc.linkedStock" value="190.2(Fake)" disabled\/>$/;"	function	line:129
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <div layout="row">$/;"	function	line:133
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container class="md-block" flex>$/;"	function	line:134
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <div style="color:#afaeae">Query for *<\/div>$/;"	function	line:135
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <md-radio-group layout="row" ng-model="cal.dcdc.scenario">$/;"	function	line:136
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <md-radio-button value="1" style="margin-right: 100px">Coupon P.A.<\/md-radio-button>$/;"	function	line:137
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <md-radio-button value="2">Strike Price<\/md-radio-button>$/;"	function	line:138
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <div layout="row">$/;"	function	line:143
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container ng-if="cal.dcdc.scenario == 1" class="md-block" flex>$/;"	function	line:144
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>Strike Price<\/label>$/;"	function	line:145
+input	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <input name="strikePrice" ng-model="cal.dcdc.strikePrice" type="number" min="1" pattern="\\d+" required>$/;"	function	line:146
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container ng-if="cal.dcdc.scenario == 2" class="md-block" flex>$/;"	function	line:148
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>Coupon P.A.<\/label>$/;"	function	line:149
+input	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <input name="couponPa" ng-model="cal.dcdc.couponPa" type="number" min="1" required>$/;"	function	line:150
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container class="md-block" flex>$/;"	function	line:152
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>Tenor<\/label>$/;"	function	line:153
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <md-select ng-model="cal.dcdc.tenor" required>$/;"	function	line:154
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <md-option ng-repeat="tenor in dcdcTenors" value="{{tenor.value}}">$/;"	function	line:155
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <div layout="row">$/;"	function	line:162
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container class="md-block" flex>$/;"	function	line:163
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>KO Type<\/label>$/;"	function	line:164
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <md-select ng-model="cal.dcdc.koType" required>$/;"	function	line:165
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <md-option ng-repeat="koType in koTypes" value="{{koType}}">{{koType}}<\/md-option>$/;"	function	line:166
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container class="md-block" flex>$/;"	function	line:169
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>KO Barrier<\/label>$/;"	function	line:170
+input	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <input name="koBarrier" ng-model="cal.dcdc.koBarrier" type="number" min="1" pattern="\\d+" required>$/;"	function	line:171
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <div layout-gt-sm="row">$/;"	function	line:175
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container class="md-block" flex>$/;"	function	line:176
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>Barrier Type<\/label>$/;"	function	line:177
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <md-select ng-model="cal.dcdc.barrierType" required>$/;"	function	line:178
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <md-option ng-repeat="barrierType in barrierTypes" value="{{barrierType}}">{{barrierType}}<\/md-option>$/;"	function	line:179
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container class="md-block" flex>$/;"	function	line:182
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>KI Barrier<\/label>$/;"	function	line:183
+input	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <input name="kiBarrier" ng-model="cal.dcdc.kiBarrier" type="number" min="1" pattern="\\d+" ng-required="cal.dcdc.barrierType !== 'NONE'" ng-disabled="cal.dcdc.barrierType === 'NONE'">$/;"	function	line:184
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <div layout-gt-sm="row">$/;"	function	line:188
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container ng-if="cal.dcdc.scenario == 1" class="md-block" flex>$/;"	function	line:189
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>Coupon P.A.<\/label>$/;"	function	line:190
+input	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <input name="couponPa" ng-if="cal.dcdc.couponPa" value="{{cal.dcdc.couponPa}}" style="font-size: 20px; font-weight: bold" readonly\/>$/;"	function	line:191
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <md-input-container ng-if="cal.dcdc.scenario == 2" class="md-block" flex>$/;"	function	line:193
+label	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <label>Strike Price<\/label>$/;"	function	line:194
+input	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <input name="strikePrice" ng-if="cal.dcdc.strikePrice" value="{{cal.dcdc.strikePrice}}" style="font-size: 20px; font-weight: bold" readonly\/>$/;"	function	line:195
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <div layout="row" layout-align="end center">$/;"	function	line:199
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <div ng-if="cal.dcdc.scenario == 1">$/;"	function	line:200
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <md-button ng-disabled="DcdcInvForm.$invalid" ng-click="calculateCouponPa()" class="md-raised md-warn" aria-label="DCDC Calculate Button" style="margin-top: -24px">$/;"	function	line:201
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <md-tooltip>$/;"	function	line:202
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <div ng-if="cal.dcdc.scenario == 2">$/;"	function	line:208
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <md-button ng-disabled="DcdcInvForm.$invalid" ng-click="calculateStrikePrice()" class="md-raised md-warn" aria-label="DCDC Calculate Button" style="margin-top: -24px">$/;"	function	line:209
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <md-tooltip>$/;"	function	line:210
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <div md-theme="{{theme}}">$/;"	function	line:216
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                      <md-button ng-click="showAdvanced($event)" class="md-raised md-warn" aria-label="Menu with Tooltip Delay" style="margin-top: -24px">$/;"	function	line:217
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                        <md-tooltip md-delay="demo.delayTooltip">$/;"	function	line:218
+br	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <br\/>$/;"	function	line:225
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <md-divider><\/md-divider>$/;"	function	line:226
+br	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <br\/>$/;"	function	line:227
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                  <div layout="row">$/;"	function	line:228
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/calculator.html	/^                    <div ng-controller="DiagramCtrl" id="dcdcChartContainer" style="width: 100%; height: 400px"><\/div>$/;"	function	line:229
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/toggle.html	/^<md-dialog class="transparent" ng-controller="DiagramCtrl">$/;"	function	line:1
+.material-icons.md-18	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^.material-icons.md-18 { font-size: 18px; }$/;"	function	line:3
+.material-icons.md-24	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^.material-icons.md-24 { font-size: 24px; }$/;"	function	line:4
+.material-icons.md-36	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^.material-icons.md-36 { font-size: 36px; }$/;"	function	line:5
+.material-icons.md-48	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^.material-icons.md-48 { font-size: 48px; }$/;"	function	line:6
+.material-icons.md-dark	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }$/;"	function	line:9
+.material-icons.md-dark.md-inactive	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }$/;"	function	line:10
+.material-icons.md-light	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^.material-icons.md-light { color: rgba(255, 255, 255, 1); }$/;"	function	line:13
+.material-icons.md-light.md-inactive	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }$/;"	function	line:14
+.transparent	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^.transparent{$/;"	function	line:16
+.tabsdemoDynamicHeight md-content	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^.tabsdemoDynamicHeight md-content {$/;"	function	line:22
+.tabsdemoDynamicHeight md-content md-tabs	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^.tabsdemoDynamicHeight md-content md-tabs {$/;"	function	line:24
+.tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^.tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {$/;"	function	line:27
+.tabsdemoDynamicHeight md-content h1:first-child	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^.tabsdemoDynamicHeight md-content h1:first-child {$/;"	function	line:29
+.full button span	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^.full button span {$/;"	function	line:32
+.partially button span	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^ .partially button span {$/;"	function	line:37
+body	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^  body{$/;"	function	line:43
+#example	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^  #example{$/;"	function	line:47
+#video	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^  #video{$/;"	function	line:56
+#parentContainer	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^  #parentContainer{$/;"	function	line:60
+.dialogdemoThemeInheritance .container	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^  .dialogdemoThemeInheritance .container {$/;"	function	line:64
+.subheaderdemoBasicUsage .face	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^  .subheaderdemoBasicUsage .face {$/;"	function	line:67
+.handsontable .selectedCol	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^  .handsontable .selectedCol {$/;"	function	line:73
+.handsontable .selectedRow	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^  .handsontable .selectedRow {$/;"	function	line:78
+.handsontable .ht_clone_left th	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^  .handsontable .ht_clone_left th {$/;"	function	line:83
+.handsontable .ht_clone_top th	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^  .handsontable .ht_clone_top th {$/;"	function	line:92
+.handsontable .ht_master tr td	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.css	/^  .handsontable .ht_master tr td {$/;"	function	line:101
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^<md-dialog aria-label="Comparison for HSBC">$/;"	function	line:1
+form	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^  <form ng-cloak>$/;"	function	line:2
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^    <md-toolbar>$/;"	function	line:3
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^      <div class="md-toolbar-tools">$/;"	function	line:4
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^        <h2>Comparison for Other Products<\/h2>$/;"	function	line:5
+span	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^        <span flex><\/span>$/;"	function	line:6
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^        <md-button class="md-icon-button" ng-click="cancel()">$/;"	function	line:7
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^          <md-icon md-svg-src="images\/ic_cancel_white_48px.svg" style="font-size:36px;" aria-label="Close dialog"><\/md-icon>$/;"	function	line:8
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^    <md-dialog-content>$/;"	function	line:13
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^      <div class="md-dialog-content" ng-controller="DiagramCtrl" >$/;"	function	line:14
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^        <h2>Hello Hello Hello<\/h2>$/;"	function	line:15
+p	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^        <p>$/;"	function	line:16
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^        <div id="barContainer" ><\/div>$/;"	function	line:20
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^        <div layout="row">$/;"	function	line:21
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^          <md-card flex>$/;"	function	line:22
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^            <div class="md-toolbar-tools">$/;"	function	line:23
+span	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <span>HSBC<\/span>$/;"	function	line:24
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^            <md-content>$/;"	function	line:26
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-list class="md-dense" flex>$/;"	function	line:27
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^                <md-subheader class="md-no-sticky">Return<\/md-subheader>$/;"	function	line:28
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^                <md-list-item class="md-3-line" >$/;"	function	line:29
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^                <div class="md-list-item-text" layout="column">$/;"	function	line:30
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^                <h3>Good<\/h3>$/;"	function	line:31
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^                <md-list-item class="md-3-line" >$/;"	function	line:34
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^                <div class="md-list-item-text" layout="column">$/;"	function	line:35
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^                <h3>Good<\/h3>$/;"	function	line:36
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^                <md-list-item class="md-3-line" >$/;"	function	line:39
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^                <div class="md-list-item-text" layout="column">$/;"	function	line:40
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^                <h3>Good<\/h3>$/;"	function	line:41
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^          <md-card flex>$/;"	function	line:47
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^            <div class="md-toolbar-tools">$/;"	function	line:48
+span	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <span>BOC<\/span>$/;"	function	line:49
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^            <md-list class="md-dense" flex>$/;"	function	line:51
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-subheader class="md-no-sticky">Return<\/md-subheader>$/;"	function	line:52
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-list-item class="md-3-line" >$/;"	function	line:53
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <div class="md-list-item-text" layout="column">$/;"	function	line:54
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <h3>Bad<\/h3>$/;"	function	line:55
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-list-item class="md-3-line" >$/;"	function	line:58
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <div class="md-list-item-text" layout="column">$/;"	function	line:59
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <h3>Bad<\/h3>$/;"	function	line:60
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-list-item class="md-3-line" >$/;"	function	line:63
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <div class="md-list-item-text" layout="column">$/;"	function	line:64
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <h3>Bad<\/h3>$/;"	function	line:65
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^          <md-card flex>$/;"	function	line:70
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^            <div class="md-toolbar-tools">$/;"	function	line:71
+span	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <span>Standard Charter<\/span>$/;"	function	line:72
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^            <md-list class="md-dense" flex>$/;"	function	line:74
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-subheader class="md-no-sticky">Return<\/md-subheader>$/;"	function	line:75
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-list-item class="md-3-line" >$/;"	function	line:76
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <div class="md-list-item-text" layout="column">$/;"	function	line:77
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <h3>Bad<\/h3>$/;"	function	line:78
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-list-item class="md-3-line" >$/;"	function	line:81
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <div class="md-list-item-text" layout="column">$/;"	function	line:82
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <h3>Bad<\/h3>$/;"	function	line:83
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-list-item class="md-3-line" >$/;"	function	line:86
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <div class="md-list-item-text" layout="column">$/;"	function	line:87
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <h3>Bad<\/h3>$/;"	function	line:88
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^          <md-card flex>$/;"	function	line:93
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^            <div class="md-toolbar-tools">$/;"	function	line:94
+span	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <span>Citi<\/span>$/;"	function	line:95
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^            <md-list class="md-dense" flex>$/;"	function	line:97
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-subheader class="md-no-sticky">Return<\/md-subheader>$/;"	function	line:98
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-list-item class="md-3-line" >$/;"	function	line:99
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <div class="md-list-item-text" layout="column">$/;"	function	line:100
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <h3>Bad<\/h3>$/;"	function	line:101
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-list-item class="md-3-line" >$/;"	function	line:104
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <div class="md-list-item-text" layout="column">$/;"	function	line:105
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <h3>Bad<\/h3>$/;"	function	line:106
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-list-item class="md-3-line" >$/;"	function	line:109
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <div class="md-list-item-text" layout="column">$/;"	function	line:110
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <h3>Bad<\/h3>$/;"	function	line:111
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^          <md-card flex>$/;"	function	line:116
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^            <div class="md-toolbar-tools">$/;"	function	line:117
+span	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <span>Hang Seng<\/span>$/;"	function	line:118
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^            <md-list class="md-dense" flex>$/;"	function	line:120
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-subheader class="md-no-sticky">Return<\/md-subheader>$/;"	function	line:121
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-list-item class="md-3-line" >$/;"	function	line:122
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <div class="md-list-item-text" layout="column">$/;"	function	line:123
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <h3>Good<\/h3>$/;"	function	line:124
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-list-item class="md-3-line" >$/;"	function	line:127
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <div class="md-list-item-text" layout="column">$/;"	function	line:128
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <h3>Good<\/h3>$/;"	function	line:129
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <md-list-item class="md-3-line" >$/;"	function	line:132
+div	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <div class="md-list-item-text" layout="column">$/;"	function	line:133
+h	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^              <h3>Good<\/h3>$/;"	function	line:134
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^    <md-dialog-actions layout="row">$/;"	function	line:142
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^      <md-button ng-click="" target="_blank" md-autofocus>$/;"	function	line:143
+span	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^      <span flex><\/span>$/;"	function	line:146
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^      <md-button ng-click="" class="md-primary">$/;"	function	line:147
+md	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/dialog.html	/^      <md-button ng-click="" class="md-primary">$/;"	function	line:150
+Highcharts	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var Highcharts = require('highcharts');$/;"	variable	line:8
+Highstock	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var Highstock = require('highcharts\/highstock');$/;"	variable	line:9
+spcal	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var spcal = angular.module('spcal',[$/;"	variable	line:13
+dpsChart	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var dpsChart;$/;"	variable	line:20
+dcdcChart	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var dcdcChart;$/;"	variable	line:21
+barChart	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var barChart;$/;"	variable	line:22
+pairCurr	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var pairCurr;$/;"	variable	line:23
+rateData	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var rateData = [['N\/A', 'N\/A', 'N\/A', 'N\/A', 'N\/A', 'N\/A'],$/;"	variable	line:24
+container	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var container;$/;"	variable	line:34
+hot	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var hot;$/;"	variable	line:35
+$interval	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $interval(function () {$/;"	function	line:51
+onCurPairChange	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.onCurPairChange = function(depoCur, linkCur) {$/;"	function	line:57
+switch	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^        switch (pairCurr){$/;"	function	line:62
+convert2dp	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.convert2dp = function(){$/;"	function	line:180
+onStockChange	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.onStockChange = function(stockName) {$/;"	function	line:184
+calculateConversionRate	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.calculateConversionRate = function() {$/;"	function	line:201
+calculateCouponPa	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.calculateCouponPa = function() {$/;"	function	line:214
+calculateStrikePrice	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.calculateStrikePrice = function() {$/;"	function	line:232
+resizeDiag	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.resizeDiag = function(ev) {$/;"	function	line:254
+showAdvanced	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.showAdvanced = function(ev) {$/;"	function	line:264
+DialogController	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function DialogController($scope, $mdDialog) {$/;"	function	line:279
+hide	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^      $scope.hide = function() {$/;"	function	line:280
+cancel	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^      $scope.cancel = function() {$/;"	function	line:284
+answer	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^      $scope.answer = function(answer) {$/;"	function	line:288
+linkedCurrencyFilter	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.linkedCurrencyFilter = function(inputCur) {$/;"	function	line:339
+DemoCtrl	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^  \/\/ function DemoCtrl ($timeout, $q, $log) {$/;"	function	line:354
+newState	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function newState(state) {$/;"	function	line:368
+querySearch	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function querySearch (query) {$/;"	function	line:380
+$timeout	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^        $timeout(function () { deferred.resolve( results ); }, Math.random() * 1000, false);$/;"	function	line:385
+searchTextChange	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function searchTextChange(text) {$/;"	function	line:392
+selectedItemChange	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function selectedItemChange(item) {$/;"	function	line:396
+loadAll	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function loadAll() {$/;"	function	line:403
+createFilterFor	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function createFilterFor(query) {$/;"	function	line:423
+filterFn	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^      return function filterFn(state) {$/;"	function	line:426
+themeIcons	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var themeIcons = function ($mdIconProvider) {$/;"	function	line:435
+themeIcons	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var themeIcons = function ($mdIconProvider) {$/;"	function	line:435
+onlyExactMatch	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function onlyExactMatch(queryStr, value) {$/;"	function	line:486
+$timeout	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $timeout(function () {$/;"	function	line:497
+showAdvanced	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^  $scope.showAdvanced = function(ev) {$/;"	function	line:680
+DialogController	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^  function DialogController($scope, $mdDialog) {$/;"	function	line:696
+hide	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.hide = function() {$/;"	function	line:697
+cancel	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.cancel = function() {$/;"	function	line:701
+answer	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.answer = function(answer) {$/;"	function	line:705
+onYouTubeIframeAPIReady	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^  onYouTubeIframeAPIReady = function () {$/;"	function	line:710
+onReady	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^                onReady: function (event) {$/;"	function	line:725

@@ -12,9 +12,6 @@ require('highcharts/modules/data.js')(Highstock);
 
 var spcal = angular.module('spcal',[
       angularMeteor,
-      // 'ui.router',
-      // 'angularUtils.directives.dirPagination',
-      // 'uiGmapgoogle-maps',
       ngMaterial,
       'ngMessages',
       'ngSanitize'
@@ -22,6 +19,20 @@ var spcal = angular.module('spcal',[
 
 var dpsChart;
 var dcdcChart;
+var barChart;
+var pairCurr;
+var rateData = [['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']
+];
+var container;
+var hot;
 
 spcal.config(function ($mdThemingProvider) {
 
@@ -32,7 +43,7 @@ spcal.config(function ($mdThemingProvider) {
       .primaryPalette('blue');
     })
 
-  .controller('ValidationCtrl', function ($scope, $mdDialog, $interval) {
+  .controller('ValidationCtrl', function ($timeout, $scope, $mdDialog, $interval) {
     $scope.theme = 'red';
 
     var isThemeRed = true;
@@ -47,6 +58,113 @@ spcal.config(function ($mdThemingProvider) {
       if (depoCur && linkCur) {
         var seq = depoCur + "-" + linkCur;
         var inv = linkCur + "-" + depoCur;
+        pairCurr = seq;
+        switch (pairCurr){
+          case "HKD-AUD":
+            rateData = [
+              [5.9015, 5.8938, 5.8961, 5.894, 5.915, 5.9401],
+              [5.9054, 5.9007, 5.9055, 5.906, 5.9362, 5.9683],
+              [5.909, 5.9072, 5.9142, 5.9171, 5.9559, 'N/A'],
+              [5.9124, 5.9132, 5.9223, 5.9274, 'N/A', 'N/A'],
+              [5.9157, 5.919, 5.93, 5.9371, 'N/A', 'N/A'],
+              [5.9188, 5.9244, 5.9372, 5.9462, 'N/A', 'N/A'],
+              [5.9218, 5.9296, 5.9441, 5.9549, 'N/A', 'N/A'],
+              [5.9246, 5.9345, 5.9507, 5.9632, 'N/A', 'N/A'],
+              [5.9274, 5.9392, 5.957, 'N/A', 'N/A', 'N/A']
+            ];
+            break;
+          case "USD-AUD":
+            rateData = [
+              [0.7594, 0.7589, 0.7583, 0.7577, 0.7596, 0.7616],
+              [0.76, 0.7599, 0.7597, 0.7595, 0.7627, 0.7658],
+              [0.7606, 0.7608, 0.7609, 0.7611, 0.7655, 0.7696],
+              [0.7611, 0.7617, 0.7621, 0.7626, 0.7681, 'N/A'],
+              [0.7616, 0.7625, 0.7632, 0.764, 'N/A', 'N/A'],
+              [0.7621, 0.7632, 0.7643, 0.7653, 'N/A', 'N/A'],
+              [0.7625, 0.7639, 0.7652, 0.7665, 'N/A', 'N/A'],
+              [0.7629, 0.7646, 0.7662, 0.7676, 'N/A', 'N/A'],
+              [0.7633, 0.7653, 0.767, 0.7687, 'N/A', 'N/A']
+            ];
+            break;
+          case "GBP-HKD":
+            rateData = [
+              [9.7533, 9.7583, 9.7561, 9.7433, 9.668, 'N/A'],
+              [9.7475, 9.7482, 9.7424, 9.7268, 'N/A', 'N/A'],
+              [9.7419, 9.7387, 9.7296, 9.7113, 'N/A', 'N/A'],
+              [9.7367, 9.7298, 9.7174, 9.6965, 'N/A', 'N/A'],
+              [9.7317, 9.7212, 9.7058, 9.6824, 'N/A', 'N/A'],
+              [9.7268, 9.713, 9.6948, 9.6689, 'N/A', 'N/A'],
+              [9.7222, 9.7052, 9.6841, 9.6559, 'N/A', 'N/A'],
+              [9.7177, 9.6976, 9.6739, 9.6434, 'N/A', 'N/A'],
+              [9.7134, 9.6903, 9.664, 'N/A', 'N/A', 'N/A']
+            ];
+            break;
+          case "HKD-CAD":
+            rateData = [
+              [5.9099, 5.9081, 5.8937, 5.885, 5.8985, 5.9098],
+              [5.9146, 5.9159, 5.9056, 5.9005, 5.925, 5.9451],
+              [5.9189, 5.9231, 5.9162, 5.9143, 5.9484, 5.976],
+              [5.9229, 5.9296, 5.9259, 5.9268, 5.9693, 'N/A'],
+              [5.9266, 5.9357, 5.9348, 5.9382, 'N/A', 'N/A'],
+              [5.9302, 5.9414, 5.943, 5.9487, 'N/A', 'N/A'],
+              [5.9335, 5.9467, 5.9507, 5.9584, 'N/A', 'N/A'],
+              [5.9367, 5.9518, 5.958, 5.9676, 'N/A', 'N/A'],
+              [5.9397, 5.9566, 5.9648, 5.9762, 'N/A', 'N/A']
+            ];
+            break;
+          case "CAD-HKD":
+            rateData = [
+                [6.0066, 6.0108, 6.0259, 6.0321, 6.0222, 6.0196],
+                [6.0015, 6.0022, 6.0135, 6.0165, 5.997, 5.9863],
+                [5.9969, 5.9946, 6.0025, 6.0029, 5.9749, 5.9571],
+                [5.9927, 5.9878, 5.9928, 5.9908, 5.955, 5.9307],
+                [5.9887, 5.9815, 5.9839, 5.9798, 5.9367, 'N/A'],
+                [5.9851, 5.9757, 5.9757, 5.9697, 'N/A', 'N/A'],
+                [5.9816, 5.9702, 5.968, 5.9602, 'N/A', 'N/A'],
+                [5.9784, 5.9651, 5.9608, 5.9514, 'N/A', 'N/A'],
+                [5.9753, 5.9603, 5.9541, 5.943, 'N/A', 'N/A']
+              ];
+              break;
+          case "EUR-HKD":
+            rateData = [
+                [8.4099, 8.4216, 8.4286, 8.4289, 8.435, 8.4295],
+                [8.4038, 8.4111, 8.414, 8.411, 8.4037, 8.3881],
+                [8.3982, 8.4015, 8.4009, 8.3949, 8.3755, 8.3505],
+                [8.3931, 8.3927, 8.3889, 8.3802, 8.3495, 8.3157],
+                [8.3882, 8.3846, 8.3779, 8.3667, 8.3254, 'N/A'],
+                [8.3837, 8.3771, 8.3676, 8.3541, 'N/A', 'N/A'],
+                [8.3795, 8.3699, 8.358, 8.3422, 'N/A', 'N/A'],
+                [8.3755, 8.3632, 8.3488, 8.331, 'N/A', 'N/A'],
+                [8.3716, 8.3568, 8.3401, 8.3202, 'N/A', 'N/A']
+              ];
+              break;
+          case "HKD-CNY":
+            rateData = [
+                [1.1326, 1.1301, 1.128, 1.1254, 1.1188, 1.1147],
+                [1.1336, 1.1319, 1.1304, 1.1287, 1.1248, 1.123],
+                [1.1344, 1.1333, 1.1324, 1.1313, 1.1297, 1.1296],
+                [1.1352, 1.1345, 1.1341, 1.1335, 1.1338, 1.1351],
+                [1.1358, 1.1356, 1.1356, 1.1355, 1.1374, 1.1399],
+                [1.1365, 1.1366, 1.137, 1.1373, 1.1406, 1.1441],
+                [1.137, 1.1376, 1.1383, 1.1389, 1.1435, 'N/A'],
+                [1.1375, 1.1384, 1.1395, 1.1404, 'N/A', 'N/A'],
+                [1.138, 1.1393, 1.1406, 1.1418, 'N/A', 'N/A']
+              ];
+              break;
+          default:
+            rateData = [
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']
+            ];
+        }
+        hot.loadData(rateData);
         var series = dpsChart.series;
         for (let i = 0; i < series.length; i++) {
           let column = series[i];
@@ -57,6 +175,10 @@ spcal.config(function ($mdThemingProvider) {
           }
         }
       }
+    };
+
+    $scope.convert2dp = function(){
+      document.getElementById('convertAmount').value = document.getElementById('tempAmount').innerHTML;
     };
 
     $scope.onStockChange = function(stockName) {
@@ -82,6 +204,8 @@ spcal.config(function ($mdThemingProvider) {
         tenor: dps.tenor, interest_rate: dps.yieldPa});
       if (dpsDoc) {
         dps.conversionRate = dpsDoc.conversion_rate;
+        document.getElementById('search_field').value = dpsDoc.conversion_rate;
+        document.getElementById('search_button').click();
       } else {
         dps.conversionRate = undefined;
       }
@@ -123,19 +247,33 @@ spcal.config(function ($mdThemingProvider) {
       }
     };
 
-    $scope.showAdvanced = function(ev) {
+    // $scope.$on('$viewContentLoaded', function(event)
+    //   {
+    //
+    //  });
+    $scope.resizeDiag = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'client/dialog1.tmpl.html',
+        templateUrl: 'client/toggle.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true
-      })
-      .then(function(answer) {
-        $scope.status = 'You said the information was "' + answer + '".';
-      }, function() {
-        $scope.status = 'You cancelled the dialog.';
       });
+    };
+
+    $scope.showAdvanced = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: 'client/dialog.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true
+      });
+      // .then(function(answer) {
+      //   $scope.status = 'You said the information was "' + answer + '".';
+      // }, function() {
+      //   $scope.status = 'You cancelled the dialog.';
+      // });
     };
 
     function DialogController($scope, $mdDialog) {
@@ -203,6 +341,7 @@ spcal.config(function ($mdThemingProvider) {
         && (!(inputCur.abbrev === 'USD' && $scope.cal.dps.depositCurrency === 'HKD')
         && (!(inputCur.abbrev === 'HKD' && $scope.cal.dps.depositCurrency === 'USD')));
     };
+
   });
 
 // (function () {
@@ -323,45 +462,45 @@ angular.module('spcal')
   .config(themeIcons);
 
 
-spcal.controller('MatrixCtrl', function($timeout, $scope){
-  var data = [
-    ["", "Ford", "Volvo", "Toyota", "Honda"],
-    ["2016", 10, 11, 12, 13],
-    ["2017", 20, 11, 14, 13],
-    ["2018", 30, 15, 12, 13]
-  ];
+spcal.controller('MatrixCtrl', function($mdDialog, $timeout, $scope){
+    var searchFiled = document.getElementById('search_field');
+    container = document.getElementById('example');
+    hot = new Handsontable(container, {
+      data: rateData,
+      headerToolTips: true,
+      rowHeaders: ['4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%'],
+      nestedHeaders: [
+        [{label: 'Conversion Rate', colspan: 6}],
+        ['1W', '2W', '3W', '1M', '2M', '3M']
+      ],
+      colWidths: 100,
+      rowHeights: 40,
+      search: {
+        queryMethod: onlyExactMatch
+      },
+      currentRowClassName: 'selectedRow',
+      currentColClassName: 'selectedCol',
+      editor: false,
+    });
 
-  var rateData = [
-    [0.7594, 0.7589, 0.7583, 0.7577, 0.7596, 0.7616],
-    [0.76, 0.7599, 0.7597, 0.7595, 0.7627, 0.7658],
-    [0.7606, 0.7608, 0.7609, 0.7611, 0.7655, 0.7696],
-    [0.7611, 0.7617, 0.7621, 0.7626, 0.7681, 'N/A'],
-    [0.7616, 0.7625, 0.7632, 0.764, 'N/A', 'N/A'],
-    [0.7621, 0.7632, 0.7643, 0.7653, 'N/A', 'N/A'],
-    [0.7625, 0.7639, 0.7652, 0.7665, 'N/A', 'N/A'],
-    [0.7629, 0.7646, 0.7662, 0.7676, 'N/A', 'N/A'],
-    [0.7633, 0.7653, 0.767, 0.7687, 'N/A', 'N/A']
-  ];
+    function onlyExactMatch(queryStr, value) {
+      return queryStr.toString() === value.toString();
+    }
 
-  var container = document.getElementById('example');
-  var hot = new Handsontable(container, {
-    data: rateData,
-    headerToolTips: true,
-    rowHeaders: ['4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%'],
-    nestedHeaders: [
-      [{label: 'Conversion Rate', colspan: 6}],
-      ['1W', '2W', '3W', '1M', '2M', '3M']
-    ],
-    colWidths: 100,
-    rowHeights: 40,
-    currentRowClassName: 'selectedRow',
-    currentColClassName: 'selectedCol',
-    editor: false,
-  });
+    Handsontable.Dom.addEvent(search_button, 'click', function (event) {
+      queryResult = hot.search.query(document.getElementById('search_field').value);
+      console.log(queryResult);
+      hot.render();
+      hot.selectCell(queryResult[0].row, queryResult[0].col);
+    });
 
-   $timeout(function () {
-     hot.selectCell(0,0);
-   }, 2);
+    $timeout(function () {
+      hot.selectCell(0,0);
+      document.getElementById('toggleBtn').click();
+      $mdDialog.cancel();
+      // document.getElementById('dpsChartContainer').style.width = "30px";
+      // document.getElementById('dpsChartContainer').style.width = "100%";
+    }, 1);
 });
 
 spcal.controller('DiagramCtrl', function ($scope) {
@@ -408,12 +547,14 @@ spcal.controller('DiagramCtrl', function ($scope) {
       }
     });
   });
-  /*
   $.get('stockPrice.csv', function (data) {
     // Create the chart
-    Highstock.stockChart('container_v2', {
+    barChart = Highstock.stockChart('barContainer', {
       chart: {
-        type: 'column'
+        type: 'column',
+        width: 900,
+        height: 600,
+        marginLeft: 100
       },
       title: {
         text: 'Performance on Deposit Plus from Other Financial Institutions'
@@ -450,7 +591,7 @@ spcal.controller('DiagramCtrl', function ($scope) {
         data: [6, 2, 4, 3, 1]
       }]
     });
-  });*/
+  });
 });
 
 spcal.config(function($mdThemingProvider) {
@@ -522,11 +663,11 @@ spcal.controller('videoCtrl',function($scope, $mdDialog){
       clickOutsideToClose:true,
       fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
     })
-    .then(function(answer) {
-      $scope.status = 'You said the information was "' + answer + '".';
-    }, function() {
-      $scope.status = 'You cancelled the dialog.';
-    });
+    // .then(function(answer) {
+    //   $scope.status = 'You said the information was "' + answer + '".';
+    // }, function() {
+    //   $scope.status = 'You cancelled the dialog.';
+    // });
   };
 
   function DialogController($scope, $mdDialog) {
