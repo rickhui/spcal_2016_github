@@ -247,10 +247,6 @@ spcal.config(function ($mdThemingProvider) {
       }
     };
 
-    // $scope.$on('$viewContentLoaded', function(event)
-    //   {
-    //
-    //  });
     $scope.resizeDiag = function(ev) {
       $mdDialog.show({
         controller: DialogController,
@@ -269,11 +265,6 @@ spcal.config(function ($mdThemingProvider) {
         targetEvent: ev,
         clickOutsideToClose:true
       });
-      // .then(function(answer) {
-      //   $scope.status = 'You said the information was "' + answer + '".';
-      // }, function() {
-      //   $scope.status = 'You cancelled the dialog.';
-      // });
     };
 
     function DialogController($scope, $mdDialog) {
@@ -344,14 +335,7 @@ spcal.config(function ($mdThemingProvider) {
 
   });
 
-// (function () {
-  // 'use strict';
-  // angular
-  //     .module('spcal')
-  //     .controller('DemoCtrl', DemoCtrl);
   spcal.controller('AutoCompleteCtrl', function ($timeout, $q, $log) {
-
-  // function DemoCtrl ($timeout, $q, $log) {
     var self = this;
 
     self.simulateQuery = true;
@@ -498,8 +482,6 @@ spcal.controller('MatrixCtrl', function($mdDialog, $timeout, $scope){
       hot.selectCell(0,0);
       document.getElementById('toggleBtn').click();
       $mdDialog.cancel();
-      // document.getElementById('dpsChartContainer').style.width = "30px";
-      // document.getElementById('dpsChartContainer').style.width = "100%";
     }, 1);
 });
 
@@ -549,12 +531,12 @@ spcal.controller('DiagramCtrl', function ($scope) {
   });
   $.get('stockPrice.csv', function (data) {
     // Create the chart
-    barChart = Highstock.stockChart('barContainer', {
+    barChart = Highcharts.chart('barContainer', {
       chart: {
         type: 'column',
         width: 900,
         height: 600,
-        marginLeft: 100
+        marginLeft: 100,
       },
       title: {
         text: 'Performance on Deposit Plus from Other Financial Institutions'
@@ -653,6 +635,26 @@ spcal.config(function($mdThemingProvider) {
     ];
 });
 
+spcal.controller('AppCtrl', ['$interval',
+    function($interval) {
+      var self = this;
+
+      self.activated = true;
+      self.determinateValue = 30;
+
+      // Iterate every 100ms, non-stop and increment
+      // the Determinate loader.
+      $interval(function() {
+
+        self.determinateValue += 1;
+        if (self.determinateValue > 100) {
+          self.determinateValue = 30;
+        }
+
+      }, 100);
+    }
+  ]);
+
 spcal.controller('videoCtrl',function($scope, $mdDialog){
   $scope.showAdvanced = function(ev) {
     $mdDialog.show({
@@ -663,11 +665,6 @@ spcal.controller('videoCtrl',function($scope, $mdDialog){
       clickOutsideToClose:true,
       fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
     })
-    // .then(function(answer) {
-    //   $scope.status = 'You said the information was "' + answer + '".';
-    // }, function() {
-    //   $scope.status = 'You cancelled the dialog.';
-    // });
   };
 
   function DialogController($scope, $mdDialog) {

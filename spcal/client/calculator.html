@@ -10,17 +10,23 @@
                   <div layout="row">
                     <md-input-container class="md-block" flex>
                       <label>Deposit Currency</label>
-                      <md-select ng-model="cal.dps.depositCurrency" ng-change="onCurPairChange(cal.dps.depositCurrency, cal.dps.linkedCurrency)" required>
+                      <md-select name="depoCurr" ng-model="cal.dps.depositCurrency" ng-change="onCurPairChange(cal.dps.depositCurrency, cal.dps.linkedCurrency)" required>
                         <md-option ng-repeat="currency in currencies" value="{{currency.abbrev}}">{{currency.abbrev}}</md-option>
                       </md-select>
+                      <div ng-messages="DpsInvForm.depoCurr.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>Linked Currency</label>
-                      <md-select ng-model="cal.dps.linkedCurrency" ng-change="onCurPairChange(cal.dps.depositCurrency, cal.dps.linkedCurrency)" required>
+                      <md-select name="linkCurr" ng-model="cal.dps.linkedCurrency" ng-change="onCurPairChange(cal.dps.depositCurrency, cal.dps.linkedCurrency)" required>
                         <md-option ng-repeat="currency in currencies | filter:linkedCurrencyFilter" value="{{currency.abbrev}}">
                           {{currency.abbrev}}
                         </md-option>
                       </md-select>
+                      <div ng-messages="DpsInvForm.linkCurr.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
                     </md-input-container>
                   </div>
 
@@ -31,18 +37,21 @@
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>Tenor</label>
-                      <md-select ng-model="cal.dps.tenor" required>
+                      <md-select name="tenor" ng-model="cal.dps.tenor" required>
                         <md-option ng-repeat="tenor in dpsTenors" value="{{tenor}}">
                           {{tenor}}
                         </md-option>
                       </md-select>
+                      <div ng-messages="DpsInvForm.tenor.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
                     </md-input-container>
                   </div>
 
                   <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
                       <label>Amount Deposit <span style="font-size:12px" ng-if="cal.dps.depositCurrency"> ({{cal.dps.depositCurrency}}) </span></label>
-                      <span id="tempAmount" style="display:none;">{{cal.dps.amountDeposit | number:2}}</span>
+                      <span id="tempAmount" style="display:none;">{{cal.dps.amountDeposit | number:0}}</span>
                       <input md-maxlength="20"  ng-maxlength="20" id="convertAmount" name="amountDeposit" ng-pattern="/^[0-9]*$/" ng-model="cal.dps.amountDeposit" ng-blur="convert2dp()">
                       <div ng-messages="DpsInvForm.amountDeposit.$error" style="color:maroon" role="alert">
                         <div ng-message="maxlength">Your field is too long.</div>
@@ -120,9 +129,12 @@
                   <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex>
                       <label>Linked Stock</label>
-                      <md-select ng-model="cal.dcdc.linkedStock" ng-change="onStockChange(cal.dcdc.linkedStock)" required>
+                      <md-select name="linkStock" ng-model="cal.dcdc.linkedStock" ng-change="onStockChange(cal.dcdc.linkedStock)" required>
                         <md-option ng-repeat="stock in stocks" value="{{stock}}">{{stock}}</md-option>
                       </md-select>
+                      <div ng-messages="DcdcInvForm.linkStock.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>Spot Price</label>
@@ -132,7 +144,7 @@
 
                   <div layout="row">
                     <md-input-container class="md-block" flex>
-                      <div style="color:#afaeae">Query for *</div>
+                      <div style="color:#afaeae">Query for</div>
                       <md-radio-group layout="row" ng-model="cal.dcdc.scenario">
                         <md-radio-button value="1" style="margin-right: 100px">Coupon P.A.</md-radio-button>
                         <md-radio-button value="2">Strike Price</md-radio-button>
@@ -144,44 +156,65 @@
                     <md-input-container ng-if="cal.dcdc.scenario == 1" class="md-block" flex>
                       <label>Strike Price</label>
                       <input name="strikePrice" ng-model="cal.dcdc.strikePrice" type="number" min="1" pattern="\d+" required>
+                      <div ng-messages="DcdcInvForm.strikePrice.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
                     </md-input-container>
                     <md-input-container ng-if="cal.dcdc.scenario == 2" class="md-block" flex>
                       <label>Coupon P.A.</label>
                       <input name="couponPa" ng-model="cal.dcdc.couponPa" type="number" min="1" required>
+                      <div ng-messages="DcdcInvForm.couponPa.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>Tenor</label>
-                      <md-select ng-model="cal.dcdc.tenor" required>
+                      <md-select name="tenor" ng-model="cal.dcdc.tenor" required>
                         <md-option ng-repeat="tenor in dcdcTenors" value="{{tenor.value}}">
                           {{tenor.name}}
                         </md-option>
                       </md-select>
+                      <div ng-messages="DcdcInvForm.tenor.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
                     </md-input-container>
                   </div>
 
                   <div layout="row">
                     <md-input-container class="md-block" flex>
                       <label>KO Type</label>
-                      <md-select ng-model="cal.dcdc.koType" required>
+                      <md-select name="koType" ng-model="cal.dcdc.koType" required>
                         <md-option ng-repeat="koType in koTypes" value="{{koType}}">{{koType}}</md-option>
                       </md-select>
+                      <div ng-messages="DcdcInvForm.koType.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>KO Barrier</label>
                       <input name="koBarrier" ng-model="cal.dcdc.koBarrier" type="number" min="1" pattern="\d+" required>
+                      <div ng-messages="DcdcInvForm.koBarrier.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
                     </md-input-container>
                   </div>
 
                   <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex>
                       <label>Barrier Type</label>
-                      <md-select ng-model="cal.dcdc.barrierType" required>
+                      <md-select name="barrierType" ng-model="cal.dcdc.barrierType" required>
                         <md-option ng-repeat="barrierType in barrierTypes" value="{{barrierType}}">{{barrierType}}</md-option>
                       </md-select>
+                      <div ng-messages="DcdcInvForm.barrierType.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>KI Barrier</label>
                       <input name="kiBarrier" ng-model="cal.dcdc.kiBarrier" type="number" min="1" pattern="\d+" ng-required="cal.dcdc.barrierType !== 'NONE'" ng-disabled="cal.dcdc.barrierType === 'NONE'">
+                      <div ng-messages="DcdcInvForm.kiBarrier.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
                     </md-input-container>
                   </div>
 
