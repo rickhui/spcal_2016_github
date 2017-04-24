@@ -75,6 +75,9 @@ spcal.config(function ($mdThemingProvider) {
               [5.9274, 5.9392, 5.957, 'N/A', 'N/A', 'N/A']
             ];
             break;
+          case "AUD-HKD":
+          //TODO:Add rateData
+            break;
           case "USD-AUD":
             rateData = [
               [0.7594, 0.7589, 0.7583, 0.7577, 0.7596, 0.7616],
@@ -88,7 +91,10 @@ spcal.config(function ($mdThemingProvider) {
               [0.7633, 0.7653, 0.767, 0.7687, 'N/A', 'N/A']
             ];
             break;
-          case "GBP-HKD":
+          case "AUD-USD":
+          //TODO:Add rateData
+            break;
+          case "HKD-GBP":
             rateData = [
               [9.7533, 9.7583, 9.7561, 9.7433, 9.668, 'N/A'],
               [9.7475, 9.7482, 9.7424, 9.7268, 'N/A', 'N/A'],
@@ -127,7 +133,7 @@ spcal.config(function ($mdThemingProvider) {
                 [5.9753, 5.9603, 5.9541, 5.943, 'N/A', 'N/A']
               ];
               break;
-          case "EUR-HKD":
+          case "HKD-EUR":
             rateData = [
                 [8.4099, 8.4216, 8.4286, 8.4289, 8.435, 8.4295],
                 [8.4038, 8.4111, 8.414, 8.411, 8.4037, 8.3881],
@@ -140,7 +146,7 @@ spcal.config(function ($mdThemingProvider) {
                 [8.3716, 8.3568, 8.3401, 8.3202, 'N/A', 'N/A']
               ];
               break;
-          case "HKD-CNY":
+          case "HKD-CNH":
             rateData = [
                 [1.1326, 1.1301, 1.128, 1.1254, 1.1188, 1.1147],
                 [1.1336, 1.1319, 1.1304, 1.1287, 1.1248, 1.123],
@@ -290,7 +296,7 @@ spcal.config(function ($mdThemingProvider) {
       }
     };
 
-    $scope.currencies = ('AUD, CAD, CHF, CNY, EUR, GBP, HKD, JPY, NZD, SGD, USD').split(', ').map(function(currency) {
+    $scope.currencies = ('AUD, CAD, CNH, EUR, GBP, HKD, USD').split(', ').map(function(currency) {
       return {abbrev: currency};
     });
 
