@@ -34,6 +34,7 @@ var rateData = [['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
 ];
 var container;
 var hot;
+var videoToPlay;
 
 spcal.config(function ($mdThemingProvider) {
 
@@ -585,55 +586,87 @@ spcal.config(function($mdThemingProvider) {
   })
   .controller('SubheaderAppCtrl', function($scope) {
     var imagePath = 'images/hsbc-icon.gif';
-    $scope.messages = [
+    $scope.infolinks = [
       {
         face : imagePath,
-        what: 'Derivatives',
-        who: 'Basic Financial Concepts',
-        when: '3:08PM',
-        notes: " Get to know the products before investing"
+        what: 'Glossary Of Banking Terms',
+        who: 'HSBC Personal Banking',
+        notes: " A to Z guide on glossaries",
+        link: "https://www.hsbc.com.hk/personal/help-and-support/glossary-of-banking-terms.html"
       },
       {
         face : imagePath,
         what: 'Deposit Plus',
+        who: 'HSBC Personal Banking',
+        notes: " Set up your Deposit Plus investment now",
+        link: "https://www.hsbc.com.hk/personal/investments/structured-products/deposit-plus.html"
+      },
+    ];
+    $scope.datalinks = [
+      {
+        face : imagePath,
+        what: 'Deposit Interest Market Data',
+        who: 'HSBC Personal Banking',
+        notes: " Check the current interest rate of normal deposit",
+        link: "https://www.personal.hsbc.com.hk/1/2/hk/investments/mkt-info/deposit-rates/interest-rates"
+      },
+      {
+        face : imagePath,
+        what: 'Equity Market Data',
+        who: 'HSBC Personal Banking',
+        notes: " Check the current market price of chosen equity",
+        link: "http://www.personal.hsbc.com.hk/1/2/hk/investments/mkt-info"
+      },
+    ];
+    $scope.videos = [
+      {
+        face : imagePath,
+        what: 'Deposit Plus Overview',
         who: 'A Currency Linked Investment',
-        when: '3:08PM',
-        notes: " Get to know the products before investing"
+        notes: " Get to know the products before investing",
+        link: '_-w3mMxkVdU'
       },
       {
         face : imagePath,
         what: 'Deposit Plus Example',
         who: 'A Currency Linked Investment',
-        when: '3:08PM',
-        notes: " Get to know the products before investing"
+        notes: " Get to know the products before investing",
+        link: 'z3ZjrWkCrdY'
       },
       {
         face : imagePath,
         what: 'Deposit Plus Interest Calculation',
         who: 'A Currency Linked Investment',
-        when: '3:08PM',
-        notes: " Get to know the products before investing"
+        notes: " Get to know the products before investing",
+        link: 'fBVv_BJ81bc'
+      },
+      {
+        face : imagePath,
+        what: 'Deposit Plus Risk',
+        who: 'A Currency Linked Investment',
+        notes: " Get to know the products before investing",
+        link: 'K-QcjbuNnwg'
       },
       {
         face : imagePath,
         what: 'DCDC',
         who: 'An Equity Linked Investment',
-        when: '3:08PM',
-        notes: " Get to know the products before investing"
+        notes: " Get to know the products before investing",
+        link: 'z3ZjrWkCrdY'
       },
       {
         face : imagePath,
         what: 'DCDC Example 1 - Auto Call',
         who: 'An Equity Linked Investment',
-        when: '3:08PM',
-        notes: " Get to know the products before investing"
+        notes: " Get to know the products before investing",
+        link: 'z3ZjrWkCrdY'
       },
       {
         face : imagePath,
         what: 'DCDC Example 2 - Airbag',
         who: 'An Equity Linked Investment',
-        when: '3:08PM',
-        notes: " Get to know the products before investing"
+        notes: " Get to know the products before investing",
+        link: 'z3ZjrWkCrdY'
       },
     ];
 });
@@ -659,15 +692,17 @@ spcal.controller('AppCtrl', ['$interval',
   ]);
 
 spcal.controller('videoCtrl',function($scope, $mdDialog){
-  $scope.showAdvanced = function(ev) {
+  $scope.showAdvanced = function(ev, id) {
     $mdDialog.show({
       controller: DialogController,
       templateUrl: 'client/video.html',
       parent: angular.element(document.body),
       targetEvent: ev,
-      clickOutsideToClose:true,
+      clickOutsideToClose: true,
       fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
     })
+    //player.videoId = id;
+    videoToPlay = id;
   };
 
   function DialogController($scope, $mdDialog) {
@@ -685,31 +720,24 @@ spcal.controller('videoCtrl',function($scope, $mdDialog){
   }
 
   onYouTubeIframeAPIReady = function () {
-
-        // New Video Player, the first argument is the id of the div.
-        // Make sure it's a global variable.
-        player = new YT.Player("player", {
-
-            height: "400",
-            width: "600",
-
-            // videoId is the "v" in URL (ex: http://www.youtube.com/watch?v=LdH1hSWGFGU, videoId = "LdH1hSWGFGU")
-            videoId: "wO_-MtWejRM",
-
-            // Events like ready, state change,
-            events: {
-
-                onReady: function (event) {
-
-                    // Play video when player ready.
-                    event.target.playVideo();
-                }
-
-            }
-
-        });
-
-    };
-
-    YT.load();
+    // New Video Player, the first argument is the id of the div.
+    // Make sure it's a global variable.
+    if (videoToPlay) {
+      player = new YT.Player("player", {
+        height: "400",
+        width: "600",
+        // videoId is the "v" in URL (ex: http://www.youtube.com/watch?v=LdH1hSWGFGU, videoId = "LdH1hSWGFGU")
+        videoId: videoToPlay,
+        // Events like ready, state change,
+        events: {
+          onReady: function (event) {
+            // Play video when player ready.
+            event.target.playVideo();
+          }
+        }
+      });
+      console.log(player);
+    }
+  }
+  YT.load();
 });
