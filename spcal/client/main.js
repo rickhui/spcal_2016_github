@@ -184,6 +184,11 @@ spcal.config(function ($mdThemingProvider) {
     };
 
     $scope.onStockChange = function(stockName) {
+      if (stockName === '700 HK') {
+        $scope.cal.dcdc.spotPrice = 242.800;
+      } else {
+        $scope.cal.dcdc.spotPrice = 192.000;
+      }
       var series = dcdcChart.series;
       var navigatorIndex = series.length - 1;
       for (let i = 0; i < navigatorIndex; i++) {
