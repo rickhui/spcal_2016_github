@@ -1,18 +1,23 @@
 <head>
   <title>Structured Product Calculator</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico?v=2" sizes="16x16 32x32" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 </head>
 
 <body ng-app="spcal" ng-cloak>
   <div ng-include src="'client/nav.html'"></div>
-  <div layout="column">
-  <div flex layout="row" >
-    <div flex ng-include src="'client/calculator.html'"></div>
-    <div flex ng-include src="'client/matrix.html'"></div>
+  <div layout="row">
+    <div flex layout="column" >
+      <div flex ng-include src="'client/calculator.html'"></div>
+    </div>
+    <div flex layout="column">
+      <div layout="row">
+        <div flex ng-include src="'client/matrix.html'"></div>
+      </div>
+      <div layout="row">
+        <div flex ng-include src="'client/reference.html'"></div>
+      </div>
+    </div>
   </div>
-  <div flex layout="row">
-    <div flex ng-include src="'client/diagram.html'"></div>
-    <div flex ng-include src="'client/reference.html'"></div>
-  </div>
-  </div>
+
 </body>

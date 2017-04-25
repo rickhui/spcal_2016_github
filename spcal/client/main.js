@@ -5,18 +5,36 @@ import Handsontable from 'handsontable-pro/dist/handsontable.full';
 import 'angular-material/angular-material.css';
 import 'handsontable-pro/dist/handsontable.full.css';
 
-
-var Highcharts = require('highcharts/highstock');
+var Highcharts = require('highcharts');
+var HighBarCharts = require('highcharts/highstock');
+var Highstock = require('highcharts/highstock');
+require('highcharts/modules/data.js')(Highcharts);
+require('highcharts/modules/data.js')(Highstock);
 
 var spcal = angular.module('spcal',[
       angularMeteor,
-      // 'ui.router',
-      // 'angularUtils.directives.dirPagination',
-      // 'uiGmapgoogle-maps',
       ngMaterial,
       'ngMessages',
       'ngSanitize'
 ]);
+
+var dpsChart;
+var dcdcChart;
+var barChart;
+var pairCurr;
+var rateData = [['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']
+];
+var container;
+var hot;
+var videoToPlay;
 
 spcal.config(function ($mdThemingProvider) {
 
@@ -27,87 +45,305 @@ spcal.config(function ($mdThemingProvider) {
       .primaryPalette('blue');
     })
 
-  .controller('ValidationCtrl', function ($scope, $mdDialog, $interval) {
+  .controller('ValidationCtrl', function ($timeout, $scope, $mdDialog, $interval) {
     $scope.theme = 'red';
 
-  var isThemeRed = true;
+    var isThemeRed = true;
 
-  $interval(function () {
-    $scope.theme = isThemeRed ? 'blue' : 'red';
+    $interval(function () {
+      $scope.theme = isThemeRed ? 'blue' : 'red';
 
-    isThemeRed = !isThemeRed;
-  }, 2000);
+      isThemeRed = !isThemeRed;
+    }, 2000);
 
-  $scope.showAdvanced = function(ev) {
-    $mdDialog.show({
-      controller: DialogController,
-      templateUrl: 'client/dialog1.tmpl.html',
-      parent: angular.element(document.body),
-      targetEvent: ev,
-      clickOutsideToClose:true
-    })
-    .then(function(answer) {
-      $scope.status = 'You said the information was "' + answer + '".';
-    }, function() {
-      $scope.status = 'You cancelled the dialog.';
+    $scope.onCurPairChange = function(depoCur, linkCur) {
+      if (depoCur && linkCur) {
+        var seq = depoCur + "-" + linkCur;
+        var inv = linkCur + "-" + depoCur;
+        pairCurr = seq;
+        switch (pairCurr){
+          case "HKD-AUD":
+            rateData = [
+              [5.9015, 5.8938, 5.8961, 5.894, 5.915, 5.9401],
+              [5.9054, 5.9007, 5.9055, 5.906, 5.9362, 5.9683],
+              [5.909, 5.9072, 5.9142, 5.9171, 5.9559, 'N/A'],
+              [5.9124, 5.9132, 5.9223, 5.9274, 'N/A', 'N/A'],
+              [5.9157, 5.919, 5.93, 5.9371, 'N/A', 'N/A'],
+              [5.9188, 5.9244, 5.9372, 5.9462, 'N/A', 'N/A'],
+              [5.9218, 5.9296, 5.9441, 5.9549, 'N/A', 'N/A'],
+              [5.9246, 5.9345, 5.9507, 5.9632, 'N/A', 'N/A'],
+              [5.9274, 5.9392, 5.957, 'N/A', 'N/A', 'N/A']
+            ];
+            break;
+          case "AUD-HKD":
+          //TODO:Add rateData
+            break;
+          case "USD-AUD":
+            rateData = [
+              [0.7594, 0.7589, 0.7583, 0.7577, 0.7596, 0.7616],
+              [0.76, 0.7599, 0.7597, 0.7595, 0.7627, 0.7658],
+              [0.7606, 0.7608, 0.7609, 0.7611, 0.7655, 0.7696],
+              [0.7611, 0.7617, 0.7621, 0.7626, 0.7681, 'N/A'],
+              [0.7616, 0.7625, 0.7632, 0.764, 'N/A', 'N/A'],
+              [0.7621, 0.7632, 0.7643, 0.7653, 'N/A', 'N/A'],
+              [0.7625, 0.7639, 0.7652, 0.7665, 'N/A', 'N/A'],
+              [0.7629, 0.7646, 0.7662, 0.7676, 'N/A', 'N/A'],
+              [0.7633, 0.7653, 0.767, 0.7687, 'N/A', 'N/A']
+            ];
+            break;
+          case "AUD-USD":
+          //TODO:Add rateData
+            break;
+          case "HKD-GBP":
+            rateData = [
+              [9.7533, 9.7583, 9.7561, 9.7433, 9.668, 'N/A'],
+              [9.7475, 9.7482, 9.7424, 9.7268, 'N/A', 'N/A'],
+              [9.7419, 9.7387, 9.7296, 9.7113, 'N/A', 'N/A'],
+              [9.7367, 9.7298, 9.7174, 9.6965, 'N/A', 'N/A'],
+              [9.7317, 9.7212, 9.7058, 9.6824, 'N/A', 'N/A'],
+              [9.7268, 9.713, 9.6948, 9.6689, 'N/A', 'N/A'],
+              [9.7222, 9.7052, 9.6841, 9.6559, 'N/A', 'N/A'],
+              [9.7177, 9.6976, 9.6739, 9.6434, 'N/A', 'N/A'],
+              [9.7134, 9.6903, 9.664, 'N/A', 'N/A', 'N/A']
+            ];
+            break;
+          case "HKD-CAD":
+            rateData = [
+              [5.9099, 5.9081, 5.8937, 5.885, 5.8985, 5.9098],
+              [5.9146, 5.9159, 5.9056, 5.9005, 5.925, 5.9451],
+              [5.9189, 5.9231, 5.9162, 5.9143, 5.9484, 5.976],
+              [5.9229, 5.9296, 5.9259, 5.9268, 5.9693, 'N/A'],
+              [5.9266, 5.9357, 5.9348, 5.9382, 'N/A', 'N/A'],
+              [5.9302, 5.9414, 5.943, 5.9487, 'N/A', 'N/A'],
+              [5.9335, 5.9467, 5.9507, 5.9584, 'N/A', 'N/A'],
+              [5.9367, 5.9518, 5.958, 5.9676, 'N/A', 'N/A'],
+              [5.9397, 5.9566, 5.9648, 5.9762, 'N/A', 'N/A']
+            ];
+            break;
+          case "CAD-HKD":
+            rateData = [
+                [6.0066, 6.0108, 6.0259, 6.0321, 6.0222, 6.0196],
+                [6.0015, 6.0022, 6.0135, 6.0165, 5.997, 5.9863],
+                [5.9969, 5.9946, 6.0025, 6.0029, 5.9749, 5.9571],
+                [5.9927, 5.9878, 5.9928, 5.9908, 5.955, 5.9307],
+                [5.9887, 5.9815, 5.9839, 5.9798, 5.9367, 'N/A'],
+                [5.9851, 5.9757, 5.9757, 5.9697, 'N/A', 'N/A'],
+                [5.9816, 5.9702, 5.968, 5.9602, 'N/A', 'N/A'],
+                [5.9784, 5.9651, 5.9608, 5.9514, 'N/A', 'N/A'],
+                [5.9753, 5.9603, 5.9541, 5.943, 'N/A', 'N/A']
+              ];
+              break;
+          case "HKD-EUR":
+            rateData = [
+                [8.4099, 8.4216, 8.4286, 8.4289, 8.435, 8.4295],
+                [8.4038, 8.4111, 8.414, 8.411, 8.4037, 8.3881],
+                [8.3982, 8.4015, 8.4009, 8.3949, 8.3755, 8.3505],
+                [8.3931, 8.3927, 8.3889, 8.3802, 8.3495, 8.3157],
+                [8.3882, 8.3846, 8.3779, 8.3667, 8.3254, 'N/A'],
+                [8.3837, 8.3771, 8.3676, 8.3541, 'N/A', 'N/A'],
+                [8.3795, 8.3699, 8.358, 8.3422, 'N/A', 'N/A'],
+                [8.3755, 8.3632, 8.3488, 8.331, 'N/A', 'N/A'],
+                [8.3716, 8.3568, 8.3401, 8.3202, 'N/A', 'N/A']
+              ];
+              break;
+          case "HKD-CNH":
+            rateData = [
+                [1.1326, 1.1301, 1.128, 1.1254, 1.1188, 1.1147],
+                [1.1336, 1.1319, 1.1304, 1.1287, 1.1248, 1.123],
+                [1.1344, 1.1333, 1.1324, 1.1313, 1.1297, 1.1296],
+                [1.1352, 1.1345, 1.1341, 1.1335, 1.1338, 1.1351],
+                [1.1358, 1.1356, 1.1356, 1.1355, 1.1374, 1.1399],
+                [1.1365, 1.1366, 1.137, 1.1373, 1.1406, 1.1441],
+                [1.137, 1.1376, 1.1383, 1.1389, 1.1435, 'N/A'],
+                [1.1375, 1.1384, 1.1395, 1.1404, 'N/A', 'N/A'],
+                [1.138, 1.1393, 1.1406, 1.1418, 'N/A', 'N/A']
+              ];
+              break;
+          default:
+            rateData = [
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']
+            ];
+        }
+        hot.loadData(rateData);
+        var series = dpsChart.series;
+        for (let i = 0; i < series.length; i++) {
+          let column = series[i];
+          if (column.name === seq || column.name === inv) {
+            column.show();
+          } else {
+            column.hide();
+          }
+        }
+      }
+    };
+
+    $scope.convert2dp = function(){
+      document.getElementById('convertAmount').value = document.getElementById('tempAmount').innerHTML;
+    };
+
+    $scope.onStockChange = function(stockName) {
+      var series = dcdcChart.series;
+      var navigatorIndex = series.length - 1;
+      for (let i = 0; i < navigatorIndex; i++) {
+        let column = series[i];
+        if (column.name === stockName) {
+          //series[navigatorIndex].data = column.data;
+          column.showInNavigator = true;
+          //dcdcChart.navigator.series = column;
+          column.show();
+        } else {
+          column.showInNavigator = false;
+          column.hide();
+        }
+      }
+    };
+
+    $scope.calculateConversionRate = function() {
+      var dps = $scope.cal.dps;
+      var dpsDoc = DpsData.findOne({ depo_cur: dps.depositCurrency, link_cur: dps.linkedCurrency,
+        tenor: dps.tenor, interest_rate: dps.yieldPa});
+      if (dpsDoc) {
+        dps.conversionRate = dpsDoc.conversion_rate;
+        document.getElementById('search_field').value = dpsDoc.conversion_rate;
+        document.getElementById('search_button').click();
+      } else {
+        dps.conversionRate = undefined;
+      }
+    };
+
+    $scope.calculateCouponPa = function() {
+      var dcdc = $scope.cal.dcdc;
+      if (dcdc.barrierType === 'NONE') {
+        var dcdcDoc = DcdcData.findOne({ underlying: dcdc.linkedStock, strike: parseInt(dcdc.strikePrice), ko_type: dcdc.koType,
+                          ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
+                          ki_barrier: null });
+      } else {
+        var dcdcDoc = DcdcData.findOne({ underlying: dcdc.linkedStock, strike: parseInt(dcdc.strikePrice), ko_type: dcdc.koType,
+                          ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
+                          ki_barrier: parseInt(dcdc.kiBarrier) });
+      }
+      if (dcdcDoc) {
+        dcdc.couponPa = dcdcDoc.coupon_pa;
+      } else {
+        dcdc.couponPa = undefined;
+      }
+    };
+
+    $scope.calculateStrikePrice = function() {
+      var dcdc = $scope.cal.dcdc;
+      if (dcdc.barrierType === 'NONE') {
+        var dcdcDoc = DcdcData.findOne({ underlying: dcdc.linkedStock, coupon_pa: parseFloat(dcdc.couponPa), ko_type: dcdc.koType,
+                          ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
+                          ki_barrier: null });
+      } else {
+        var dcdcDoc = DcdcData.findOne({ underlying: dcdc.linkedStock, coupon_pa: parseFloat(dcdc.couponPa), ko_type: dcdc.koType,
+                          ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
+                          ki_barrier: parseInt(dcdc.kiBarrier) });
+      }
+      if (dcdcDoc) {
+        dcdc.strikePrice = dcdcDoc.strike;
+      } else {
+        dcdc.strikePrice = undefined;
+      }
+    };
+
+    $scope.resizeDiag = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: 'client/toggle.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true
+      });
+    };
+
+    $scope.showAdvanced = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: 'client/dialog.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true
+      });
+    };
+
+    function DialogController($scope, $mdDialog) {
+      $scope.hide = function() {
+        $mdDialog.hide();
+      };
+
+      $scope.cancel = function() {
+        $mdDialog.cancel();
+      };
+
+      $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
+    }
+
+    $scope.cal = {
+      dps: {},
+      dcdc: {
+        scenario: 1,
+      }
+    };
+
+    $scope.currencies = ('AUD, CAD, CNH, EUR, GBP, HKD, USD').split(', ').map(function(currency) {
+      return {abbrev: currency};
     });
-  };
 
-  function DialogController($scope, $mdDialog) {
-    $scope.hide = function() {
-      $mdDialog.hide();
+    $scope.dpsTenors = ['1W', '2W', '3W', '1M', '2M', '3M'];
+
+    $scope.dcdcTenors = [
+      {
+        name: '3M',
+        value: 3
+      }, {
+        name: '6M',
+        value: 6
+      }, {
+        name: '9M',
+        value: 9
+      }, {
+        name: '12M',
+        value: 12
+      }
+    ];
+
+    $scope.stocks = ['700 HK', '388 HK'];
+
+    $scope.koTypes = ['Daily', 'Period End'];
+
+    $scope.barrierTypes = ['NONE', 'AKI', 'EKI'];
+
+    //dcdcview Button JS
+    $scope.demo = {
+      showTooltip: false,
+      tipDirection: 'bottom'
     };
 
-    $scope.cancel = function() {
-      $mdDialog.cancel();
+    $scope.demo.delayTooltip = undefined;
+    $scope.$watch('demo.delayTooltip', function(val) {
+      $scope.demo.delayTooltip = parseInt(val, 10) || 0;
+    });
+
+    $scope.linkedCurrencyFilter = function(inputCur) {
+      return (inputCur.abbrev !== $scope.cal.dps.depositCurrency)
+        && (!(inputCur.abbrev === 'USD' && $scope.cal.dps.depositCurrency === 'HKD')
+        && (!(inputCur.abbrev === 'HKD' && $scope.cal.dps.depositCurrency === 'USD')));
     };
 
-    $scope.answer = function(answer) {
-      $mdDialog.hide(answer);
-    };
-  }
-
-  $scope.cal = {
-    tradeDate: new Date(),
-    currencyPair: 'AUD/HKD',
-    maturityDate: new Date(),
-    amountDeposit: '$10000',
-    currency: 'USD',
-    interestRate: '5%',
-    fixValue: 'Linked to Currency Exchange',
-    refValue: 6.400,
-    determinationDate: new Date(),
-    closingPrice: 'The official closing price of the MTR shares on the Determination Data as published by the Exchange',
-    cpnRate: '4.37%',
-    spotPrice: '$98.5',
-    stock: '0700.HK',
-    yieldPA: 50,
-    finRate: 30
-  };
-  $scope.currencies = ('AUD CNY JPY USD EUR').split(' ').map(function(currency) {
-       return {abbrev: currency};
   });
 
-  //Preview Button JS
-  $scope.demo = {
-    showTooltip: false,
-    tipDirection: 'bottom'
-  };
-
-  $scope.demo.delayTooltip = undefined;
-  $scope.$watch('demo.delayTooltip', function(val) {
-    $scope.demo.delayTooltip = parseInt(val, 10) || 0;
-  });
-});
-
-// (function () {
-  // 'use strict';
-  // angular
-  //     .module('spcal')
-  //     .controller('DemoCtrl', DemoCtrl);
   spcal.controller('AutoCompleteCtrl', function ($timeout, $q, $log) {
-
-  // function DemoCtrl ($timeout, $q, $log) {
     var self = this;
 
     self.simulateQuery = true;
@@ -218,239 +454,261 @@ angular.module('spcal')
   .config(themeIcons);
 
 
-spcal.controller('matrixCtrl', function($timeout, $scope){
-  var data = [
-    ["", "Ford", "Volvo", "Toyota", "Honda"],
-    ["2016", 10, 11, 12, 13],
-    ["2017", 20, 11, 14, 13],
-    ["2018", 30, 15, 12, 13]
-  ];
+spcal.controller('MatrixCtrl', function($mdDialog, $timeout, $scope){
+    var searchFiled = document.getElementById('search_field');
+    container = document.getElementById('example');
+    hot = new Handsontable(container, {
+      data: rateData,
+      headerToolTips: true,
+      rowHeaders: ['4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%'],
+      nestedHeaders: [
+        [{label: 'Conversion Rate', colspan: 6}],
+        ['1W', '2W', '3W', '1M', '2M', '3M']
+      ],
+      colWidths: 100,
+      rowHeights: 40,
+      search: {
+        queryMethod: onlyExactMatch
+      },
+      currentRowClassName: 'selectedRow',
+      currentColClassName: 'selectedCol',
+      editor: false,
+    });
 
-  var container = document.getElementById('example');
-  var hot = new Handsontable(container, {
-    data: Handsontable.helper.createSpreadsheetData(100, 100),
-    rowHeaders: true,
-    colHeaders: true,
-    currentRowClassName: 'selectedRow',
-    currentColClassName: 'selectedCol',
-    editor: false,
-  });
+    function onlyExactMatch(queryStr, value) {
+      return queryStr.toString() === value.toString();
+    }
 
-   $timeout(function () {
-     hot.selectCell(0,0);
-   }, 2);
+    Handsontable.Dom.addEvent(search_button, 'click', function (event) {
+      queryResult = hot.search.query(document.getElementById('search_field').value);
+      console.log(queryResult);
+      hot.render();
+      hot.selectCell(queryResult[0].row, queryResult[0].col);
+    });
+
+    $timeout(function () {
+      hot.selectCell(0,0);
+      document.getElementById('toggleBtn').click();
+      $mdDialog.cancel();
+    }, 1);
 });
 
 spcal.controller('DiagramCtrl', function ($scope) {
-      $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
-          // Create the chart
-          Highcharts.stockChart('container', {
-            chart: {
-              height: 400
-          },
-
-          title: {
-              text: 'AUD-HKD FX RATE'
-          },
-
-          subtitle: {
-              text: ''
-          },
-
-          rangeSelector: {
-              selected: 1
-          },
-
-          series: [{
-              name: 'AUD-HKD FX RATE',
-              data: data,
-              type: 'area',
-              threshold: null,
-              tooltip: {
-                  valueDecimals: 2
-              }
-          }],
-
-            // responsive: {
-            //     rules: [{
-            //         condition: {
-            //             maxWidth: 500
-            //         },
-            //         chartOptions: {
-            //             chart: {
-            //                 height: 300
-            //             },
-            //             subtitle: {
-            //                 text: null
-            //             },
-            //             navigator: {
-            //                 enabled: false
-            //             }
-            //         }
-            //     }]
-            //   }
-                  // fillColor: {
-                  //     linearGradient: {
-                  //         x1: 0,
-                  //         y1: 0,
-                  //         x2: 0,
-                  //         y2: 1
-                  //     },
-                  //     stops: [
-                  //         [0, Highcharts.getOptions().colors[0]],
-                  //         [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                  //     ]
-                  // }
-
-          });
-
-          Highcharts.chart('container_v2', {
-            chart: {
-                type: 'column'
-            },
-            title: {
-                text: 'Performance on Deposit Plus from Other Financial Institutions'
-            },
-            xAxis: {
-                categories: ['HSBC', 'BOC', 'Standard Charter', 'Citi', 'Hang Seng']
-            },
-            yAxis: {
-                min: 0,
-                title: {
-                    text: 'Criteria Distribution'
-                }
-            },
-            tooltip: {
-                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
-                shared: true
-            },
-            plotOptions: {
-                column: {
-                    stacking: 'percent'
-                }
-            },
-            series: [{
-                name: 'Return',
-                data: [5, 3, 4, 7, 2]
-            }, {
-                name: 'Stability',
-                data: [2, 2, 3, 2, 1]
-            }, {
-                name: 'Volatility',
-                data: [3, 4, 4, 2, 5]
-            },{
-                name: 'Momentum',
-                data: [6, 2, 4, 3, 1]
-            }]
-        });
-      });
+  $.get('fxRate.csv', function (data) {
+    // Create the chart
+    dpsChart = Highcharts.chart('dpsChartContainer', {
+      data: {
+        csv: data
+      },
+      plotOptions: {
+        series: {
+          visible: false
+        }
+      },
+      title: {
+        text: 'Deposit Plus'
+      },
+      yAxis: {
+        crosshair: true,
+        title: {
+          text: 'FX Rate'
+        }
+      }
+    });
+  });
+  $.get('stockPrice.csv', function (data) {
+    // Create the chart
+    dcdcChart = Highstock.stockChart('dcdcChartContainer', {
+      data: {
+        csv: data
+      },
+      plotOptions: {
+        series: {
+          visible: false
+        }
+      },
+      title: {
+        text: 'DCDC'
+      },
+      yAxis: {
+        title: {
+          text: 'Stock Price'
+        }
+      }
+    });
   });
 
+});
+
+spcal.controller('BarChartCtrl', function ($scope) {
+  // Create the chart
+  $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
+  barChart = HighBarCharts.chart('barContainer', {
+    chart: {
+      type: 'column',
+    },
+    title: {
+      text: 'Performance on Deposit Plus from Other Financial Institutions'
+    },
+    xAxis: {
+      categories: ['HSBC', 'BOC', 'Standard Charter', 'Citi', 'Hang Seng']
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: 'Criteria Distribution'
+      }
+    },
+    tooltip: {
+      pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+      shared: true
+    },
+    plotOptions: {
+      column: {
+        stacking: 'percent'
+      }
+    },
+    series: [{
+      name: 'Return',
+      data: [5, 3, 4, 7, 2]
+    }, {
+      name: 'Stability',
+      data: [2, 2, 3, 2, 1]
+    }, {
+      name: 'Volatility',
+      data: [3, 4, 4, 2, 5]
+    },{
+      name: 'Momentum',
+      data: [6, 2, 4, 3, 1]
+    }]
+  })
+  });
+});
 
 
-
-  spcal.config(function($mdThemingProvider) {
+spcal.config(function($mdThemingProvider) {
   $mdThemingProvider.theme('altTheme')
     .primaryPalette('purple');
   })
   .controller('SubheaderAppCtrl', function($scope) {
     var imagePath = 'images/hsbc-icon.gif';
-    $scope.messages = [
+    $scope.infolinks = [
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        what: 'Glossary Of Banking Terms',
+        who: 'HSBC Personal Banking',
+        notes: " A to Z guide on glossaries",
+        link: "https://www.hsbc.com.hk/personal/help-and-support/glossary-of-banking-terms.html"
       },
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        what: 'Deposit Plus',
+        who: 'HSBC Personal Banking',
+        notes: " Set up your Deposit Plus investment now",
+        link: "https://www.hsbc.com.hk/personal/investments/structured-products/deposit-plus.html"
+      },
+    ];
+    $scope.datalinks = [
+      {
+        face : imagePath,
+        what: 'Deposit Interest Market Data',
+        who: 'HSBC Personal Banking',
+        notes: " Check the current interest rate of normal deposit",
+        link: "https://www.personal.hsbc.com.hk/1/2/hk/investments/mkt-info/deposit-rates/interest-rates"
       },
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        what: 'Equity Market Data',
+        who: 'HSBC Personal Banking',
+        notes: " Check the current market price of chosen equity",
+        link: "http://www.personal.hsbc.com.hk/1/2/hk/investments/mkt-info"
+      },
+    ];
+    $scope.videos = [
+      {
+        face : imagePath,
+        what: 'Deposit Plus Overview',
+        who: 'A Currency Linked Investment',
+        notes: " Get to know the products before investing",
+        link: '_-w3mMxkVdU'
       },
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        what: 'Deposit Plus Example',
+        who: 'A Currency Linked Investment',
+        notes: " Get to know the products before investing",
+        link: 'z3ZjrWkCrdY'
       },
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        what: 'Deposit Plus Interest Calculation',
+        who: 'A Currency Linked Investment',
+        notes: " Get to know the products before investing",
+        link: 'fBVv_BJ81bc'
       },
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        what: 'Deposit Plus Risk',
+        who: 'A Currency Linked Investment',
+        notes: " Get to know the products before investing",
+        link: 'K-QcjbuNnwg'
       },
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        what: 'DCDC',
+        who: 'An Equity Linked Investment',
+        notes: " Get to know the products before investing",
+        link: 'z3ZjrWkCrdY'
       },
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        what: 'DCDC Example 1 - Auto Call',
+        who: 'An Equity Linked Investment',
+        notes: " Get to know the products before investing",
+        link: 'z3ZjrWkCrdY'
       },
       {
         face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: " I'll be in your neighborhood doing errands"
+        what: 'DCDC Example 2 - Airbag',
+        who: 'An Equity Linked Investment',
+        notes: " Get to know the products before investing",
+        link: 'z3ZjrWkCrdY'
       },
     ];
 });
 
+spcal.controller('AppCtrl', ['$interval',
+    function($interval) {
+      var self = this;
+
+      self.activated = true;
+      self.determinateValue = 30;
+
+      // Iterate every 100ms, non-stop and increment
+      // the Determinate loader.
+      $interval(function() {
+
+        self.determinateValue += 1;
+        if (self.determinateValue > 100) {
+          self.determinateValue = 30;
+        }
+
+      }, 100);
+    }
+  ]);
+
 spcal.controller('videoCtrl',function($scope, $mdDialog){
-  $scope.showAdvanced = function(ev) {
+  $scope.showAdvanced = function(ev, id) {
     $mdDialog.show({
       controller: DialogController,
       templateUrl: 'client/video.html',
       parent: angular.element(document.body),
       targetEvent: ev,
-      clickOutsideToClose:true,
+      clickOutsideToClose: true,
       fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
     })
-    .then(function(answer) {
-      $scope.status = 'You said the information was "' + answer + '".';
-    }, function() {
-      $scope.status = 'You cancelled the dialog.';
-    });
+    //player.videoId = id;
+    videoToPlay = id;
   };
 
   function DialogController($scope, $mdDialog) {
@@ -468,31 +726,24 @@ spcal.controller('videoCtrl',function($scope, $mdDialog){
   }
 
   onYouTubeIframeAPIReady = function () {
-
-        // New Video Player, the first argument is the id of the div.
-        // Make sure it's a global variable.
-        player = new YT.Player("player", {
-
-            height: "400",
-            width: "600",
-
-            // videoId is the "v" in URL (ex: http://www.youtube.com/watch?v=LdH1hSWGFGU, videoId = "LdH1hSWGFGU")
-            videoId: "wO_-MtWejRM",
-
-            // Events like ready, state change,
-            events: {
-
-                onReady: function (event) {
-
-                    // Play video when player ready.
-                    event.target.playVideo();
-                }
-
-            }
-
-        });
-
-    };
-
-    YT.load();
+    // New Video Player, the first argument is the id of the div.
+    // Make sure it's a global variable.
+    if (videoToPlay) {
+      player = new YT.Player("player", {
+        height: "400",
+        width: "600",
+        // videoId is the "v" in URL (ex: http://www.youtube.com/watch?v=LdH1hSWGFGU, videoId = "LdH1hSWGFGU")
+        videoId: videoToPlay,
+        // Events like ready, state change,
+        events: {
+          onReady: function (event) {
+            // Play video when player ready.
+            event.target.playVideo();
+          }
+        }
+      });
+      console.log(player);
+    }
+  }
+  YT.load();
 });

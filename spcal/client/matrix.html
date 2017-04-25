@@ -5,12 +5,14 @@
   <md-card-title >
     <md-content class="container">
       <div id="parentContainer">
-        <div class="handsontable" ng-controller="matrixCtrl" id="example"></div>
+        <input id="search_field" type="hidden">
+        <input id="search_button" style="display:none;" type="button">
+        <div class="handsontable" ng-controller="MatrixCtrl" id="example"></div>
       </div>
     </md-content>
   </md-card-title>
   <md-card-actions layout="row" layout-align="end center">
-          <md-button class="md-raised" style="background: #3399ff; color:white">Trade Dates</md-button>
-          <md-button class="md-raised" style="background: #cc0066; color:white">Maturity Dates</md-button>
+          <md-button class="md-raised" style="background: #3399ff; color:white">Conversion Rates</md-button>
+          <md-button class="md-raised" style="background: #cc0066; color:white">Interest Rates</md-button>
   </md-card-actions>
 </md-card>

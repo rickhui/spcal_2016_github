@@ -1,238 +1,272 @@
 <div layout="column" class="container" ng-cloak class="md-inline-form">
+  <div class="tabsdemoDynamicHeight" ng-cloak>
+    <md-card>
+      <md-tabs md-stretch-tabs="always" style="min-height: 865px;" md-border-bottom>
+        <md-tab label="Deposit Plus">
+          <md-content class="md-padding" >
+            <md-content layout-padding ng-controller="ValidationCtrl">
+              <div>
+                <form name="DpsInvForm">
+                  <div layout="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Deposit Currency</label>
+                      <md-select name="depoCurr" ng-model="cal.dps.depositCurrency" ng-change="onCurPairChange(cal.dps.depositCurrency, cal.dps.linkedCurrency)" required>
+                        <md-option ng-repeat="currency in currencies" value="{{currency.abbrev}}">{{currency.abbrev}}</md-option>
+                      </md-select>
+                      <div ng-messages="DpsInvForm.depoCurr.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                      <label>Linked Currency</label>
+                      <md-select name="linkCurr" ng-model="cal.dps.linkedCurrency" ng-change="onCurPairChange(cal.dps.depositCurrency, cal.dps.linkedCurrency)" required>
+                        <md-option ng-repeat="currency in currencies | filter:linkedCurrencyFilter" value="{{currency.abbrev}}">
+                          {{currency.abbrev}}
+                        </md-option>
+                      </md-select>
+                      <div ng-messages="DpsInvForm.linkCurr.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
+                    </md-input-container>
+                  </div>
 
-    <!-- <div layout="row" layout-padding>
-    <div flex="66"> -->
-    <!-- <md-content md-colors="{background: 'blue'}" layout-gt-sm="row" layout-padding>
-    <div>
-      <h4>Deposit Plus</h4>md-dynamic-height
-    </div>style="min-height: 450px;"
-    </md-content> -->
-    <div class="tabsdemoDynamicHeight" ng-cloak>
-        <md-card>
-            <md-tabs md-stretch-tabs="always" style="min-height: 450px;" md-border-bottom>
-                <md-tab label="Deposit Plus">
-                    <md-content class="md-padding">
-                        <md-content layout-padding ng-controller="ValidationCtrl">
-                            <div>
-                                <form name="InvForm">
-                                    <div layout="row">
-                                        <md-input-container class="md-block" flex>
-                                            <label>Deposit Currency</label>
-                                            <md-select ng-model="cal.depositCurrency">
-                                                <md-option ng-repeat="currency in currencies" value="{{currency.abbrev}}">
-                                                    {{currency.abbrev}}
-                                                </md-option>
-                                            </md-select>
-                                        </md-input-container>
+                  <div layout="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Currency Pair</label>
+                      <input name="currencyPair" ng-if="cal.dps.depositCurrency&&cal.dps.linkedCurrency" value="{{cal.dps.depositCurrency}}-{{cal.dps.linkedCurrency}}" disabled/>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                      <label>Tenor</label>
+                      <md-select name="tenor" ng-model="cal.dps.tenor" required>
+                        <md-option ng-repeat="tenor in dpsTenors" value="{{tenor}}">
+                          {{tenor}}
+                        </md-option>
+                      </md-select>
+                      <div ng-messages="DpsInvForm.tenor.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
+                    </md-input-container>
+                  </div>
 
-                                        <md-input-container class="md-block" flex>
-                                            <label>Linked Currency</label>
-                                            <md-select ng-model="cal.linkedCurrency">
-                                                <md-option ng-repeat="currency in currencies" value="{{currency.abbrev}}">
-                                                    {{currency.abbrev}}
-                                                </md-option>
-                                            </md-select>
-                                        </md-input-container>
+                  <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                      <label>Amount Deposit <span style="font-size:12px" ng-if="cal.dps.depositCurrency"> ({{cal.dps.depositCurrency}}) </span></label>
+                      <span id="tempAmount" style="display:none;">{{cal.dps.amountDeposit | number:0}}</span>
+                      <input md-maxlength="20"  ng-maxlength="20" id="convertAmount" name="amountDeposit" ng-pattern="/^[0-9]*$/" ng-model="cal.dps.amountDeposit" ng-blur="convert2dp()">
+                      <div ng-messages="DpsInvForm.amountDeposit.$error" style="color:maroon" role="alert">
+                        <div ng-message="maxlength">Your field is too long.</div>
+                        <div ng-message="pattern">Not a Valid Amount.</div>
+                      </div>
 
-                                        <md-input-container class="md-block" flex>
-                                            <label>Currency Pair</label>
-                                            <input name="currencyPair" ng-if="cal.depositCurrency&&cal.linkedCurrency" value="{{cal.depositCurrency}}/{{cal.linkedCurrency}}" disabled/>
-                                        </md-input-container>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                      <label>Interest Amount <span style="font-size:12px" ng-if="cal.dps.depositCurrency"> ({{cal.dps.depositCurrency}}) </span></label>
+                      <input name="interestAmount" ng-if="cal.dps.amountDeposit && cal.dps.yieldPa" value="{{cal.dps.amountDeposit*cal.dps.yieldPa/100 | number:2}}" disabled/>
+                    </md-input-container>
+                  </div>
 
-                                    </div>
+                  <div layout="row">
+                    <!-- <h4 style="color:#737373">Yield P.A. &emsp;&emsp;</h4> -->
+                    <md-slider-container flex>
+                      <label style="color:#afaeae">Yield P.A. *</label>
+                      <md-slider md-discrete flex min="2" max="9.5" step="0.5" ng-model="cal.dps.yieldPa" aria-label="yieldPaSlider" required></md-slider>
+                      <md-input-container>
+                        <input flex ng-if="cal.dps.yieldPa" value="{{cal.dps.yieldPa}}%" aria-label="yieldPaInput" readonly>
+                      </md-input-container>
+                    </md-slider-container>
+                  </div>
 
+                  <div layout="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Conversion Rate</label>
+                      <input name="conversionRate" ng-if="cal.dps.conversionRate" value="{{cal.dps.conversionRate}}" style="font-size: 20px; font-weight: bold" readonly/>
+                    </md-input-container>
+                    <!-- <label>Conversion Rate &emsp;&emsp;</label>
+                    <div style="font-size: 18px"><b>{{cal.dps.conversionRate}}</b></div> -->
+                  </div>
 
-                                    <div layout="row">
-                                        <md-input-container class="md-block" flex>
-                                            <label>Amount Deposit</label>
-                                            <input md-maxlength="10" ng-maxlength="10" name="amountDeposit" ng-model="cal.amountDeposit" required>
-                                            <div ng-messages="InvForm.amountDeposit.$error">
-                                                <div ng-message="required">A valid value is required.</div>
-                                                <div ng-message="maxlength">This should be less than 10 digits.</div>
-                                            </div>
-                                        </md-input-container>
-                                        <md-input-container class="md-block" flex>
-                                            <label>Trade date</label>
-                                            <md-datepicker name="tradeDate" ng-model="cal.tradeDate" required md-open-on-focus></md-datepicker>
-                                            <div ng-messages="InvForm.tradeDate.$error">
-                                                <div ng-message="required">A valid date is required</div>
-                                            </div>
-                                        </md-input-container>
-                                        <md-input-container class="md-block" flex>
-                                            <label>Maturity Date</label>
-                                            <md-datepicker md-no-asterisk name="maturityDate" ng-model="cal.maturityDate" required md-open-on-focus=""></md-datepicker>
-                                            <div ng-messages="InvForm.maturityDate.$error">
-                                                <div ng-message="required">A valid date is required.</div>
-                                            </div>
-                                        </md-input-container>
-                                    </div>
+                  <div layout="row" layout-align="end center">
+                    <!-- showAdvanced($event)
+                    resizeDiag($event) -->
+                    <input id="toggleBtn" type="button" style="display:none;" ng-click="resizeDiag($event)"/>
+                    <div>
+                      <md-button ng-disabled="DpsInvForm.$invalid" ng-click="calculateConversionRate()" class="md-raised md-warn" aria-label="DPS Calculate Button">
+                        <md-tooltip>
+                          See the conversion rate under the chosen criteria
+                        </md-tooltip>
+                        Query
+                      </md-button>
+                    </div>
+                    <div md-theme="{{theme}}">
+                      <md-button ng-click="showAdvanced($event)" class="md-raised md-warn" aria-label="Menu with Tooltip Delay">
+                        <md-tooltip md-delay="demo.delayTooltip">
+                          See the Comparison of Other Products
+                        </md-tooltip>
+                        Preview
+                      </md-button>
+                    </div>
+                  </div>
+                  <br/>
+                  <md-divider></md-divider>
+                  <br/>
+                  <div layout="row">
+                     <!-- <div ng-controller="DiagramCtrl">
 
-                                    <div layout="row">
+                    </div> -->
+                    <div ng-controller="DiagramCtrl" id="dpsChartContainer" style="width: 100%; height: 400px;"></div>
+                  </div>
+                </form>
+              </div>
+            </md-content>
+          </md-content>
+        </md-tab>
 
+        <md-tab label="DCDC">
+          <md-content class="md-padding">
+            <md-content layout-padding ng-controller="ValidationCtrl">
+              <div>
+                <form name="DcdcInvForm">
+                  <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Linked Stock</label>
+                      <md-select name="linkStock" ng-model="cal.dcdc.linkedStock" ng-change="onStockChange(cal.dcdc.linkedStock)" required>
+                        <md-option ng-repeat="stock in stocks" value="{{stock}}">{{stock}}</md-option>
+                      </md-select>
+                      <div ng-messages="DcdcInvForm.linkStock.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                      <label>Spot Price</label>
+                      <input name="spotPrice" ng-if="cal.dcdc.linkedStock" value="190.2(Fake)" disabled/>
+                    </md-input-container>
+                  </div>
 
-                                    </div>
+                  <div layout="row">
+                    <md-input-container class="md-block" flex>
+                      <div style="color:#afaeae">Query for</div>
+                      <md-radio-group layout="row" ng-model="cal.dcdc.scenario">
+                        <md-radio-button value="1" style="margin-right: 100px">Coupon P.A.</md-radio-button>
+                        <md-radio-button value="2">Strike Price</md-radio-button>
+                      </md-radio-group>
+                    </md-input-container>
+                  </div>
 
-                                    <div layout="row">
-                                        <md-input-container class="md-block" flex>
-                                            <label>Interest Rate</label>
-                                            <input name="interestRate" required ng-model="cal.interestRate">
-                                            <div ng-messages="InvForm.interestRate.$error">
-                                                <div ng-message="required">A valid value is required.</div>
-                                            </div>
-                                        </md-input-container>
+                  <div layout="row">
+                    <md-input-container ng-if="cal.dcdc.scenario == 1" class="md-block" flex>
+                      <label>Strike Price</label>
+                      <input name="strikePrice" ng-model="cal.dcdc.strikePrice" type="number" min="1" pattern="\d+" required>
+                      <div ng-messages="DcdcInvForm.strikePrice.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
+                    </md-input-container>
+                    <md-input-container ng-if="cal.dcdc.scenario == 2" class="md-block" flex>
+                      <label>Coupon P.A.</label>
+                      <input name="couponPa" ng-model="cal.dcdc.couponPa" type="number" min="1" required>
+                      <div ng-messages="DcdcInvForm.couponPa.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                      <label>Tenor</label>
+                      <md-select name="tenor" ng-model="cal.dcdc.tenor" required>
+                        <md-option ng-repeat="tenor in dcdcTenors" value="{{tenor.value}}">
+                          {{tenor.name}}
+                        </md-option>
+                      </md-select>
+                      <div ng-messages="DcdcInvForm.tenor.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
+                    </md-input-container>
+                  </div>
 
-                                        <md-input-container class="md-block" flex>
-                                            <label>Fixing Value</label>
-                                            <input disabled ng-model="cal.fixValue">
-                                            <div ng-messages="InvForm.fixValue.$error">
-                                                <div ng-message="required">A valid value is required.</div>
-                                            </div>
-                                        </md-input-container>
+                  <div layout="row">
+                    <md-input-container class="md-block" flex>
+                      <label>KO Type</label>
+                      <md-select name="koType" ng-model="cal.dcdc.koType" required>
+                        <md-option ng-repeat="koType in koTypes" value="{{koType}}">{{koType}}</md-option>
+                      </md-select>
+                      <div ng-messages="DcdcInvForm.koType.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                      <label>KO Barrier</label>
+                      <input name="koBarrier" ng-model="cal.dcdc.koBarrier" type="number" min="1" pattern="\d+" required>
+                      <div ng-messages="DcdcInvForm.koBarrier.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
+                    </md-input-container>
+                  </div>
 
-                                        <md-input-container class="md-block" flex>
-                                            <label>Reference Value</label>
-                                            <input required name="refValue" ng-model="cal.refValue">
-                                            <div ng-messages="InvForm.refValue.$error">
-                                                <div ng-message="required">A valid value is required.</div>
-                                            </div>
-                                        </md-input-container>
+                  <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Barrier Type</label>
+                      <md-select name="barrierType" ng-model="cal.dcdc.barrierType" required>
+                        <md-option ng-repeat="barrierType in barrierTypes" value="{{barrierType}}">{{barrierType}}</md-option>
+                      </md-select>
+                      <div ng-messages="DcdcInvForm.barrierType.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                      <label>KI Barrier</label>
+                      <input name="kiBarrier" ng-model="cal.dcdc.kiBarrier" type="number" min="1" pattern="\d+" ng-required="cal.dcdc.barrierType !== 'NONE'" ng-disabled="cal.dcdc.barrierType === 'NONE'">
+                      <div ng-messages="DcdcInvForm.kiBarrier.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
+                    </md-input-container>
+                  </div>
 
-                                    </div>
-                                    <div layout="row">
-                                        <h4 style="color:#737373">Inv Yield PA &emsp;&emsp;</h4>
-                                        <md-slider-container flex>
-                                            <md-slider md-discrete flex min="0" max="255" ng-model="cal.yieldPA" aria-label="red" id="red-slider">
-                                                </md-slider>
-                                            <md-input-container>
-                                              <input flex type="number" ng-model="cal.yieldPA" aria-label="red" aria-controls="red-slider" >
-                                            </md-input-container>
-                                          </md-slider-container>
-                                          <div style="padding-right: 160px">
-                                          </div>
-                                    </div>
-                                    <div layout="row" layout-align="space-between center">
-                                        <h4 style="color:#737373">Final Conversion Rate &emsp;&emsp;</h4>
-                                        <md-slider-container flex>
-                                            <md-slider md-discrete flex min="0" max="255" ng-model="cal.finRate" aria-label="red" id="red-slider">
-                                            </md-slider>
-                                            <md-input-container>
-                                              <input flex type="number" ng-model="cal.finRate" aria-label="red" aria-controls="red-slider" >
-                                            </md-input-container>
-                                          </md-slider-container>
-                                        <div style="padding-left: 50px">
-                                        </div>
-                                        <div md-theme="{{theme}}">
-                                            <md-button ng-click="showAdvanced($event)" class="md-raised md-warn" aria-label="Menu with Tooltip Delay" style="margin-top: -24px">
-                                                <md-tooltip md-delay="demo.delayTooltip">
-                                                    See the Comparison of Other Products
-                                                </md-tooltip>
-                                                Preview
-                                            </md-button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </md-content>
-                    </md-content>
-                </md-tab>
+                  <div layout-gt-sm="row">
+                    <md-input-container ng-if="cal.dcdc.scenario == 1" class="md-block" flex>
+                      <label>Coupon P.A.</label>
+                      <input name="couponPa" ng-if="cal.dcdc.couponPa" value="{{cal.dcdc.couponPa}}" style="font-size: 20px; font-weight: bold" readonly/>
+                    </md-input-container>
+                    <md-input-container ng-if="cal.dcdc.scenario == 2" class="md-block" flex>
+                      <label>Strike Price</label>
+                      <input name="strikePrice" ng-if="cal.dcdc.strikePrice" value="{{cal.dcdc.strikePrice}}" style="font-size: 20px; font-weight: bold" readonly/>
+                    </md-input-container>
+                  </div>
 
-                <md-tab label="DCDC">
-                    <md-content class="md-padding">
-                        <md-content layout-padding ng-controller="ValidationCtrl">
-                            <div>
-                                <form name="InvForm">
-                                    <div layout="row">
-                                        <md-input-container class="md-block" flex>
-                                            <label>Currency Pair</label>
-                                            <input name="currencyPair" ng-model="cal.currencyPair" required/>
-                                            <!-- <div ng-messages="InvForm.currencyPair.$error" role="alert"> -->
-                                            <div ng-if="!cal.currencyPair">
-                                                <div style="font-size:11px;color:#D32F2F">This is required.</div>
-                                            </div>
-                                            <!-- </div> -->
-                                        </md-input-container>
-
-                                        <md-input-container>
-                                            <label>Trade date</label>
-                                            <md-datepicker name="tradeDate" ng-model="cal.tradeDate" required md-open-on-focus=""></md-datepicker>
-                                            <div ng-messages="InvForm.tradeDate.$error">
-                                                <div ng-message="required">A valid date is required.</div>
-                                            </div>
-                                        </md-input-container>
-                                    </div>
-
-                                    <div layout-gt-sm="row">
-                                        <md-input-container class="md-block" flex>
-                                            <label>Currency</label>
-                                            <md-select ng-model="cal.currency">
-                                                <md-option ng-repeat="currency in currencies" value="{{currency.abbrev}}">
-                                                    {{currency.abbrev}}
-                                                </md-option>
-                                            </md-select>
-                                        </md-input-container>
-                                        <md-input-container class="md-block" flex>
-                                            <label>Amount Deposit</label>
-                                            <input md-maxlength="10" ng-maxlength="10" name="amountDeposit" ng-model="cal.amountDeposit" required>
-                                            <div ng-messages="InvForm.amountDeposit.$error">
-                                                <div ng-message="required">A valid date is required.</div>
-                                                <div ng-message="maxlength">This should be less than 10 digits.</div>
-                                            </div>
-                                        </md-input-container>
-
-                                        <md-input-container>
-                                            <label>Maturity Date</label>
-                                            <md-datepicker md-no-asterisk name="maturityDate" ng-model="cal.maturityDate" required md-open-on-focus=""></md-datepicker>
-                                            <div ng-messages="InvForm.maturityDate.$error">
-                                                <div ng-message="required">A valid date is required.</div>
-                                            </div>
-                                        </md-input-container>
-                                    </div>
-                                    <div layout="row">
-                                        <md-input-container class="md-block" flex>
-                                            <label>Interest Rate</label>
-                                            <input name="interestRate" required ng-model="cal.interestRate">
-                                            <div ng-messages="InvForm.interestRate.$error">
-                                                <div ng-message="required">A valid date is required.</div>
-                                            </div>
-                                        </md-input-container>
-
-                                        <md-input-container class="md-block" flex>
-                                            <label>Fixing Value</label>
-                                            <input disabled ng-model="cal.fixValue">
-                                            <div ng-messages="InvForm.fixValue.$error">
-                                                <div ng-message="required">A valid date is required.</div>
-                                            </div>
-                                        </md-input-container>
-
-                                        <md-input-container class="md-block" flex>
-                                            <label>Reference Value</label>
-                                            <input required ng-model="cal.refValue">
-                                            <div ng-messages="InvForm.refValue.$error">
-                                                <div ng-message="required">A valid date is required.</div>
-                                            </div>
-                                        </md-input-container>
-
-
-                                    </div>
-                                    <div layout="row" layout-align="space-between center">
-                                        <div style="padding-left: 30px">
-                                        </div>
-                                        <div md-theme="{{theme}}">
-                                            <md-button ng-click="showAdvanced($event)" class="md-raised md-warn" aria-label="Menu with Tooltip Delay" style="margin-top: -24px">
-                                                <md-tooltip md-delay="demo.delayTooltip">
-                                                    See the Comparison of Other Products
-                                                </md-tooltip>
-                                                Preview
-                                            </md-button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </md-content>
-                    </md-content>
-                </md-tab>
-            </md-tabs>
-        </md-card>
-    </div>
-
+                  <div layout="row" layout-align="end center">
+                    <div ng-if="cal.dcdc.scenario == 1">
+                      <md-button ng-disabled="DcdcInvForm.$invalid" ng-click="calculateCouponPa()" class="md-raised md-warn" aria-label="DCDC Calculate Button" style="margin-top: -24px">
+                        <md-tooltip>
+                          See the coupon per annum under the chosen criteria
+                        </md-tooltip>
+                        Query
+                      </md-button>
+                    </div>
+                    <div ng-if="cal.dcdc.scenario == 2">
+                      <md-button ng-disabled="DcdcInvForm.$invalid" ng-click="calculateStrikePrice()" class="md-raised md-warn" aria-label="DCDC Calculate Button" style="margin-top: -24px">
+                        <md-tooltip>
+                          See the strike price under the chosen criteria
+                        </md-tooltip>
+                        Query
+                      </md-button>
+                    </div>
+                    <div md-theme="{{theme}}">
+                      <md-button ng-click="showAdvanced($event)" class="md-raised md-warn" aria-label="Menu with Tooltip Delay" style="margin-top: -24px">
+                        <md-tooltip md-delay="demo.delayTooltip">
+                          See the Comparison of Other Products
+                        </md-tooltip>
+                        Preview
+                      </md-button>
+                    </div>
+                  </div>
+                  <br/>
+                  <md-divider></md-divider>
+                  <br/>
+                  <div layout="row">
+                    <div ng-controller="DiagramCtrl" id="dcdcChartContainer" style="width: 100%; height: 400px"></div>
+                  </div>
+                </form>
+              </div>
+            </md-content>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-card>
+  </div>
 </div>
