@@ -22,6 +22,7 @@ var dpsChart;
 var dcdcChart;
 var barChart;
 var pairCurr;
+var rowHeader = ['4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%'];
 var rateData = [['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
   ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
   ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
@@ -63,6 +64,7 @@ spcal.config(function ($mdThemingProvider) {
         pairCurr = seq;
         switch (pairCurr){
           case "HKD-AUD":
+            rowHeader = ['4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%', '8.5%'];
             rateData = [
               [5.9015, 5.8938, 5.8961, 5.894, 5.915, 5.9401],
               [5.9054, 5.9007, 5.9055, 5.906, 5.9362, 5.9683],
@@ -79,6 +81,7 @@ spcal.config(function ($mdThemingProvider) {
           //TODO:Add rateData
             break;
           case "USD-AUD":
+            rowHeader = ['4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%'];
             rateData = [
               [0.7594, 0.7589, 0.7583, 0.7577, 0.7596, 0.7616],
               [0.76, 0.7599, 0.7597, 0.7595, 0.7627, 0.7658],
@@ -91,10 +94,8 @@ spcal.config(function ($mdThemingProvider) {
               [0.7633, 0.7653, 0.767, 0.7687, 'N/A', 'N/A']
             ];
             break;
-          case "AUD-USD":
-          //TODO:Add rateData
-            break;
           case "HKD-GBP":
+            rowHeader = ['5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%', '8.5%', '9.0%', '9.5%'];
             rateData = [
               [9.7533, 9.7583, 9.7561, 9.7433, 9.668, 'N/A'],
               [9.7475, 9.7482, 9.7424, 9.7268, 'N/A', 'N/A'],
@@ -108,6 +109,7 @@ spcal.config(function ($mdThemingProvider) {
             ];
             break;
           case "HKD-CAD":
+            rowHeader = ['3.0%', '3.5%', '4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%'];
             rateData = [
               [5.9099, 5.9081, 5.8937, 5.885, 5.8985, 5.9098],
               [5.9146, 5.9159, 5.9056, 5.9005, 5.925, 5.9451],
@@ -120,20 +122,8 @@ spcal.config(function ($mdThemingProvider) {
               [5.9397, 5.9566, 5.9648, 5.9762, 'N/A', 'N/A']
             ];
             break;
-          case "CAD-HKD":
-            rateData = [
-                [6.0066, 6.0108, 6.0259, 6.0321, 6.0222, 6.0196],
-                [6.0015, 6.0022, 6.0135, 6.0165, 5.997, 5.9863],
-                [5.9969, 5.9946, 6.0025, 6.0029, 5.9749, 5.9571],
-                [5.9927, 5.9878, 5.9928, 5.9908, 5.955, 5.9307],
-                [5.9887, 5.9815, 5.9839, 5.9798, 5.9367, 'N/A'],
-                [5.9851, 5.9757, 5.9757, 5.9697, 'N/A', 'N/A'],
-                [5.9816, 5.9702, 5.968, 5.9602, 'N/A', 'N/A'],
-                [5.9784, 5.9651, 5.9608, 5.9514, 'N/A', 'N/A'],
-                [5.9753, 5.9603, 5.9541, 5.943, 'N/A', 'N/A']
-              ];
-              break;
           case "HKD-EUR":
+            rowHeader = ['3.0%', '3.5%', '4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%'];
             rateData = [
                 [8.4099, 8.4216, 8.4286, 8.4289, 8.435, 8.4295],
                 [8.4038, 8.4111, 8.414, 8.411, 8.4037, 8.3881],
@@ -147,6 +137,7 @@ spcal.config(function ($mdThemingProvider) {
               ];
               break;
           case "HKD-CNH":
+            rowHeader = ['2.0%', '2.5%', '3.0%', '3.5%', '4.0%', '4.5%', '5.0%', '5.5%', '6.0%'];
             rateData = [
                 [1.1326, 1.1301, 1.128, 1.1254, 1.1188, 1.1147],
                 [1.1336, 1.1319, 1.1304, 1.1287, 1.1248, 1.123],
@@ -172,6 +163,9 @@ spcal.config(function ($mdThemingProvider) {
               ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']
             ];
         }
+        hot.updateSettings({
+          rowHeaders: rowHeader
+        });
         hot.loadData(rateData);
         var series = dpsChart.series;
         for (let i = 0; i < series.length; i++) {
@@ -460,7 +454,7 @@ spcal.controller('MatrixCtrl', function($mdDialog, $timeout, $scope){
     hot = new Handsontable(container, {
       data: rateData,
       headerToolTips: true,
-      rowHeaders: ['4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%'],
+      rowHeaders: rowHeader,
       nestedHeaders: [
         [{label: 'Conversion Rate', colspan: 6}],
         ['1W', '2W', '3W', '1M', '2M', '3M']
