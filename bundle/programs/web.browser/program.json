@@ -51,9 +51,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/modules.js?hash=52e421124453b0e2d58f15f3cc6dc0237f7a38cf",
-      "size": 7970002,
-      "hash": "52e421124453b0e2d58f15f3cc6dc0237f7a38cf"
+      "url": "/packages/modules.js?hash=5b1cd8b0830cc1cdda78988cd508ef1919bf30c9",
+      "size": 7967727,
+      "hash": "5b1cd8b0830cc1cdda78988cd508ef1919bf30c9"
     },
     {
       "path": "packages/es5-shim.js",
@@ -244,11 +244,11 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/ddp-client.js?hash=85e417303eadd8da1c7364a7fb2bd8ee7798bed0",
+      "url": "/packages/ddp-client.js?hash=d69811b75e636077a323c16b077a38a29bacca9e",
       "sourceMap": "packages/ddp-client.js.map",
-      "sourceMapUrl": "/packages/85e417303eadd8da1c7364a7fb2bd8ee7798bed0.map",
+      "sourceMapUrl": "/packages/d69811b75e636077a323c16b077a38a29bacca9e.map",
       "size": 637472,
-      "hash": "85e417303eadd8da1c7364a7fb2bd8ee7798bed0"
+      "hash": "d69811b75e636077a323c16b077a38a29bacca9e"
     },
     {
       "path": "packages/ddp.js",
@@ -414,9 +414,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/angular-meteor-data.js?hash=9ff3243ecf29edbd88848412c30b47f0d4325e7d",
-      "size": 320905,
-      "hash": "9ff3243ecf29edbd88848412c30b47f0d4325e7d"
+      "url": "/packages/angular-meteor-data.js?hash=a4c859997b71ecd453c62943db61e5af01c9dc82",
+      "size": 321367,
+      "hash": "a4c859997b71ecd453c62943db61e5af01c9dc82"
     },
     {
       "path": "packages/angular-templates.js",
@@ -551,20 +551,20 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app.js?hash=a2e5009f59bd42fd1a25a6a41a4d44bc8ee38e25",
+      "url": "/app.js?hash=2f01489ff0facff1bb133e760149ff4aa949a337",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/a2e5009f59bd42fd1a25a6a41a4d44bc8ee38e25.map",
-      "size": 108839,
-      "hash": "a2e5009f59bd42fd1a25a6a41a4d44bc8ee38e25"
+      "sourceMapUrl": "/2f01489ff0facff1bb133e760149ff4aa949a337.map",
+      "size": 126665,
+      "hash": "2f01489ff0facff1bb133e760149ff4aa949a337"
     },
     {
-      "path": "2c05fca11965abf75c8a80f0d8e281e34d40465a.css",
+      "path": "b0d422c96cde55db3ce5db50f0bc17520a5ea327.css",
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/2c05fca11965abf75c8a80f0d8e281e34d40465a.css?meteor_css_resource=true",
-      "size": 1770,
-      "hash": "2c05fca11965abf75c8a80f0d8e281e34d40465a"
+      "url": "/b0d422c96cde55db3ce5db50f0bc17520a5ea327.css?meteor_css_resource=true",
+      "size": 1840,
+      "hash": "b0d422c96cde55db3ce5db50f0bc17520a5ea327"
     },
     {
       "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-action-symbol.svg",
@@ -846,6 +846,15 @@
       "hash": "fb7e96a2875cae6b0d49461faf07dca9dddd13fd"
     },
     {
+      "path": "app/favicon.ico",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/favicon.ico",
+      "size": 2970,
+      "hash": "3cbeac2b942c4761c9aca76f70bc247b99ce4536"
+    },
+    {
       "path": "app/fxRate.csv",
       "where": "client",
       "type": "asset",
@@ -930,7 +939,7 @@
       "path": "head.html",
       "where": "internal",
       "type": "head",
-      "hash": "a90f67e95bd71f26889708e32ad064491ec45c70"
+      "hash": "de156eec4a2a5aabeeb54d62ba809feffc69513e"
     },
     {
       "path": "body.html",

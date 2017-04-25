@@ -2744,11 +2744,11 @@ if (typeof define === 'function' && define.amd) {                               
                                                                                                                        //
 var DDP = void 0,                                                                                                      // 1
     LivedataTest = void 0;                                                                                             // 1
-module.import("./namespace.js", {                                                                                      // 1
-  "DDP": function (v) {                                                                                                // 1
+module.importSync("./namespace.js", {                                                                                  // 1
+  DDP: function (v) {                                                                                                  // 1
     DDP = v;                                                                                                           // 1
   },                                                                                                                   // 1
-  "LivedataTest": function (v) {                                                                                       // 1
+  LivedataTest: function (v) {                                                                                         // 1
     LivedataTest = v;                                                                                                  // 1
   }                                                                                                                    // 1
 }, 0);                                                                                                                 // 1
@@ -2941,11 +2941,11 @@ _.extend(LivedataTest.ClientStream.prototype, {                                 
                                                                                                                        //
 var DDP = void 0,                                                                                                      // 1
     LivedataTest = void 0;                                                                                             // 1
-module.import("./namespace.js", {                                                                                      // 1
-  "DDP": function (v) {                                                                                                // 1
+module.importSync("./namespace.js", {                                                                                  // 1
+  DDP: function (v) {                                                                                                  // 1
     DDP = v;                                                                                                           // 1
   },                                                                                                                   // 1
-  "LivedataTest": function (v) {                                                                                       // 1
+  LivedataTest: function (v) {                                                                                         // 1
     LivedataTest = v;                                                                                                  // 1
   }                                                                                                                    // 1
 }, 0);                                                                                                                 // 1
@@ -3187,11 +3187,11 @@ DDP.ForcedReconnectError = Meteor.makeErrorType("DDP.ForcedReconnectError", func
                                                                                                                        //
 var DDP = void 0,                                                                                                      // 1
     LivedataTest = void 0;                                                                                             // 1
-module.import("./namespace.js", {                                                                                      // 1
-  "DDP": function (v) {                                                                                                // 1
+module.importSync("./namespace.js", {                                                                                  // 1
+  DDP: function (v) {                                                                                                  // 1
     DDP = v;                                                                                                           // 1
   },                                                                                                                   // 1
-  "LivedataTest": function (v) {                                                                                       // 1
+  LivedataTest: function (v) {                                                                                         // 1
     LivedataTest = v;                                                                                                  // 1
   }                                                                                                                    // 1
 }, 0);                                                                                                                 // 1
@@ -3211,8 +3211,8 @@ DDP._CurrentInvocation = new Meteor.EnvironmentVariable();                      
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                                                                                                        //
 var DDP = void 0;                                                                                                      // 1
-module.import("./namespace.js", {                                                                                      // 1
-  "DDP": function (v) {                                                                                                // 1
+module.importSync("./namespace.js", {                                                                                  // 1
+  DDP: function (v) {                                                                                                  // 1
     DDP = v;                                                                                                           // 1
   }                                                                                                                    // 1
 }, 0);                                                                                                                 // 1
@@ -3243,17 +3243,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
                                                                                                                        //
 var DDP = void 0,                                                                                                      // 1
     LivedataTest = void 0;                                                                                             // 1
-module.import("./namespace.js", {                                                                                      // 1
-  "DDP": function (v) {                                                                                                // 1
+module.importSync("./namespace.js", {                                                                                  // 1
+  DDP: function (v) {                                                                                                  // 1
     DDP = v;                                                                                                           // 1
   },                                                                                                                   // 1
-  "LivedataTest": function (v) {                                                                                       // 1
+  LivedataTest: function (v) {                                                                                         // 1
     LivedataTest = v;                                                                                                  // 1
   }                                                                                                                    // 1
 }, 0);                                                                                                                 // 1
 var MongoIDMap = void 0;                                                                                               // 1
-module.import("./id_map.js", {                                                                                         // 1
-  "MongoIDMap": function (v) {                                                                                         // 1
+module.importSync("./id_map.js", {                                                                                     // 1
+  MongoIDMap: function (v) {                                                                                           // 1
     MongoIDMap = v;                                                                                                    // 1
   }                                                                                                                    // 1
 }, 1);                                                                                                                 // 1
@@ -4948,8 +4948,8 @@ DDP._allSubscriptionsReady = function () {                                      
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                                                                                                        //
 var DDP = void 0;                                                                                                      // 1
-module.import("./namespace.js", {                                                                                      // 1
-  "DDP": function (v) {                                                                                                // 1
+module.importSync("./namespace.js", {                                                                                  // 1
+  DDP: function (v) {                                                                                                  // 1
     DDP = v;                                                                                                           // 1
   }                                                                                                                    // 1
 }, 0);                                                                                                                 // 1

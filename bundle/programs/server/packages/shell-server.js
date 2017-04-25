@@ -22,14 +22,14 @@ var require = meteorInstall({"node_modules":{"meteor":{"shell-server":{"main.js"
 //                                                                                                                 //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                                                                                                    //
-module.import("./shell-server.js", {                                                                               // 1
-  '*': function (v, k) {                                                                                           // 1
+module.importSync("./shell-server.js", {                                                                           // 1
+  "*": function (v, k) {                                                                                           // 1
     exports[k] = v;                                                                                                // 1
   }                                                                                                                // 1
 }, 0);                                                                                                             // 1
 var listen = void 0;                                                                                               // 1
-module.import("./shell-server.js", {                                                                               // 1
-  "listen": function (v) {                                                                                         // 1
+module.importSync("./shell-server.js", {                                                                           // 1
+  listen: function (v) {                                                                                           // 1
     listen = v;                                                                                                    // 1
   }                                                                                                                // 1
 }, 1);                                                                                                             // 1
