@@ -551,11 +551,11 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app.js?hash=2f01489ff0facff1bb133e760149ff4aa949a337",
+      "url": "/app.js?hash=464848eb372db8d3924ea385db0dc524260efbb3",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/2f01489ff0facff1bb133e760149ff4aa949a337.map",
-      "size": 126665,
-      "hash": "2f01489ff0facff1bb133e760149ff4aa949a337"
+      "sourceMapUrl": "/464848eb372db8d3924ea385db0dc524260efbb3.map",
+      "size": 126691,
+      "hash": "464848eb372db8d3924ea385db0dc524260efbb3"
     },
     {
       "path": "b0d422c96cde55db3ce5db50f0bc17520a5ea327.css",
@@ -939,7 +939,7 @@
       "path": "head.html",
       "where": "internal",
       "type": "head",
-      "hash": "de156eec4a2a5aabeeb54d62ba809feffc69513e"
+      "hash": "e9cb1b8e849b7caaece377f966bff94536c92812"
     },
     {
       "path": "body.html",
