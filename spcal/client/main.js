@@ -784,6 +784,9 @@ spcal.controller('MatrixCtrl', function($mdDialog, $timeout, $scope){
 =======
       rowHeaders: rowHeader,
       colHeaders: ['1W', '2W', '3W', '1M', '2M', '3M'],
+<<<<<<< HEAD
+>>>>>>> 57516629db61a50a8be0f0098f66b81ce0b22374
+=======
 >>>>>>> 57516629db61a50a8be0f0098f66b81ce0b22374
       colWidths: 100,
       rowHeights: 40,
