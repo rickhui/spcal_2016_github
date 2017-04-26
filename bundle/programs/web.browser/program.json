@@ -551,20 +551,20 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app.js?hash=464848eb372db8d3924ea385db0dc524260efbb3",
+      "url": "/app.js?hash=6887fcff80eebe15c2808b46de72bb0f145f1606",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/464848eb372db8d3924ea385db0dc524260efbb3.map",
-      "size": 126691,
-      "hash": "464848eb372db8d3924ea385db0dc524260efbb3"
+      "sourceMapUrl": "/6887fcff80eebe15c2808b46de72bb0f145f1606.map",
+      "size": 141265,
+      "hash": "6887fcff80eebe15c2808b46de72bb0f145f1606"
     },
     {
-      "path": "b0d422c96cde55db3ce5db50f0bc17520a5ea327.css",
+      "path": "9e990aaf5c3abb489f6c8bae90c68cbea478a767.css",
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/b0d422c96cde55db3ce5db50f0bc17520a5ea327.css?meteor_css_resource=true",
-      "size": 1840,
-      "hash": "b0d422c96cde55db3ce5db50f0bc17520a5ea327"
+      "url": "/9e990aaf5c3abb489f6c8bae90c68cbea478a767.css?meteor_css_resource=true",
+      "size": 1973,
+      "hash": "9e990aaf5c3abb489f6c8bae90c68cbea478a767"
     },
     {
       "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-action-symbol.svg",
@@ -861,7 +861,7 @@
       "cacheable": false,
       "url": "/fxRate.csv",
       "size": 28532,
-      "hash": "3a814ac6fd6b451bade827180f8a981f217d52e0"
+      "hash": "87fc9ba5e1089bd7fe2cdee2e566d50251b22c04"
     },
     {
       "path": "app/stockPrice.csv",
