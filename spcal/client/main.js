@@ -6,7 +6,6 @@ import 'angular-material/angular-material.css';
 import 'handsontable-pro/dist/handsontable.full.css';
 
 var Highcharts = require('highcharts');
-var HighBarCharts = require('highcharts/highstock');
 var Highstock = require('highcharts/highstock');
 require('highcharts/modules/data.js')(Highcharts);
 require('highcharts/modules/data.js')(Highstock);
@@ -679,7 +678,7 @@ spcal.controller('DiagramCtrl', function ($scope) {
 spcal.controller('BarChartCtrl', function ($scope) {
   // Create the chart
   $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
-  barChart = HighBarCharts.chart('barContainer', {
+  barChart = Highcharts.chart('barContainer', {
     chart: {
       type: 'column',
     },
