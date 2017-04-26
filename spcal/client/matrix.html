@@ -1,18 +1,25 @@
-<md-card style="height:450px">
-  <!-- <md-toolbar>
-    <h3>Coupon Rate p.a. Matrix</h3>
-  </md-toolbar> -->
+<md-card style="height:450px" ng-controller="MatrixCtrl">
   <md-card-title >
-    <md-content class="container">
-      <div id="parentContainer">
+    <md-content class="container" >
+      <div id="parentContainer" >
         <input id="search_field" type="hidden">
         <input id="search_button" style="display:none;" type="button">
-        <div class="handsontable" ng-controller="MatrixCtrl" id="example"></div>
+        <div class="handsontable" id="matrixTable"></div>
       </div>
     </md-content>
   </md-card-title>
+<<<<<<< HEAD
+  <!-- style="display:none;" -->
+  <md-card-actions  layout="row" layout-align="end center">
+          <input style="display:none;" id="toggle_button" type="checkbox" ng-model="checked" >
+          <md-button ng-show="checked" class="md-raised" style="background: #ffffff; color:black">Conversion Rates</md-button>
+          <md-button ng-show="checked" class="md-raised" style="background: #3399ff; color:white">Tenors</md-button>
+          <md-button ng-show="checked" class="md-raised" style="background: #cc0066; color:white">Interest Rates</md-button>
+=======
   <md-card-actions layout="row" layout-align="end center">
-          <md-button class="md-raised" style="background: #3399ff; color:white">Conversion Rates</md-button>
-          <md-button class="md-raised" style="background: #cc0066; color:white">Interest Rates</md-button>
+          <md-button class="md-raised" style="background: #3399ff; color:white" disabled>Tenors</md-button>
+          <md-button class="md-raised" style="background: #cc0066; color:white" disabled>Interest Rates</md-button>
+          <md-button class="md-raised" style="background: #808080; color:white" disabled>Conversion Rates</md-button>
+>>>>>>> 57516629db61a50a8be0f0098f66b81ce0b22374
   </md-card-actions>
 </md-card>

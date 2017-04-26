@@ -1,10 +1,11 @@
-<div layout="column" class="container" ng-cloak class="md-inline-form">
+<div layout="column" class="container" ng-cloak class="md-inline-form" ng-controller="ValidationCtrl">
   <div class="tabsdemoDynamicHeight" ng-cloak>
     <md-card>
       <md-tabs md-stretch-tabs="always" style="min-height: 865px;" md-border-bottom>
-        <md-tab label="Deposit Plus">
+        <md-tab label="Deposit Plus" ng-click="switchTable('dps')">
           <md-content class="md-padding" >
-            <md-content layout-padding ng-controller="ValidationCtrl">
+            <!-- ng-controller="ValidationCtrl" -->
+            <md-content layout-padding >
               <div>
                 <form name="DpsInvForm">
                   <div layout="row">
@@ -121,9 +122,10 @@
           </md-content>
         </md-tab>
 
-        <md-tab label="DCDC">
+        <md-tab label="DCDC" ng-click="switchTable('dcdc')">
           <md-content class="md-padding">
-            <md-content layout-padding ng-controller="ValidationCtrl">
+            <!-- ng-controller="ValidationCtrl" -->
+            <md-content layout-padding >
               <div>
                 <form name="DcdcInvForm">
                   <div layout-gt-sm="row">
@@ -171,7 +173,7 @@
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>Tenor</label>
-                      <md-select name="tenor" ng-model="cal.dcdc.tenor" required>
+                      <md-select name="tenor" ng-model="cal.dcdc.tenor" ng-change="onTenorChange(cal.dcdc.tenor)" required>
                         <md-option ng-repeat="tenor in dcdcTenors" value="{{tenor.value}}">
                           {{tenor.name}}
                         </md-option>
