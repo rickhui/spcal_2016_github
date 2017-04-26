@@ -18,6 +18,7 @@ var spcal = angular.module('spcal',[
       'ngSanitize'
 ]);
 
+testing = null;
 var dpsChart;
 var dcdcChart;
 var barChart;
@@ -36,6 +37,12 @@ var rateData = [['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
 var container;
 var hot;
 var videoToPlay;
+var dps;
+var dcdc;
+var rowCnt = 0;
+var colCnt = 0;
+var rowCntTmp = 0;
+var colCntTmp = 0;
 
 spcal.config(function ($mdThemingProvider) {
 
@@ -78,7 +85,18 @@ spcal.config(function ($mdThemingProvider) {
             ];
             break;
           case "AUD-HKD":
-          //TODO:Add rateData
+            rowHeader = ['4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%', '8.5%'];
+            rateData = [
+              [0.1694, 0.1697, 0.1696, 0.1697, 0.1691, 0.1683],
+              [0.1693, 0.1695, 0.1693, 0.1693, 0.1685, 0.1676],
+              [0.1692, 0.1693, 0.1691, 0.169, 0.1679, 'N/A'],
+              [0.1691, 0.1691, 0.1689, 0.1687, 'N/A', 'N/A'],
+              [0.169, 0.1689, 0.1686, 0.1684, 'N/A', 'N/A'],
+              [0.169, 0.1688, 0.1684, 0.1682, 'N/A', 'N/A'],
+              [0.1689, 0.1686, 0.1682, 0.1679, 'N/A', 'N/A'],
+              [0.1688, 0.1685, 0.168, 0.1677, 'N/A', 'N/A'],
+              [0.1687, 0.1684, 0.1679, 'N/A', 'N/A', 'N/A']
+            ];
             break;
           case "USD-AUD":
             rowHeader = ['4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%'];
@@ -92,6 +110,20 @@ spcal.config(function ($mdThemingProvider) {
               [0.7625, 0.7639, 0.7652, 0.7665, 'N/A', 'N/A'],
               [0.7629, 0.7646, 0.7662, 0.7676, 'N/A', 'N/A'],
               [0.7633, 0.7653, 0.767, 0.7687, 'N/A', 'N/A']
+            ];
+            break;
+          case "AUD-USD":
+            rowHeader = ['4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%'];
+            rateData = [
+              [1.3168, 1.3177, 1.3187, 1.3198, 1.3165, 1.313],
+              [1.3158, 1.316, 1.3163, 1.3167, 1.3111, 1.3058],
+              [1.3158, 1.316, 1.3163, 1.3167, 1.3111, 1.3058],
+              [1.3139, 1.3129, 1.3122, 1.3113, 1.3019, 'N/A'],
+              [1.313, 1.3115, 1.3103, 1.3089, 'N/A', 'N/A'],
+              [1.3122, 1.3103, 1.3084, 1.3067, 'N/A', 'N/A'],
+              [1.3115, 1.3091, 1.3068, 1.3046, 'N/A', 'N/A'],
+              [1.3108, 1.3079, 1.3051, 1.3028, 'N/A', 'N/A'],
+              [1.3101, 1.3067, 1.3038, 1.3009, 'N/A', 'N/A']
             ];
             break;
           case "HKD-GBP":
@@ -108,6 +140,20 @@ spcal.config(function ($mdThemingProvider) {
               [9.7134, 9.6903, 9.664, 'N/A', 'N/A', 'N/A']
             ];
             break;
+          case "GBP-HKD":
+            rowHeader = ['5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%', '8.5%', '9.0%', '9.5%'];
+            rateData = [
+              [0.1025, 0.1025, 0.1025, 0.1026, 0.1034, 'N/A'],
+              [0.1026, 0.1026, 0.1026, 0.1028, 'N/A', 'N/A'],
+              [0.1026, 0.1027, 0.1028, 0.103, 'N/A', 'N/A'],
+              [0.1027, 0.1028, 0.1029, 0.1031, 'N/A', 'N/A'],
+              [0.1028, 0.1029, 0.103, 0.1033, 'N/A', 'N/A'],
+              [0.1028, 0.103, 0.1031, 0.1034, 'N/A', 'N/A'],
+              [0.1029, 0.103, 0.1033, 0.1036, 'N/A', 'N/A'],
+              [0.1029, 0.1031, 0.1034, 0.1037, 'N/A', 'N/A'],
+              [0.103, 0.1032, 0.1035, 'N/A', 'N/A', 'N/A']
+            ];
+            break;
           case "HKD-CAD":
             rowHeader = ['3.0%', '3.5%', '4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%'];
             rateData = [
@@ -120,6 +166,20 @@ spcal.config(function ($mdThemingProvider) {
               [5.9335, 5.9467, 5.9507, 5.9584, 'N/A', 'N/A'],
               [5.9367, 5.9518, 5.958, 5.9676, 'N/A', 'N/A'],
               [5.9397, 5.9566, 5.9648, 5.9762, 'N/A', 'N/A']
+            ];
+            break;
+          case "CAD-HKD":
+            rowHeader = ['3.0%', '3.5%', '4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%'];
+            rateData = [
+              [0.1692, 0.1693, 0.1697, 0.1699, 0.1695, 0.1692],
+              [0.1691, 0.169, 0.1693, 0.1695, 0.1688, 0.1682],
+              [0.169, 0.1688, 0.169, 0.1691, 0.1681, 0.1673],
+              [0.1688, 0.1686, 0.1688, 0.1687, 0.1675, 'N/A'],
+              [0.1687, 0.1685, 0.1685, 0.1684, 'N/A', 'N/A'],
+              [0.1686, 0.1683, 0.1683, 0.1681, 'N/A', 'N/A'],
+              [0.1685, 0.1682, 0.168, 0.1678, 'N/A', 'N/A'],
+              [0.1684, 0.168, 0.1678, 0.1676, 'N/A', 'N/A'],
+              [0.1684, 0.1679, 0.1677, 0.1673, 'N/A', 'N/A']
             ];
             break;
           case "HKD-EUR":
@@ -136,6 +196,20 @@ spcal.config(function ($mdThemingProvider) {
                 [8.3716, 8.3568, 8.3401, 8.3202, 'N/A', 'N/A']
               ];
               break;
+          case "EUR-HKD":
+            rowHeader = ['3.0%', '3.5%', '4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%'];
+            rateData = [
+                [0.1189, 0.1187, 0.1186, 0.1186, 0.1186, 0.1186],
+                [0.119, 0.1189, 0.1188, 0.1189, 0.119, 0.1192],
+                [0.1191, 0.119, 0.119, 0.1191, 0.1194, 0.1198],
+                [0.1191, 0.1192, 0.1192, 0.1193, 0.1198, 0.1203],
+                [0.1192, 0.1193, 0.1194, 0.1195, 0.1201, 'N/A'],
+                [0.1193, 0.1194, 0.1195, 0.1197, 'N/A', 'N/A'],
+                [0.1193, 0.1195, 0.1196, 0.1199, 'N/A', 'N/A'],
+                [0.1194, 0.1196, 0.1198, 0.12, 'N/A', 'N/A'],
+                [0.1195, 0.1197, 0.1199, 0.1202, 'N/A', 'N/A']
+              ];
+            break;
           case "HKD-CNH":
             rowHeader = ['2.0%', '2.5%', '3.0%', '3.5%', '4.0%', '4.5%', '5.0%', '5.5%', '6.0%'];
             rateData = [
@@ -150,6 +224,20 @@ spcal.config(function ($mdThemingProvider) {
                 [1.138, 1.1393, 1.1406, 1.1418, 'N/A', 'N/A']
               ];
               break;
+          case "CNH-HKD":
+            rowHeader = ['2.0%', '2.5%', '3.0%', '3.5%', '4.0%', '4.5%', '5.0%', '5.5%', '6.0%'];
+            rateData = [
+                [0.8829, 0.8849, 0.8865, 0.8886, 0.8938, 0.8971],
+                [0.8821, 0.8835, 0.8846, 0.886, 0.889, 0.8905],
+                [0.8815, 0.8824, 0.8831, 0.8839, 0.8852, 0.8853],
+                [0.8809, 0.8814, 0.8818, 0.8822, 0.882, 0.881],
+                [0.8804, 0.8806, 0.8806, 0.8807, 0.8792, 0.8773],
+                [0.8799, 0.8798, 0.8795, 0.8793, 0.8767, 0.874],
+                [0.8795, 0.879, 0.8785, 0.878, 0.8745, 'N/A'],
+                [0.8791, 0.8784, 0.8776, 0.8769, 'N/A', 'N/A'],
+                [0.8787, 0.8777, 0.8767, 0.8758, 'N/A', 'N/A']
+              ];
+            break;
           default:
             rateData = [
               ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
@@ -183,9 +271,19 @@ spcal.config(function ($mdThemingProvider) {
       document.getElementById('convertAmount').value = document.getElementById('tempAmount').innerHTML;
     };
 
+    //TODO: multiple listener
+    // $scope.$onMany(['event:onStockChange', 'event:'], function(){
+    //
+    // });
+
+
+
     $scope.onStockChange = function(stockName) {
       if (stockName === '700 HK') {
         $scope.cal.dcdc.spotPrice = 242.800;
+        //TODO: test in find sort mongodb
+        // find({"underlying": "700 HK", "ko_barrier": 105})
+        testing = DcdcData;
       } else {
         $scope.cal.dcdc.spotPrice = 192.000;
       }
@@ -206,9 +304,9 @@ spcal.config(function ($mdThemingProvider) {
     };
 
     $scope.calculateConversionRate = function() {
-      var dps = $scope.cal.dps;
+      dps = $scope.cal.dps;
       var dpsDoc = DpsData.findOne({ depo_cur: dps.depositCurrency, link_cur: dps.linkedCurrency,
-        tenor: dps.tenor, interest_rate: dps.yieldPa});
+        tenor: JSON.parse(dps.tenor).name, interest_rate: dps.yieldPa});
       if (dpsDoc) {
         dps.conversionRate = dpsDoc.conversion_rate;
         document.getElementById('search_field').value = dpsDoc.conversion_rate;
@@ -219,7 +317,7 @@ spcal.config(function ($mdThemingProvider) {
     };
 
     $scope.calculateCouponPa = function() {
-      var dcdc = $scope.cal.dcdc;
+      dcdc = $scope.cal.dcdc;
       if (dcdc.barrierType === 'NONE') {
         var dcdcDoc = DcdcData.findOne({ underlying: dcdc.linkedStock, strike: parseInt(dcdc.strikePrice), ko_type: dcdc.koType,
                           ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
@@ -299,7 +397,27 @@ spcal.config(function ($mdThemingProvider) {
       return {abbrev: currency};
     });
 
-    $scope.dpsTenors = ['1W', '2W', '3W', '1M', '2M', '3M'];
+    $scope.dpsTenors = [
+      {
+        name: '1W',
+        value: 0
+      },{
+        name: '2W',
+        value: 1
+      },{
+        name: '3W',
+        value: 2
+      },{
+        name: '1M',
+        value: 3
+      },{
+        name: '2M',
+        value: 4
+      },{
+        name: '3M',
+        value: 5
+      }
+    ];
 
     $scope.dcdcTenors = [
       {
@@ -319,7 +437,11 @@ spcal.config(function ($mdThemingProvider) {
 
     $scope.stocks = ['700 HK', '388 HK'];
 
+    $scope.koBarriers = ['95', '100', '105', '110'];
+
     $scope.koTypes = ['Daily', 'Period End'];
+
+    $scope.kiBarriers = ['75', '78'];
 
     $scope.barrierTypes = ['NONE', 'AKI', 'EKI'];
 
@@ -475,13 +597,31 @@ spcal.controller('MatrixCtrl', function($mdDialog, $timeout, $scope){
     });
 
     function onlyExactMatch(queryStr, value) {
-      return queryStr.toString() === value.toString();
+      var matchFlag = false;
+
+      if (queryStr.toString() === value.toString()){
+        rowCnt = rowCntTmp;
+        colCnt = colCntTmp;
+        if (dps) {
+          if (parseInt(colCnt) == parseInt(JSON.parse(dps.tenor).value)){
+            matchFlag = true;
+          }
+        }
+      }
+
+      colCntTmp++;
+      if (colCntTmp > 5){
+        colCntTmp = 0;
+        rowCntTmp++;
+      }
+
+      return matchFlag;
     }
 
     Handsontable.Dom.addEvent(search_button, 'click', function (event) {
       queryResult = hot.search.query(document.getElementById('search_field').value);
-      console.log(queryResult);
       hot.render();
+      console.log(queryResult);
       hot.selectCell(queryResult[0].row, queryResult[0].col);
     });
 

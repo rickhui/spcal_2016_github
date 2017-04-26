@@ -39,7 +39,7 @@
                       <label>Tenor</label>
                       <md-select name="tenor" ng-model="cal.dps.tenor" required>
                         <md-option ng-repeat="tenor in dpsTenors" value="{{tenor}}">
-                          {{tenor}}
+                          {{tenor.name}}
                         </md-option>
                       </md-select>
                       <div ng-messages="DpsInvForm.tenor.$error" style="color:maroon" role="alert">
@@ -156,6 +156,7 @@
                     <md-input-container ng-if="cal.dcdc.scenario == 1" class="md-block" flex>
                       <label>Strike Price</label>
                       <input name="strikePrice" ng-model="cal.dcdc.strikePrice" type="number" min="1" pattern="\d+" required>
+                       <div class="hint" >Please refer to the matrix on the right.</div>
                       <div ng-messages="DcdcInvForm.strikePrice.$error" style="color:maroon" role="alert">
                         <div ng-message="required">This field is required.</div>
                       </div>
@@ -163,6 +164,7 @@
                     <md-input-container ng-if="cal.dcdc.scenario == 2" class="md-block" flex>
                       <label>Coupon P.A.</label>
                       <input name="couponPa" ng-model="cal.dcdc.couponPa" type="number" min="1" required>
+                      <div class="hint" >Please refer to the matrix on the right.</div>
                       <div ng-messages="DcdcInvForm.couponPa.$error" style="color:maroon" role="alert">
                         <div ng-message="required">This field is required.</div>
                       </div>
@@ -192,7 +194,10 @@
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>KO Barrier</label>
-                      <input name="koBarrier" ng-model="cal.dcdc.koBarrier" type="number" min="1" pattern="\d+" required>
+                      <md-select name="koBarrier" ng-model="cal.dcdc.koBarrier" required>
+                        <md-option ng-repeat="koBarrier in koBarriers" value="{{koBarrier}}">{{koBarrier}}</md-option>
+                      </md-select>
+                      <!-- <input name="koBarrier" ng-model="cal.dcdc.koBarrier" type="number" min="1" pattern="\d+" required> -->
                       <div ng-messages="DcdcInvForm.koBarrier.$error" style="color:maroon" role="alert">
                         <div ng-message="required">This field is required.</div>
                       </div>
@@ -211,7 +216,10 @@
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                       <label>KI Barrier</label>
-                      <input name="kiBarrier" ng-model="cal.dcdc.kiBarrier" type="number" min="1" pattern="\d+" ng-required="cal.dcdc.barrierType !== 'NONE'" ng-disabled="cal.dcdc.barrierType === 'NONE'">
+                      <md-select name="kiBarrier" ng-disabled="cal.dcdc.barrierType !== 'AKI' && cal.dcdc.barrierType !== 'EKI'" ng-model="cal.dcdc.kiBarrier" ng-required="cal.dcdc.barrierType == 'AKI' || cal.dcdc.barrierType == 'EKI'">
+                        <md-option ng-repeat="kiBarrier in kiBarriers" value="{{kiBarrier}}">{{kiBarrier}}</md-option>
+                      </md-select>
+                      <!-- <input name="kiBarrier" ng-model="cal.dcdc.kiBarrier" type="number" min="1" pattern="\d+" ng-required="cal.dcdc.barrierType !== 'NONE'" ng-disabled="cal.dcdc.barrierType === 'NONE'"> -->
                       <div ng-messages="DcdcInvForm.kiBarrier.$error" style="color:maroon" role="alert">
                         <div ng-message="required">This field is required.</div>
                       </div>

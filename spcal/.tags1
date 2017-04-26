@@ -1,0 +1,60 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Highcharts	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var Highcharts = require('highcharts');$/;"	variable	line:8
+HighBarCharts	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var HighBarCharts = require('highcharts\/highstock');$/;"	variable	line:9
+Highstock	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var Highstock = require('highcharts\/highstock');$/;"	variable	line:10
+spcal	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var spcal = angular.module('spcal',[$/;"	variable	line:14
+dpsChart	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var dpsChart;$/;"	variable	line:22
+dcdcChart	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var dcdcChart;$/;"	variable	line:23
+barChart	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var barChart;$/;"	variable	line:24
+pairCurr	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var pairCurr;$/;"	variable	line:25
+rowHeader	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var rowHeader = ['4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%'];$/;"	variable	line:26
+rateData	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var rateData = [['N\/A', 'N\/A', 'N\/A', 'N\/A', 'N\/A', 'N\/A'],$/;"	variable	line:27
+container	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var container;$/;"	variable	line:37
+hot	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var hot;$/;"	variable	line:38
+videoToPlay	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var videoToPlay;$/;"	variable	line:39
+dps	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var dps;$/;"	variable	line:40
+dcdc	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var dcdc;$/;"	variable	line:41
+rowCnt	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var rowCnt = 0;$/;"	variable	line:42
+colCnt	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var colCnt = 0;$/;"	variable	line:43
+rowCntTmp	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var rowCntTmp = 0;$/;"	variable	line:44
+colCntTmp	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var colCntTmp = 0;$/;"	variable	line:45
+$interval	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $interval(function () {$/;"	function	line:61
+onCurPairChange	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.onCurPairChange = function(depoCur, linkCur) {$/;"	function	line:67
+switch	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^        switch (pairCurr){$/;"	function	line:72
+convert2dp	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.convert2dp = function(){$/;"	function	line:270
+onStockChange	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.onStockChange = function(stockName) {$/;"	function	line:281
+calculateConversionRate	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.calculateConversionRate = function() {$/;"	function	line:306
+calculateCouponPa	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.calculateCouponPa = function() {$/;"	function	line:319
+calculateStrikePrice	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.calculateStrikePrice = function() {$/;"	function	line:337
+resizeDiag	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.resizeDiag = function(ev) {$/;"	function	line:355
+showAdvanced	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.showAdvanced = function(ev) {$/;"	function	line:365
+DialogController	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function DialogController($scope, $mdDialog) {$/;"	function	line:375
+hide	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^      $scope.hide = function() {$/;"	function	line:376
+cancel	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^      $scope.cancel = function() {$/;"	function	line:380
+answer	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^      $scope.answer = function(answer) {$/;"	function	line:384
+linkedCurrencyFilter	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.linkedCurrencyFilter = function(inputCur) {$/;"	function	line:459
+newState	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function newState(state) {$/;"	function	line:481
+querySearch	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function querySearch (query) {$/;"	function	line:493
+$timeout	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^        $timeout(function () { deferred.resolve( results ); }, Math.random() * 1000, false);$/;"	function	line:498
+searchTextChange	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function searchTextChange(text) {$/;"	function	line:505
+selectedItemChange	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function selectedItemChange(item) {$/;"	function	line:509
+loadAll	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function loadAll() {$/;"	function	line:516
+createFilterFor	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function createFilterFor(query) {$/;"	function	line:536
+filterFn	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^      return function filterFn(state) {$/;"	function	line:539
+themeIcons	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var themeIcons = function ($mdIconProvider) {$/;"	function	line:548
+themeIcons	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^var themeIcons = function ($mdIconProvider) {$/;"	function	line:548
+onlyExactMatch	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    function onlyExactMatch(queryStr, value) {$/;"	function	line:599
+$timeout	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $timeout(function () {$/;"	function	line:628
+$interval	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^      $interval(function() {$/;"	function	line:828
+showAdvanced	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^  $scope.showAdvanced = function(ev, id) {$/;"	function	line:840
+DialogController	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^  function DialogController($scope, $mdDialog) {$/;"	function	line:853
+hide	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.hide = function() {$/;"	function	line:854
+cancel	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.cancel = function() {$/;"	function	line:858
+answer	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^    $scope.answer = function(answer) {$/;"	function	line:862
+onYouTubeIframeAPIReady	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^  onYouTubeIframeAPIReady = function () {$/;"	function	line:867
+onReady	/Users/huikaseng/Spcal_Final_v2/spcal_2016_github/spcal/client/main.js	/^          onReady: function (event) {$/;"	function	line:878
