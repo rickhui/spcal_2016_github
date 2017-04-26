@@ -582,10 +582,7 @@ spcal.controller('MatrixCtrl', function($mdDialog, $timeout, $scope){
       data: rateData,
       headerToolTips: true,
       rowHeaders: rowHeader,
-      nestedHeaders: [
-        [{label: 'Conversion Rate', colspan: 6}],
-        ['1W', '2W', '3W', '1M', '2M', '3M']
-      ],
+      colHeaders: ['1W', '2W', '3W', '1M', '2M', '3M'],
       colWidths: 100,
       rowHeights: 40,
       search: {
