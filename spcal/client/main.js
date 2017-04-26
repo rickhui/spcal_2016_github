@@ -683,10 +683,10 @@ spcal.controller('BarChartCtrl', function ($scope) {
       type: 'column',
     },
     title: {
-      text: 'Performance on Deposit Plus from Other Financial Institutions'
+      text: 'Performance of Structured Products Offered by HSBC'
     },
     xAxis: {
-      categories: ['HSBC', 'BOC', 'Standard Charter', 'Citi', 'Hang Seng']
+      categories: ['Deposit Plus', 'Currency Linked III', 'Interest Rate Range Accrual', 'Capped and Floored Floater Deposit']
     },
     yAxis: {
       min: 0,
@@ -705,16 +705,16 @@ spcal.controller('BarChartCtrl', function ($scope) {
     },
     series: [{
       name: 'Return',
-      data: [5, 3, 4, 7, 2]
+      data: [5, 3, 4, 7]
     }, {
       name: 'Stability',
-      data: [2, 2, 3, 2, 1]
+      data: [2, 2, 3, 2]
     }, {
       name: 'Volatility',
-      data: [3, 4, 4, 2, 5]
+      data: [3, 4, 4, 2]
     },{
       name: 'Momentum',
-      data: [6, 2, 4, 3, 1]
+      data: [6, 2, 4, 3]
     }]
   })
   });
