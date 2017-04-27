@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * gap: data: blob: 'unsafe-inline' 'unsafe-eval' ws: wss:;">
+
+
+
+  <link rel="stylesheet" type="text/css" class="__meteor-css__" href="/e6bb977dd7d4c789fea90b8d4eb1979f9b8e67ac.css?meteor_css_resource=true">
+
+  <script type="text/javascript">
+    __meteor_runtime_config__ = JSON.parse(decodeURIComponent("%7B%22meteorRelease%22%3A%22METEOR%401.4.4.1%22%2C%22ROOT_URL%22%3A%22http%3A%2F%2Fhkl103456.hk.hsbc%3A3000%2F%22%2C%22ROOT_URL_PATH_PREFIX%22%3A%22%22%2C%22DDP_DEFAULT_CONNECTION_URL%22%3A%22http%3A%2F%2Fhkl103456.hk.hsbc%3A3000%2F%22%2C%22autoupdateVersionCordova%22%3A%22b8baebe316210b765be2fafb1a3aff4d15477e37%22%2C%22appId%22%3A%22c6uci1glphxqjfm4el%22%2C%22meteorEnv%22%3A%7B%22NODE_ENV%22%3A%22production%22%2C%22TEST_METADATA%22%3A%22%7B%7D%22%7D%7D"));
+
+    if (/Android/i.test(navigator.userAgent)) {
+      // When Android app is emulated, it cannot connect to localhost,
+      // instead it should connect to 10.0.2.2
+      // (unless we're using an http proxy; then it works!)
+      if (!__meteor_runtime_config__.httpProxyPort) {
+        __meteor_runtime_config__.ROOT_URL = (__meteor_runtime_config__.ROOT_URL || '').replace(/localhost/i, '10.0.2.2');
+        __meteor_runtime_config__.DDP_DEFAULT_CONNECTION_URL = (__meteor_runtime_config__.DDP_DEFAULT_CONNECTION_URL || '').replace(/localhost/i, '10.0.2.2');
+      }
+    }
+  </script>
+
+  <script type="text/javascript" src="/cordova.js"></script>
+  <script type="text/javascript" src="/packages/underscore.js?hash=cde485f60699ff9aced3305f70189e39c665183c"></script>
+  <script type="text/javascript" src="/packages/meteor.js?hash=b09c234116cd2599026c6a5d872d2896d8ab5885"></script>
+  <script type="text/javascript" src="/packages/meteor-base.js?hash=a4d07a6b394e56bbe6ccc773c95e7cdb3434960d"></script>
+  <script type="text/javascript" src="/packages/mobile-experience.js?hash=8ded3e69a3e367f321ab9a2b52e3ecdd2661a365"></script>
+  <script type="text/javascript" src="/packages/modules-runtime.js?hash=2b888cb7873bacf38cf32f41d44ac3d4fd600b06"></script>
+  <script type="text/javascript" src="/packages/modules.js?hash=132077460ef78a1c931121179270866f1dcf64a0"></script>
+  <script type="text/javascript" src="/packages/es5-shim.js?hash=adc3c6270d5697523fe2a72e73428390b7eba83a"></script>
+  <script type="text/javascript" src="/packages/promise.js?hash=e1cb0cb24d96664557c9376c15db655f91518fd5"></script>
+  <script type="text/javascript" src="/packages/ecmascript-runtime.js?hash=f7e181e2f8dad8ea7cdf1faaf8f3c1b47de11272"></script>
+  <script type="text/javascript" src="/packages/babel-compiler.js?hash=a9546d4e245cfe40b406e08d40bf106241f01683"></script>
+  <script type="text/javascript" src="/packages/ecmascript.js?hash=370a8752194bcf73be7fffa3635715d0fbf7853d"></script>
+  <script type="text/javascript" src="/packages/base64.js?hash=0053489bb30bb5c0e3545df151f83e41150344b0"></script>
+  <script type="text/javascript" src="/packages/ejson.js?hash=0f17ced99d522d48cd8f8b2139167fd06babd969"></script>
+  <script type="text/javascript" src="/packages/id-map.js?hash=c7aea8dfa2bf46ff2ae0aa6c6cf09e36abc61d07"></script>
+  <script type="text/javascript" src="/packages/ordered-dict.js?hash=bacdd1852075630a01f7de783e5e8e8aa8541cdc"></script>
+  <script type="text/javascript" src="/packages/tracker.js?hash=9f8a0cec09c662aad5a5e224447b2d4e88d011ef"></script>
+  <script type="text/javascript" src="/packages/babel-runtime.js?hash=1db3784a7268156b770997413c0a7a82d866994a"></script>
+  <script type="text/javascript" src="/packages/random.js?hash=a3be1ee923a6fc933f063c7f8de3e15243e12f47"></script>
+  <script type="text/javascript" src="/packages/mongo-id.js?hash=345d169d517353f8146292b4abd24061721f8b26"></script>
+  <script type="text/javascript" src="/packages/diff-sequence.js?hash=15014d7b1e11c05111a386992e684ab1d3cc4158"></script>
+  <script type="text/javascript" src="/packages/geojson-utils.js?hash=b204c7d4caf119e6883522fb87c6cce060724bf0"></script>
+  <script type="text/javascript" src="/packages/minimongo.js?hash=15fb4e0e5e55cdddc5e59a060001fc2b0249cc65"></script>
+  <script type="text/javascript" src="/packages/check.js?hash=87c633843915b879a0c9676ea81f1cd351296e41"></script>
+  <script type="text/javascript" src="/packages/retry.js?hash=1e409617b538ff3e2b0238b15e45b3380c51a224"></script>
+  <script type="text/javascript" src="/packages/ddp-common.js?hash=d42359bcace6c66ac90e2782193494253ee68155"></script>
+  <script type="text/javascript" src="/packages/reload.js?hash=628b069673bffbc7390ba84ece8809c8c88c2eed"></script>
+  <script type="text/javascript" src="/packages/ddp-client.js?hash=d69811b75e636077a323c16b077a38a29bacca9e"></script>
+  <script type="text/javascript" src="/packages/ddp.js?hash=25dc3f428447c81620c91c4245dbc6e4f7d32fb7"></script>
+  <script type="text/javascript" src="/packages/ddp-server.js?hash=1beefbc7bd033ea687e7ab8fbd5694df072662af"></script>
+  <script type="text/javascript" src="/packages/allow-deny.js?hash=0a3547d203dfd89d9484cad533c54cd0f4778263"></script>
+  <script type="text/javascript" src="/packages/insecure.js?hash=a0e5f17c280f4c7b05178d36a7ceb07cb7b086c6"></script>
+  <script type="text/javascript" src="/packages/mongo.js?hash=90f037f47abee1e74ba80360e6b3f3dbaa792260"></script>
+  <script type="text/javascript" src="/packages/reactive-var.js?hash=ec712fa3ae588c4a1e7017f0bb4507c725391225"></script>
+  <script type="text/javascript" src="/packages/jquery.js?hash=c57b3cfa0ca9c66400d4456b6f6f1e486ee10aad"></script>
+  <script type="text/javascript" src="/packages/standard-minifier-css.js?hash=cfe82682f4394d3ffc6335555c1f9f3f73294507"></script>
+  <script type="text/javascript" src="/packages/shell-server.js?hash=6ff1313e4bf7618e577eb2604a580b2ea9b7631f"></script>
+  <script type="text/javascript" src="/packages/autopublish.js?hash=073bd4c42d2fb6182c944501b4f30e8d17bcceb3"></script>
+  <script type="text/javascript" src="/packages/reactive-dict.js?hash=fafa4f575f707596da31c349eb0ddb1f899f1e3d"></script>
+  <script type="text/javascript" src="/packages/session.js?hash=821b0746e602b3be69538d299d6866e222121b54"></script>
+  <script type="text/javascript" src="/packages/lai_collection-extensions.js?hash=6dc576b4d7916e6777ffd39636bf63730cdf28b4"></script>
+  <script type="text/javascript" src="/packages/dburles_mongo-collection-instances.js?hash=90da85b2bd33cd8f89924ff508c36afd228262a0"></script>
+  <script type="text/javascript" src="/packages/observe-sequence.js?hash=8fe58036c6ba00c458f54c360a21fd0e41fb7ee0"></script>
+  <script type="text/javascript" src="/packages/benjamine_jsondiffpatch.js?hash=9c89f57ba6f413196bea394df89c54c13f2a5b35"></script>
+  <script type="text/javascript" src="/packages/angular_angular.js?hash=ba46867929499f57e7b9be4d72abbbbdd0372009"></script>
+  <script type="text/javascript" src="/packages/angular-meteor-data.js?hash=a4c859997b71ecd453c62943db61e5af01c9dc82"></script>
+  <script type="text/javascript" src="/packages/angular-templates.js?hash=bb9d31b69778266042ee846eece158ddb194c46c"></script>
+  <script type="text/javascript" src="/packages/planettraining_material-design-icons.js?hash=4e018b772d89fc79e5addc3f97008f434a0221a1"></script>
+  <script type="text/javascript" src="/packages/angular_angular-messages.js?hash=29722e4f7eb1e0ff570c9a7ebd0337746a160bf8"></script>
+  <script type="text/javascript" src="/packages/angularjs_angular.js?hash=37915db9b877c759183049be32de17f7e23e8d67"></script>
+  <script type="text/javascript" src="/packages/angularjs_angular-sanitize.js?hash=0735afddb9ac0e983ae80bf2bb47d6072b185a3e"></script>
+  <script type="text/javascript" src="/packages/angular.js?hash=a07ef95d4e7328eaf0dcf7c0a1194a854d214160"></script>
+  <script type="text/javascript" src="/packages/adrianliaw_youtube-iframe-api.js?hash=22a1c9a062eec61102a4a20a2076c7c2842402b1"></script>
+  <script type="text/javascript" src="/packages/webapp.js?hash=7d7982c2400cb07921a9a65fb77da05010d32166"></script>
+  <script type="text/javascript" src="/packages/livedata.js?hash=7cf1831a60b48e304b054aee1ae0f7e38ff35d09"></script>
+  <script type="text/javascript" src="/packages/hot-code-push.js?hash=2e864a0bdd0d5f686115099f8c48eb6c866b5b14"></script>
+  <script type="text/javascript" src="/packages/fastclick.js?hash=83277d259c1bde488cbffdb303de8e7b6e52d79e"></script>
+  <script type="text/javascript" src="/packages/mobile-status-bar.js?hash=e04ed73b8d8bcbad1c53a2bbb5d130765b637134"></script>
+  <script type="text/javascript" src="/packages/launch-screen.js?hash=2f56943306c7e900ed9f4d894b87f534ebffeaeb"></script>
+  <script type="text/javascript" src="/packages/pbastowski_angular-babel.js?hash=a816526c08fad76a03784cb17b169e703b8711ca"></script>
+  <script type="text/javascript" src="/packages/url.js?hash=137892484d84f8a5ae5824e6fc7ac12745fa43e9"></script>
+  <script type="text/javascript" src="/packages/http.js?hash=9355a65a433bea87be60bc1fd90e0ef608af93e4"></script>
+  <script type="text/javascript" src="/packages/autoupdate.js?hash=cdfb6b94a347d718a41c216182b9aac5f2910d08"></script>
+  <script type="text/javascript" src="/packages/global-imports.js?hash=08abe118caea9380e9f7324f8b1831a6c62591b5"></script>
+  <script type="text/javascript" src="/app.js?hash=68567e6b13588b5b83182197c830cbe4e4eadeb3"></script>
+
+
+  
+  <title>Structured Product Calculator</title>
+  <link rel="icon" href="/favicon.ico?v=2" sizes="16x16 32x32">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+  
+  <div ng-include="" src="&apos;client/nav.html&apos;"></div>
+  <div layout="row">
+    <div flex="" layout="column">
+      <div flex="" ng-include="" src="&apos;client/calculator.html&apos;"></div>
+    </div>
+    <div flex="" layout="column">
+      <div layout="row">
+        <div flex="" ng-include="" src="&apos;client/matrix.html&apos;"></div>
+      </div>
+      <div layout="row">
+        <div flex="" ng-include="" src="&apos;client/reference.html&apos;"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

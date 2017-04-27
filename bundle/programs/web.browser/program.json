@@ -551,20 +551,20 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app.js?hash=6887fcff80eebe15c2808b46de72bb0f145f1606",
+      "url": "/app.js?hash=68567e6b13588b5b83182197c830cbe4e4eadeb3",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/6887fcff80eebe15c2808b46de72bb0f145f1606.map",
-      "size": 141265,
-      "hash": "6887fcff80eebe15c2808b46de72bb0f145f1606"
+      "sourceMapUrl": "/68567e6b13588b5b83182197c830cbe4e4eadeb3.map",
+      "size": 164158,
+      "hash": "68567e6b13588b5b83182197c830cbe4e4eadeb3"
     },
     {
-      "path": "9e990aaf5c3abb489f6c8bae90c68cbea478a767.css",
+      "path": "e6bb977dd7d4c789fea90b8d4eb1979f9b8e67ac.css",
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/9e990aaf5c3abb489f6c8bae90c68cbea478a767.css?meteor_css_resource=true",
-      "size": 1973,
-      "hash": "9e990aaf5c3abb489f6c8bae90c68cbea478a767"
+      "url": "/e6bb977dd7d4c789fea90b8d4eb1979f9b8e67ac.css?meteor_css_resource=true",
+      "size": 1977,
+      "hash": "e6bb977dd7d4c789fea90b8d4eb1979f9b8e67ac"
     },
     {
       "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-action-symbol.svg",

@@ -1,0 +1,993 @@
+{
+  "format": "web-program-pre1",
+  "manifest": [
+    {
+      "path": "packages/underscore.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/underscore.js?hash=cde485f60699ff9aced3305f70189e39c665183c",
+      "size": 150249,
+      "hash": "cde485f60699ff9aced3305f70189e39c665183c"
+    },
+    {
+      "path": "packages/meteor.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/meteor.js?hash=b09c234116cd2599026c6a5d872d2896d8ab5885",
+      "size": 123128,
+      "hash": "b09c234116cd2599026c6a5d872d2896d8ab5885"
+    },
+    {
+      "path": "packages/meteor-base.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/meteor-base.js?hash=a4d07a6b394e56bbe6ccc773c95e7cdb3434960d",
+      "size": 720,
+      "hash": "a4d07a6b394e56bbe6ccc773c95e7cdb3434960d"
+    },
+    {
+      "path": "packages/mobile-experience.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/mobile-experience.js?hash=8ded3e69a3e367f321ab9a2b52e3ecdd2661a365",
+      "size": 726,
+      "hash": "8ded3e69a3e367f321ab9a2b52e3ecdd2661a365"
+    },
+    {
+      "path": "packages/modules-runtime.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/modules-runtime.js?hash=2b888cb7873bacf38cf32f41d44ac3d4fd600b06",
+      "size": 42886,
+      "hash": "2b888cb7873bacf38cf32f41d44ac3d4fd600b06"
+    },
+    {
+      "path": "packages/modules.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/modules.js?hash=132077460ef78a1c931121179270866f1dcf64a0",
+      "size": 7968227,
+      "hash": "132077460ef78a1c931121179270866f1dcf64a0"
+    },
+    {
+      "path": "packages/es5-shim.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/es5-shim.js?hash=adc3c6270d5697523fe2a72e73428390b7eba83a",
+      "size": 346492,
+      "hash": "adc3c6270d5697523fe2a72e73428390b7eba83a"
+    },
+    {
+      "path": "packages/promise.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/promise.js?hash=e1cb0cb24d96664557c9376c15db655f91518fd5",
+      "size": 65779,
+      "hash": "e1cb0cb24d96664557c9376c15db655f91518fd5"
+    },
+    {
+      "path": "packages/ecmascript-runtime.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/ecmascript-runtime.js?hash=f7e181e2f8dad8ea7cdf1faaf8f3c1b47de11272",
+      "size": 519496,
+      "hash": "f7e181e2f8dad8ea7cdf1faaf8f3c1b47de11272"
+    },
+    {
+      "path": "packages/babel-compiler.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/babel-compiler.js?hash=a9546d4e245cfe40b406e08d40bf106241f01683",
+      "size": 723,
+      "hash": "a9546d4e245cfe40b406e08d40bf106241f01683"
+    },
+    {
+      "path": "packages/ecmascript.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/ecmascript.js?hash=370a8752194bcf73be7fffa3635715d0fbf7853d",
+      "size": 716,
+      "hash": "370a8752194bcf73be7fffa3635715d0fbf7853d"
+    },
+    {
+      "path": "packages/base64.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/base64.js?hash=0053489bb30bb5c0e3545df151f83e41150344b0",
+      "size": 15332,
+      "hash": "0053489bb30bb5c0e3545df151f83e41150344b0"
+    },
+    {
+      "path": "packages/ejson.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/ejson.js?hash=0f17ced99d522d48cd8f8b2139167fd06babd969",
+      "size": 81952,
+      "hash": "0f17ced99d522d48cd8f8b2139167fd06babd969"
+    },
+    {
+      "path": "packages/id-map.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/id-map.js?hash=c7aea8dfa2bf46ff2ae0aa6c6cf09e36abc61d07",
+      "size": 8189,
+      "hash": "c7aea8dfa2bf46ff2ae0aa6c6cf09e36abc61d07"
+    },
+    {
+      "path": "packages/ordered-dict.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/ordered-dict.js?hash=bacdd1852075630a01f7de783e5e8e8aa8541cdc",
+      "size": 20041,
+      "hash": "bacdd1852075630a01f7de783e5e8e8aa8541cdc"
+    },
+    {
+      "path": "packages/tracker.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/tracker.js?hash=9f8a0cec09c662aad5a5e224447b2d4e88d011ef",
+      "size": 85367,
+      "hash": "9f8a0cec09c662aad5a5e224447b2d4e88d011ef"
+    },
+    {
+      "path": "packages/babel-runtime.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/babel-runtime.js?hash=1db3784a7268156b770997413c0a7a82d866994a",
+      "size": 11132,
+      "hash": "1db3784a7268156b770997413c0a7a82d866994a"
+    },
+    {
+      "path": "packages/random.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/random.js?hash=a3be1ee923a6fc933f063c7f8de3e15243e12f47",
+      "sourceMap": "packages/random.js.map",
+      "sourceMapUrl": "/packages/a3be1ee923a6fc933f063c7f8de3e15243e12f47.map",
+      "size": 39765,
+      "hash": "a3be1ee923a6fc933f063c7f8de3e15243e12f47"
+    },
+    {
+      "path": "packages/mongo-id.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/mongo-id.js?hash=345d169d517353f8146292b4abd24061721f8b26",
+      "size": 12235,
+      "hash": "345d169d517353f8146292b4abd24061721f8b26"
+    },
+    {
+      "path": "packages/diff-sequence.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/diff-sequence.js?hash=15014d7b1e11c05111a386992e684ab1d3cc4158",
+      "size": 24291,
+      "hash": "15014d7b1e11c05111a386992e684ab1d3cc4158"
+    },
+    {
+      "path": "packages/geojson-utils.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/geojson-utils.js?hash=b204c7d4caf119e6883522fb87c6cce060724bf0",
+      "size": 46635,
+      "hash": "b204c7d4caf119e6883522fb87c6cce060724bf0"
+    },
+    {
+      "path": "packages/minimongo.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/minimongo.js?hash=15fb4e0e5e55cdddc5e59a060001fc2b0249cc65",
+      "sourceMap": "packages/minimongo.js.map",
+      "sourceMapUrl": "/packages/15fb4e0e5e55cdddc5e59a060001fc2b0249cc65.map",
+      "size": 473055,
+      "hash": "15fb4e0e5e55cdddc5e59a060001fc2b0249cc65"
+    },
+    {
+      "path": "packages/check.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/check.js?hash=87c633843915b879a0c9676ea81f1cd351296e41",
+      "size": 67991,
+      "hash": "87c633843915b879a0c9676ea81f1cd351296e41"
+    },
+    {
+      "path": "packages/retry.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/retry.js?hash=1e409617b538ff3e2b0238b15e45b3380c51a224",
+      "size": 6891,
+      "hash": "1e409617b538ff3e2b0238b15e45b3380c51a224"
+    },
+    {
+      "path": "packages/ddp-common.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/ddp-common.js?hash=d42359bcace6c66ac90e2782193494253ee68155",
+      "size": 45313,
+      "hash": "d42359bcace6c66ac90e2782193494253ee68155"
+    },
+    {
+      "path": "packages/reload.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/reload.js?hash=628b069673bffbc7390ba84ece8809c8c88c2eed",
+      "size": 26433,
+      "hash": "628b069673bffbc7390ba84ece8809c8c88c2eed"
+    },
+    {
+      "path": "packages/ddp-client.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/ddp-client.js?hash=d69811b75e636077a323c16b077a38a29bacca9e",
+      "sourceMap": "packages/ddp-client.js.map",
+      "sourceMapUrl": "/packages/d69811b75e636077a323c16b077a38a29bacca9e.map",
+      "size": 637472,
+      "hash": "d69811b75e636077a323c16b077a38a29bacca9e"
+    },
+    {
+      "path": "packages/ddp.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/ddp.js?hash=25dc3f428447c81620c91c4245dbc6e4f7d32fb7",
+      "size": 874,
+      "hash": "25dc3f428447c81620c91c4245dbc6e4f7d32fb7"
+    },
+    {
+      "path": "packages/ddp-server.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/ddp-server.js?hash=1beefbc7bd033ea687e7ab8fbd5694df072662af",
+      "size": 719,
+      "hash": "1beefbc7bd033ea687e7ab8fbd5694df072662af"
+    },
+    {
+      "path": "packages/allow-deny.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/allow-deny.js?hash=0a3547d203dfd89d9484cad533c54cd0f4778263",
+      "sourceMap": "packages/allow-deny.js.map",
+      "sourceMapUrl": "/packages/0a3547d203dfd89d9484cad533c54cd0f4778263.map",
+      "size": 62341,
+      "hash": "0a3547d203dfd89d9484cad533c54cd0f4778263"
+    },
+    {
+      "path": "packages/insecure.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/insecure.js?hash=a0e5f17c280f4c7b05178d36a7ceb07cb7b086c6",
+      "size": 714,
+      "hash": "a0e5f17c280f4c7b05178d36a7ceb07cb7b086c6"
+    },
+    {
+      "path": "packages/mongo.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/mongo.js?hash=90f037f47abee1e74ba80360e6b3f3dbaa792260",
+      "sourceMap": "packages/mongo.js.map",
+      "sourceMapUrl": "/packages/90f037f47abee1e74ba80360e6b3f3dbaa792260.map",
+      "size": 97645,
+      "hash": "90f037f47abee1e74ba80360e6b3f3dbaa792260"
+    },
+    {
+      "path": "packages/reactive-var.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/reactive-var.js?hash=ec712fa3ae588c4a1e7017f0bb4507c725391225",
+      "size": 13609,
+      "hash": "ec712fa3ae588c4a1e7017f0bb4507c725391225"
+    },
+    {
+      "path": "packages/jquery.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/jquery.js?hash=c57b3cfa0ca9c66400d4456b6f6f1e486ee10aad",
+      "size": 1297965,
+      "hash": "c57b3cfa0ca9c66400d4456b6f6f1e486ee10aad"
+    },
+    {
+      "path": "packages/standard-minifier-css.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/standard-minifier-css.js?hash=cfe82682f4394d3ffc6335555c1f9f3f73294507",
+      "size": 730,
+      "hash": "cfe82682f4394d3ffc6335555c1f9f3f73294507"
+    },
+    {
+      "path": "packages/shell-server.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/shell-server.js?hash=6ff1313e4bf7618e577eb2604a580b2ea9b7631f",
+      "size": 721,
+      "hash": "6ff1313e4bf7618e577eb2604a580b2ea9b7631f"
+    },
+    {
+      "path": "packages/autopublish.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/autopublish.js?hash=073bd4c42d2fb6182c944501b4f30e8d17bcceb3",
+      "size": 717,
+      "hash": "073bd4c42d2fb6182c944501b4f30e8d17bcceb3"
+    },
+    {
+      "path": "packages/reactive-dict.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/reactive-dict.js?hash=fafa4f575f707596da31c349eb0ddb1f899f1e3d",
+      "sourceMap": "packages/reactive-dict.js.map",
+      "sourceMapUrl": "/packages/fafa4f575f707596da31c349eb0ddb1f899f1e3d.map",
+      "size": 35527,
+      "hash": "fafa4f575f707596da31c349eb0ddb1f899f1e3d"
+    },
+    {
+      "path": "packages/session.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/session.js?hash=821b0746e602b3be69538d299d6866e222121b54",
+      "size": 6138,
+      "hash": "821b0746e602b3be69538d299d6866e222121b54"
+    },
+    {
+      "path": "packages/lai_collection-extensions.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/lai_collection-extensions.js?hash=6dc576b4d7916e6777ffd39636bf63730cdf28b4",
+      "size": 16184,
+      "hash": "6dc576b4d7916e6777ffd39636bf63730cdf28b4"
+    },
+    {
+      "path": "packages/dburles_mongo-collection-instances.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/dburles_mongo-collection-instances.js?hash=90da85b2bd33cd8f89924ff508c36afd228262a0",
+      "size": 5191,
+      "hash": "90da85b2bd33cd8f89924ff508c36afd228262a0"
+    },
+    {
+      "path": "packages/observe-sequence.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/observe-sequence.js?hash=8fe58036c6ba00c458f54c360a21fd0e41fb7ee0",
+      "size": 33341,
+      "hash": "8fe58036c6ba00c458f54c360a21fd0e41fb7ee0"
+    },
+    {
+      "path": "packages/benjamine_jsondiffpatch.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/benjamine_jsondiffpatch.js?hash=9c89f57ba6f413196bea394df89c54c13f2a5b35",
+      "size": 609234,
+      "hash": "9c89f57ba6f413196bea394df89c54c13f2a5b35"
+    },
+    {
+      "path": "packages/angular_angular.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/angular_angular.js?hash=ba46867929499f57e7b9be4d72abbbbdd0372009",
+      "size": 1143497,
+      "hash": "ba46867929499f57e7b9be4d72abbbbdd0372009"
+    },
+    {
+      "path": "packages/angular-meteor-data.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/angular-meteor-data.js?hash=a4c859997b71ecd453c62943db61e5af01c9dc82",
+      "size": 321367,
+      "hash": "a4c859997b71ecd453c62943db61e5af01c9dc82"
+    },
+    {
+      "path": "packages/angular-templates.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/angular-templates.js?hash=bb9d31b69778266042ee846eece158ddb194c46c",
+      "size": 7301,
+      "hash": "bb9d31b69778266042ee846eece158ddb194c46c"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/planettraining_material-design-icons.js?hash=4e018b772d89fc79e5addc3f97008f434a0221a1",
+      "size": 745,
+      "hash": "4e018b772d89fc79e5addc3f97008f434a0221a1"
+    },
+    {
+      "path": "packages/angular_angular-messages.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/angular_angular-messages.js?hash=29722e4f7eb1e0ff570c9a7ebd0337746a160bf8",
+      "size": 91987,
+      "hash": "29722e4f7eb1e0ff570c9a7ebd0337746a160bf8"
+    },
+    {
+      "path": "packages/angularjs_angular.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/angularjs_angular.js?hash=37915db9b877c759183049be32de17f7e23e8d67",
+      "size": 3360576,
+      "hash": "37915db9b877c759183049be32de17f7e23e8d67"
+    },
+    {
+      "path": "packages/angularjs_angular-sanitize.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/angularjs_angular-sanitize.js?hash=0735afddb9ac0e983ae80bf2bb47d6072b185a3e",
+      "size": 84802,
+      "hash": "0735afddb9ac0e983ae80bf2bb47d6072b185a3e"
+    },
+    {
+      "path": "packages/angular.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/angular.js?hash=a07ef95d4e7328eaf0dcf7c0a1194a854d214160",
+      "size": 713,
+      "hash": "a07ef95d4e7328eaf0dcf7c0a1194a854d214160"
+    },
+    {
+      "path": "packages/adrianliaw_youtube-iframe-api.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/adrianliaw_youtube-iframe-api.js?hash=22a1c9a062eec61102a4a20a2076c7c2842402b1",
+      "size": 8691,
+      "hash": "22a1c9a062eec61102a4a20a2076c7c2842402b1"
+    },
+    {
+      "path": "packages/webapp.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/webapp.js?hash=7d7982c2400cb07921a9a65fb77da05010d32166",
+      "sourceMap": "packages/webapp.js.map",
+      "sourceMapUrl": "/packages/7d7982c2400cb07921a9a65fb77da05010d32166.map",
+      "size": 3970,
+      "hash": "7d7982c2400cb07921a9a65fb77da05010d32166"
+    },
+    {
+      "path": "packages/livedata.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/livedata.js?hash=7cf1831a60b48e304b054aee1ae0f7e38ff35d09",
+      "size": 958,
+      "hash": "7cf1831a60b48e304b054aee1ae0f7e38ff35d09"
+    },
+    {
+      "path": "packages/hot-code-push.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/hot-code-push.js?hash=2e864a0bdd0d5f686115099f8c48eb6c866b5b14",
+      "size": 722,
+      "hash": "2e864a0bdd0d5f686115099f8c48eb6c866b5b14"
+    },
+    {
+      "path": "packages/fastclick.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/fastclick.js?hash=83277d259c1bde488cbffdb303de8e7b6e52d79e",
+      "size": 112200,
+      "hash": "83277d259c1bde488cbffdb303de8e7b6e52d79e"
+    },
+    {
+      "path": "packages/mobile-status-bar.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/mobile-status-bar.js?hash=e04ed73b8d8bcbad1c53a2bbb5d130765b637134",
+      "size": 726,
+      "hash": "e04ed73b8d8bcbad1c53a2bbb5d130765b637134"
+    },
+    {
+      "path": "packages/launch-screen.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/launch-screen.js?hash=2f56943306c7e900ed9f4d894b87f534ebffeaeb",
+      "size": 8391,
+      "hash": "2f56943306c7e900ed9f4d894b87f534ebffeaeb"
+    },
+    {
+      "path": "packages/pbastowski_angular-babel.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/pbastowski_angular-babel.js?hash=a816526c08fad76a03784cb17b169e703b8711ca",
+      "size": 861463,
+      "hash": "a816526c08fad76a03784cb17b169e703b8711ca"
+    },
+    {
+      "path": "packages/url.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/url.js?hash=137892484d84f8a5ae5824e6fc7ac12745fa43e9",
+      "size": 6470,
+      "hash": "137892484d84f8a5ae5824e6fc7ac12745fa43e9"
+    },
+    {
+      "path": "packages/http.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/http.js?hash=9355a65a433bea87be60bc1fd90e0ef608af93e4",
+      "sourceMap": "packages/http.js.map",
+      "sourceMapUrl": "/packages/9355a65a433bea87be60bc1fd90e0ef608af93e4.map",
+      "size": 36417,
+      "hash": "9355a65a433bea87be60bc1fd90e0ef608af93e4"
+    },
+    {
+      "path": "packages/autoupdate.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/autoupdate.js?hash=cdfb6b94a347d718a41c216182b9aac5f2910d08",
+      "size": 9869,
+      "hash": "cdfb6b94a347d718a41c216182b9aac5f2910d08"
+    },
+    {
+      "path": "packages/global-imports.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/global-imports.js?hash=08abe118caea9380e9f7324f8b1831a6c62591b5",
+      "size": 822,
+      "hash": "08abe118caea9380e9f7324f8b1831a6c62591b5"
+    },
+    {
+      "path": "app/app.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/app.js?hash=68567e6b13588b5b83182197c830cbe4e4eadeb3",
+      "sourceMap": "app/app.js.map",
+      "sourceMapUrl": "/68567e6b13588b5b83182197c830cbe4e4eadeb3.map",
+      "size": 164158,
+      "hash": "68567e6b13588b5b83182197c830cbe4e4eadeb3"
+    },
+    {
+      "path": "e6bb977dd7d4c789fea90b8d4eb1979f9b8e67ac.css",
+      "where": "client",
+      "type": "css",
+      "cacheable": true,
+      "url": "/e6bb977dd7d4c789fea90b8d4eb1979f9b8e67ac.css?meteor_css_resource=true",
+      "size": 1977,
+      "hash": "e6bb977dd7d4c789fea90b8d4eb1979f9b8e67ac"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-action-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-action-symbol.svg",
+      "size": 62780,
+      "hash": "51332ff1888d0df78bda742023dfeaa63aa2317f"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-av.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-av.svg",
+      "size": 23671,
+      "hash": "41841ede7c18ed0b905c1b80a2f98e95d449b5ae"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-device.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-device.svg",
+      "size": 26145,
+      "hash": "ef7c569d2864b39ada231639d30e145253098a4d"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-hardware-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-hardware-symbol.svg",
+      "size": 10750,
+      "hash": "c24855a0403a4b97777453ea810e41444cdcd111"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-maps.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-maps.svg",
+      "size": 22099,
+      "hash": "7c3deef5fcc3ad33cb99fe053b9fa44ecdb30d6b"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-places-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-places-symbol.svg",
+      "size": 8875,
+      "hash": "2fbb79aefdea43499728fd05d53fddf4084175f3"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-toggle.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-toggle.svg",
+      "size": 2044,
+      "hash": "3a3eb6e6e662f66a7018993d7a776e33ef479309"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-action.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-action.svg",
+      "size": 69562,
+      "hash": "3aacdeb931f7a77a75c1042837c0aa80d6ee158d"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-communication-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-communication-symbol.svg",
+      "size": 14240,
+      "hash": "4cfc9df300127c93405ba42a4243d2d36bb971f9"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-editor-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-editor-symbol.svg",
+      "size": 16125,
+      "hash": "41314c9bbd0e1fce5c42800ffa1411bb24fad090"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-hardware.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-hardware.svg",
+      "size": 12213,
+      "hash": "df988212634ec19efd77b4d3dd0196c6428ad472"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-navigation-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-navigation-symbol.svg",
+      "size": 4325,
+      "hash": "8f57fd8fc3e8153f49fe05a92e99b80cf9a10619"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-places.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-places.svg",
+      "size": 9446,
+      "hash": "56f2c352bb1875fc4be9c4b10d86a5d88d162f41"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-alert-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-alert-symbol.svg",
+      "size": 984,
+      "hash": "c660f9d1f9eb55842dbc9fd238b237b8eab74463"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-communication.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-communication.svg",
+      "size": 15761,
+      "hash": "4ef6bf92530c53c2332c4c839a0e51587f92af4a"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-editor.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-editor.svg",
+      "size": 18213,
+      "hash": "8f78da2d301f2550eef74068d1cdaf38b51720f3"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-image-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-image-symbol.svg",
+      "size": 50072,
+      "hash": "5a0cf58bd5fc946ef664cf17f115087c69edc228"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-navigation.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-navigation.svg",
+      "size": 5134,
+      "hash": "72787624f22de4176ad69e5f8099085983f5ac46"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-social-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-social-symbol.svg",
+      "size": 10435,
+      "hash": "93ec466cbb60b75cebd63ca6aff6aa34c0e4cf7e"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-alert.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-alert.svg",
+      "size": 1123,
+      "hash": "a1f40a96c29ed52818fbdd2a7933509d40667a7f"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-content-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-content-symbol.svg",
+      "size": 9271,
+      "hash": "49639816bd9d60938f3faf9491fb3ed91892167b"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-file-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-file-symbol.svg",
+      "size": 3468,
+      "hash": "7266760e711d47dfc11ea0e1852c1874fefd28b4"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-image.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-image.svg",
+      "size": 54934,
+      "hash": "6ba565a79c28ef2c6c8e99b26b6b273e45ed5d9b"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-notification-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-notification-symbol.svg",
+      "size": 16613,
+      "hash": "57c01ee838ca161504100ec042226659fb3f3bfb"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-social.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-social.svg",
+      "size": 11340,
+      "hash": "8a97bff75334020cd1d65deee3a8df58e1f81504"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-av-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-av-symbol.svg",
+      "size": 21200,
+      "hash": "a833f66559741d4de5e9eb4d7f0a3268afd561fe"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-content.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-content.svg",
+      "size": 10534,
+      "hash": "14ab98fac2bda8c332a2e59475c1217c2b16f562"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-file.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-file.svg",
+      "size": 3889,
+      "hash": "b0d59edec041bb740a71725c99336e30fdd2535d"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-maps-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-maps-symbol.svg",
+      "size": 20011,
+      "hash": "f647bf8de2b1ffc2a68ac2b47ba891ca4a9ce1cf"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-notification.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-notification.svg",
+      "size": 18262,
+      "hash": "0d869ed6d6d4030b8479fe4c13cebef156f619c7"
+    },
+    {
+      "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-toggle-symbol.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-toggle-symbol.svg",
+      "size": 1795,
+      "hash": "fb7e96a2875cae6b0d49461faf07dca9dddd13fd"
+    },
+    {
+      "path": "app/favicon.ico",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/favicon.ico",
+      "size": 2970,
+      "hash": "3cbeac2b942c4761c9aca76f70bc247b99ce4536"
+    },
+    {
+      "path": "app/fxRate.csv",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fxRate.csv",
+      "size": 28532,
+      "hash": "87fc9ba5e1089bd7fe2cdee2e566d50251b22c04"
+    },
+    {
+      "path": "app/stockPrice.csv",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/stockPrice.csv",
+      "size": 2822,
+      "hash": "854dae93ee84d52c904926dc4a0139c0b8b5926d"
+    },
+    {
+      "path": "app/images/Hsbc-logo.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/Hsbc-logo.svg",
+      "size": 6228,
+      "hash": "4b3e7af760beb733fcd9ddf1209d8520667b6de2"
+    },
+    {
+      "path": "app/images/cross-icon.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/cross-icon.svg",
+      "size": 1029,
+      "hash": "7d08ccdb02372d7dda35a023e178aaa0eceb5f2c"
+    },
+    {
+      "path": "app/images/hsbc-icon.gif",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/hsbc-icon.gif",
+      "size": 2970,
+      "hash": "3cbeac2b942c4761c9aca76f70bc247b99ce4536"
+    },
+    {
+      "path": "app/images/ic_cancel_white_48px.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/ic_cancel_white_48px.svg",
+      "size": 339,
+      "hash": "4b5c95c78db305af36d078738e1f58748c9c3f98"
+    },
+    {
+      "path": "app/images/test1.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/test1.jpg",
+      "size": 93140,
+      "hash": "a5f9d12940c96288f96c54dc7d46112c3cff87c6"
+    },
+    {
+      "path": "app/images/test2.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/test2.jpg",
+      "size": 1448642,
+      "hash": "04a51490afde3c4b21367ccb9d0e7fd5543a158a"
+    },
+    {
+      "path": "app/images/test3.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/test3.jpg",
+      "size": 469800,
+      "hash": "7286ab2b3a12ca91bd83219f542cb8639e15f279"
+    },
+    {
+      "path": "head.html",
+      "where": "internal",
+      "type": "head",
+      "hash": "e9cb1b8e849b7caaece377f966bff94536c92812"
+    },
+    {
+      "path": "body.html",
+      "where": "internal",
+      "type": "body",
+      "hash": "d222294c4d3801d8cea759e0606213f2bec109b6"
+    }
+  ],
+  "cordovaCompatibilityVersions": {
+    "android": "3d75c4de41c7e30e401f0f093d55e1379af89097",
+    "ios": "3ed5b9318b2916b595f7721759ead4d708dfbd46"
+  }
+}
