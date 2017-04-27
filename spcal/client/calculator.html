@@ -51,7 +51,7 @@
 
                   <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
-                      <label>Amount Deposit <span style="font-size:12px" ng-if="cal.dps.depositCurrency"> ({{cal.dps.depositCurrency}}) </span></label>
+                      <label>Deposit Amount <span style="font-size:12px" ng-if="cal.dps.depositCurrency"> ({{cal.dps.depositCurrency}}) </span></label>
                       <span id="tempAmount" style="display:none;">{{cal.dps.amountDeposit | number:0}}</span>
                       <input md-maxlength="20"  ng-maxlength="20" id="convertAmount" name="amountDeposit" ng-pattern="/^[0-9]*$/" ng-model="cal.dps.amountDeposit" ng-blur="convert2dp()">
                       <div ng-messages="DpsInvForm.amountDeposit.$error" style="color:maroon" role="alert">
@@ -66,10 +66,15 @@
                     </md-input-container>
                   </div>
 
+                  <!-- <h4 style="color:#737373">Yield P.A. &emsp;&emsp;</h4> -->
                   <div layout="row">
-                    <!-- <h4 style="color:#737373">Yield P.A. &emsp;&emsp;</h4> -->
+                    <label style="color:#afaeae; display: block;" >Interest Rate *</label>
+                  </div>
+                  <div layout="row">
+                    <div class="hint" >Please refer to the matrix on the right.</div>
+                  </div>
+                  <div layout="row">
                     <md-slider-container flex>
-                      <label style="color:#afaeae">Yield P.A. *</label>
                       <md-slider md-discrete flex min="2" max="9.5" step="0.5" ng-model="cal.dps.yieldPa" aria-label="yieldPaSlider" required></md-slider>
                       <md-input-container>
                         <input flex ng-if="cal.dps.yieldPa" value="{{cal.dps.yieldPa}}%" aria-label="yieldPaInput" readonly>
@@ -95,7 +100,7 @@
                         <md-tooltip>
                           See the conversion rate under the chosen criteria
                         </md-tooltip>
-                        Query
+                        Preview
                       </md-button>
                     </div>
                     <div md-theme="{{theme}}">
@@ -103,7 +108,7 @@
                         <md-tooltip md-delay="demo.delayTooltip">
                           See the Comparison of Other Products
                         </md-tooltip>
-                        Preview
+                        Compare
                       </md-button>
                     </div>
                   </div>
@@ -148,7 +153,7 @@
                     <md-input-container class="md-block" flex>
                       <div style="color:#afaeae">Query for</div>
                       <md-radio-group layout="row" ng-model="cal.dcdc.scenario">
-                        <md-radio-button value="1" style="margin-right: 100px">Coupon P.A.</md-radio-button>
+                        <md-radio-button value="1" style="margin-right: 100px">Annual Coupon Rate</md-radio-button>
                         <md-radio-button value="2">Strike Price</md-radio-button>
                       </md-radio-group>
                     </md-input-container>
@@ -164,7 +169,7 @@
                       </div>
                     </md-input-container>
                     <md-input-container ng-if="cal.dcdc.scenario == 2" class="md-block" flex>
-                      <label>Coupon P.A.</label>
+                      <label>Annual Coupon Rate</label>
                       <input name="couponPa" ng-model="cal.dcdc.couponPa" type="number" min="1" required>
                       <div class="hint" >Please refer to the matrix on the right.</div>
                       <div ng-messages="DcdcInvForm.couponPa.$error" style="color:maroon" role="alert">
@@ -186,7 +191,7 @@
 
                   <div layout="row">
                     <md-input-container class="md-block" flex>
-                      <label>KO Type</label>
+                      <label>Knock Out Type</label>
                       <md-select name="koType" ng-model="cal.dcdc.koType" required>
                         <md-option ng-repeat="koType in koTypes" value="{{koType}}">{{koType}}</md-option>
                       </md-select>
@@ -195,7 +200,7 @@
                       </div>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
-                      <label>KO Barrier</label>
+                      <label>Knock Out Barrier</label>
                       <md-select name="koBarrier" ng-model="cal.dcdc.koBarrier" required>
                         <md-option ng-repeat="koBarrier in koBarriers" value="{{koBarrier}}">{{koBarrier}}</md-option>
                       </md-select>
@@ -217,7 +222,7 @@
                       </div>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
-                      <label>KI Barrier</label>
+                      <label>Knock In Barrier</label>
                       <md-select name="kiBarrier" ng-disabled="cal.dcdc.barrierType !== 'AKI' && cal.dcdc.barrierType !== 'EKI'" ng-model="cal.dcdc.kiBarrier" ng-required="cal.dcdc.barrierType == 'AKI' || cal.dcdc.barrierType == 'EKI'">
                         <md-option ng-repeat="kiBarrier in kiBarriers" value="{{kiBarrier}}">{{kiBarrier}}</md-option>
                       </md-select>
@@ -230,7 +235,7 @@
 
                   <div layout-gt-sm="row">
                     <md-input-container ng-if="cal.dcdc.scenario == 1" class="md-block" flex>
-                      <label>Coupon P.A.</label>
+                      <label>Annual Coupon Rate</label>
                       <input name="couponPa" ng-if="cal.dcdc.couponPa" value="{{cal.dcdc.couponPa}}" style="font-size: 20px; font-weight: bold" readonly/>
                     </md-input-container>
                     <md-input-container ng-if="cal.dcdc.scenario == 2" class="md-block" flex>
