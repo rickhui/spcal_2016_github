@@ -780,8 +780,6 @@ spcal.controller('MatrixCtrl', function($mdDialog, $timeout, $scope){
       headerToolTips: true,
       rowHeaders: dpsRowHeader,
       colHeaders: dpsColHeader,
-      rowHeaders: rowHeader,
-      colHeaders: ['1W', '2W', '3W', '1M', '2M', '3M'],
 
       colWidths: 100,
       rowHeights: 40,
