@@ -778,16 +778,11 @@ spcal.controller('MatrixCtrl', function($mdDialog, $timeout, $scope){
     hot = new Handsontable(container, {
       data: dpsRateData,
       headerToolTips: true,
-<<<<<<< HEAD
       rowHeaders: dpsRowHeader,
       colHeaders: dpsColHeader,
-=======
       rowHeaders: rowHeader,
       colHeaders: ['1W', '2W', '3W', '1M', '2M', '3M'],
-<<<<<<< HEAD
->>>>>>> 57516629db61a50a8be0f0098f66b81ce0b22374
-=======
->>>>>>> 57516629db61a50a8be0f0098f66b81ce0b22374
+
       colWidths: 100,
       rowHeights: 40,
       search: {
@@ -1088,3 +1083,14 @@ spcal.controller('videoCtrl',function($scope, $mdDialog){
   }
   YT.load();
 });
+
+
+function onReady() {
+  angular.bootstrap(document, ['spcal']);
+}
+
+if (Meteor.isCordova) {
+  angular.element(document).on('deviceready', onReady);
+} else {
+  angular.element(document).ready(onReady);
+}
