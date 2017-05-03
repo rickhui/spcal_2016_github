@@ -145,14 +145,31 @@ spcal.config(function ($mdThemingProvider) {
     }
 
     function dcdcExactMatch(queryStr, value) {
-      var tmpMatchData;
-      if ($scope.cal.dcdc.scenario == 2){
-        tmpMatchData = DcdcData.findOne({"underlying": $scope.cal.dcdc.linkedStock, "tenor": parseInt($scope.cal.dcdc.tenor), "ko_type": $scope.cal.dcdc.koType, "barrier_type": $scope.cal.dcdc.barrierType, "strike": value, "ko_barrier": $scope.cal.dcdc.koBarrier, "coupon_pa": $scope.cal.dcdc.couponPa, "ki_barrier": $scope.cal.dcdc.kiBarrier});
-      }else{
-        tmpMatchData = DcdcData.findOne({"underlying": $scope.cal.dcdc.linkedStock, "tenor": parseInt($scope.cal.dcdc.tenor), "ko_type": $scope.cal.dcdc.koType, "barrier_type": $scope.cal.dcdc.barrierType, "strike": $scope.cal.dcdc.strikePrice, "ko_barrier": $scope.cal.dcdc.koBarrier, "coupon_pa": value, "ki_barrier": $scope.cal.dcdc.kiBarrier});
+      var matchFlag = false;
+
+      if (queryStr.toString() === value.toString()){
+        rowCnt = rowCntTmp;
+        colCnt = colCntTmp;
+        
+        if($scope.cal.dcdc.scenario == 1){
+          if ((dcdcRowHeader[rowCnt] == $scope.cal.dcdc.strikePrice) && (dcdcColHeader[colCnt] == $scope.cal.dcdc.koBarrier)){
+              matchFlag = true;
+          }
+        }else{
+          if ((dcdcRowHeader[rowCnt] == $scope.cal.dcdc.couponPa) && (dcdcColHeader[colCnt] == $scope.cal.dcdc.koBarrier)){
+              matchFlag = true;
+          }
+        }
+        
       }
 
-      return (queryStr.toString() === value.toString()) && tmpMatchData;
+      colCntTmp++;
+      if (colCntTmp > dcdcColHeader.length - 1){
+        colCntTmp = 0;
+        rowCntTmp++;
+      }
+
+      return matchFlag;
     }
 
     $scope.onCurPairChange = function(depoCur, linkCur) {
@@ -394,7 +411,6 @@ spcal.config(function ($mdThemingProvider) {
         if($scope.cal.dcdc.scenario == 1){
           tmpRowHeader.push(sortDcdcDataQuery[0].strike);
         }else{
-          console.log(sortDcdcDataQuery[0].coupon_pa);
           tmpRowHeader.push(sortDcdcDataQuery[0].coupon_pa);
         }
 

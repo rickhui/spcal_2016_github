@@ -65,7 +65,6 @@
                     </md-input-container>
                   </div>
 
-                  <!-- <h4 style="color:#737373">Yield P.A. &emsp;&emsp;</h4> -->
                   <div layout="row">
                     <label style="color:#afaeae; display: block;" >Interest Rate *</label>
                   </div>
@@ -195,7 +194,6 @@
                       <md-select name="koBarrier" ng-model="cal.dcdc.koBarrier" required>
                         <md-option ng-repeat="koBarrier in koBarriers" value="{{koBarrier}}">{{koBarrier}}</md-option>
                       </md-select>
-                      <!-- <input name="koBarrier" ng-model="cal.dcdc.koBarrier" type="number" min="1" pattern="\d+" required> -->
                       <div ng-messages="DcdcInvForm.koBarrier.$error" style="color:maroon" role="alert">
                         <div ng-message="required">This field is required.</div>
                       </div>
