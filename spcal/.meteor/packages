@@ -23,3 +23,4 @@ angular:angular-messages
 angularjs:angular-sanitize
 angular
 adrianliaw:youtube-iframe-api
+classcraft:meteor-wkhtmltopdf

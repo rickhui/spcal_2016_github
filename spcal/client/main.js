@@ -18,13 +18,13 @@ var spcal = angular.module('spcal',[
 ]);
 
 var temp;
-var isDcdcData;
 var dpsChart;
 var dcdcChart;
 var barChart;
 var pairCurr;
 var dpsColHeader = ['1W', '2W', '3W', '1M', '2M', '3M'];
-var dcdcColHeader = ['Underlying', 'Tenor', 'Strike Price', 'KO Type', 'KO Barrier', 'Barrier Type', 'KI Barrier', 'Coupon P.A.'];
+var dcdcColHeader = ['N/A', 'N/A'];
+var dcdcRowHeader = ['N/A','N/A','N/A'];
 var dpsRowHeader = ['4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%'];
 var dpsRateData = [['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
   ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
@@ -36,22 +36,11 @@ var dpsRateData = [['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
   ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
   ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']
 ];
+
 var dcdcRateData = [
-  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-  ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']
+  ['N/A', 'N/A'],
+  ['N/A', 'N/A'],
+  ['N/A', 'N/A']
 ];
 var hot;
 var videoToPlay;
@@ -61,8 +50,6 @@ var rowCnt = 0;
 var colCnt = 0;
 var rowCntTmp = 0;
 var colCntTmp = 0;
-var linkStock;
-var dcdcTenor;
 
 spcal.config(function ($mdThemingProvider) {
 
@@ -86,15 +73,13 @@ spcal.config(function ($mdThemingProvider) {
 
     $scope.switchTable = function(option){
       if(option == 'dps'){
-        if(!document.getElementById("toggle_button").checked){
-          document.getElementById("toggle_button").click();
+        if(!document.getElementById("toggle_button1").checked){
+          document.getElementById("toggle_button1").click();
         }
         hot.selectCell(0,0);
         hot.updateSettings({
           rowHeaders: dpsRowHeader,
           colHeaders: dpsColHeader,
-          fixedColumnsLeft: 0,
-          colWidths: [100, 100, 100, 100, 100, 100],
           search: {
             queryMethod: dpsExactMatch
           }
@@ -112,39 +97,30 @@ spcal.config(function ($mdThemingProvider) {
         ];
         hot.loadData(dpsRateData);
       }else if (option == 'dcdc') {
-        if(document.getElementById("toggle_button").checked){
-          document.getElementById("toggle_button").click();
+        if(document.getElementById("toggle_button1").checked){
+          document.getElementById("toggle_button1").click();
         }
         hot.selectCell(0,0);
         hot.updateSettings({
-          rowHeaders: true,
-          colWidths: [90, 70, 100, 100, 100, 100, 100, 100],
+          rowHeaders: dcdcRowHeader,
           colHeaders: dcdcColHeader,
           search: {
             queryMethod: dcdcExactMatch
-          },
-          fixedColumnsLeft: 2
+          }
         });
         dcdcRateData = [
-          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
-          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']
+          ['N/A', 'N/A'],
+          ['N/A', 'N/A'],
+          ['N/A', 'N/A']
         ];
         hot.loadData(dcdcRateData);
       }
     };
+
+    $scope.onRadioChange = function(){
+      document.getElementById("toggle_button2").click();
+      $scope.$emit('tableChange', $scope.cal.dcdc.linkedStock, $scope.cal.dcdc.tenor, $scope.cal.dcdc.koType, $scope.cal.dcdc.barrierType, $scope.cal.dcdc.kiBarrier);
+    }
 
     function dpsExactMatch(queryStr, value) {
       var matchFlag = false;
@@ -169,27 +145,14 @@ spcal.config(function ($mdThemingProvider) {
     }
 
     function dcdcExactMatch(queryStr, value) {
-      var matchFlag = false;
-      console.log(queryStr);
-      if (queryStr.toString() === value.toString()) {
-        if ($scope.cal.dcdc.scenario == 1){
-          if (dcdcRateData[rowCntTmp][colCntTmp-5].toString() === $scope.cal.dcdc.strikePrice.toString()){
-            matchFlag = true;
-          }
-        }else{
-          if (dcdcRateData[rowCntTmp][colCntTmp+5].toString() === $scope.cal.dcdc.couponPa.toString()){
-            matchFlag = true;
-          }
-        }
+      var tmpMatchData;
+      if ($scope.cal.dcdc.scenario == 2){
+        tmpMatchData = DcdcData.findOne({"underlying": $scope.cal.dcdc.linkedStock, "tenor": parseInt($scope.cal.dcdc.tenor), "ko_type": $scope.cal.dcdc.koType, "barrier_type": $scope.cal.dcdc.barrierType, "strike": value, "ko_barrier": $scope.cal.dcdc.koBarrier, "coupon_pa": $scope.cal.dcdc.couponPa, "ki_barrier": $scope.cal.dcdc.kiBarrier});
+      }else{
+        tmpMatchData = DcdcData.findOne({"underlying": $scope.cal.dcdc.linkedStock, "tenor": parseInt($scope.cal.dcdc.tenor), "ko_type": $scope.cal.dcdc.koType, "barrier_type": $scope.cal.dcdc.barrierType, "strike": $scope.cal.dcdc.strikePrice, "ko_barrier": $scope.cal.dcdc.koBarrier, "coupon_pa": value, "ki_barrier": $scope.cal.dcdc.kiBarrier});
       }
 
-       colCntTmp++;
-       if (colCntTmp > 7){
-         colCntTmp = 0;
-         rowCntTmp++;
-       }
-
-      return matchFlag;
+      return (queryStr.toString() === value.toString()) && tmpMatchData;
     }
 
     $scope.onCurPairChange = function(depoCur, linkCur) {
@@ -399,74 +362,140 @@ spcal.config(function ($mdThemingProvider) {
       document.getElementById('convertAmount').value = document.getElementById('tempAmount').innerHTML;
     };
 
-    $scope.$on('tableWithTenor', function(event, tenor){
-      dcdcTenor = tenor;
-      if(linkStock){
-        isDcdcData = DcdcData.find({"underlying": linkStock, "tenor": parseInt(dcdcTenor)}, {sort:{"tenor": 1, "strike": 1, "ko_barrier": 1, "barrier_type": 1, "ki_barrier":1, "coupon_pa": 1}}).fetch();
-        if(isDcdcData.length > 0){
-          temp = [[]];
-          var j = 0;
-          for (var i = 0; i < isDcdcData.length; i++){
-            temp[j].push(isDcdcData[i].underlying);
-            temp[j].push(isDcdcData[i].tenor);
-            temp[j].push(isDcdcData[i].strike);
-            temp[j].push(isDcdcData[i].ko_type);
-            temp[j].push(isDcdcData[i].ko_barrier);
-            temp[j].push(isDcdcData[i].barrier_type);
-            if (isDcdcData[i].barrier_type == 'NONE'){
-              temp[j].push('N/A')
-            }else{
-              temp[j].push(isDcdcData[i].ki_barrier);
-            }
-            temp[j].push(isDcdcData[i].coupon_pa);
-            if (i < isDcdcData.length - 1){
-              temp.push(new Array());
-              j++;
+    $scope.$on('tableChange', function(event, linkedStock, tenor, koType, barrierType, kiBarrier){
+      var tmpColHeader = [];
+      var tmpRowHeader = [];
+      var tmpData;
+      var sortDcdcDataKOBarrier;
+      var sortDcdcDataQuery;
+      
+
+      if(barrierType == "NONE"){
+        sortDcdcDataKOBarrier = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType}, {sort:{"ko_barrier": 1}}).fetch();
+        if($scope.cal.dcdc.scenario == 1){
+          sortDcdcDataQuery = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType}, {sort:{"strike": 1}}).fetch();
+        }else{
+          sortDcdcDataQuery = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType}, {sort:{"coupon_pa": 1}}).fetch();
+        }
+      }else{
+        sortDcdcDataKOBarrier = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType, "ki_barrier": parseInt(kiBarrier)}, {sort:{"ko_barrier": 1}}).fetch();
+        if($scope.cal.dcdc.scenario == 1){
+          sortDcdcDataQuery = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType, "ki_barrier": parseInt(kiBarrier)}, {sort:{"strike": 1}}).fetch();
+        }else{
+          sortDcdcDataQuery = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType, "ki_barrier": parseInt(kiBarrier)}, {sort:{"coupon_pa": 1}}).fetch();
+        }
+      }
+
+      if(sortDcdcDataKOBarrier.length > 0){
+        temp = [[]];
+        var tmpIdx = 0;
+
+        tmpColHeader.push(sortDcdcDataKOBarrier[0].ko_barrier);
+        if($scope.cal.dcdc.scenario == 1){
+          tmpRowHeader.push(sortDcdcDataQuery[0].strike);
+        }else{
+          console.log(sortDcdcDataQuery[0].coupon_pa);
+          tmpRowHeader.push(sortDcdcDataQuery[0].coupon_pa);
+        }
+
+        for (var i = 0; i < sortDcdcDataKOBarrier.length; i++){
+          for(var a = 0; a < tmpColHeader.length; a++){
+            if (!tmpColHeader.includes(sortDcdcDataKOBarrier[i].ko_barrier)) {
+              tmpColHeader.push(sortDcdcDataKOBarrier[i].ko_barrier);
             }
           }
-          dcdcRateData = temp;
-          hot.loadData(dcdcRateData);
+
+          for(var b = 0; b < tmpRowHeader.length; b++){
+            if($scope.cal.dcdc.scenario == 1){
+              if (!tmpRowHeader.includes(sortDcdcDataQuery[i].strike)) {
+                tmpRowHeader.push(sortDcdcDataQuery[i].strike);
+              }
+            }else{
+              if (!tmpRowHeader.includes(sortDcdcDataQuery[i].coupon_pa)) {
+                tmpRowHeader.push(sortDcdcDataQuery[i].coupon_pa);
+              }
+            }
           }
         }
-    });
 
-    $scope.$on('tableWithStock', function(event, stockName){
-      linkStock = stockName;
-      if(dcdcTenor){
-        isDcdcData = DcdcData.find({"underlying": linkStock, "tenor": parseInt(dcdcTenor)}, {sort:{"tenor": 1, "strike": 1, "ko_barrier": 1, "barrier_type": 1, "ki_barrier":1, "coupon_pa": 1}}).fetch();
-        if(isDcdcData.length > 0){
-          temp = [[]];
-          var j = 0;
-          for (var i = 0; i < isDcdcData.length; i++){
-            temp[j].push(isDcdcData[i].underlying);
-            temp[j].push(isDcdcData[i].tenor);
-            temp[j].push(isDcdcData[i].strike);
-            temp[j].push(isDcdcData[i].ko_type);
-            temp[j].push(isDcdcData[i].ko_barrier);
-            temp[j].push(isDcdcData[i].barrier_type);
-            if (isDcdcData[i].barrier_type == 'NONE'){
-              temp[j].push('N/A')
+        for (var i = 0; i < tmpRowHeader.length - 1; i++){
+          temp.push(new Array());
+        }
+
+        for (var a = 0; a < tmpRowHeader.length; a++){
+          for (var b = 0; b < tmpColHeader.length; b++){
+            if($scope.cal.dcdc.scenario == 1){
+              if(barrierType == "NONE"){
+                tmpData = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType, "strike": tmpRowHeader[a], "ko_barrier": tmpColHeader[b]}, {sort:{"ko_barrier": 1, "coupon_pa": 1}}).fetch();
+              }else{
+                tmpData = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType, "strike": tmpRowHeader[a], "ko_barrier": tmpColHeader[b], "ki_barrier": parseInt(kiBarrier)}, {sort:{"ko_barrier": 1, "coupon_pa": 1}}).fetch();
+              }
             }else{
-              temp[j].push(isDcdcData[i].ki_barrier);
+              if(barrierType == "NONE"){
+                tmpData = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType, "coupon_pa": tmpRowHeader[a], "ko_barrier": tmpColHeader[b]}, {sort:{"ko_barrier": 1, "strike": 1}}).fetch();
+              }else{
+                tmpData = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType, "coupon_pa": tmpRowHeader[a], "ko_barrier": tmpColHeader[b], "ki_barrier": parseInt(kiBarrier)}, {sort:{"ko_barrier": 1, "strike": 1}}).fetch();
+              }
             }
-            temp[j].push(isDcdcData[i].coupon_pa);
-            if (i < isDcdcData.length - 1){
-              temp.push(new Array());
-              j++;
+            
+            if (tmpData.length > 0) {
+              if($scope.cal.dcdc.scenario == 1){
+                temp[a].push(tmpData[0].coupon_pa);
+              }else{
+                temp[a].push(tmpData[0].strike);
+              }
+            }else{
+              temp[a].push('N/A');
             }
-          }
-          dcdcRateData = temp;
-          hot.loadData(dcdcRateData);
           }
         }
+        dcdcRateData = temp;
+        dcdcRowHeader = tmpRowHeader;
+        dcdcColHeader = tmpColHeader;
+      }else{
+        dcdcColHeader = ['N/A', 'N/A'];
+        dcdcRowHeader = ['N/A','N/A','N/A'];
+        dcdcRateData = [
+            ['N/A', 'N/A'],
+            ['N/A', 'N/A'],
+            ['N/A', 'N/A']
+          ];
+      }
+      hot.updateSettings({
+          rowHeaders: dcdcRowHeader,
+          colHeaders: dcdcColHeader
+      });
+      hot.loadData(dcdcRateData);
     });
 
-    $scope.onTenorChange = function(tenor){
-      $scope.$emit('tableWithTenor', tenor);
+    $scope.onKIBarrierChange = function(){
+      if($scope.cal.dcdc.linkedStock && $scope.cal.dcdc.tenor && $scope.cal.dcdc.koType && $scope.cal.dcdc.barrierType && $scope.cal.dcdc.kiBarrier){
+        $scope.$emit('tableChange', $scope.cal.dcdc.linkedStock, $scope.cal.dcdc.tenor, $scope.cal.dcdc.koType, $scope.cal.dcdc.barrierType, $scope.cal.dcdc.kiBarrier);
+      }
+    }
+
+    $scope.onKOTypeChange = function(){
+      if($scope.cal.dcdc.linkedStock && $scope.cal.dcdc.tenor && $scope.cal.dcdc.koType && $scope.cal.dcdc.barrierType){
+        $scope.$emit('tableChange', $scope.cal.dcdc.linkedStock, $scope.cal.dcdc.tenor, $scope.cal.dcdc.koType, $scope.cal.dcdc.barrierType, $scope.cal.dcdc.kiBarrier);
+      }
+    }
+
+    $scope.onBarrierTypeChange = function(){
+      if($scope.cal.dcdc.linkedStock && $scope.cal.dcdc.tenor && $scope.cal.dcdc.koType && $scope.cal.dcdc.barrierType){
+        $scope.$emit('tableChange', $scope.cal.dcdc.linkedStock, $scope.cal.dcdc.tenor, $scope.cal.dcdc.koType, $scope.cal.dcdc.barrierType, $scope.cal.dcdc.kiBarrier);
+      }
+    }   
+
+    $scope.onTenorChange = function(){
+      if($scope.cal.dcdc.linkedStock && $scope.cal.dcdc.tenor && $scope.cal.dcdc.koType && $scope.cal.dcdc.barrierType){
+        $scope.$emit('tableChange', $scope.cal.dcdc.linkedStock, $scope.cal.dcdc.tenor, $scope.cal.dcdc.koType, $scope.cal.dcdc.barrierType, $scope.cal.dcdc.kiBarrier);
+      }
     }
 
     $scope.onStockChange = function(stockName) {
-      $scope.$emit('tableWithStock', stockName);
+      if($scope.cal.dcdc.linkedStock && $scope.cal.dcdc.tenor && $scope.cal.dcdc.koType && $scope.cal.dcdc.barrierType){
+        $scope.$emit('tableChange', $scope.cal.dcdc.linkedStock, $scope.cal.dcdc.tenor, $scope.cal.dcdc.koType, $scope.cal.dcdc.barrierType, $scope.cal.dcdc.kiBarrier);
+      }
       if (stockName === '700 HK') {
         $scope.cal.dcdc.spotPrice = 242.800;
       } else {
@@ -809,14 +838,12 @@ spcal.controller('MatrixCtrl', function($mdDialog, $timeout, $scope){
         colCntTmp = 0;
         rowCntTmp++;
       }
-
       return matchFlag;
     }
 
     Handsontable.Dom.addEvent(search_button, 'click', function (event) {
       queryResult = hot.search.query(document.getElementById('search_field').value);
       hot.render();
-      console.log(queryResult);
       hot.selectCell(queryResult[0].row, queryResult[0].col);
     });
 
@@ -918,7 +945,6 @@ spcal.controller('BarChartCtrl', function ($scope) {
   })
   });
 });
-
 
 spcal.config(function($mdThemingProvider) {
   $mdThemingProvider.theme('altTheme')
@@ -1076,7 +1102,6 @@ spcal.controller('videoCtrl',function($scope, $mdDialog){
           }
         }
       });
-      console.log(player);
     }
   }
   YT.load();
