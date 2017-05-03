@@ -209,6 +209,10 @@
       "path": "packages/adrianliaw_youtube-iframe-api.js"
     },
     {
+      "node_modules": "npm/node_modules/meteor/classcraft_meteor-wkhtmltopdf/node_modules",
+      "path": "packages/classcraft_meteor-wkhtmltopdf.js"
+    },
+    {
       "path": "packages/livedata.js"
     },
     {

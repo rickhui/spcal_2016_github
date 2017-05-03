@@ -5,6 +5,7 @@ Mongo = Package.mongo.Mongo;
 ReactiveVar = Package['reactive-var'].ReactiveVar;
 Tracker = Package.tracker.Tracker;
 Deps = Package.tracker.Deps;
+wkhtmltopdf = Package['classcraft:meteor-wkhtmltopdf'].wkhtmltopdf;
 Meteor = Package.meteor.Meteor;
 global = Package.meteor.global;
 meteorEnv = Package.meteor.meteorEnv;

@@ -137,6 +137,7 @@ install("angular:angular-messages");
 install("angularjs:angular-sanitize");
 install("angular");
 install("adrianliaw:youtube-iframe-api");
+install("classcraft:meteor-wkhtmltopdf");
 install("livedata");
 install("hot-code-push");
 install("launch-screen");

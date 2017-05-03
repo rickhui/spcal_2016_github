@@ -51,9 +51,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/modules.js?hash=132077460ef78a1c931121179270866f1dcf64a0",
-      "size": 7968227,
-      "hash": "132077460ef78a1c931121179270866f1dcf64a0"
+      "url": "/packages/modules.js?hash=eb33f9c81aacc32fefe96e580ef116f3bd7edc86",
+      "size": 7968352,
+      "hash": "eb33f9c81aacc32fefe96e580ef116f3bd7edc86"
     },
     {
       "path": "packages/es5-shim.js",
@@ -482,6 +482,15 @@
       "hash": "22a1c9a062eec61102a4a20a2076c7c2842402b1"
     },
     {
+      "path": "packages/classcraft_meteor-wkhtmltopdf.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/classcraft_meteor-wkhtmltopdf.js?hash=010ad8180837d37942a5109047600161daa28a6d",
+      "size": 1475,
+      "hash": "010ad8180837d37942a5109047600161daa28a6d"
+    },
+    {
       "path": "packages/webapp.js",
       "where": "client",
       "type": "js",
@@ -589,11 +598,11 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app.js?hash=68567e6b13588b5b83182197c830cbe4e4eadeb3",
+      "url": "/app.js?hash=7d5b1ead514272332905d8676493956b9a5956c6",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/68567e6b13588b5b83182197c830cbe4e4eadeb3.map",
-      "size": 164158,
-      "hash": "68567e6b13588b5b83182197c830cbe4e4eadeb3"
+      "sourceMapUrl": "/7d5b1ead514272332905d8676493956b9a5956c6.map",
+      "size": 175720,
+      "hash": "7d5b1ead514272332905d8676493956b9a5956c6"
     },
     {
       "path": "e6bb977dd7d4c789fea90b8d4eb1979f9b8e67ac.css",
