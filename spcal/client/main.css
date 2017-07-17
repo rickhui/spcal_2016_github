@@ -18,6 +18,23 @@
   display: none;
   opacity: 0;
 }
+<<<<<<< HEAD
+=======
+
+.hint {
+    /* Position the hint */
+    left: 2px;
+    right: auto;
+    bottom: 7px;
+    /* Copy styles from ng-messages */
+    font-size: 12px;
+    line-height: 14px;
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    /* Set our own color */
+    color: grey;
+  }
+
+>>>>>>> lencia
 
 .tabsdemoDynamicHeight md-content {
   background-color: transparent !important; }
@@ -44,7 +61,7 @@
     background: f2f2f2;
   }
 
-  #example{
+  #matrixTable{
     margin: 0;
     padding: 0;
     /*height: 300px;*/

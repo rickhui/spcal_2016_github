@@ -6,7 +6,10 @@ import 'angular-material/angular-material.css';
 import 'handsontable-pro/dist/handsontable.full.css';
 
 var Highcharts = require('highcharts');
+<<<<<<< HEAD
 var HighBarCharts = require('highcharts/highstock');
+=======
+>>>>>>> lencia
 var Highstock = require('highcharts/highstock');
 require('highcharts/modules/data.js')(Highcharts);
 require('highcharts/modules/data.js')(Highstock);
@@ -18,11 +21,23 @@ var spcal = angular.module('spcal',[
       'ngSanitize'
 ]);
 
+<<<<<<< HEAD
+=======
+var temp;
+>>>>>>> lencia
 var dpsChart;
 var dcdcChart;
 var barChart;
 var pairCurr;
+<<<<<<< HEAD
 var rateData = [['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+=======
+var dpsColHeader = ['1W', '2W', '3W', '1M', '2M', '3M'];
+var dcdcColHeader = ['N/A', 'N/A'];
+var dcdcRowHeader = ['N/A','N/A','N/A'];
+var dpsRowHeader = ['4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%'];
+var dpsRateData = [['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+>>>>>>> lencia
   ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
   ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
   ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
@@ -32,9 +47,26 @@ var rateData = [['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
   ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
   ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']
 ];
+<<<<<<< HEAD
 var container;
 var hot;
 var videoToPlay;
+=======
+
+var dcdcRateData = [
+  ['N/A', 'N/A'],
+  ['N/A', 'N/A'],
+  ['N/A', 'N/A']
+];
+var hot;
+var videoToPlay;
+var dps;
+var dcdc;
+var rowCnt = 0;
+var colCnt = 0;
+var rowCntTmp = 0;
+var colCntTmp = 0;
+>>>>>>> lencia
 
 spcal.config(function ($mdThemingProvider) {
 
@@ -56,6 +88,7 @@ spcal.config(function ($mdThemingProvider) {
       isThemeRed = !isThemeRed;
     }, 2000);
 
+<<<<<<< HEAD
     $scope.onCurPairChange = function(depoCur, linkCur) {
       if (depoCur && linkCur) {
         var seq = depoCur + "-" + linkCur;
@@ -275,6 +308,549 @@ spcal.config(function ($mdThemingProvider) {
       });
     };
 
+=======
+    $scope.switchTable = function(option){
+      if(option == 'dps'){
+        if(!document.getElementById("toggle_button1").checked){
+          document.getElementById("toggle_button1").click();
+        }
+        hot.selectCell(0,0);
+        hot.updateSettings({
+          rowHeaders: dpsRowHeader,
+          colHeaders: dpsColHeader,
+          search: {
+            queryMethod: dpsExactMatch
+          }
+        });
+        dpsRateData = [
+          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+          ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']
+        ];
+        hot.loadData(dpsRateData);
+      }else if (option == 'dcdc') {
+        if(document.getElementById("toggle_button1").checked){
+          document.getElementById("toggle_button1").click();
+        }
+        hot.selectCell(0,0);
+        hot.updateSettings({
+          rowHeaders: dcdcRowHeader,
+          colHeaders: dcdcColHeader,
+          search: {
+            queryMethod: dcdcExactMatch
+          }
+        });
+        dcdcRateData = [
+          ['N/A', 'N/A'],
+          ['N/A', 'N/A'],
+          ['N/A', 'N/A']
+        ];
+        hot.loadData(dcdcRateData);
+      }
+    };
+
+    $scope.onRadioChange = function(){
+      document.getElementById("toggle_button2").click();
+      $scope.$emit('tableChange', $scope.cal.dcdc.linkedStock, $scope.cal.dcdc.tenor, $scope.cal.dcdc.koType, $scope.cal.dcdc.barrierType, $scope.cal.dcdc.kiBarrier);
+    }
+
+    function dpsExactMatch(queryStr, value) {
+      var matchFlag = false;
+
+      if (queryStr.toString() === value.toString()){
+        rowCnt = rowCntTmp;
+        colCnt = colCntTmp;
+        if (dps) {
+          if (parseInt(colCnt) == parseInt(JSON.parse(dps.tenor).value)){
+            matchFlag = true;
+          }
+        }
+      }
+
+      colCntTmp++;
+      if (colCntTmp > 5){
+        colCntTmp = 0;
+        rowCntTmp++;
+      }
+
+      return matchFlag;
+    }
+
+    function dcdcExactMatch(queryStr, value) {
+      var matchFlag = false;
+
+      if (queryStr.toString() === value.toString()){
+        rowCnt = rowCntTmp;
+        colCnt = colCntTmp;
+        
+        if($scope.cal.dcdc.scenario == 1){
+          if ((dcdcRowHeader[rowCnt] == $scope.cal.dcdc.strikePrice) && (dcdcColHeader[colCnt] == $scope.cal.dcdc.koBarrier)){
+              matchFlag = true;
+          }
+        }else{
+          if ((dcdcRowHeader[rowCnt] == $scope.cal.dcdc.couponPa) && (dcdcColHeader[colCnt] == $scope.cal.dcdc.koBarrier)){
+              matchFlag = true;
+          }
+        }
+        
+      }
+
+      colCntTmp++;
+      if (colCntTmp > dcdcColHeader.length - 1){
+        colCntTmp = 0;
+        rowCntTmp++;
+      }
+
+      return matchFlag;
+    }
+
+    $scope.onCurPairChange = function(depoCur, linkCur) {
+      if (depoCur && linkCur) {
+        var seq = depoCur + "-" + linkCur;
+        var inv = linkCur + "-" + depoCur;
+        pairCurr = seq;
+        switch (pairCurr){
+          case "HKD-AUD":
+            dpsRowHeader = ['4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%', '8.5%'];
+            dpsRateData = [
+              [5.9015, 5.8938, 5.8961, 5.894, 5.915, 5.9401],
+              [5.9054, 5.9007, 5.9055, 5.906, 5.9362, 5.9683],
+              [5.909, 5.9072, 5.9142, 5.9171, 5.9559, 'N/A'],
+              [5.9124, 5.9132, 5.9223, 5.9274, 'N/A', 'N/A'],
+              [5.9157, 5.919, 5.93, 5.9371, 'N/A', 'N/A'],
+              [5.9188, 5.9244, 5.9372, 5.9462, 'N/A', 'N/A'],
+              [5.9218, 5.9296, 5.9441, 5.9549, 'N/A', 'N/A'],
+              [5.9246, 5.9345, 5.9507, 5.9632, 'N/A', 'N/A'],
+              [5.9274, 5.9392, 5.957, 'N/A', 'N/A', 'N/A']
+            ];
+            break;
+          case "AUD-HKD":
+            dpsRowHeader = ['4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%', '8.5%'];
+            dpsRateData = [
+              [0.1694, 0.1697, 0.1696, 0.1697, 0.1691, 0.1683],
+              [0.1693, 0.1695, 0.1693, 0.1693, 0.1685, 0.1676],
+              [0.1692, 0.1693, 0.1691, 0.169, 0.1679, 'N/A'],
+              [0.1691, 0.1691, 0.1689, 0.1687, 'N/A', 'N/A'],
+              [0.169, 0.1689, 0.1686, 0.1684, 'N/A', 'N/A'],
+              [0.169, 0.1688, 0.1684, 0.1682, 'N/A', 'N/A'],
+              [0.1689, 0.1686, 0.1682, 0.1679, 'N/A', 'N/A'],
+              [0.1688, 0.1685, 0.168, 0.1677, 'N/A', 'N/A'],
+              [0.1687, 0.1684, 0.1679, 'N/A', 'N/A', 'N/A']
+            ];
+            break;
+          case "USD-AUD":
+            dpsRowHeader = ['4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%'];
+            dpsRateData = [
+              [0.7594, 0.7589, 0.7583, 0.7577, 0.7596, 0.7616],
+              [0.76, 0.7599, 0.7597, 0.7595, 0.7627, 0.7658],
+              [0.7606, 0.7608, 0.7609, 0.7611, 0.7655, 0.7696],
+              [0.7611, 0.7617, 0.7621, 0.7626, 0.7681, 'N/A'],
+              [0.7616, 0.7625, 0.7632, 0.764, 'N/A', 'N/A'],
+              [0.7621, 0.7632, 0.7643, 0.7653, 'N/A', 'N/A'],
+              [0.7625, 0.7639, 0.7652, 0.7665, 'N/A', 'N/A'],
+              [0.7629, 0.7646, 0.7662, 0.7676, 'N/A', 'N/A'],
+              [0.7633, 0.7653, 0.767, 0.7687, 'N/A', 'N/A']
+            ];
+            break;
+          case "AUD-USD":
+            dpsRowHeader = ['4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%'];
+            dpsRateData = [
+              [1.3168, 1.3177, 1.3187, 1.3198, 1.3165, 1.313],
+              [1.3158, 1.316, 1.3163, 1.3167, 1.3111, 1.3058],
+              [1.3158, 1.316, 1.3163, 1.3167, 1.3111, 1.3058],
+              [1.3139, 1.3129, 1.3122, 1.3113, 1.3019, 'N/A'],
+              [1.313, 1.3115, 1.3103, 1.3089, 'N/A', 'N/A'],
+              [1.3122, 1.3103, 1.3084, 1.3067, 'N/A', 'N/A'],
+              [1.3115, 1.3091, 1.3068, 1.3046, 'N/A', 'N/A'],
+              [1.3108, 1.3079, 1.3051, 1.3028, 'N/A', 'N/A'],
+              [1.3101, 1.3067, 1.3038, 1.3009, 'N/A', 'N/A']
+            ];
+            break;
+          case "HKD-GBP":
+            dpsRowHeader = ['5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%', '8.5%', '9.0%', '9.5%'];
+            dpsRateData = [
+              [9.7533, 9.7583, 9.7561, 9.7433, 9.668, 'N/A'],
+              [9.7475, 9.7482, 9.7424, 9.7268, 'N/A', 'N/A'],
+              [9.7419, 9.7387, 9.7296, 9.7113, 'N/A', 'N/A'],
+              [9.7367, 9.7298, 9.7174, 9.6965, 'N/A', 'N/A'],
+              [9.7317, 9.7212, 9.7058, 9.6824, 'N/A', 'N/A'],
+              [9.7268, 9.713, 9.6948, 9.6689, 'N/A', 'N/A'],
+              [9.7222, 9.7052, 9.6841, 9.6559, 'N/A', 'N/A'],
+              [9.7177, 9.6976, 9.6739, 9.6434, 'N/A', 'N/A'],
+              [9.7134, 9.6903, 9.664, 'N/A', 'N/A', 'N/A']
+            ];
+            break;
+          case "GBP-HKD":
+            dpsRowHeader = ['5.5%', '6.0%', '6.5%', '7.0%', '7.5%', '8.0%', '8.5%', '9.0%', '9.5%'];
+            dpsRateData = [
+              [0.1025, 0.1025, 0.1025, 0.1026, 0.1034, 'N/A'],
+              [0.1026, 0.1026, 0.1026, 0.1028, 'N/A', 'N/A'],
+              [0.1026, 0.1027, 0.1028, 0.103, 'N/A', 'N/A'],
+              [0.1027, 0.1028, 0.1029, 0.1031, 'N/A', 'N/A'],
+              [0.1028, 0.1029, 0.103, 0.1033, 'N/A', 'N/A'],
+              [0.1028, 0.103, 0.1031, 0.1034, 'N/A', 'N/A'],
+              [0.1029, 0.103, 0.1033, 0.1036, 'N/A', 'N/A'],
+              [0.1029, 0.1031, 0.1034, 0.1037, 'N/A', 'N/A'],
+              [0.103, 0.1032, 0.1035, 'N/A', 'N/A', 'N/A']
+            ];
+            break;
+          case "HKD-CAD":
+            dpsRowHeader = ['3.0%', '3.5%', '4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%'];
+            dpsRateData = [
+              [5.9099, 5.9081, 5.8937, 5.885, 5.8985, 5.9098],
+              [5.9146, 5.9159, 5.9056, 5.9005, 5.925, 5.9451],
+              [5.9189, 5.9231, 5.9162, 5.9143, 5.9484, 5.976],
+              [5.9229, 5.9296, 5.9259, 5.9268, 5.9693, 'N/A'],
+              [5.9266, 5.9357, 5.9348, 5.9382, 'N/A', 'N/A'],
+              [5.9302, 5.9414, 5.943, 5.9487, 'N/A', 'N/A'],
+              [5.9335, 5.9467, 5.9507, 5.9584, 'N/A', 'N/A'],
+              [5.9367, 5.9518, 5.958, 5.9676, 'N/A', 'N/A'],
+              [5.9397, 5.9566, 5.9648, 5.9762, 'N/A', 'N/A']
+            ];
+            break;
+          case "CAD-HKD":
+            dpsRowHeader = ['3.0%', '3.5%', '4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%'];
+            dpsRateData = [
+              [0.1692, 0.1693, 0.1697, 0.1699, 0.1695, 0.1692],
+              [0.1691, 0.169, 0.1693, 0.1695, 0.1688, 0.1682],
+              [0.169, 0.1688, 0.169, 0.1691, 0.1681, 0.1673],
+              [0.1688, 0.1686, 0.1688, 0.1687, 0.1675, 'N/A'],
+              [0.1687, 0.1685, 0.1685, 0.1684, 'N/A', 'N/A'],
+              [0.1686, 0.1683, 0.1683, 0.1681, 'N/A', 'N/A'],
+              [0.1685, 0.1682, 0.168, 0.1678, 'N/A', 'N/A'],
+              [0.1684, 0.168, 0.1678, 0.1676, 'N/A', 'N/A'],
+              [0.1684, 0.1679, 0.1677, 0.1673, 'N/A', 'N/A']
+            ];
+            break;
+          case "HKD-EUR":
+            dpsRowHeader = ['3.0%', '3.5%', '4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%'];
+            dpsRateData = [
+                [8.4099, 8.4216, 8.4286, 8.4289, 8.435, 8.4295],
+                [8.4038, 8.4111, 8.414, 8.411, 8.4037, 8.3881],
+                [8.3982, 8.4015, 8.4009, 8.3949, 8.3755, 8.3505],
+                [8.3931, 8.3927, 8.3889, 8.3802, 8.3495, 8.3157],
+                [8.3882, 8.3846, 8.3779, 8.3667, 8.3254, 'N/A'],
+                [8.3837, 8.3771, 8.3676, 8.3541, 'N/A', 'N/A'],
+                [8.3795, 8.3699, 8.358, 8.3422, 'N/A', 'N/A'],
+                [8.3755, 8.3632, 8.3488, 8.331, 'N/A', 'N/A'],
+                [8.3716, 8.3568, 8.3401, 8.3202, 'N/A', 'N/A']
+              ];
+              break;
+          case "EUR-HKD":
+            dpsRowHeader = ['3.0%', '3.5%', '4.0%', '4.5%', '5.0%', '5.5%', '6.0%', '6.5%', '7.0%'];
+            dpsRateData = [
+                [0.1189, 0.1187, 0.1186, 0.1186, 0.1186, 0.1186],
+                [0.119, 0.1189, 0.1188, 0.1189, 0.119, 0.1192],
+                [0.1191, 0.119, 0.119, 0.1191, 0.1194, 0.1198],
+                [0.1191, 0.1192, 0.1192, 0.1193, 0.1198, 0.1203],
+                [0.1192, 0.1193, 0.1194, 0.1195, 0.1201, 'N/A'],
+                [0.1193, 0.1194, 0.1195, 0.1197, 'N/A', 'N/A'],
+                [0.1193, 0.1195, 0.1196, 0.1199, 'N/A', 'N/A'],
+                [0.1194, 0.1196, 0.1198, 0.12, 'N/A', 'N/A'],
+                [0.1195, 0.1197, 0.1199, 0.1202, 'N/A', 'N/A']
+              ];
+            break;
+          case "HKD-CNH":
+            dpsRowHeader = ['2.0%', '2.5%', '3.0%', '3.5%', '4.0%', '4.5%', '5.0%', '5.5%', '6.0%'];
+            dpsRateData = [
+                [1.1326, 1.1301, 1.128, 1.1254, 1.1188, 1.1147],
+                [1.1336, 1.1319, 1.1304, 1.1287, 1.1248, 1.123],
+                [1.1344, 1.1333, 1.1324, 1.1313, 1.1297, 1.1296],
+                [1.1352, 1.1345, 1.1341, 1.1335, 1.1338, 1.1351],
+                [1.1358, 1.1356, 1.1356, 1.1355, 1.1374, 1.1399],
+                [1.1365, 1.1366, 1.137, 1.1373, 1.1406, 1.1441],
+                [1.137, 1.1376, 1.1383, 1.1389, 1.1435, 'N/A'],
+                [1.1375, 1.1384, 1.1395, 1.1404, 'N/A', 'N/A'],
+                [1.138, 1.1393, 1.1406, 1.1418, 'N/A', 'N/A']
+              ];
+              break;
+          case "CNH-HKD":
+            dpsRowHeader = ['2.0%', '2.5%', '3.0%', '3.5%', '4.0%', '4.5%', '5.0%', '5.5%', '6.0%'];
+            dpsRateData = [
+                [0.8829, 0.8849, 0.8865, 0.8886, 0.8938, 0.8971],
+                [0.8821, 0.8835, 0.8846, 0.886, 0.889, 0.8905],
+                [0.8815, 0.8824, 0.8831, 0.8839, 0.8852, 0.8853],
+                [0.8809, 0.8814, 0.8818, 0.8822, 0.882, 0.881],
+                [0.8804, 0.8806, 0.8806, 0.8807, 0.8792, 0.8773],
+                [0.8799, 0.8798, 0.8795, 0.8793, 0.8767, 0.874],
+                [0.8795, 0.879, 0.8785, 0.878, 0.8745, 'N/A'],
+                [0.8791, 0.8784, 0.8776, 0.8769, 'N/A', 'N/A'],
+                [0.8787, 0.8777, 0.8767, 0.8758, 'N/A', 'N/A']
+              ];
+            break;
+          default:
+            dpsRateData = [
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A'],
+              ['N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A']
+            ];
+        }
+        hot.updateSettings({
+          rowHeaders: dpsRowHeader
+        });
+        hot.loadData(dpsRateData);
+        var series = dpsChart.series;
+        for (let i = 0; i < series.length; i++) {
+          let column = series[i];
+          if (column.name === seq || column.name === inv) {
+            column.show();
+          } else {
+            column.hide();
+          }
+        }
+      }
+    };
+
+    $scope.convert2dp = function(){
+      document.getElementById('convertAmount').value = document.getElementById('tempAmount').innerHTML;
+    };
+
+    $scope.$on('tableChange', function(event, linkedStock, tenor, koType, barrierType, kiBarrier){
+      var tmpColHeader = [];
+      var tmpRowHeader = [];
+      var tmpData;
+      var sortDcdcDataKOBarrier;
+      var sortDcdcDataQuery;
+      
+
+      if(barrierType == "NONE"){
+        sortDcdcDataKOBarrier = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType}, {sort:{"ko_barrier": 1}}).fetch();
+        if($scope.cal.dcdc.scenario == 1){
+          sortDcdcDataQuery = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType}, {sort:{"strike": 1}}).fetch();
+        }else{
+          sortDcdcDataQuery = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType}, {sort:{"coupon_pa": 1}}).fetch();
+        }
+      }else{
+        sortDcdcDataKOBarrier = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType, "ki_barrier": parseInt(kiBarrier)}, {sort:{"ko_barrier": 1}}).fetch();
+        if($scope.cal.dcdc.scenario == 1){
+          sortDcdcDataQuery = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType, "ki_barrier": parseInt(kiBarrier)}, {sort:{"strike": 1}}).fetch();
+        }else{
+          sortDcdcDataQuery = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType, "ki_barrier": parseInt(kiBarrier)}, {sort:{"coupon_pa": 1}}).fetch();
+        }
+      }
+
+      if(sortDcdcDataKOBarrier.length > 0){
+        temp = [[]];
+        var tmpIdx = 0;
+
+        tmpColHeader.push(sortDcdcDataKOBarrier[0].ko_barrier);
+        if($scope.cal.dcdc.scenario == 1){
+          tmpRowHeader.push(sortDcdcDataQuery[0].strike);
+        }else{
+          tmpRowHeader.push(sortDcdcDataQuery[0].coupon_pa);
+        }
+
+        for (var i = 0; i < sortDcdcDataKOBarrier.length; i++){
+          for(var a = 0; a < tmpColHeader.length; a++){
+            if (!tmpColHeader.includes(sortDcdcDataKOBarrier[i].ko_barrier)) {
+              tmpColHeader.push(sortDcdcDataKOBarrier[i].ko_barrier);
+            }
+          }
+
+          for(var b = 0; b < tmpRowHeader.length; b++){
+            if($scope.cal.dcdc.scenario == 1){
+              if (!tmpRowHeader.includes(sortDcdcDataQuery[i].strike)) {
+                tmpRowHeader.push(sortDcdcDataQuery[i].strike);
+              }
+            }else{
+              if (!tmpRowHeader.includes(sortDcdcDataQuery[i].coupon_pa)) {
+                tmpRowHeader.push(sortDcdcDataQuery[i].coupon_pa);
+              }
+            }
+          }
+        }
+
+        for (var i = 0; i < tmpRowHeader.length - 1; i++){
+          temp.push(new Array());
+        }
+
+        for (var a = 0; a < tmpRowHeader.length; a++){
+          for (var b = 0; b < tmpColHeader.length; b++){
+            if($scope.cal.dcdc.scenario == 1){
+              if(barrierType == "NONE"){
+                tmpData = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType, "strike": tmpRowHeader[a], "ko_barrier": tmpColHeader[b]}, {sort:{"ko_barrier": 1, "coupon_pa": 1}}).fetch();
+              }else{
+                tmpData = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType, "strike": tmpRowHeader[a], "ko_barrier": tmpColHeader[b], "ki_barrier": parseInt(kiBarrier)}, {sort:{"ko_barrier": 1, "coupon_pa": 1}}).fetch();
+              }
+            }else{
+              if(barrierType == "NONE"){
+                tmpData = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType, "coupon_pa": tmpRowHeader[a], "ko_barrier": tmpColHeader[b]}, {sort:{"ko_barrier": 1, "strike": 1}}).fetch();
+              }else{
+                tmpData = DcdcData.find({"underlying": linkedStock, "tenor": parseInt(tenor), "ko_type": koType, "barrier_type": barrierType, "coupon_pa": tmpRowHeader[a], "ko_barrier": tmpColHeader[b], "ki_barrier": parseInt(kiBarrier)}, {sort:{"ko_barrier": 1, "strike": 1}}).fetch();
+              }
+            }
+            
+            if (tmpData.length > 0) {
+              if($scope.cal.dcdc.scenario == 1){
+                temp[a].push(tmpData[0].coupon_pa);
+              }else{
+                temp[a].push(tmpData[0].strike);
+              }
+            }else{
+              temp[a].push('N/A');
+            }
+          }
+        }
+        dcdcRateData = temp;
+        dcdcRowHeader = tmpRowHeader;
+        dcdcColHeader = tmpColHeader;
+      }else{
+        dcdcColHeader = ['N/A', 'N/A'];
+        dcdcRowHeader = ['N/A','N/A','N/A'];
+        dcdcRateData = [
+            ['N/A', 'N/A'],
+            ['N/A', 'N/A'],
+            ['N/A', 'N/A']
+          ];
+      }
+      hot.updateSettings({
+          rowHeaders: dcdcRowHeader,
+          colHeaders: dcdcColHeader
+      });
+      hot.loadData(dcdcRateData);
+    });
+
+    $scope.onKIBarrierChange = function(){
+      if($scope.cal.dcdc.linkedStock && $scope.cal.dcdc.tenor && $scope.cal.dcdc.koType && $scope.cal.dcdc.barrierType && $scope.cal.dcdc.kiBarrier){
+        $scope.$emit('tableChange', $scope.cal.dcdc.linkedStock, $scope.cal.dcdc.tenor, $scope.cal.dcdc.koType, $scope.cal.dcdc.barrierType, $scope.cal.dcdc.kiBarrier);
+      }
+    }
+
+    $scope.onKOTypeChange = function(){
+      if($scope.cal.dcdc.linkedStock && $scope.cal.dcdc.tenor && $scope.cal.dcdc.koType && $scope.cal.dcdc.barrierType){
+        $scope.$emit('tableChange', $scope.cal.dcdc.linkedStock, $scope.cal.dcdc.tenor, $scope.cal.dcdc.koType, $scope.cal.dcdc.barrierType, $scope.cal.dcdc.kiBarrier);
+      }
+    }
+
+    $scope.onBarrierTypeChange = function(){
+      if($scope.cal.dcdc.linkedStock && $scope.cal.dcdc.tenor && $scope.cal.dcdc.koType && $scope.cal.dcdc.barrierType){
+        $scope.$emit('tableChange', $scope.cal.dcdc.linkedStock, $scope.cal.dcdc.tenor, $scope.cal.dcdc.koType, $scope.cal.dcdc.barrierType, $scope.cal.dcdc.kiBarrier);
+      }
+    }   
+
+    $scope.onTenorChange = function(){
+      if($scope.cal.dcdc.linkedStock && $scope.cal.dcdc.tenor && $scope.cal.dcdc.koType && $scope.cal.dcdc.barrierType){
+        $scope.$emit('tableChange', $scope.cal.dcdc.linkedStock, $scope.cal.dcdc.tenor, $scope.cal.dcdc.koType, $scope.cal.dcdc.barrierType, $scope.cal.dcdc.kiBarrier);
+      }
+    }
+
+    $scope.onStockChange = function(stockName) {
+      if($scope.cal.dcdc.linkedStock && $scope.cal.dcdc.tenor && $scope.cal.dcdc.koType && $scope.cal.dcdc.barrierType){
+        $scope.$emit('tableChange', $scope.cal.dcdc.linkedStock, $scope.cal.dcdc.tenor, $scope.cal.dcdc.koType, $scope.cal.dcdc.barrierType, $scope.cal.dcdc.kiBarrier);
+      }
+      if (stockName === '700 HK') {
+        $scope.cal.dcdc.spotPrice = 242.800;
+      } else {
+        $scope.cal.dcdc.spotPrice = 192.000;
+      }
+      var series = dcdcChart.series;
+      var navigatorIndex = series.length - 1;
+      for (let i = 0; i < navigatorIndex; i++) {
+        let column = series[i];
+        if (column.name === stockName) {
+          //series[navigatorIndex].data = column.data;
+          column.showInNavigator = true;
+          //dcdcChart.navigator.series = column;
+          column.show();
+        } else {
+          column.showInNavigator = false;
+          column.hide();
+        }
+      }
+    };
+
+    $scope.calculateConversionRate = function() {
+      dps = $scope.cal.dps;
+      var dpsDoc = DpsData.findOne({ depo_cur: dps.depositCurrency, link_cur: dps.linkedCurrency,
+        tenor: JSON.parse(dps.tenor).name, interest_rate: dps.yieldPa});
+      if (dpsDoc) {
+        dps.conversionRate = dpsDoc.conversion_rate;
+        document.getElementById('search_field').value = dpsDoc.conversion_rate;
+        colCntTmp=0;
+        rowCntTmp=0;
+        document.getElementById('search_button').click();
+      } else {
+        dps.conversionRate = undefined;
+      }
+    };
+
+    $scope.calculateCouponPa = function() {
+      dcdc = $scope.cal.dcdc;
+      if (dcdc.barrierType === 'NONE') {
+        var dcdcDoc = DcdcData.findOne({ underlying: dcdc.linkedStock, strike: parseInt(dcdc.strikePrice), ko_type: dcdc.koType,
+                          ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
+                          ki_barrier: null });
+      } else {
+        var dcdcDoc = DcdcData.findOne({ underlying: dcdc.linkedStock, strike: parseInt(dcdc.strikePrice), ko_type: dcdc.koType,
+                          ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
+                          ki_barrier: parseInt(dcdc.kiBarrier) });
+      }
+      if (dcdcDoc) {
+        dcdc.couponPa = dcdcDoc.coupon_pa;
+        document.getElementById('search_field').value = dcdcDoc.coupon_pa;
+        colCntTmp=0;
+        rowCntTmp=0;
+        document.getElementById('search_button').click();
+      } else {
+        dcdc.couponPa = undefined;
+      }
+    };
+
+    $scope.calculateStrikePrice = function() {
+      var dcdc = $scope.cal.dcdc;
+      if (dcdc.barrierType === 'NONE') {
+        var dcdcDoc = DcdcData.findOne({ underlying: dcdc.linkedStock, coupon_pa: parseFloat(dcdc.couponPa), ko_type: dcdc.koType,
+                          ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
+                          ki_barrier: null });
+      } else {
+        var dcdcDoc = DcdcData.findOne({ underlying: dcdc.linkedStock, coupon_pa: parseFloat(dcdc.couponPa), ko_type: dcdc.koType,
+                          ko_barrier: parseInt(dcdc.koBarrier), tenor: parseInt(dcdc.tenor), barrier_type: dcdc.barrierType,
+                          ki_barrier: parseInt(dcdc.kiBarrier) });
+      }
+      if (dcdcDoc) {
+        dcdc.strikePrice = dcdcDoc.strike;
+        document.getElementById('search_field').value = dcdcDoc.strike;
+        colCntTmp=0;
+        rowCntTmp=0;
+        document.getElementById('search_button').click();
+      } else {
+        dcdc.strikePrice = undefined;
+      }
+    };
+
+    $scope.resizeDiag = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: 'client/toggle.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true
+      });
+    };
+
+    $scope.showAdvanced = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: 'client/dialog.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true
+      });
+    };
+
+>>>>>>> lencia
     function DialogController($scope, $mdDialog) {
       $scope.hide = function() {
         $mdDialog.hide();
@@ -300,7 +876,31 @@ spcal.config(function ($mdThemingProvider) {
       return {abbrev: currency};
     });
 
+<<<<<<< HEAD
     $scope.dpsTenors = ['1W', '2W', '3W', '1M', '2M', '3M'];
+=======
+    $scope.dpsTenors = [
+      {
+        name: '1W',
+        value: 0
+      },{
+        name: '2W',
+        value: 1
+      },{
+        name: '3W',
+        value: 2
+      },{
+        name: '1M',
+        value: 3
+      },{
+        name: '2M',
+        value: 4
+      },{
+        name: '3M',
+        value: 5
+      }
+    ];
+>>>>>>> lencia
 
     $scope.dcdcTenors = [
       {
@@ -320,8 +920,17 @@ spcal.config(function ($mdThemingProvider) {
 
     $scope.stocks = ['700 HK', '388 HK'];
 
+<<<<<<< HEAD
     $scope.koTypes = ['Daily', 'Period End'];
 
+=======
+    $scope.koBarriers = ['95', '100', '105', '110'];
+
+    $scope.koTypes = ['Daily', 'Period End'];
+
+    $scope.kiBarriers = ['75', '78'];
+
+>>>>>>> lencia
     $scope.barrierTypes = ['NONE', 'AKI', 'EKI'];
 
     //dcdcview Button JS
@@ -455,6 +1064,7 @@ angular.module('spcal')
 
 
 spcal.controller('MatrixCtrl', function($mdDialog, $timeout, $scope){
+<<<<<<< HEAD
     var searchFiled = document.getElementById('search_field');
     container = document.getElementById('example');
     hot = new Handsontable(container, {
@@ -469,12 +1079,29 @@ spcal.controller('MatrixCtrl', function($mdDialog, $timeout, $scope){
       rowHeights: 40,
       search: {
         queryMethod: onlyExactMatch
+=======
+    $scope.checked = true;
+    var searchFiled = document.getElementById('search_field');
+    container = document.getElementById('matrixTable');
+    
+    hot = new Handsontable(container, {
+      data: dpsRateData,
+      headerToolTips: true,
+      rowHeaders: dpsRowHeader,
+      colHeaders: dpsColHeader,
+
+      colWidths: 100,
+      rowHeights: 40,
+      search: {
+        queryMethod: dpsExactMatch
+>>>>>>> lencia
       },
       currentRowClassName: 'selectedRow',
       currentColClassName: 'selectedCol',
       editor: false,
     });
 
+<<<<<<< HEAD
     function onlyExactMatch(queryStr, value) {
       return queryStr.toString() === value.toString();
     }
@@ -486,6 +1113,35 @@ spcal.controller('MatrixCtrl', function($mdDialog, $timeout, $scope){
       hot.selectCell(queryResult[0].row, queryResult[0].col);
     });
 
+=======
+    function dpsExactMatch(queryStr, value) {
+      var matchFlag = false;
+
+      if (queryStr.toString() === value.toString()){
+        rowCnt = rowCntTmp;
+        colCnt = colCntTmp;
+        if (dps) {
+          if (parseInt(colCnt) == parseInt(JSON.parse(dps.tenor).value)){
+            matchFlag = true;
+          }
+        }
+      }
+
+      colCntTmp++;
+      if (colCntTmp > 5){
+        colCntTmp = 0;
+        rowCntTmp++;
+      }
+      return matchFlag;
+    }
+
+    Handsontable.Dom.addEvent(search_button, 'click', function (event) {
+      queryResult = hot.search.query(document.getElementById('search_field').value);
+      hot.render();
+      hot.selectCell(queryResult[0].row, queryResult[0].col);
+    });
+
+>>>>>>> lencia
     $timeout(function () {
       hot.selectCell(0,0);
       document.getElementById('toggleBtn').click();
@@ -543,15 +1199,26 @@ spcal.controller('DiagramCtrl', function ($scope) {
 spcal.controller('BarChartCtrl', function ($scope) {
   // Create the chart
   $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
+<<<<<<< HEAD
   barChart = HighBarCharts.chart('barContainer', {
+=======
+  barChart = Highcharts.chart('barContainer', {
+>>>>>>> lencia
     chart: {
       type: 'column',
     },
     title: {
+<<<<<<< HEAD
       text: 'Performance on Deposit Plus from Other Financial Institutions'
     },
     xAxis: {
       categories: ['HSBC', 'BOC', 'Standard Charter', 'Citi', 'Hang Seng']
+=======
+      text: 'Performance of Structured Products Offered by HSBC'
+    },
+    xAxis: {
+      categories: ['Deposit Plus', 'Currency Linked III', 'Interest Rate Range Accrual', 'Capped and Floored Floater Deposit']
+>>>>>>> lencia
     },
     yAxis: {
       min: 0,
@@ -570,6 +1237,7 @@ spcal.controller('BarChartCtrl', function ($scope) {
     },
     series: [{
       name: 'Return',
+<<<<<<< HEAD
       data: [5, 3, 4, 7, 2]
     }, {
       name: 'Stability',
@@ -580,12 +1248,27 @@ spcal.controller('BarChartCtrl', function ($scope) {
     },{
       name: 'Momentum',
       data: [6, 2, 4, 3, 1]
+=======
+      data: [5, 3, 4, 7]
+    }, {
+      name: 'Stability',
+      data: [2, 2, 3, 2]
+    }, {
+      name: 'Volatility',
+      data: [3, 4, 4, 2]
+    },{
+      name: 'Momentum',
+      data: [6, 2, 4, 3]
+>>>>>>> lencia
     }]
   })
   });
 });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> lencia
 spcal.config(function($mdThemingProvider) {
   $mdThemingProvider.theme('altTheme')
     .primaryPalette('purple');
@@ -742,8 +1425,25 @@ spcal.controller('videoCtrl',function($scope, $mdDialog){
           }
         }
       });
+<<<<<<< HEAD
       console.log(player);
+=======
+>>>>>>> lencia
     }
   }
   YT.load();
 });
+<<<<<<< HEAD
+=======
+
+
+function onReady() {
+  angular.bootstrap(document, ['spcal']);
+}
+
+if (Meteor.isCordova) {
+  angular.element(document).on('deviceready', onReady);
+} else {
+  angular.element(document).ready(onReady);
+}
+>>>>>>> lencia

@@ -8,6 +8,21 @@
       "path": "programs/web.browser/program.json"
     },
     {
+<<<<<<< HEAD
+=======
+      "name": "web.cordova",
+      "arch": "web.cordova",
+      "path": "programs/web.cordova/program.json",
+      "cordovaDependencies": {
+        "cordova-plugin-whitelist": "1.3.1",
+        "cordova-plugin-wkwebview-engine": "1.1.1",
+        "cordova-plugin-meteor-webapp": "1.4.1",
+        "cordova-plugin-statusbar": "2.2.1",
+        "cordova-plugin-splashscreen": "4.0.1"
+      }
+    },
+    {
+>>>>>>> lencia
       "name": "server",
       "arch": "os",
       "path": "programs/server/boot.js"

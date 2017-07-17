@@ -51,9 +51,15 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
+<<<<<<< HEAD
       "url": "/packages/modules.js?hash=5b1cd8b0830cc1cdda78988cd508ef1919bf30c9",
       "size": 7967727,
       "hash": "5b1cd8b0830cc1cdda78988cd508ef1919bf30c9"
+=======
+      "url": "/packages/modules.js?hash=c848648f7dc0cb2049bea78a6d790c1d02b53eeb",
+      "size": 7967852,
+      "hash": "c848648f7dc0cb2049bea78a6d790c1d02b53eeb"
+>>>>>>> lencia
     },
     {
       "path": "packages/es5-shim.js",
@@ -482,6 +488,18 @@
       "hash": "22a1c9a062eec61102a4a20a2076c7c2842402b1"
     },
     {
+<<<<<<< HEAD
+=======
+      "path": "packages/classcraft_meteor-wkhtmltopdf.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/classcraft_meteor-wkhtmltopdf.js?hash=010ad8180837d37942a5109047600161daa28a6d",
+      "size": 1475,
+      "hash": "010ad8180837d37942a5109047600161daa28a6d"
+    },
+    {
+>>>>>>> lencia
       "path": "packages/webapp.js",
       "where": "client",
       "type": "js",
@@ -551,6 +569,7 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
+<<<<<<< HEAD
       "url": "/app.js?hash=464848eb372db8d3924ea385db0dc524260efbb3",
       "sourceMap": "app/app.js.map",
       "sourceMapUrl": "/464848eb372db8d3924ea385db0dc524260efbb3.map",
@@ -565,6 +584,22 @@
       "url": "/b0d422c96cde55db3ce5db50f0bc17520a5ea327.css?meteor_css_resource=true",
       "size": 1840,
       "hash": "b0d422c96cde55db3ce5db50f0bc17520a5ea327"
+=======
+      "url": "/app.js?hash=7d5b1ead514272332905d8676493956b9a5956c6",
+      "sourceMap": "app/app.js.map",
+      "sourceMapUrl": "/7d5b1ead514272332905d8676493956b9a5956c6.map",
+      "size": 175720,
+      "hash": "7d5b1ead514272332905d8676493956b9a5956c6"
+    },
+    {
+      "path": "e6bb977dd7d4c789fea90b8d4eb1979f9b8e67ac.css",
+      "where": "client",
+      "type": "css",
+      "cacheable": true,
+      "url": "/e6bb977dd7d4c789fea90b8d4eb1979f9b8e67ac.css?meteor_css_resource=true",
+      "size": 1977,
+      "hash": "e6bb977dd7d4c789fea90b8d4eb1979f9b8e67ac"
+>>>>>>> lencia
     },
     {
       "path": "packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-action-symbol.svg",
@@ -861,7 +896,11 @@
       "cacheable": false,
       "url": "/fxRate.csv",
       "size": 28532,
+<<<<<<< HEAD
       "hash": "3a814ac6fd6b451bade827180f8a981f217d52e0"
+=======
+      "hash": "87fc9ba5e1089bd7fe2cdee2e566d50251b22c04"
+>>>>>>> lencia
     },
     {
       "path": "app/stockPrice.csv",

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div layout="column" class="container" ng-cloak class="md-inline-form">
   <div class="tabsdemoDynamicHeight" ng-cloak>
     <md-card>
@@ -5,6 +6,15 @@
         <md-tab label="Deposit Plus">
           <md-content class="md-padding" >
             <md-content layout-padding ng-controller="ValidationCtrl">
+=======
+<div layout="column" class="container" ng-cloak class="md-inline-form" ng-controller="ValidationCtrl">
+  <div class="tabsdemoDynamicHeight" ng-cloak>
+    <md-card>
+      <md-tabs md-stretch-tabs="always" style="min-height: 865px;" md-border-bottom>
+        <md-tab label="Deposit Plus" ng-click="switchTable('dps')">
+          <md-content class="md-padding" >
+            <md-content layout-padding >
+>>>>>>> lencia
               <div>
                 <form name="DpsInvForm">
                   <div layout="row">
@@ -39,7 +49,11 @@
                       <label>Tenor</label>
                       <md-select name="tenor" ng-model="cal.dps.tenor" required>
                         <md-option ng-repeat="tenor in dpsTenors" value="{{tenor}}">
+<<<<<<< HEAD
                           {{tenor}}
+=======
+                          {{tenor.name}}
+>>>>>>> lencia
                         </md-option>
                       </md-select>
                       <div ng-messages="DpsInvForm.tenor.$error" style="color:maroon" role="alert">
@@ -50,7 +64,11 @@
 
                   <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
+<<<<<<< HEAD
                       <label>Amount Deposit <span style="font-size:12px" ng-if="cal.dps.depositCurrency"> ({{cal.dps.depositCurrency}}) </span></label>
+=======
+                      <label>Deposit Amount <span style="font-size:12px" ng-if="cal.dps.depositCurrency"> ({{cal.dps.depositCurrency}}) </span></label>
+>>>>>>> lencia
                       <span id="tempAmount" style="display:none;">{{cal.dps.amountDeposit | number:0}}</span>
                       <input md-maxlength="20"  ng-maxlength="20" id="convertAmount" name="amountDeposit" ng-pattern="/^[0-9]*$/" ng-model="cal.dps.amountDeposit" ng-blur="convert2dp()">
                       <div ng-messages="DpsInvForm.amountDeposit.$error" style="color:maroon" role="alert">
@@ -66,9 +84,19 @@
                   </div>
 
                   <div layout="row">
+<<<<<<< HEAD
                     <!-- <h4 style="color:#737373">Yield P.A. &emsp;&emsp;</h4> -->
                     <md-slider-container flex>
                       <label style="color:#afaeae">Yield P.A. *</label>
+=======
+                    <label style="color:#afaeae; display: block;" >Interest Rate *</label>
+                  </div>
+                  <div layout="row">
+                    <div class="hint" >Please refer to the matrix on the right.</div>
+                  </div>
+                  <div layout="row">
+                    <md-slider-container flex>
+>>>>>>> lencia
                       <md-slider md-discrete flex min="2" max="9.5" step="0.5" ng-model="cal.dps.yieldPa" aria-label="yieldPaSlider" required></md-slider>
                       <md-input-container>
                         <input flex ng-if="cal.dps.yieldPa" value="{{cal.dps.yieldPa}}%" aria-label="yieldPaInput" readonly>
@@ -81,6 +109,7 @@
                       <label>Conversion Rate</label>
                       <input name="conversionRate" ng-if="cal.dps.conversionRate" value="{{cal.dps.conversionRate}}" style="font-size: 20px; font-weight: bold" readonly/>
                     </md-input-container>
+<<<<<<< HEAD
                     <!-- <label>Conversion Rate &emsp;&emsp;</label>
                     <div style="font-size: 18px"><b>{{cal.dps.conversionRate}}</b></div> -->
                   </div>
@@ -88,13 +117,22 @@
                   <div layout="row" layout-align="end center">
                     <!-- showAdvanced($event)
                     resizeDiag($event) -->
+=======
+                  </div>
+
+                  <div layout="row" layout-align="end center">
+>>>>>>> lencia
                     <input id="toggleBtn" type="button" style="display:none;" ng-click="resizeDiag($event)"/>
                     <div>
                       <md-button ng-disabled="DpsInvForm.$invalid" ng-click="calculateConversionRate()" class="md-raised md-warn" aria-label="DPS Calculate Button">
                         <md-tooltip>
                           See the conversion rate under the chosen criteria
                         </md-tooltip>
+<<<<<<< HEAD
                         Query
+=======
+                        Preview
+>>>>>>> lencia
                       </md-button>
                     </div>
                     <div md-theme="{{theme}}">
@@ -102,7 +140,11 @@
                         <md-tooltip md-delay="demo.delayTooltip">
                           See the Comparison of Other Products
                         </md-tooltip>
+<<<<<<< HEAD
                         Preview
+=======
+                        Compare
+>>>>>>> lencia
                       </md-button>
                     </div>
                   </div>
@@ -110,6 +152,7 @@
                   <md-divider></md-divider>
                   <br/>
                   <div layout="row">
+<<<<<<< HEAD
                      <!-- <div ng-controller="DiagramCtrl">
 
                     </div> -->
@@ -139,20 +182,88 @@
                     <md-input-container class="md-block" flex>
                       <label>Spot Price</label>
                       <input name="spotPrice" ng-if="cal.dcdc.linkedStock" value="190.2(Fake)" disabled/>
+=======
+                    <div ng-controller="DiagramCtrl" id="dpsChartContainer" style="width: 100%; height: 400px;"></div>
+                  </div>
+                </form>
+              </div>
+            </md-content>
+          </md-content>
+        </md-tab>
+
+        <md-tab label="DCDC" ng-click="switchTable('dcdc')">
+          <md-content class="md-padding">
+            <md-content layout-padding >
+              <div>
+                <form name="DcdcInvForm">
+                  <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Linked Stock</label>
+                      <md-select name="linkStock" ng-model="cal.dcdc.linkedStock" ng-change="onStockChange(cal.dcdc.linkedStock)" required>
+                        <md-option ng-repeat="stock in stocks" value="{{stock}}">{{stock}}</md-option>
+                      </md-select>
+                      <div ng-messages="DcdcInvForm.linkStock.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                      <label>Spot Price</label>
+                      <input name="spotPrice" ng-if="cal.dcdc.linkedStock" value="{{cal.dcdc.spotPrice}}" disabled/>
                     </md-input-container>
                   </div>
 
                   <div layout="row">
                     <md-input-container class="md-block" flex>
                       <div style="color:#afaeae">Query for</div>
-                      <md-radio-group layout="row" ng-model="cal.dcdc.scenario">
-                        <md-radio-button value="1" style="margin-right: 100px">Coupon P.A.</md-radio-button>
+                      <md-radio-group layout="row" ng-model="cal.dcdc.scenario" ng-change="onRadioChange()">
+                        <md-radio-button value="1" style="margin-right: 100px">Annual Coupon Rate</md-radio-button>
                         <md-radio-button value="2">Strike Price</md-radio-button>
                       </md-radio-group>
+>>>>>>> lencia
                     </md-input-container>
                   </div>
 
                   <div layout="row">
+<<<<<<< HEAD
+                    <md-input-container class="md-block" flex>
+                      <div style="color:#afaeae">Query for</div>
+                      <md-radio-group layout="row" ng-model="cal.dcdc.scenario">
+                        <md-radio-button value="1" style="margin-right: 100px">Coupon P.A.</md-radio-button>
+                        <md-radio-button value="2">Strike Price</md-radio-button>
+                      </md-radio-group>
+=======
+                    <md-input-container ng-if="cal.dcdc.scenario == 1" class="md-block" flex>
+                      <label>Strike Price</label>
+                      <input name="strikePrice" ng-model="cal.dcdc.strikePrice" type="number" min="1" pattern="\d+" required>
+                       <div class="hint" >Please refer to the matrix on the right.</div>
+                      <div ng-messages="DcdcInvForm.strikePrice.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
+                    </md-input-container>
+                    <md-input-container ng-if="cal.dcdc.scenario == 2" class="md-block" flex>
+                      <label>Annual Coupon Rate</label>
+                      <input name="couponPa" ng-model="cal.dcdc.couponPa" type="number" min="1" required>
+                      <div class="hint" >Please refer to the matrix on the right.</div>
+                      <div ng-messages="DcdcInvForm.couponPa.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                      <label>Tenor</label>
+                      <md-select name="tenor" ng-model="cal.dcdc.tenor" ng-change="onTenorChange()" required>
+                        <md-option ng-repeat="tenor in dcdcTenors" value="{{tenor.value}}">
+                          {{tenor.name}}
+                        </md-option>
+                      </md-select>
+                      <div ng-messages="DcdcInvForm.tenor.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">This field is required.</div>
+                      </div>
+>>>>>>> lencia
+                    </md-input-container>
+                  </div>
+
+                  <div layout="row">
+<<<<<<< HEAD
                     <md-input-container ng-if="cal.dcdc.scenario == 1" class="md-block" flex>
                       <label>Strike Price</label>
                       <input name="strikePrice" ng-model="cal.dcdc.strikePrice" type="number" min="1" pattern="\d+" required>
@@ -164,10 +275,19 @@
                       <label>Coupon P.A.</label>
                       <input name="couponPa" ng-model="cal.dcdc.couponPa" type="number" min="1" required>
                       <div ng-messages="DcdcInvForm.couponPa.$error" style="color:maroon" role="alert">
+=======
+                    <md-input-container class="md-block" flex>
+                      <label>Knock Out Type</label>
+                      <md-select name="koType" ng-model="cal.dcdc.koType" ng-change="onKOTypeChange()" required>
+                      <md-option ng-repeat="koType in koTypes" value="{{koType}}">{{koType}}</md-option>
+                      </md-select>
+                      <div ng-messages="DcdcInvForm.koType.$error" style="color:maroon" role="alert">
+>>>>>>> lencia
                         <div ng-message="required">This field is required.</div>
                       </div>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
+<<<<<<< HEAD
                       <label>Tenor</label>
                       <md-select name="tenor" ng-model="cal.dcdc.tenor" required>
                         <md-option ng-repeat="tenor in dcdcTenors" value="{{tenor.value}}">
@@ -175,11 +295,19 @@
                         </md-option>
                       </md-select>
                       <div ng-messages="DcdcInvForm.tenor.$error" style="color:maroon" role="alert">
+=======
+                      <label>Knock Out Barrier</label>
+                      <md-select name="koBarrier" ng-model="cal.dcdc.koBarrier" required>
+                        <md-option ng-repeat="koBarrier in koBarriers" value="{{koBarrier}}">{{koBarrier}}</md-option>
+                      </md-select>
+                      <div ng-messages="DcdcInvForm.koBarrier.$error" style="color:maroon" role="alert">
+>>>>>>> lencia
                         <div ng-message="required">This field is required.</div>
                       </div>
                     </md-input-container>
                   </div>
 
+<<<<<<< HEAD
                   <div layout="row">
                     <md-input-container class="md-block" flex>
                       <label>KO Type</label>
@@ -187,19 +315,37 @@
                         <md-option ng-repeat="koType in koTypes" value="{{koType}}">{{koType}}</md-option>
                       </md-select>
                       <div ng-messages="DcdcInvForm.koType.$error" style="color:maroon" role="alert">
+=======
+                  <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex>
+                      <label>Barrier Type</label>
+                      <md-select name="barrierType" ng-model="cal.dcdc.barrierType" ng-change="onBarrierTypeChange()" required>
+                        <md-option ng-repeat="barrierType in barrierTypes" value="{{barrierType}}">{{barrierType}}</md-option>
+                      </md-select>
+                      <div ng-messages="DcdcInvForm.barrierType.$error" style="color:maroon" role="alert">
+>>>>>>> lencia
                         <div ng-message="required">This field is required.</div>
                       </div>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
+<<<<<<< HEAD
                       <label>KO Barrier</label>
                       <input name="koBarrier" ng-model="cal.dcdc.koBarrier" type="number" min="1" pattern="\d+" required>
                       <div ng-messages="DcdcInvForm.koBarrier.$error" style="color:maroon" role="alert">
+=======
+                      <label>Knock In Barrier</label>
+                      <md-select name="kiBarrier" ng-disabled="cal.dcdc.barrierType !== 'AKI' && cal.dcdc.barrierType !== 'EKI'" ng-model="cal.dcdc.kiBarrier" ng-required="cal.dcdc.barrierType == 'AKI' || cal.dcdc.barrierType == 'EKI'" ng-change="onKIBarrierChange()">
+                      <md-option ng-repeat="kiBarrier in kiBarriers" value="{{kiBarrier}}">{{kiBarrier}}</md-option>
+                      </md-select>
+                      <div ng-messages="DcdcInvForm.kiBarrier.$error" style="color:maroon" role="alert">
+>>>>>>> lencia
                         <div ng-message="required">This field is required.</div>
                       </div>
                     </md-input-container>
                   </div>
 
                   <div layout-gt-sm="row">
+<<<<<<< HEAD
                     <md-input-container class="md-block" flex>
                       <label>Barrier Type</label>
                       <md-select name="barrierType" ng-model="cal.dcdc.barrierType" required>
@@ -221,6 +367,10 @@
                   <div layout-gt-sm="row">
                     <md-input-container ng-if="cal.dcdc.scenario == 1" class="md-block" flex>
                       <label>Coupon P.A.</label>
+=======
+                    <md-input-container ng-if="cal.dcdc.scenario == 1" class="md-block" flex>
+                      <label>Annual Coupon Rate</label>
+>>>>>>> lencia
                       <input name="couponPa" ng-if="cal.dcdc.couponPa" value="{{cal.dcdc.couponPa}}" style="font-size: 20px; font-weight: bold" readonly/>
                     </md-input-container>
                     <md-input-container ng-if="cal.dcdc.scenario == 2" class="md-block" flex>
@@ -243,7 +393,11 @@
                         <md-tooltip>
                           See the strike price under the chosen criteria
                         </md-tooltip>
+<<<<<<< HEAD
                         Query
+=======
+                        Preview
+>>>>>>> lencia
                       </md-button>
                     </div>
                     <div md-theme="{{theme}}">
@@ -251,7 +405,11 @@
                         <md-tooltip md-delay="demo.delayTooltip">
                           See the Comparison of Other Products
                         </md-tooltip>
+<<<<<<< HEAD
                         Preview
+=======
+                        Compare
+>>>>>>> lencia
                       </md-button>
                     </div>
                   </div>
